@@ -1,0 +1,37 @@
+
+:root{
+  --navy:#12355b; --blue:#1f6feb; --sky:#eaf4ff; --mint:#e9f8f1;
+  --bg:#f4f7fb; --card:#ffffff; --line:#d8e0ea; --text:#172033;
+  --muted:#637083; --danger:#b42318; --warn:#b54708; --ok:#067647;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+.topbar{background:linear-gradient(90deg,var(--navy),#176b87);color:white;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:5}
+.brand{font-weight:800;letter-spacing:.2px;font-size:20px}.brand span{font-weight:500;opacity:.9}
+.phase-select{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.phase-select button{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.14);color:white;border-radius:999px;padding:8px 11px;cursor:pointer}
+.phase-select button.active{background:white;color:var(--navy);font-weight:700}
+.header{background:white;border-bottom:1px solid var(--line);padding:14px 18px;display:grid;grid-template-columns:1.2fr 2fr;gap:14px}
+.patient h1{margin:0;font-size:24px}.sub{color:var(--muted);font-size:13px;margin-top:4px}
+.storyboard{display:grid;grid-template-columns:repeat(4,minmax(110px,1fr));gap:8px}
+.sb{border:1px solid var(--line);border-radius:10px;padding:8px;background:#fbfdff}
+.sb label{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em}.sb strong{font-size:15px}
+.layout{display:grid;grid-template-columns:235px 1fr 320px;gap:14px;padding:14px}
+.sidebar,.rightbar,.main{min-width:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 1px 2px rgba(16,24,40,.04);overflow:hidden;margin-bottom:14px}
+.card h2{font-size:15px;margin:0;padding:12px 14px;border-bottom:1px solid var(--line);background:#fbfdff}
+.card-body{padding:14px}
+.tabs button{width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:white;padding:12px 14px;cursor:pointer;color:var(--text);font-weight:600}
+.tabs button.active{background:var(--sky);border-left:4px solid var(--blue);padding-left:10px}
+.timeline-item{display:grid;grid-template-columns:58px 1fr;gap:8px;padding:9px 0;border-bottom:1px solid #eef2f7;font-size:13px}.timeline-item time{color:var(--muted);font-weight:700}
+.note{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;background:white}.note-title{padding:10px 12px;background:#fbfdff;border-bottom:1px solid var(--line);font-weight:800}.note-meta{font-size:12px;color:var(--muted);margin-top:2px}.note-content{padding:12px;white-space:pre-wrap;line-height:1.42}
+.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{border-bottom:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}.table th{font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);background:#fbfdff}
+.flag-high{color:var(--danger);font-weight:800}.flag-warn{color:var(--warn);font-weight:800}.ok{color:var(--ok);font-weight:800}
+.msg{padding:10px;border:1px solid var(--line);border-radius:12px;margin-bottom:9px;background:#fff}.msg .from{font-weight:800}.msg .time{font-size:12px;color:var(--muted);float:right}
+.alert{background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;border-radius:12px;padding:10px;margin-bottom:10px}
+.danger{background:#fef3f2;border:1px solid #fecdca;color:#7a271a}
+.reveal{padding:12px;border:1px dashed var(--blue);border-radius:12px;background:#f7fbff;margin-top:10px}
+.reveal input{padding:9px;border:1px solid var(--line);border-radius:8px;width:120px}.reveal button{padding:9px 12px;border:0;border-radius:8px;background:var(--blue);color:white;font-weight:700;cursor:pointer}
+.hidden{display:none}
+.footer{color:var(--muted);font-size:12px;text-align:center;padding:18px}
+@media(max-width:1000px){.layout{grid-template-columns:1fr}.rightbar{order:3}.sidebar{order:1}.main{order:2}.header{grid-template-columns:1fr}.storyboard{grid-template-columns:repeat(2,1fr)}.tabs{display:grid;grid-template-columns:repeat(3,1fr)}.tabs button{font-size:13px}}
+@media(max-width:600px){.topbar{align-items:flex-start;flex-direction:column}.tabs{grid-template-columns:repeat(2,1fr)}.storyboard{grid-template-columns:1fr}.layout{padding:8px}.header{padding:10px}}
