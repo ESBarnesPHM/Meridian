@@ -1,4 +1,4 @@
-# Meridian EMR v2
+# Meridian EMR v2.1
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -8,11 +8,11 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - data.js
 - README.md
 
-What changed:
-- Epic-style horizontal file-folder chart tabs.
-- No learner-facing "better/worse/same" banner.
-- No learner-facing Phase 1 medication-safety giveaway alert.
-- Patient avatar/photo added.
-- Vital sign trend graphs added to Summary and Flowsheets.
-- Faculty notes retain the hidden medication-safety clues.
+Changes:
+- More realistic evolving illustrated patient avatar.
+- Compact patient header with more Epic-like demographic boxes.
+- Flowsheets are now table-first, Epic-style, with nursing assessments and abnormal highlighting.
+- Trend graphs are still available in Flowsheets and as a Summary snapshot.
+- Results Review groups labs by CBC, inflammatory markers, chemistry, microbiology, blood gas, etc.
+- Summary now follows a prerounding workflow: Assessment, events, plan, pending/to-do.
 - Phase 4A reveal code: IPASS.

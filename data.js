@@ -7,7 +7,6 @@ const CASE = {
     "sex": "Male",
     "mrn": "MCH-203948",
     "dob": "04/14/2023",
-    "room": "ED-12",
     "pcp": "Riverbend Pediatrics",
     "allergy": "NKDA",
     "code": "Full Code",
@@ -34,25 +33,34 @@ const CASE = {
       "label": "Phase 1",
       "title": "ED admission",
       "time": "07/03/2026 17:20",
-      "location": "ED \u2192 PHM",
+      "location": "ED-12 \u2192 PHM",
+      "room": "ED-12",
       "team": "Hospital Medicine",
       "severity": "Watcher",
       "weight": "31 kg",
       "hospitalDay": "ED",
       "status": "same",
+      "photoState": "alert",
       "learnerPrompt": "You are the admitting team. Review the ED chart and identify anything that needs attention before accepting admission orders.",
       "summary": {
-        "problems": [
-          "Fever",
-          "Refusal to bear weight",
-          "Left hip pain",
-          "Tachycardia"
+        "assessment": [
+          "Previously healthy 3-year-old with fever and refusal to bear weight.",
+          "Initial ED impression: transient synovitis vs early musculoskeletal infection."
         ],
-        "recent": [
-          "ED evaluation completed",
-          "Blood culture collected",
-          "Hip x-ray completed",
-          "Admission requested"
+        "overnight": [
+          "ED evaluation completed.",
+          "Blood culture collected.",
+          "Hip x-ray completed.",
+          "Admission requested."
+        ],
+        "plan": [
+          "Admit to PHM.",
+          "Review MAR and admission orders.",
+          "Reassess patient at bedside."
+        ],
+        "pending": [
+          "Blood culture.",
+          "Final admission medication verification."
         ],
         "tasks": [
           "Review MAR",
@@ -145,38 +153,51 @@ const CASE = {
           "Not yet administered"
         ]
       ],
-      "labs": [
-        [
-          "WBC",
-          "13.8 K/uL",
-          "High"
+      "results": {
+        "CBC": [
+          [
+            "WBC",
+            "13.8 K/uL",
+            "High"
+          ],
+          [
+            "Hgb",
+            "11.5 g/dL",
+            ""
+          ],
+          [
+            "Platelets",
+            "355 K/uL",
+            ""
+          ]
         ],
-        [
-          "Hgb",
-          "11.5 g/dL",
-          ""
+        "Inflammatory markers": [
+          [
+            "CRP",
+            "8.6 mg/dL",
+            "High"
+          ],
+          [
+            "ESR",
+            "42 mm/hr",
+            "High"
+          ]
         ],
-        [
-          "Platelets",
-          "355 K/uL",
-          ""
+        "Chemistry": [
+          [
+            "BMP",
+            "Within normal limits",
+            ""
+          ]
         ],
-        [
-          "CRP",
-          "8.6 mg/dL",
-          "High"
-        ],
-        [
-          "ESR",
-          "42 mm/hr",
-          "High"
-        ],
-        [
-          "BMP",
-          "Within normal limits",
-          ""
+        "Microbiology": [
+          [
+            "Blood culture",
+            "Pending",
+            "Pending"
+          ]
         ]
-      ],
+      },
       "imaging": [
         [
           "Left hip radiograph",
@@ -206,30 +227,69 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "Heart Rate": [
-          152,
-          158,
-          164
+        "times": [
+          "14:32",
+          "14:52",
+          "16:20",
+          "17:20"
         ],
-        "Temperature": [
-          39.1,
-          39.3,
-          39.0
-        ],
-        "Respiratory Rate": [
-          26,
-          28,
-          30
-        ],
-        "SpO\u2082": [
-          99,
-          99,
-          98
-        ],
-        "Pain": [
-          8,
-          7,
-          7
+        "rows": [
+          [
+            "Heart Rate",
+            "152",
+            "158",
+            "164",
+            "166"
+          ],
+          [
+            "Respiratory Rate",
+            "26",
+            "28",
+            "30",
+            "30"
+          ],
+          [
+            "Temperature",
+            "39.1",
+            "39.3",
+            "39.0",
+            "39.2"
+          ],
+          [
+            "SpO\u2082",
+            "99",
+            "99",
+            "98",
+            "99"
+          ],
+          [
+            "Pain",
+            "8",
+            "7",
+            "7",
+            "7"
+          ],
+          [
+            "Cap refill",
+            "<2 sec",
+            "<2 sec",
+            "<2 sec",
+            "<2 sec"
+          ],
+          [
+            "Mental status",
+            "Alert",
+            "Alert",
+            "Fussy",
+            "Fussy"
+          ],
+          [
+            "Urine output",
+            "\u2014",
+            "\u2014",
+            "1 wet diaper",
+            "\u2014"
+          ]
         ]
       },
       "messages": [
@@ -254,24 +314,32 @@ const CASE = {
       "title": "Hospital day 1",
       "time": "07/04/2026 08:30",
       "location": "6A-12",
+      "room": "6A-12",
       "team": "Hospital Medicine",
       "severity": "Watcher",
       "weight": "13 kg",
       "hospitalDay": "1",
       "status": "worse",
+      "photoState": "uncomfortable",
       "learnerPrompt": "Review overnight events and determine whether the working diagnosis still fits the patient.",
       "summary": {
-        "problems": [
-          "Fever",
-          "Refusal to bear weight",
-          "Rising CRP",
-          "Concern for bone/joint infection"
+        "assessment": [
+          "Persistent fever and refusal to bear weight despite observation.",
+          "Clinical course is not consistent with simple improvement from transient synovitis."
         ],
-        "recent": [
-          "Weight corrected to 13 kg",
-          "Pain persists",
-          "CRP increased from 8.6 to 16.4",
-          "Parent reports he is worse"
+        "overnight": [
+          "Fever continued overnight.",
+          "Nursing documented worsening pain with movement.",
+          "Parent reports he is worse today."
+        ],
+        "plan": [
+          "Repeat focused history and physical.",
+          "Broaden differential.",
+          "Obtain MRI and consult orthopedics."
+        ],
+        "pending": [
+          "Blood culture remains preliminary.",
+          "MRI not yet ordered."
         ],
         "tasks": [
           "Repeat focused exam",
@@ -335,7 +403,7 @@ const CASE = {
           "Repeat CRP",
           "Morning draw",
           "Completed",
-          "See labs"
+          "See results"
         ],
         [
           "MRI left hip/femur",
@@ -360,28 +428,39 @@ const CASE = {
           ""
         ]
       ],
-      "labs": [
-        [
-          "WBC",
-          "15.6 K/uL",
-          "High"
+      "results": {
+        "CBC": [
+          [
+            "WBC",
+            "15.6 K/uL",
+            "High"
+          ],
+          [
+            "Platelets",
+            "352 K/uL",
+            ""
+          ]
         ],
-        [
-          "CRP",
-          "16.4 mg/dL",
-          "High"
+        "Inflammatory markers": [
+          [
+            "CRP",
+            "16.4 mg/dL",
+            "High"
+          ],
+          [
+            "ESR",
+            "58 mm/hr",
+            "High"
+          ]
         ],
-        [
-          "ESR",
-          "58 mm/hr",
-          "High"
-        ],
-        [
-          "Blood culture",
-          "No growth to date",
-          "Prelim"
+        "Microbiology": [
+          [
+            "Blood culture",
+            "No growth to date",
+            "Prelim"
+          ]
         ]
-      ],
+      },
       "imaging": [
         [
           "Prior radiograph",
@@ -399,35 +478,69 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "Heart Rate": [
-          152,
-          164,
-          168,
-          172
+        "times": [
+          "20:00",
+          "23:30",
+          "04:15",
+          "08:00"
         ],
-        "Temperature": [
-          39.3,
-          39.5,
-          39.1,
-          39.4
-        ],
-        "Respiratory Rate": [
-          28,
-          30,
-          32,
-          34
-        ],
-        "SpO\u2082": [
-          99,
-          98,
-          98,
-          97
-        ],
-        "Pain": [
-          7,
-          8,
-          9,
-          9
+        "rows": [
+          [
+            "Heart Rate",
+            "152",
+            "164",
+            "168",
+            "172"
+          ],
+          [
+            "Respiratory Rate",
+            "28",
+            "30",
+            "32",
+            "34"
+          ],
+          [
+            "Temperature",
+            "39.3",
+            "39.5",
+            "39.1",
+            "39.4"
+          ],
+          [
+            "SpO\u2082",
+            "99",
+            "98",
+            "98",
+            "97"
+          ],
+          [
+            "Pain",
+            "7",
+            "8",
+            "9",
+            "9"
+          ],
+          [
+            "Cap refill",
+            "<2 sec",
+            "<2 sec",
+            "3 sec",
+            "3 sec"
+          ],
+          [
+            "Mental status",
+            "Alert",
+            "Fussy",
+            "Sleeping",
+            "Sleepier"
+          ],
+          [
+            "Urine output",
+            "Adequate",
+            "Adequate",
+            "Low",
+            "Low"
+          ]
         ]
       },
       "messages": [
@@ -447,23 +560,33 @@ const CASE = {
       "title": "Pathway decisions",
       "time": "07/04/2026 15:45",
       "location": "6A-12",
+      "room": "6A-12",
       "team": "PHM + Ortho",
       "severity": "Watcher",
       "weight": "13 kg",
       "hospitalDay": "1",
       "status": "worse",
+      "photoState": "sleepy",
       "learnerPrompt": "New results are available. Use the pathway and chart data to decide what needs to happen next.",
       "summary": {
-        "problems": [
-          "Acute hematogenous osteomyelitis",
-          "Subperiosteal abscess",
-          "Positive blood culture",
-          "Persistent tachycardia"
+        "assessment": [
+          "MRI confirms acute osteomyelitis with small subperiosteal abscess.",
+          "Blood culture now positive with gram-positive cocci in clusters."
         ],
-        "recent": [
-          "MRI confirms proximal femur osteomyelitis",
-          "Blood culture positive: gram-positive cocci in clusters",
-          "Ortho consulted"
+        "overnight": [
+          "MRI completed.",
+          "Orthopedic surgery consulted.",
+          "Microbiology reported a critical result."
+        ],
+        "plan": [
+          "Use osteomyelitis pathway.",
+          "Repeat blood cultures until negative.",
+          "Trend CRP/CBC/BMP.",
+          "Keep NPO at midnight per Ortho contingency."
+        ],
+        "pending": [
+          "Speciation/susceptibilities.",
+          "Repeat blood culture order."
         ],
         "tasks": [
           "Repeat blood culture",
@@ -551,23 +674,29 @@ const CASE = {
           "After dose correction"
         ]
       ],
-      "labs": [
-        [
-          "Blood culture",
-          "Gram-positive cocci in clusters",
-          "Critical"
+      "results": {
+        "Microbiology": [
+          [
+            "Blood culture",
+            "Gram-positive cocci in clusters",
+            "Critical"
+          ]
         ],
-        [
-          "CRP",
-          "16.4 mg/dL",
-          "High"
+        "Inflammatory markers": [
+          [
+            "CRP",
+            "16.4 mg/dL",
+            "High"
+          ]
         ],
-        [
-          "WBC",
-          "15.6 K/uL",
-          "High"
+        "CBC": [
+          [
+            "WBC",
+            "15.6 K/uL",
+            "High"
+          ]
         ]
-      ],
+      },
       "imaging": [
         [
           "MRI left hip/femur",
@@ -581,35 +710,69 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "Heart Rate": [
-          164,
-          168,
-          172,
-          176
+        "times": [
+          "08:00",
+          "12:00",
+          "14:00",
+          "15:30"
         ],
-        "Temperature": [
-          39.1,
-          39.4,
-          39.2,
-          39.6
-        ],
-        "Respiratory Rate": [
-          30,
-          32,
-          34,
-          35
-        ],
-        "SpO\u2082": [
-          98,
-          98,
-          97,
-          97
-        ],
-        "Pain": [
-          8,
-          9,
-          9,
-          8
+        "rows": [
+          [
+            "Heart Rate",
+            "164",
+            "168",
+            "172",
+            "176"
+          ],
+          [
+            "Respiratory Rate",
+            "30",
+            "32",
+            "34",
+            "35"
+          ],
+          [
+            "Temperature",
+            "39.1",
+            "39.4",
+            "39.2",
+            "39.6"
+          ],
+          [
+            "SpO\u2082",
+            "98",
+            "98",
+            "97",
+            "97"
+          ],
+          [
+            "Pain",
+            "8",
+            "9",
+            "9",
+            "8"
+          ],
+          [
+            "Cap refill",
+            "<2 sec",
+            "3 sec",
+            "3 sec",
+            "3 sec"
+          ],
+          [
+            "Mental status",
+            "Fussy",
+            "Sleepy",
+            "Sleepy",
+            "Sleepy"
+          ],
+          [
+            "Urine output",
+            "Adequate",
+            "Adequate",
+            "Low",
+            "Low"
+          ]
         ]
       },
       "messages": [
@@ -634,23 +797,33 @@ const CASE = {
       "title": "Poor handoff",
       "time": "07/04/2026 21:15",
       "location": "6A-12",
+      "room": "6A-12",
       "team": "Night PHM",
       "severity": "Unclear",
       "weight": "13 kg",
       "hospitalDay": "1",
       "status": "worse",
+      "photoState": "pale",
       "learnerPrompt": "You are the night team. Review the handoff and documentation. Decide whether you have enough information to safely care for this patient.",
       "summary": {
-        "problems": [
-          "Bacteremic osteomyelitis",
-          "Subperiosteal abscess",
-          "Persistent tachycardia",
-          "Poor documentation/handoff"
+        "assessment": [
+          "Known bacteremic osteomyelitis with abscess, but documentation does not clearly reflect current illness severity.",
+          "Nursing concerns suggest clinical worsening."
         ],
-        "recent": [
-          "Day note predates MRI/culture results",
-          "Handoff omits bacteremia and contingencies",
-          "RN reports worsening perfusion/urine output"
+        "overnight": [
+          "Day note predates MRI/culture results.",
+          "Handoff omits bacteremia and contingencies.",
+          "RN reports worsening perfusion and urine output."
+        ],
+        "plan": [
+          "Review chart for missing data.",
+          "Evaluate patient now.",
+          "Clarify action list and contingency planning."
+        ],
+        "pending": [
+          "Repeat blood culture not ordered.",
+          "NPO order not placed.",
+          "Trend labs not ordered."
         ],
         "tasks": [
           "Identify missing IPASS elements",
@@ -738,18 +911,22 @@ const CASE = {
           ""
         ]
       ],
-      "labs": [
-        [
-          "Blood culture",
-          "Gram-positive cocci in clusters",
-          "Critical"
+      "results": {
+        "Microbiology": [
+          [
+            "Blood culture",
+            "Gram-positive cocci in clusters",
+            "Critical"
+          ]
         ],
-        [
-          "CRP",
-          "16.4 mg/dL",
-          "High"
+        "Inflammatory markers": [
+          [
+            "CRP",
+            "16.4 mg/dL",
+            "High"
+          ]
         ]
-      ],
+      },
       "imaging": [
         [
           "MRI",
@@ -763,35 +940,76 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "Heart Rate": [
-          168,
-          174,
-          178,
-          182
+        "times": [
+          "17:45",
+          "18:30",
+          "20:00",
+          "21:00"
         ],
-        "Temperature": [
-          39.2,
-          39.6,
-          39.8,
-          40.0
-        ],
-        "Respiratory Rate": [
-          32,
-          34,
-          36,
-          38
-        ],
-        "SpO\u2082": [
-          98,
-          97,
-          96,
-          96
-        ],
-        "Urine Output": [
-          3,
-          2,
-          1,
-          1
+        "rows": [
+          [
+            "Heart Rate",
+            "168",
+            "174",
+            "178",
+            "182"
+          ],
+          [
+            "Respiratory Rate",
+            "32",
+            "34",
+            "36",
+            "38"
+          ],
+          [
+            "Temperature",
+            "39.2",
+            "39.6",
+            "39.8",
+            "40.0"
+          ],
+          [
+            "SpO\u2082",
+            "98",
+            "97",
+            "96",
+            "96"
+          ],
+          [
+            "Urine output",
+            "Adequate",
+            "Low",
+            "Low",
+            "Minimal"
+          ],
+          [
+            "Cap refill",
+            "3 sec",
+            "3 sec",
+            "4 sec",
+            "4 sec"
+          ],
+          [
+            "Pulses",
+            "2+",
+            "2+",
+            "1+",
+            "1+"
+          ],
+          [
+            "Skin",
+            "Warm",
+            "Warm",
+            "Cool",
+            "Cool"
+          ],
+          [
+            "Mental status",
+            "Fussy",
+            "Sleepy",
+            "Irritable",
+            "Sleepy"
+          ]
         ]
       },
       "messages": [
@@ -812,24 +1030,35 @@ const CASE = {
       "title": "Corrected IPASS",
       "time": "07/04/2026 21:35",
       "location": "6A-12",
+      "room": "6A-12",
       "team": "Night PHM",
       "severity": "Watcher / high risk",
       "weight": "13 kg",
       "hospitalDay": "1",
       "status": "worse",
+      "photoState": "pale",
       "learnerPrompt": "Review the updated handoff and physician event note. Compare what is different now.",
       "summary": {
-        "problems": [
-          "Bacteremic osteomyelitis",
-          "Subperiosteal abscess",
-          "Early perfusion concerns",
-          "High risk for septic shock"
+        "assessment": [
+          "Bacteremic osteomyelitis with abscess and early perfusion concerns.",
+          "Illness severity and contingency planning now explicitly documented."
         ],
-        "recent": [
-          "Night team evaluated patient",
-          "Updated IPASS documented",
-          "Event note filed",
-          "Repeat labs/culture ordered"
+        "overnight": [
+          "Night team evaluated patient.",
+          "Updated IPASS documented.",
+          "Physician event note filed.",
+          "Repeat labs/culture ordered."
+        ],
+        "plan": [
+          "Follow lactate and labs.",
+          "Ensure cefazolin given on time.",
+          "NPO at midnight.",
+          "Escalate if perfusion worsens."
+        ],
+        "pending": [
+          "Lactate.",
+          "Repeat CBC/BMP/CRP.",
+          "Repeat blood culture."
         ],
         "tasks": [
           "Follow lactate/labs",
@@ -907,18 +1136,20 @@ const CASE = {
           "Ensure on time"
         ]
       ],
-      "labs": [
-        [
-          "Lactate",
-          "Pending",
-          ""
-        ],
-        [
-          "CBC/BMP/CRP",
-          "Pending",
-          ""
+      "results": {
+        "Labs ordered": [
+          [
+            "Lactate",
+            "Pending",
+            ""
+          ],
+          [
+            "CBC/BMP/CRP",
+            "Pending",
+            ""
+          ]
         ]
-      ],
+      },
       "imaging": [
         [
           "MRI",
@@ -932,35 +1163,76 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "Heart Rate": [
-          168,
-          174,
-          178,
-          182
+        "times": [
+          "17:45",
+          "18:30",
+          "20:00",
+          "21:00"
         ],
-        "Temperature": [
-          39.2,
-          39.6,
-          39.8,
-          40.0
-        ],
-        "Respiratory Rate": [
-          32,
-          34,
-          36,
-          38
-        ],
-        "SpO\u2082": [
-          98,
-          97,
-          96,
-          96
-        ],
-        "Urine Output": [
-          3,
-          2,
-          1,
-          1
+        "rows": [
+          [
+            "Heart Rate",
+            "168",
+            "174",
+            "178",
+            "182"
+          ],
+          [
+            "Respiratory Rate",
+            "32",
+            "34",
+            "36",
+            "38"
+          ],
+          [
+            "Temperature",
+            "39.2",
+            "39.6",
+            "39.8",
+            "40.0"
+          ],
+          [
+            "SpO\u2082",
+            "98",
+            "97",
+            "96",
+            "96"
+          ],
+          [
+            "Urine output",
+            "Adequate",
+            "Low",
+            "Low",
+            "Minimal"
+          ],
+          [
+            "Cap refill",
+            "3 sec",
+            "3 sec",
+            "4 sec",
+            "4 sec"
+          ],
+          [
+            "Pulses",
+            "2+",
+            "2+",
+            "1+",
+            "1+"
+          ],
+          [
+            "Skin",
+            "Warm",
+            "Warm",
+            "Cool",
+            "Cool"
+          ],
+          [
+            "Mental status",
+            "Fussy",
+            "Sleepy",
+            "Irritable",
+            "Sleepy"
+          ]
         ]
       },
       "messages": [
@@ -980,24 +1252,35 @@ const CASE = {
       "title": "MET call",
       "time": "07/05/2026 02:10",
       "location": "6A-12 \u2192 PICU",
+      "room": "6A-12",
       "team": "PHM + PICU + Ortho",
       "severity": "Critical",
       "weight": "13 kg",
       "hospitalDay": "2",
       "status": "worse",
+      "photoState": "critical",
       "learnerPrompt": "The patient is deteriorating. Review the chart quickly and lead the next steps.",
       "summary": {
-        "problems": [
-          "Septic shock",
-          "Bacteremic osteomyelitis",
-          "End-organ dysfunction",
-          "Need for source control"
+        "assessment": [
+          "Septic shock with end-organ dysfunction in patient with bacteremic osteomyelitis.",
+          "Requires immediate escalation and source-control reassessment."
         ],
-        "recent": [
-          "Hypotension and lethargy",
-          "Lactate 5.1",
-          "VBG metabolic acidosis",
-          "PICU accepts transfer"
+        "overnight": [
+          "Hypotension and lethargy.",
+          "Lactate 5.1.",
+          "VBG metabolic acidosis.",
+          "PICU accepts transfer."
+        ],
+        "plan": [
+          "Activate/lead MET response.",
+          "Fluid resuscitation.",
+          "Repeat cultures and broaden antibiotics.",
+          "PICU transfer and urgent Ortho reassessment."
+        ],
+        "pending": [
+          "Repeat blood culture.",
+          "Response to fluid bolus.",
+          "Source control plan."
         ],
         "tasks": [
           "Lead MET using closed-loop communication",
@@ -1100,43 +1383,47 @@ const CASE = {
           ""
         ]
       ],
-      "labs": [
-        [
-          "VBG pH",
-          "7.24",
-          "Critical"
+      "results": {
+        "Blood gas": [
+          [
+            "VBG pH",
+            "7.24",
+            "Critical"
+          ],
+          [
+            "pCO\u2082",
+            "31 mmHg",
+            ""
+          ],
+          [
+            "HCO\u2083",
+            "13 mEq/L",
+            "Low"
+          ],
+          [
+            "Base deficit",
+            "-13",
+            "Critical"
+          ]
         ],
-        [
-          "pCO2",
-          "31 mmHg",
-          ""
-        ],
-        [
-          "HCO3",
-          "13 mEq/L",
-          "Low"
-        ],
-        [
-          "Base deficit",
-          "-13",
-          "Critical"
-        ],
-        [
-          "Lactate",
-          "5.1 mmol/L",
-          "Critical"
-        ],
-        [
-          "Creatinine",
-          "0.72 mg/dL",
-          "High"
-        ],
-        [
-          "Platelets",
-          "118 K/uL",
-          "Low"
+        "Perfusion / organ function": [
+          [
+            "Lactate",
+            "5.1 mmol/L",
+            "Critical"
+          ],
+          [
+            "Creatinine",
+            "0.72 mg/dL",
+            "High"
+          ],
+          [
+            "Platelets",
+            "118 K/uL",
+            "Low"
+          ]
         ]
-      ],
+      },
       "imaging": [
         [
           "MRI",
@@ -1150,35 +1437,83 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "Heart Rate": [
-          176,
-          182,
-          186,
-          190
+        "times": [
+          "00:20",
+          "01:15",
+          "01:50",
+          "02:00"
         ],
-        "Temperature": [
-          39.8,
-          40.0,
-          40.2,
-          40.2
-        ],
-        "Respiratory Rate": [
-          38,
-          42,
-          46,
-          48
-        ],
-        "SpO\u2082": [
-          96,
-          94,
-          93,
-          92
-        ],
-        "Urine Output": [
-          2,
-          1,
-          1,
-          0
+        "rows": [
+          [
+            "Heart Rate",
+            "176",
+            "182",
+            "186",
+            "190"
+          ],
+          [
+            "Respiratory Rate",
+            "38",
+            "42",
+            "46",
+            "48"
+          ],
+          [
+            "Blood Pressure",
+            "88/52",
+            "82/46",
+            "72/38",
+            "74/40"
+          ],
+          [
+            "Temperature",
+            "39.8",
+            "40.0",
+            "40.2",
+            "40.2"
+          ],
+          [
+            "SpO\u2082",
+            "96",
+            "94",
+            "93",
+            "92"
+          ],
+          [
+            "Urine output",
+            "Low",
+            "Minimal",
+            "None",
+            "None"
+          ],
+          [
+            "Cap refill",
+            "4 sec",
+            "4 sec",
+            "5 sec",
+            "5 sec"
+          ],
+          [
+            "Pulses",
+            "1+",
+            "Weak",
+            "Weak",
+            "Weak"
+          ],
+          [
+            "Skin",
+            "Cool",
+            "Cool",
+            "Mottled",
+            "Mottled"
+          ],
+          [
+            "Mental status",
+            "Sleepy",
+            "Lethargic",
+            "Difficult to arouse",
+            "Lethargic"
+          ]
         ]
       },
       "messages": [
