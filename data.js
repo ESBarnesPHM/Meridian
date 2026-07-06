@@ -3,15 +3,19 @@ const CASE = {
   "tagline": "Think clearly. Communicate effectively. Care safely.",
   "patient": {
     "name": "Mason Carter",
-    "age": "3 years",
+    "age": "3 y.o.",
     "sex": "Male",
-    "mrn": "MCH-203948",
+    "mrn": "203948",
     "dob": "04/14/2023",
     "pcp": "Riverbend Pediatrics",
     "allergy": "NKDA",
     "code": "Full Code",
-    "isolation": "None",
-    "attending": "Barnes, MD"
+    "attending": "Barnes, MD",
+    "bed": "Bed 1",
+    "access": "PIV L AC",
+    "diet": "Regular",
+    "mother": "Samantha Carter",
+    "father": "David Carter"
   },
   "inactivePatients": [
     {
@@ -33,44 +37,60 @@ const CASE = {
       "label": "Phase 1",
       "title": "ED admission",
       "time": "07/03/2026 17:20",
-      "location": "ED-12 \u2192 PHM",
+      "location": "ED \u2192 PHM",
       "room": "ED-12",
       "team": "Hospital Medicine",
       "severity": "Watcher",
       "weight": "31 kg",
+      "weightDetail": "68 lb 5 oz",
       "hospitalDay": "ED",
       "status": "same",
-      "photoState": "alert",
       "learnerPrompt": "You are the admitting team. Review the ED chart and identify anything that needs attention before accepting admission orders.",
+      "vitals": {
+        "Temp": "39.2 \u00b0C",
+        "HR": "166",
+        "RR": "30",
+        "SpO\u2082": "99% RA",
+        "Pain": "7/10",
+        "Updated": "07/03 17:20"
+      },
       "summary": {
         "assessment": [
-          "Previously healthy 3-year-old with fever and refusal to bear weight.",
-          "Initial ED impression: transient synovitis vs early musculoskeletal infection."
+          "3 y.o. male presenting with fever, left hip pain, and refusal to bear weight.",
+          "Concern for transient synovitis vs early osteomyelitis/septic arthritis."
         ],
-        "overnight": [
-          "ED evaluation completed.",
-          "Blood culture collected.",
-          "Hip x-ray completed.",
-          "Admission requested."
+        "problems": [
+          "Fever",
+          "Left hip pain",
+          "Refusal to bear weight",
+          "Tachycardia"
+        ],
+        "events": [
+          "ED evaluation completed",
+          "Blood culture collected",
+          "Hip x-ray completed",
+          "Admission requested"
         ],
         "plan": [
-          "Admit to PHM.",
-          "Review MAR and admission orders.",
-          "Reassess patient at bedside."
+          "Review ED evaluation and labs",
+          "Verify weight and medication dosing",
+          "Follow up blood culture",
+          "Continue cefazolin",
+          "Consider MRI if no improvement"
         ],
         "pending": [
-          "Blood culture.",
-          "Final admission medication verification."
+          "Blood culture collected 07/03 16:18",
+          "Left hip x-ray completed 07/03 15:40"
         ],
-        "tasks": [
-          "Review MAR",
-          "Reassess patient",
-          "Follow blood culture",
-          "Verify admission orders"
+        "todo": [
+          "Verify weight with parent/growth history",
+          "Recalculate medication dosing",
+          "Review allergy documentation",
+          "Perform admission exam"
         ],
         "meds": [
-          "Cefazolin 775 mg IV q8h ordered",
-          "Ibuprofen 65 mg PO given"
+          "Cefazolin 775 mg IV q8h",
+          "Ibuprofen 65 mg PO once"
         ]
       },
       "timeline": [
@@ -93,48 +113,62 @@ const CASE = {
         [
           "16:25",
           "Cefazolin ordered"
-        ],
-        [
-          "17:01",
-          "PHM admission requested"
         ]
       ],
       "notes": [
         [
-          "ED Triage Note",
-          "Ashley Reed, RN \u00b7 14:38",
-          "Chief complaint: Fever and will not walk.\n\nMother reports fever since yesterday and refusal to bear weight today. No known trauma. Mother states, \u201cHe was about 29 pounds at his pediatrician appointment last week.\u201d\n\nTriage weight documented: 31 kg."
+          "ED Provider Note",
+          "Patel, MD",
+          "07/03 16:45",
+          "Fever and left hip pain since yesterday. Refusing to bear weight. Tachycardic, febrile...",
+          "Previously healthy 3-year-old male with one day of fever and left leg pain/refusal to bear weight. No trauma.\n\nExam: uncomfortable, cries with passive left hip range of motion, no swelling or erythema. Tachycardic, capillary refill less than 2 seconds.\n\nAssessment: transient synovitis vs early osteomyelitis vs septic arthritis.\n\nPlan: admit to PHM for observation, labs, blood culture, hip radiograph, empiric cefazolin, pain control."
         ],
         [
-          "ED Provider Note",
-          "N. Patel, MD \u00b7 16:45",
-          "Previously healthy 3-year-old male with one day of fever and left leg pain/refusal to bear weight. No trauma.\n\nExam: uncomfortable, cries with passive left hip range of motion, no swelling or erythema. Tachycardic, capillary refill less than 2 seconds.\n\nAssessment: transient synovitis vs early osteomyelitis vs septic arthritis.\n\nPlan: admit to PHM for observation, labs, blood culture, hip radiograph, empiric cefazolin, pain control."
+          "ED Nursing Note",
+          "Ashley RN",
+          "07/03 16:18",
+          "Ibuprofen given. PIV placed. Labs and blood culture drawn. Cefazolin ordered.",
+          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week."
+        ],
+        [
+          "Triage Note",
+          "ED Triage RN",
+          "07/03 14:38",
+          "Arrived via private car. Fever today. Left hip pain. Won't walk.",
+          "Chief complaint: Fever and will not walk. Triage weight documented: 31 kg."
+        ],
+        [
+          "ED Nursing Note",
+          "Ashley RN",
+          "07/03 14:32",
+          "Initial assessment completed. Placed on monitor.",
+          "Patient appears uncomfortable. No visible swelling or bruising."
         ]
       ],
       "orders": [
         [
-          "Cefazolin",
-          "775 mg IV q8h",
+          "Cefazolin 775 mg IV q8h",
+          "Ordered 16:25",
           "Active",
-          "Dose calculated using documented ED weight"
+          "Medication"
         ],
         [
-          "Ibuprofen",
-          "65 mg PO once",
-          "Given",
-          ""
-        ],
-        [
-          "Blood culture",
-          "Peripheral x1",
-          "Collected",
-          "Pending"
-        ],
-        [
-          "Left hip radiograph",
-          "2 views",
+          "Ibuprofen 65 mg PO once",
+          "Given 14:52",
           "Completed",
-          "See imaging"
+          "Medication"
+        ],
+        [
+          "Blood Culture (Peripheral)",
+          "Collected 16:18",
+          "In process",
+          "Lab"
+        ],
+        [
+          "Left Hip X-Ray",
+          "Completed 15:40",
+          "Completed",
+          "Imaging"
         ]
       ],
       "mar": [
@@ -296,12 +330,14 @@ const CASE = {
         [
           "Ashley RN",
           "16:20",
-          "He is still crying with diaper changes. Pain did not improve much after ibuprofen."
+          "He is still crying with diaper changes. Pain did not improve much after ibuprofen.",
+          "AR"
         ],
         [
           "Pharmacy",
           "16:31",
-          "Can you verify the patient's weight before we prepare cefazolin? The documented weight seems high for age."
+          "Can you verify the patient's weight before we prepare cefazolin? The documented weight seems high for age.",
+          "PH"
         ]
       ],
       "facilitator": [
@@ -318,30 +354,46 @@ const CASE = {
       "team": "Hospital Medicine",
       "severity": "Watcher",
       "weight": "13 kg",
+      "weightDetail": "28 lb 10 oz",
       "hospitalDay": "1",
       "status": "worse",
-      "photoState": "uncomfortable",
       "learnerPrompt": "Review overnight events and determine whether the working diagnosis still fits the patient.",
+      "vitals": {
+        "Temp": "39.4 \u00b0C",
+        "HR": "172",
+        "RR": "34",
+        "SpO\u2082": "97% RA",
+        "Pain": "9/10",
+        "Updated": "07/04 08:00"
+      },
       "summary": {
         "assessment": [
           "Persistent fever and refusal to bear weight despite observation.",
           "Clinical course is not consistent with simple improvement from transient synovitis."
         ],
-        "overnight": [
-          "Fever continued overnight.",
-          "Nursing documented worsening pain with movement.",
-          "Parent reports he is worse today."
+        "problems": [
+          "Fever",
+          "Left hip pain",
+          "Refusal to bear weight",
+          "Rising CRP"
+        ],
+        "events": [
+          "Fever continued overnight",
+          "Nursing documented worsening pain",
+          "Parent reports he is worse today",
+          "CRP increased from 8.6 to 16.4"
         ],
         "plan": [
-          "Repeat focused history and physical.",
-          "Broaden differential.",
-          "Obtain MRI and consult orthopedics."
+          "Repeat focused history and physical",
+          "Broaden differential",
+          "Order MRI",
+          "Consult orthopedics"
         ],
         "pending": [
-          "Blood culture remains preliminary.",
-          "MRI not yet ordered."
+          "Blood culture preliminary",
+          "MRI not yet ordered"
         ],
-        "tasks": [
+        "todo": [
           "Repeat focused exam",
           "Order MRI",
           "Consult orthopedics",
@@ -377,39 +429,43 @@ const CASE = {
       "notes": [
         [
           "Overnight PHM Update",
-          "M. Lee, MD \u00b7 04:45",
+          "M. Lee, MD",
+          "07/04 04:45",
+          "Continues febrile. Refusing to stand.",
           "Continues febrile. Refusing to stand. Treated as likely transient synovitis with viral symptoms. Blood culture pending."
         ],
         [
           "Nursing Note",
-          "Ashley Reed, RN \u00b7 07:55",
+          "Ashley RN",
+          "07/04 07:55",
+          "Cries with any movement of left leg.",
           "Patient cries with any movement of left leg. Refuses to sit upright. Mother worried he is sleepier and worse than yesterday."
         ]
       ],
       "orders": [
         [
-          "Acetaminophen",
-          "195 mg PO q6h PRN",
+          "Acetaminophen 195 mg PO q6h PRN",
           "Active",
-          "Corrected weight 13 kg"
+          "Active",
+          "Medication"
         ],
         [
-          "Cefazolin",
-          "325 mg IV q8h",
+          "Cefazolin 325 mg IV q8h",
           "Active",
-          "Dose corrected"
+          "Active",
+          "Medication"
         ],
         [
           "Repeat CRP",
-          "Morning draw",
           "Completed",
-          "See results"
+          "Completed",
+          "Lab"
         ],
         [
           "MRI left hip/femur",
           "Not ordered",
           "Missing",
-          "Consider based on clinical course"
+          "Imaging"
         ]
       ],
       "mar": [
@@ -547,7 +603,8 @@ const CASE = {
         [
           "Ashley RN",
           "08:05",
-          "I am concerned. He screams when I move his left hip and will not put any weight on the leg."
+          "I am concerned. He screams when I move his left hip and will not put any weight on the leg.",
+          "AR"
         ]
       ],
       "facilitator": [
@@ -564,31 +621,45 @@ const CASE = {
       "team": "PHM + Ortho",
       "severity": "Watcher",
       "weight": "13 kg",
+      "weightDetail": "28 lb 10 oz",
       "hospitalDay": "1",
       "status": "worse",
-      "photoState": "sleepy",
       "learnerPrompt": "New results are available. Use the pathway and chart data to decide what needs to happen next.",
+      "vitals": {
+        "Temp": "39.6 \u00b0C",
+        "HR": "176",
+        "RR": "35",
+        "SpO\u2082": "97% RA",
+        "Pain": "8/10",
+        "Updated": "07/04 15:30"
+      },
       "summary": {
         "assessment": [
           "MRI confirms acute osteomyelitis with small subperiosteal abscess.",
           "Blood culture now positive with gram-positive cocci in clusters."
         ],
-        "overnight": [
-          "MRI completed.",
-          "Orthopedic surgery consulted.",
-          "Microbiology reported a critical result."
+        "problems": [
+          "Acute hematogenous osteomyelitis",
+          "Subperiosteal abscess",
+          "Positive blood culture",
+          "Persistent tachycardia"
+        ],
+        "events": [
+          "MRI completed",
+          "Orthopedic surgery consulted",
+          "Microbiology reported critical result"
         ],
         "plan": [
-          "Use osteomyelitis pathway.",
-          "Repeat blood cultures until negative.",
-          "Trend CRP/CBC/BMP.",
-          "Keep NPO at midnight per Ortho contingency."
+          "Use osteomyelitis pathway",
+          "Repeat blood cultures until negative",
+          "Trend CRP/CBC/BMP",
+          "Keep NPO at midnight per Ortho"
         ],
         "pending": [
-          "Speciation/susceptibilities.",
-          "Repeat blood culture order."
+          "Speciation/susceptibilities",
+          "Repeat blood culture order"
         ],
-        "tasks": [
+        "todo": [
           "Repeat blood culture",
           "Trend CRP/CBC/BMP",
           "Review antibiotic pathway/antibiogram",
@@ -625,44 +696,50 @@ const CASE = {
       "notes": [
         [
           "MRI Result",
-          "Radiology \u00b7 14:05",
+          "Radiology",
+          "07/04 14:05",
+          "Acute osteomyelitis of left proximal femur.",
           "Acute osteomyelitis of the left proximal femur with small adjacent subperiosteal abscess. No hip joint effusion."
         ],
         [
           "Orthopedic Surgery Consult",
-          "J. Kim, MD \u00b7 15:25",
+          "J. Kim, MD",
+          "07/04 15:25",
+          "Recommend IV antibiotics and serial exams.",
           "Recommend continued IV antibiotics, serial exams, trend CRP, and NPO at midnight in case operative source control is needed if clinical status worsens or abscess enlarges."
         ],
         [
           "Meridian Osteomyelitis Pathway",
-          "Clinical Pathway \u00b7 15:35",
+          "Clinical Pathway",
+          "07/04 15:35",
+          "Obtain cultures, trend CRP, use local antibiotic guidance.",
           "Obtain blood cultures. Trend CRP every 24-48 hours. Tailor empiric antibiotics to local susceptibility and MRSA risk. Consult orthopedics for abscess, septic arthritis concern, or failure to improve."
         ]
       ],
       "orders": [
         [
-          "Cefazolin",
-          "325 mg IV q8h",
+          "Cefazolin 325 mg IV q8h",
           "Active",
-          "MSSA coverage"
+          "Active",
+          "Medication"
         ],
         [
           "Repeat blood culture",
-          "Daily until negative",
           "Needs order",
-          "Bacteremia"
+          "Missing",
+          "Lab"
         ],
         [
-          "CRP",
-          "Daily",
+          "CRP daily",
           "Needs order",
-          "Trend response"
+          "Missing",
+          "Lab"
         ],
         [
           "NPO at midnight",
-          "Diet order",
           "Recommended",
-          "Ortho contingency"
+          "Missing",
+          "Diet"
         ]
       ],
       "mar": [
@@ -779,12 +856,14 @@ const CASE = {
         [
           "Microbiology",
           "14:20",
-          "Critical result: blood culture positive for gram-positive cocci in clusters."
+          "Critical result: blood culture positive for gram-positive cocci in clusters.",
+          "MICRO"
         ],
         [
           "Ortho Resident",
           "15:32",
-          "Please keep NPO at midnight and call if tachycardia worsens, perfusion changes, or pain increases."
+          "Please keep NPO at midnight and call if tachycardia worsens, perfusion changes, or pain increases.",
+          "ORT"
         ]
       ],
       "facilitator": [
@@ -801,31 +880,45 @@ const CASE = {
       "team": "Night PHM",
       "severity": "Unclear",
       "weight": "13 kg",
+      "weightDetail": "28 lb 10 oz",
       "hospitalDay": "1",
       "status": "worse",
-      "photoState": "pale",
       "learnerPrompt": "You are the night team. Review the handoff and documentation. Decide whether you have enough information to safely care for this patient.",
+      "vitals": {
+        "Temp": "40.0 \u00b0C",
+        "HR": "182",
+        "RR": "38",
+        "SpO\u2082": "96% RA",
+        "Pain": "8/10",
+        "Updated": "07/04 21:00"
+      },
       "summary": {
         "assessment": [
           "Known bacteremic osteomyelitis with abscess, but documentation does not clearly reflect current illness severity.",
           "Nursing concerns suggest clinical worsening."
         ],
-        "overnight": [
-          "Day note predates MRI/culture results.",
-          "Handoff omits bacteremia and contingencies.",
-          "RN reports worsening perfusion and urine output."
+        "problems": [
+          "Bacteremic osteomyelitis",
+          "Subperiosteal abscess",
+          "Persistent tachycardia",
+          "Poor documentation/handoff"
+        ],
+        "events": [
+          "Day note predates MRI/culture results",
+          "Handoff omits bacteremia and contingencies",
+          "RN reports worsening perfusion/urine output"
         ],
         "plan": [
-          "Review chart for missing data.",
-          "Evaluate patient now.",
-          "Clarify action list and contingency planning."
+          "Review chart for missing data",
+          "Evaluate patient now",
+          "Clarify action list and contingency planning"
         ],
         "pending": [
-          "Repeat blood culture not ordered.",
-          "NPO order not placed.",
-          "Trend labs not ordered."
+          "Repeat blood culture not ordered",
+          "NPO order not placed",
+          "Trend labs not ordered"
         ],
-        "tasks": [
+        "todo": [
           "Identify missing IPASS elements",
           "Review MRI/culture/Ortho note",
           "Evaluate patient now",
@@ -861,38 +954,43 @@ const CASE = {
       "notes": [
         [
           "Outdated PHM Progress Note",
-          "M. Lee, MD \u00b7 09:10",
+          "M. Lee, MD",
+          "07/04 09:10",
+          "Likely transient synovitis. Blood culture pending.",
           "Assessment: likely transient synovitis. Continue observation and pain control. Blood culture pending. Consider further imaging if not improving.\n\nNote: This documentation was written before MRI and positive blood culture resulted."
         ],
         [
           "Verbal/Written Handoff",
-          "Day Team \u00b7 19:00",
+          "Day Team",
+          "07/04 19:00",
+          "Probably osteo. Nothing major overnight.",
           "3yo admitted with leg pain, probably osteo. MRI done. On cefazolin. Ortho aware. Nothing major overnight."
         ]
       ],
       "orders": [
         [
-          "Cefazolin",
-          "325 mg IV q8h",
+          "Cefazolin 325 mg IV q8h",
           "Active",
-          ""
+          "Active",
+          "Medication"
         ],
         [
           "Repeat blood culture",
           "Not ordered",
           "Missing",
-          ""
+          "Lab"
         ],
         [
           "CRP trend",
           "Not ordered",
           "Missing",
-          ""
+          "Lab"
         ],
         [
           "NPO at midnight",
           "Not ordered",
-          "Missing despite Ortho recommendation"
+          "Missing",
+          "Diet"
         ]
       ],
       "mar": [
@@ -1016,7 +1114,8 @@ const CASE = {
         [
           "Ashley RN",
           "20:40",
-          "He does not look right. HR is still 178, cap refill is closer to 4 seconds, and he has barely peed. Can someone come see him?"
+          "He does not look right. HR is still 178, cap refill is closer to 4 seconds, and he has barely peed. Can someone come see him?",
+          "AR"
         ]
       ],
       "reveal": true,
@@ -1034,33 +1133,47 @@ const CASE = {
       "team": "Night PHM",
       "severity": "Watcher / high risk",
       "weight": "13 kg",
+      "weightDetail": "28 lb 10 oz",
       "hospitalDay": "1",
       "status": "worse",
-      "photoState": "pale",
       "learnerPrompt": "Review the updated handoff and physician event note. Compare what is different now.",
+      "vitals": {
+        "Temp": "40.0 \u00b0C",
+        "HR": "182",
+        "RR": "38",
+        "SpO\u2082": "96% RA",
+        "Pain": "8/10",
+        "Updated": "07/04 21:35"
+      },
       "summary": {
         "assessment": [
           "Bacteremic osteomyelitis with abscess and early perfusion concerns.",
           "Illness severity and contingency planning now explicitly documented."
         ],
-        "overnight": [
-          "Night team evaluated patient.",
-          "Updated IPASS documented.",
-          "Physician event note filed.",
-          "Repeat labs/culture ordered."
+        "problems": [
+          "Bacteremic osteomyelitis",
+          "Subperiosteal abscess",
+          "Early perfusion concerns",
+          "High risk for septic shock"
+        ],
+        "events": [
+          "Night team evaluated patient",
+          "Updated IPASS documented",
+          "Physician event note filed",
+          "Repeat labs/culture ordered"
         ],
         "plan": [
-          "Follow lactate and labs.",
-          "Ensure cefazolin given on time.",
-          "NPO at midnight.",
-          "Escalate if perfusion worsens."
+          "Follow lactate and labs",
+          "Ensure cefazolin given on time",
+          "NPO at midnight",
+          "Escalate if perfusion worsens"
         ],
         "pending": [
-          "Lactate.",
-          "Repeat CBC/BMP/CRP.",
-          "Repeat blood culture."
+          "Lactate",
+          "Repeat CBC/BMP/CRP",
+          "Repeat blood culture"
         ],
-        "tasks": [
+        "todo": [
           "Follow lactate/labs",
           "Ensure antibiotics on time",
           "NPO at midnight",
@@ -1092,39 +1205,43 @@ const CASE = {
       "notes": [
         [
           "Updated IPASS Handoff",
-          "Day + Night Team \u00b7 21:28",
+          "Day + Night Team",
+          "07/04 21:28",
+          "Watcher. Bacteremic osteomyelitis. Action list and contingencies included.",
           "I \u2014 Illness severity: WATCHER. 3yo with acute hematogenous osteomyelitis of left proximal femur, bacteremia, and small subperiosteal abscess.\n\nP \u2014 Patient summary: Initially admitted for fever/refusal to bear weight. ED weight error corrected. MRI confirms osteomyelitis. Blood culture positive for gram-positive cocci in clusters. On cefazolin. Ortho following.\n\nA \u2014 Action list: Repeat blood culture now and daily until negative. CRP/CBC/BMP tonight. NPO at midnight. Reassess perfusion and urine output. Confirm antibiotic timing.\n\nS \u2014 Situation awareness/contingency: If persistent tachycardia, hypotension, altered mental status, delayed cap refill, rising lactate, or worsening pain, activate sepsis pathway, call Ortho/PICU, broaden antibiotics per pathway.\n\nS \u2014 Synthesis by receiver: Night team repeats back bacteremia, abscess, NPO plan, repeat culture/labs, and sepsis escalation triggers."
         ],
         [
           "Physician Event Note",
-          "R. Nguyen, MD \u00b7 21:35",
+          "R. Nguyen, MD",
+          "07/04 21:35",
+          "Evaluated for tachycardia and nursing concern. Repeat labs/culture ordered.",
           "Called to bedside for persistent tachycardia and nursing concern. Patient febrile, uncomfortable, cap refill 3-4 seconds, HR 176, BP 88/52, urine output decreased. Reviewed chart and noted MRI-confirmed left proximal femur osteomyelitis with small subperiosteal abscess and positive blood culture.\n\nPlan: repeat blood culture, CBC, BMP, CRP, lactate; continue cefazolin; NPO at midnight; notify Ortho of clinical concern; close reassessment within 1 hour; activate sepsis pathway if perfusion worsens."
         ]
       ],
       "orders": [
         [
           "Repeat blood culture",
-          "Peripheral x1",
           "Ordered",
-          ""
+          "Active",
+          "Lab"
         ],
         [
           "CBC/BMP/CRP/lactate",
-          "STAT",
-          "Ordered",
-          ""
+          "STAT ordered",
+          "Active",
+          "Lab"
         ],
         [
           "NPO at midnight",
-          "Diet",
           "Ordered",
-          ""
+          "Active",
+          "Diet"
         ],
         [
           "Ortho update",
-          "Page consult",
           "Completed",
-          ""
+          "Completed",
+          "Page"
         ]
       ],
       "mar": [
@@ -1239,7 +1356,8 @@ const CASE = {
         [
           "Ortho Resident",
           "21:42",
-          "Agree with NPO and repeat labs. Call immediately for hypotension, worsening perfusion, or increased pain."
+          "Agree with NPO and repeat labs. Call immediately for hypotension, worsening perfusion, or increased pain.",
+          "ORT"
         ]
       ],
       "facilitator": [
@@ -1256,33 +1374,47 @@ const CASE = {
       "team": "PHM + PICU + Ortho",
       "severity": "Critical",
       "weight": "13 kg",
+      "weightDetail": "28 lb 10 oz",
       "hospitalDay": "2",
       "status": "worse",
-      "photoState": "critical",
       "learnerPrompt": "The patient is deteriorating. Review the chart quickly and lead the next steps.",
+      "vitals": {
+        "Temp": "40.2 \u00b0C",
+        "HR": "190",
+        "RR": "48",
+        "SpO\u2082": "92% RA",
+        "Pain": "\u2014",
+        "Updated": "07/05 02:00"
+      },
       "summary": {
         "assessment": [
           "Septic shock with end-organ dysfunction in patient with bacteremic osteomyelitis.",
           "Requires immediate escalation and source-control reassessment."
         ],
-        "overnight": [
-          "Hypotension and lethargy.",
-          "Lactate 5.1.",
-          "VBG metabolic acidosis.",
-          "PICU accepts transfer."
+        "problems": [
+          "Septic shock",
+          "Bacteremic osteomyelitis",
+          "End-organ dysfunction",
+          "Need for source control"
+        ],
+        "events": [
+          "Hypotension and lethargy",
+          "Lactate 5.1",
+          "VBG metabolic acidosis",
+          "PICU accepts transfer"
         ],
         "plan": [
-          "Activate/lead MET response.",
-          "Fluid resuscitation.",
-          "Repeat cultures and broaden antibiotics.",
-          "PICU transfer and urgent Ortho reassessment."
+          "Activate/lead MET response",
+          "Fluid resuscitation",
+          "Repeat cultures and broaden antibiotics",
+          "PICU transfer and urgent Ortho reassessment"
         ],
         "pending": [
-          "Repeat blood culture.",
-          "Response to fluid bolus.",
-          "Source control plan."
+          "Repeat blood culture",
+          "Response to fluid bolus",
+          "Source control plan"
         ],
-        "tasks": [
+        "todo": [
           "Lead MET using closed-loop communication",
           "Fluid resuscitation",
           "Repeat cultures + broaden antibiotics",
@@ -1319,19 +1451,23 @@ const CASE = {
       "notes": [
         [
           "Rapid Response Note",
-          "MET Team \u00b7 02:05",
+          "MET Team",
+          "07/05 02:05",
+          "Septic shock with end-organ dysfunction.",
           "Called for hypotension and altered mental status in 3yo with bacteremic osteomyelitis. On arrival: lethargic, HR 190, RR 48, BP 72/38, SpO2 92% RA, cap refill 5 seconds, weak pulses, mottled extremities. Impression: septic shock with end-organ dysfunction."
         ],
         [
           "PICU Acceptance Note",
-          "S. Allen, MD \u00b7 02:15",
+          "S. Allen, MD",
+          "07/05 02:15",
+          "Accept to PICU for septic shock.",
           "Accept to PICU for septic shock. Initiate sepsis bundle, fluid resuscitation, vasoactive support if inadequate response, broaden antibiotics per sepsis pathway, urgent Ortho reassessment for source control."
         ]
       ],
       "orders": [
         [
           "Sepsis pathway",
-          "Activate",
+          "Activated",
           "Completed",
           ""
         ],
@@ -1351,7 +1487,7 @@ const CASE = {
           "Cefepime + Vancomycin",
           "Per sepsis pathway",
           "Ordered",
-          "Pending adjustment after cultures"
+          ""
         ],
         [
           "PICU transfer",
@@ -1520,12 +1656,14 @@ const CASE = {
         [
           "PICU Fellow",
           "02:12",
-          "We are coming now. Please continue fluid resuscitation and have antibiotics ready at bedside."
+          "We are coming now. Please continue fluid resuscitation and have antibiotics ready at bedside.",
+          "PICU"
         ],
         [
           "Ortho Resident",
           "02:14",
-          "On our way for urgent reassessment. Keep NPO."
+          "On our way for urgent reassessment. Keep NPO.",
+          "ORT"
         ]
       ],
       "facilitator": [
@@ -1534,3 +1672,4 @@ const CASE = {
     }
   ]
 };
+const PATIENT_PHOTO = "patient_photo.png";
