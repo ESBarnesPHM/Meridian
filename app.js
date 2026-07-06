@@ -27,18 +27,97 @@ function tabCount(p,t){const map={notes:p.notes,orders:p.orders,mar:p.mar,imagin
 function renderTab(p,t){if(t==="summary")return renderSummary(p);if(t==="notes")return renderNotes(p);if(t==="flowsheet")return renderFlowsheet(p,true);if(t==="messages")return renderMessages(p);if(t==="orders")return renderOrders(p,false);if(t==="mar")return renderMAR(p);if(t==="results")return renderResults(p);if(t==="imaging")return renderImaging(p);if(t==="growth")return renderGrowth(p)}
 function renderSummary(p){return `<div class="summary-grid"><div class="mini"><h4>Assessment</h4><ul>${p.summary.assessment.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Active Problems</h4><ul>${p.summary.problems.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Overnight / Recent Events</h4><ul>${p.summary.events.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Today's Plan</h4><ul>${p.summary.plan.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div><div class="two-col"><div class="mini"><h4>Pending Studies</h4><ul>${p.summary.pending.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>To Do</h4><ul>${p.summary.todo.map(x=>`<li>☐ ${esc(x)}</li>`).join("")}</ul></div></div><div class="card" style="margin-top:14px"><div class="card-head"><h3>Recent Notes</h3></div><div class="card-body">${renderNotes(p,true)}</div></div>`}
 
+
+function noteTimeKey(note){
+  const raw = String(note[2] || "");
+  const m = raw.match(/(\d{2})\/(\d{2})\s+(\d{2}):(\d{2})/);
+  if(!m) return raw;
+  return `${m[1]}${m[2]}${m[3]}${m[4]}`;
+}
+function noteShortTime(note){
+  const raw = String(note[2] || "");
+  const m = raw.match(/(\d{2})\/(\d{2})\s+(\d{2}):(\d{2})/);
+  return m ? `${m[3]}:${m[4]}` : raw;
+}
+function noteIcon(note){
+  const type = String(note[5] || note[0] || "").toLowerCase();
+  if(type.includes("nursing") || type.includes("triage")) return "👩‍⚕️";
+  if(type.includes("pharmacy")) return "💊";
+  if(type.includes("consult")) return "🩺";
+  if(type.includes("handoff")) return "📋";
+  if(type.includes("event")) return "🚨";
+  if(type.includes("result") || type.includes("radiology")) return "🧪";
+  return "📝";
+}
 function renderNotes(p,compact=false){
+  const ordered = [...p.notes].sort((a,b)=> noteTimeKey(b).localeCompare(noteTimeKey(a)));
   if(compact){
-    return `<div class="note-list">${p.notes.slice(0,4).map((n,i)=>`<div class="note-card"><div class="note-summary"><div class="note-icon">▸</div><div><div class="note-title">${esc(n[0])}<span class="note-tag">${esc(n[5]||"Note")}</span></div><div class="note-preview">${esc(n[3])}</div></div><div class="note-meta">${esc(n[1])}</div><div class="note-meta">${esc(n[2])}</div></div></div>`).join("")}</div>`;
+    return `<div class="note-list">${ordered.slice(0,4).map((n,i)=>`
+      <div class="note-card">
+        <div class="note-summary">
+          <div class="note-icon">${noteIcon(n)}</div>
+          <div>
+            <div class="note-title">${esc(n[0])}<span class="note-tag">${esc(n[5]||"Note")}</span></div>
+            <div class="note-preview">${esc(n[3])}</div>
+          </div>
+          <div class="note-meta">${esc(n[1])}</div>
+          <div class="note-meta">${esc(noteShortTime(n))}</div>
+        </div>
+      </div>`).join("")}</div>`;
   }
-  const selected = window.selectedNoteIndex ?? 0;
-  const n = p.notes[selected] || p.notes[0];
-  return `<div class="notes-split"><div class="notes-list-pane">${p.notes.map((note,i)=>`<button class="note-picker ${i===selected?'active':''}" onclick="selectNote(${i})"><span class="note-kind">${esc(note[5]||"Note")}</span><strong>${esc(note[0])}</strong><small>${esc(note[1])} · ${esc(note[2])}</small><em>${esc(note[3])}</em></button>`).join("")}</div><div class="note-reader"><div class="note-reader-head"><span class="note-tag">${esc(n[5]||"Note")}</span><h3>${esc(n[0])}</h3><p>${esc(n[1])} · ${esc(n[2])}</p></div><div class="note-detail open">${esc(n[4])}</div></div></div>`;
+
+  const selected = Math.min(window.selectedNoteIndex ?? 0, ordered.length - 1);
+  const n = ordered[selected] || ordered[0];
+
+  return `<div class="notes-split">
+    <div class="notes-list-pane">
+      ${ordered.map((note,i)=>`
+        <button class="note-picker ${i===selected?'active':''}" onclick="selectNote(${i})">
+          <span class="note-kind">${noteIcon(note)} ${esc(note[5]||"Note")}</span>
+          <strong>${esc(note[0])}</strong>
+          <small>${esc(note[1])} · ${esc(noteShortTime(note))}</small>
+          <em>${esc(note[3])}</em>
+        </button>`).join("")}
+    </div>
+    <div class="note-reader">
+      <div class="note-reader-head">
+        <span class="note-tag">${noteIcon(n)} ${esc(n[5]||"Note")}</span>
+        <h3>${esc(n[0])}</h3>
+        <p>${esc(n[1])} · ${esc(n[2])}</p>
+      </div>
+      <div class="note-detail open">${formatNoteBody(n[4])}</div>
+    </div>
+  </div>`;
+}
+function formatNoteBody(text){
+  let safe = esc(text || "");
+  safe = safe.replace(/\n\n/g, "<br><br>");
+  safe = safe.replace(/\b(Chief Complaint|HPI|Exam|Physical Exam|Assessment|Plan|Medical Decision Making|Impression|Recommendations|I — Illness severity|P — Patient summary|A — Action list|S — Situation awareness\/contingency|S — Synthesis by receiver):/g, "<strong>$1:</strong>");
+  return safe;
 }
 function selectNote(i){window.selectedNoteIndex=i;render();}
 function toggleNote(i){const el=$("note"+i); if(el) el.classList.toggle("hidden")}
 function renderMessages(p){return p.messages.map(m=>{let cls=(m[3]||"").toLowerCase();return `<div class="msg"><div class="msg-head"><div class="avatar ${cls}">${esc(m[3]||"AR")}</div><div><div class="from">${esc(m[0])}</div><div>${esc(m[2])}</div></div><div class="time">${esc(m[1])}<span class="unread"></span></div></div></div>`}).join("")||"<p>No messages.</p>"}
-function renderOrders(p,limit){let rows=limit?p.orders.slice(0,5):p.orders;return `<div class="order-list">${rows.map(o=>{let s=String(o[2]||"").toLowerCase();let cls=s.includes("missing")?"missing":s.includes("complete")||s.includes("given")?"completed":s.includes("process")||s.includes("pending")?"process":"";return `<div class="order-card"><div><div class="order-type">${esc(o[3]||"Order")}</div><div class="order-title">${esc(o[0])}</div><div class="order-sub">${esc(o[1])}</div></div><span class="status ${cls}">${esc(o[2])}</span></div>`}).join("")}</div>`}
+
+function orderIcon(type){
+  const t = String(type||"").toLowerCase();
+  if(t.includes("med")) return "💊";
+  if(t.includes("lab")) return "🧪";
+  if(t.includes("imaging")) return "📷";
+  if(t.includes("admission")) return "🏥";
+  if(t.includes("diet")) return "🍽️";
+  if(t.includes("consult")) return "🩺";
+  if(t.includes("page")) return "📟";
+  return "▪";
+}
+function renderOrders(p,limit){
+  let rows=limit?p.orders.slice(0,5):p.orders;
+  return `<div class="order-list">${rows.map(o=>{
+    let s=String(o[2]||"").toLowerCase();
+    let cls=s.includes("missing")?"missing":s.includes("complete")||s.includes("given")?"completed":s.includes("process")||s.includes("pending")?"process":"";
+    return `<div class="order-card"><div><div class="order-type">${orderIcon(o[3])} ${esc(o[3]||"Order")}</div><div class="order-title">${esc(o[0])}</div><div class="order-sub">${esc(o[1])}</div></div><span class="status ${cls}">${esc(o[2])}</span></div>`
+  }).join("")}</div>`
+}
 function renderMAR(p){return `<div class="mar-grid"><table class="mar-table"><thead><tr><th>Time</th><th>Medication</th><th>Dose</th><th>Status</th><th>Comment</th></tr></thead><tbody>${p.mar.map(r=>`<tr><td class="med-time">${esc(r[0])}</td><td class="med-name">${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join("")}</tbody></table></div>`}
 function renderResults(p){let micro = ""; if(p.results && p.results.Microbiology){let m=p.results.Microbiology[0];let crit=String(m[2]).toLowerCase().includes("critical"); micro=`<div class="micro-status ${crit?'critical':''}">Microbiology: ${esc(m[0])} — ${esc(m[1])}</div>`}return `${micro}<div class="results-grid">${Object.entries(p.results||{}).map(([group,rows])=>`<div class="card"><div class="card-head"><h3>${esc(group)}</h3></div><div class="card-body">${table(["Test","Result","Flag"],rows)}</div></div>`).join("")}</div>${renderResultTrends(p)}`}
 function renderResultTrends(p){if(!p.resultTrends)return"";return `<div class="result-trend"><div class="card-head"><h3>Result Trends</h3></div><div class="card-body">${Object.entries(p.resultTrends).map(([k,vals])=>`<div style="margin-bottom:10px"><strong>${esc(k)}</strong><div class="muted">${vals.map(v=>`${esc(v[0])}: ${esc(v[1])}`).join("  ·  ")}</div></div>`).join("")}</div></div>`}

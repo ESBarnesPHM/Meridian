@@ -33,3 +33,23 @@
 .note-reader-head{padding:16px;border-bottom:1px solid #edf2f7;background:#fbfdff}.note-reader-head h3{margin:8px 0 4px;font-size:22px}.note-reader-head p{margin:0;color:var(--muted)}
 .note-detail.open{display:block;border-bottom:0;min-height:360px;font-size:15px}
 @media(max-width:900px){.notes-split{grid-template-columns:1fr}.note-reader{min-height:auto}}
+
+
+/* v3.2 Notes polish */
+.notes-split{display:grid;grid-template-columns:320px minmax(0,1fr);gap:14px;min-height:560px}
+.notes-list-pane{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;align-self:start}
+.note-picker{width:100%;border:0;border-bottom:1px solid #edf2f7;background:#fff;text-align:left;padding:12px;cursor:pointer;display:grid;gap:4px}
+.note-picker:hover{background:#fbfdff}
+.note-picker.active{background:#e6f4ff;border-left:5px solid #0b67c2;padding-left:7px}
+.note-picker strong{color:#0b3157;font-size:15px;line-height:1.2}
+.note-picker small{color:var(--muted);font-size:12px}
+.note-picker em{font-style:normal;color:#344054;font-size:12px;line-height:1.25}
+.note-kind{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#667085;font-weight:950}
+.note-reader{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden}
+.note-reader-head{padding:16px;border-bottom:1px solid #edf2f7;background:#fbfdff}
+.note-reader-head h3{margin:8px 0 4px;font-size:24px;letter-spacing:-.02em}
+.note-reader-head p{margin:0;color:var(--muted)}
+.note-tag{display:inline-block;background:#eef5ff;color:#1d4f91;border-radius:999px;padding:3px 9px;font-size:11px;font-weight:800}
+.note-detail.open{display:block;border-bottom:0;min-height:390px;font-size:15px;line-height:1.55}
+.order-type{letter-spacing:.06em}
+@media(max-width:900px){.notes-split{grid-template-columns:1fr}.note-reader{min-height:auto}}

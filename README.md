@@ -1,4 +1,4 @@
-# Meridian EMR v3.1
+# Meridian EMR v3.2
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -10,11 +10,16 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - patient_photo.png
 
 Changes:
-- Removed learner-facing authentic question from the EMR; keep it in facilitator guide/Faculty Mode.
-- Removed growth chart warning box from learner view.
-- Pharmacy message is subtler: asks to clarify documented weight differing from prior encounters.
-- Phase 1 physiology revised so fever/tachycardia improve after antipyretic, making observation without antibiotics clinically reasonable.
-- Phase 1 MAR/order now shows ibuprofen 310 mg PO given based on erroneous 31 kg weight.
-- Added current chart review timestamp in the learner view.
-- Notes activity now uses a two-pane layout: note list on the left, selected note displayed on the right.
-- Phase 2 remains clinical reassessment with evolving symptoms rather than ED diagnostic error.
+- Notes are listed reverse chronologically, newest to oldest.
+- Notes activity uses a polished two-pane layout.
+- Selected note has a stronger Epic-style blue highlight.
+- Reading pane displays the selected note title, author, time, and type.
+- Added subtle note-type icons.
+- Improved note body typography and section emphasis.
+- Orders have small category icons for faster scanning.
+- Keeps v3.1 clinical updates:
+  - no learner-facing authentic question
+  - no growth chart warning box
+  - subtle pharmacy message
+  - ibuprofen 310 mg PO in Phase 1
+  - Phase 1 vitals improve after antipyretic
