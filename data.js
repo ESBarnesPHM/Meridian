@@ -41,9 +41,7 @@ const CASE = {
       "status": "same",
       "betterSameWorse": "Same, but unresolved \u2014 safety review needed before accepting orders.",
       "urgency": "Act now: verify weight and medication dosing before cefazolin is administered.",
-      "alerts": [
-        "Medication safety concern: ED weight, growth history, MAR, and parent history do not match."
-      ],
+      "alerts": [],
       "summary": {
         "problems": [
           "Fever",
@@ -235,7 +233,14 @@ const CASE = {
         ]
       ],
       "facilitator": [
+        "Learner-facing alert removed: the medication safety concern is distributed across ED weight, growth history, MAR, and parent history.",
         "Correct weight is 13 kg. Cefazolin dose should be recalculated using verified weight. Ibuprofen 65 mg is only 5 mg/kg; typical analgesic/antipyretic dosing would be 10 mg/kg = 130 mg."
+      ],
+      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
+      "currentMeds": [
+        "Cefazolin 775 mg IV q8h ordered",
+        "Ibuprofen 65 mg PO given",
+        "Acetaminophen PRN not yet ordered"
       ]
     },
     {
@@ -424,6 +429,12 @@ const CASE = {
       ],
       "facilitator": [
         "Expected actions: bedside reassessment, recognize red flags, avoid anchoring on transient synovitis, order MRI, consult orthopedics."
+      ],
+      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
+      "currentMeds": [
+        "Cefazolin 325 mg IV q8h",
+        "Acetaminophen 195 mg PO q6h PRN",
+        "Ibuprofen PRN"
       ]
     },
     {
@@ -605,6 +616,12 @@ const CASE = {
       ],
       "facilitator": [
         "Expected actions: repeat culture, trend labs, use pathway/antibiogram, clarify MRSA risk, communicate with Ortho/ID."
+      ],
+      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
+      "currentMeds": [
+        "Cefazolin 325 mg IV q8h",
+        "Acetaminophen 195 mg PO q6h PRN",
+        "Ibuprofen PRN"
       ]
     },
     {
@@ -778,6 +795,12 @@ const CASE = {
       "reveal": true,
       "facilitator": [
         "Learners should identify inadequate illness severity, missing action list, missing contingency planning, outdated physician note, and missing orders. Reveal 4B with code IPASS after debrief."
+      ],
+      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
+      "currentMeds": [
+        "Cefazolin 325 mg IV q8h",
+        "Acetaminophen 195 mg PO q6h PRN",
+        "Ibuprofen PRN"
       ]
     },
     {
@@ -941,6 +964,12 @@ const CASE = {
       ],
       "facilitator": [
         "Use this after the handoff debrief to model complete IPASS and appropriate event documentation."
+      ],
+      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
+      "currentMeds": [
+        "Cefazolin 325 mg IV q8h",
+        "Acetaminophen 195 mg PO q6h PRN",
+        "Ibuprofen PRN"
       ]
     },
     {
@@ -1158,6 +1187,12 @@ const CASE = {
       ],
       "facilitator": [
         "Expected actions: recognize septic shock, activate sepsis pathway/MET, fluids, cultures, broad antibiotics, PICU transfer, Ortho/source control communication."
+      ],
+      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
+      "currentMeds": [
+        "NS bolus 20 mL/kg",
+        "Vancomycin 15 mg/kg IV",
+        "Cefepime 50 mg/kg IV"
       ]
     }
   ]

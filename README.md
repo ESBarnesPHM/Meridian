@@ -1,28 +1,19 @@
-# Meridian EMR v1.0
+# Meridian EMR v1.1
 
-A fictional pediatric electronic medical record for patient safety simulation.
+Upload these files to the root of the GitHub repository, replacing prior versions:
 
-## Publish on GitHub Pages
+- index.html
+- style.css
+- app.js
+- data.js
+- README.md
 
-Upload these files to the root of the `Meridian` repository:
+Changes in v1.1:
+- Removed the learner-facing "better/worse/same" banner.
+- Moved chart review tabs into a horizontal file-folder tab bar.
+- Removed the Phase 1 giveaway medication-safety alert from learner view.
+- Kept hidden facilitator notes.
+- Added an illustrated pediatric patient avatar.
+- Added vital-sign trend graphs to Summary and Flowsheets.
 
-- `index.html`
-- `style.css`
-- `app.js`
-- `data.js`
-- `README.md`
-
-Then GitHub Pages should automatically rebuild.
-
-## Direct phase links
-
-- Phase 1: `?phase=1`
-- Phase 2: `?phase=2`
-- Phase 3: `?phase=3`
-- Phase 4A: `?phase=4a`
-- Phase 4B: `?phase=4b`
-- Phase 5: `?phase=5`
-
-Phase 4A facilitator reveal code: `IPASS`.
-
-Core question: Is the patient better, worse, or the same — and how urgently do we need to act?
+Phase 4A facilitator reveal code: IPASS.
