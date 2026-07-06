@@ -35,7 +35,7 @@ const CASE = {
     {
       "id": "1",
       "label": "Phase 1",
-      "title": "ED admission",
+      "title": "Admission reconciliation",
       "time": "07/03/2026 17:20",
       "location": "ED \u2192 PHM",
       "room": "ED-12",
@@ -45,7 +45,7 @@ const CASE = {
       "weightDetail": "68 lb 5 oz",
       "hospitalDay": "ED",
       "status": "same",
-      "learnerPrompt": "You are the admitting team. Review the ED chart and identify anything that needs attention before accepting admission orders.",
+      "learnerPrompt": "You are the admitting pediatric hospitalist. Review the Emergency Department evaluation before assuming care.",
       "vitals": {
         "Temp": "39.2 \u00b0C",
         "HR": "166",
@@ -57,7 +57,7 @@ const CASE = {
       "summary": {
         "assessment": [
           "3 y.o. male presenting with fever, left hip pain, and refusal to bear weight.",
-          "Concern for transient synovitis vs early osteomyelitis/septic arthritis."
+          "Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture."
         ],
         "problems": [
           "Fever",
@@ -69,28 +69,28 @@ const CASE = {
           "ED evaluation completed",
           "Blood culture collected",
           "Hip x-ray completed",
-          "Admission requested"
+          "Admission requested for observation"
         ],
         "plan": [
-          "Review ED evaluation and labs",
-          "Verify weight and medication dosing",
-          "Follow up blood culture",
-          "Continue cefazolin",
-          "Consider MRI if no improvement"
+          "Admit for observation and serial examinations",
+          "Pain control with NSAID/acetaminophen",
+          "Follow blood culture",
+          "Defer empiric antibiotics while clinically stable unless patient worsens",
+          "Consider MRI if symptoms persist or worsen"
         ],
         "pending": [
           "Blood culture collected 07/03 16:18",
-          "Left hip x-ray completed 07/03 15:40"
+          "Clinical response to observation and analgesia"
         ],
         "todo": [
-          "Verify weight with parent/growth history",
-          "Recalculate medication dosing",
-          "Review allergy documentation",
-          "Perform admission exam"
+          "Review ED note and nursing documentation",
+          "Reconcile admission orders",
+          "Verify patient weight",
+          "Complete admission exam"
         ],
         "meds": [
-          "Cefazolin 775 mg IV q8h",
-          "Ibuprofen 65 mg PO once"
+          "Ibuprofen 65 mg PO given",
+          "Acetaminophen PRN not yet administered"
         ]
       },
       "timeline": [
@@ -111,8 +111,8 @@ const CASE = {
           "Blood culture collected"
         ],
         [
-          "16:25",
-          "Cefazolin ordered"
+          "17:01",
+          "PHM admission requested"
         ]
       ],
       "notes": [
@@ -121,21 +121,21 @@ const CASE = {
           "Patel, MD",
           "07/03 16:45",
           "Fever and left hip pain since yesterday. Refusing to bear weight. Tachycardic, febrile...",
-          "Previously healthy 3-year-old male with one day of fever and left leg pain/refusal to bear weight. No trauma.\n\nExam: uncomfortable, cries with passive left hip range of motion, no swelling or erythema. Tachycardic, capillary refill less than 2 seconds.\n\nAssessment: transient synovitis vs early osteomyelitis vs septic arthritis.\n\nPlan: admit to PHM for observation, labs, blood culture, hip radiograph, empiric cefazolin, pain control."
+          "Previously healthy 3-year-old male with one day of fever and left hip/leg pain with refusal to bear weight. No known trauma. Had URI symptoms last week.\n\nExam: uncomfortable with movement, cries with passive left hip range of motion, no swelling or erythema. Tachycardic while febrile, capillary refill less than 2 seconds, interactive with mother between exams.\n\nAssessment: Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture. Given reassuring perfusion and absence of septic physiology, plan to admit for observation and serial examinations.\n\nPlan: blood culture obtained, hip radiograph, pain control, IV fluids if poor intake. Defer empiric antibiotics while clinically stable to preserve culture yield unless patient worsens or additional data suggests bacterial infection. Consider MRI if worsening pain, persistent fever, rising inflammatory markers, or inability to bear weight persists."
         ],
         [
           "ED Nursing Note",
           "Ashley RN",
           "07/03 16:18",
-          "Ibuprofen given. PIV placed. Labs and blood culture drawn. Cefazolin ordered.",
-          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week."
+          "Ibuprofen given. PIV placed. Labs and blood culture drawn.",
+          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week. PIV placed, labs and blood culture drawn. Ibuprofen administered per order."
         ],
         [
           "Triage Note",
           "ED Triage RN",
           "07/03 14:38",
           "Arrived via private car. Fever today. Left hip pain. Won't walk.",
-          "Chief complaint: Fever and will not walk. Triage weight documented: 31 kg."
+          "Chief complaint: Fever and will not walk. Mother reports no trauma. Triage weight documented: 31 kg."
         ],
         [
           "ED Nursing Note",
@@ -147,15 +147,15 @@ const CASE = {
       ],
       "orders": [
         [
-          "Cefazolin 775 mg IV q8h",
-          "Ordered 16:25",
-          "Active",
+          "Ibuprofen 10 mg/kg PO once",
+          "Given 14:52",
+          "Completed",
           "Medication"
         ],
         [
-          "Ibuprofen 65 mg PO once",
-          "Given 14:52",
-          "Completed",
+          "Acetaminophen 15 mg/kg PO q6h PRN",
+          "Ordered 16:10",
+          "Active",
           "Medication"
         ],
         [
@@ -169,6 +169,12 @@ const CASE = {
           "Completed 15:40",
           "Completed",
           "Imaging"
+        ],
+        [
+          "Admit to Hospital Medicine",
+          "Requested 17:01",
+          "Active",
+          "Admission"
         ]
       ],
       "mar": [
@@ -177,12 +183,12 @@ const CASE = {
           "Ibuprofen",
           "65 mg PO",
           "Given",
-          "Pain improved minimally"
+          "Ordered as 10 mg/kg"
         ],
         [
-          "16:25",
-          "Cefazolin",
-          "775 mg IV q8h",
+          "16:10",
+          "Acetaminophen",
+          "PRN",
           "Ordered",
           "Not yet administered"
         ]
@@ -336,18 +342,19 @@ const CASE = {
         [
           "Pharmacy",
           "16:31",
-          "Can you verify the patient's weight before we prepare cefazolin? The documented weight seems high for age.",
+          "Can you verify the patient's weight before we prepare any weight-based medications? The documented weight seems high for age.",
           "PH"
         ]
       ],
       "facilitator": [
-        "Medication safety clue: ED weight is 31 kg, parent says 29 lb, growth chart shows 13.1 kg, MAR shows cefazolin dosed using wrong weight and ibuprofen only 5 mg/kg."
+        "Phase 1 focus: admission reconciliation. The ED plan to observe without antibiotics is defensible because the child is clinically stable and diagnosis is uncertain.",
+        "Medication safety clue: ED weight is 31 kg, parent says 29 lb, growth chart shows 13.1 kg, and ibuprofen 65 mg does not match 10 mg/kg using either 31 kg or 13 kg. Learners should verbalize that the weight must be verified and medication dosing corrected before assuming care."
       ]
     },
     {
       "id": "2",
       "label": "Phase 2",
-      "title": "Hospital day 1",
+      "title": "Clinical reassessment",
       "time": "07/04/2026 08:30",
       "location": "6A-12",
       "room": "6A-12",
@@ -357,7 +364,7 @@ const CASE = {
       "weightDetail": "28 lb 10 oz",
       "hospitalDay": "1",
       "status": "worse",
-      "learnerPrompt": "Review overnight events and determine whether the working diagnosis still fits the patient.",
+      "learnerPrompt": "You are the day hospitalist after overnight observation. Reassess whether the admission diagnosis still fits the patient.",
       "vitals": {
         "Temp": "39.4 \u00b0C",
         "HR": "172",
@@ -368,40 +375,42 @@ const CASE = {
       },
       "summary": {
         "assessment": [
-          "Persistent fever and refusal to bear weight despite observation.",
-          "Clinical course is not consistent with simple improvement from transient synovitis."
+          "Persistent fever and refusal to bear weight after observation.",
+          "The clinical course is evolving; transient synovitis is less convincing this morning."
         ],
         "problems": [
           "Fever",
           "Left hip pain",
           "Refusal to bear weight",
-          "Rising CRP"
+          "Rising inflammatory markers"
         ],
         "events": [
-          "Fever continued overnight",
-          "Nursing documented worsening pain",
-          "Parent reports he is worse today",
+          "Continued fever overnight",
+          "Worsening pain with movement",
+          "Parent reports he is not acting like himself",
           "CRP increased from 8.6 to 16.4"
         ],
         "plan": [
-          "Repeat focused history and physical",
-          "Broaden differential",
-          "Order MRI",
-          "Consult orthopedics"
+          "Repeat focused history and physical exam",
+          "Broaden differential to osteomyelitis/septic arthritis",
+          "Order MRI left hip/femur",
+          "Consult orthopedics",
+          "Continue to defer antibiotics until cultures/imaging unless unstable"
         ],
         "pending": [
           "Blood culture preliminary",
-          "MRI not yet ordered"
+          "MRI decision",
+          "Orthopedic surgery input"
         ],
         "todo": [
-          "Repeat focused exam",
+          "See the patient at bedside",
           "Order MRI",
           "Consult orthopedics",
           "Update family"
         ],
         "meds": [
-          "Cefazolin 325 mg IV q8h",
-          "Acetaminophen 195 mg PO q6h PRN"
+          "Ibuprofen/acetaminophen PRN",
+          "No empiric antibiotics started yet"
         ]
       },
       "timeline": [
@@ -432,14 +441,14 @@ const CASE = {
           "M. Lee, MD",
           "07/04 04:45",
           "Continues febrile. Refusing to stand.",
-          "Continues febrile. Refusing to stand. Treated as likely transient synovitis with viral symptoms. Blood culture pending."
+          "Admitted for observation with suspected transient synovitis vs early infection. Continues febrile overnight and refuses to stand. Blood culture pending. Pain with movement persists despite antipyretics."
         ],
         [
           "Nursing Note",
           "Ashley RN",
           "07/04 07:55",
           "Cries with any movement of left leg.",
-          "Patient cries with any movement of left leg. Refuses to sit upright. Mother worried he is sleepier and worse than yesterday."
+          "Patient lies still in bed and cries with any movement of left leg. Refuses to sit upright. Did not want breakfast. Mother worried he is sleepier and says, 'He is not acting like himself.'"
         ]
       ],
       "orders": [
@@ -450,7 +459,7 @@ const CASE = {
           "Medication"
         ],
         [
-          "Cefazolin 325 mg IV q8h",
+          "Ibuprofen 130 mg PO q6h PRN",
           "Active",
           "Active",
           "Medication"
@@ -466,6 +475,12 @@ const CASE = {
           "Not ordered",
           "Missing",
           "Imaging"
+        ],
+        [
+          "Orthopedic surgery consult",
+          "Not ordered",
+          "Missing",
+          "Consult"
         ]
       ],
       "mar": [
@@ -477,11 +492,11 @@ const CASE = {
           "Temp 39.1 \u2192 38.6"
         ],
         [
-          "07:00",
-          "Cefazolin",
-          "325 mg IV",
+          "07:30",
+          "Ibuprofen",
+          "130 mg PO",
           "Given",
-          ""
+          "Weight corrected to 13 kg"
         ]
       ],
       "results": {
@@ -608,13 +623,14 @@ const CASE = {
         ]
       ],
       "facilitator": [
-        "Expected actions: bedside reassessment, recognize red flags, avoid anchoring on transient synovitis, order MRI, consult orthopedics."
+        "Phase 2 focus: clinical reassessment, not blaming the ED for a missed diagnosis. The patient is declaring himself over time.",
+        "Expected actions: go to bedside, recognize that transient synovitis fits less well, broaden differential, order MRI, consult orthopedics, and communicate with family/nursing."
       ]
     },
     {
       "id": "3",
       "label": "Phase 3",
-      "title": "Pathway decisions",
+      "title": "Evidence-based treatment",
       "time": "07/04/2026 15:45",
       "location": "6A-12",
       "room": "6A-12",
@@ -624,7 +640,7 @@ const CASE = {
       "weightDetail": "28 lb 10 oz",
       "hospitalDay": "1",
       "status": "worse",
-      "learnerPrompt": "New results are available. Use the pathway and chart data to decide what needs to happen next.",
+      "learnerPrompt": "MRI and microbiology results are now available. Use the pathway and chart data to decide the treatment plan.",
       "vitals": {
         "Temp": "39.6 \u00b0C",
         "HR": "176",
@@ -650,10 +666,11 @@ const CASE = {
           "Microbiology reported critical result"
         ],
         "plan": [
-          "Use osteomyelitis pathway",
+          "Start cefazolin per osteomyelitis pathway if clinically stable and low MRSA risk",
           "Repeat blood cultures until negative",
           "Trend CRP/CBC/BMP",
-          "Keep NPO at midnight per Ortho"
+          "Keep NPO at midnight per Ortho contingency",
+          "Broaden coverage if unstable or MRSA risk is high"
         ],
         "pending": [
           "Speciation/susceptibilities",
@@ -666,7 +683,7 @@ const CASE = {
           "NPO at midnight per Ortho"
         ],
         "meds": [
-          "Cefazolin 325 mg IV q8h",
+          "Cefazolin 325 mg IV q8h started",
           "Acetaminophen PRN",
           "Ibuprofen PRN"
         ]
@@ -719,7 +736,7 @@ const CASE = {
       "orders": [
         [
           "Cefazolin 325 mg IV q8h",
-          "Active",
+          "Ordered 15:00",
           "Active",
           "Medication"
         ],
@@ -748,7 +765,7 @@ const CASE = {
           "Cefazolin",
           "325 mg IV",
           "Given",
-          "After dose correction"
+          "Started after MRI/culture results"
         ]
       ],
       "results": {
@@ -867,13 +884,14 @@ const CASE = {
         ]
       ],
       "facilitator": [
-        "Expected actions: repeat culture, trend labs, use pathway/antibiogram, clarify MRSA risk, communicate with Ortho/ID."
+        "Phase 3 focus: evidence-based treatment. Cefazolin begins after MRI confirms osteomyelitis and blood culture shows GPC in clusters.",
+        "Discuss antibiotic pathway logic: cefazolin may be appropriate if stable/low MRSA risk/local MSSA predominance; broaden to vancomycin if unstable, high MRSA risk, or severe sepsis."
       ]
     },
     {
       "id": "4a",
       "label": "Phase 4A",
-      "title": "Poor handoff",
+      "title": "Unsafe handoff",
       "time": "07/04/2026 21:15",
       "location": "6A-12",
       "room": "6A-12",
@@ -883,7 +901,7 @@ const CASE = {
       "weightDetail": "28 lb 10 oz",
       "hospitalDay": "1",
       "status": "worse",
-      "learnerPrompt": "You are the night team. Review the handoff and documentation. Decide whether you have enough information to safely care for this patient.",
+      "learnerPrompt": "You are the night team. Receive sign-out and determine whether you have enough information to safely care for this patient overnight.",
       "vitals": {
         "Temp": "40.0 \u00b0C",
         "HR": "182",
@@ -1126,7 +1144,7 @@ const CASE = {
     {
       "id": "4b",
       "label": "Phase 4B",
-      "title": "Corrected IPASS",
+      "title": "Model handoff",
       "time": "07/04/2026 21:35",
       "location": "6A-12",
       "room": "6A-12",
@@ -1367,7 +1385,7 @@ const CASE = {
     {
       "id": "5",
       "label": "Phase 5",
-      "title": "MET call",
+      "title": "Escalation of care",
       "time": "07/05/2026 02:10",
       "location": "6A-12 \u2192 PICU",
       "room": "6A-12",
@@ -1404,10 +1422,11 @@ const CASE = {
           "PICU accepts transfer"
         ],
         "plan": [
-          "Activate/lead MET response",
+          "Activate and lead MET response",
           "Fluid resuscitation",
           "Repeat cultures and broaden antibiotics",
-          "PICU transfer and urgent Ortho reassessment"
+          "PICU transfer",
+          "Urgent Ortho reassessment for source control"
         ],
         "pending": [
           "Repeat blood culture",

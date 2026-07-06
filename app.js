@@ -1,13 +1,13 @@
 
 let screen = new URLSearchParams(location.search).get("phase") ? "chart" : "login";
 let currentPhase = new URLSearchParams(location.search).get("phase") || "1";
-let activeTab = "summary";
+let activeTab = "notes";
 let facultyOpen = false;
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
 function phase(){return CASE.phases.find(p=>p.id===currentPhase)||CASE.phases[0]}
-function routeToChart(id="1"){screen="chart";currentPhase=id;activeTab="summary";history.replaceState(null,"",`?phase=${id}`);render()}
-function setPhase(id){currentPhase=id;activeTab="summary";history.replaceState(null,"",`?phase=${id}`);render()}
+function routeToChart(id="1"){screen="chart";currentPhase=id;activeTab="notes";history.replaceState(null,"",`?phase=${id}`);render()}
+function setPhase(id){currentPhase=id;activeTab="notes";history.replaceState(null,"",`?phase=${id}`);render()}
 function setTab(tab){activeTab=tab;render()}
 function toggleFaculty(){facultyOpen=!facultyOpen;const panel=$("facultyPanel");if(panel)panel.classList.toggle("open",facultyOpen)}
 function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
@@ -18,7 +18,7 @@ function renderTabs(p){return `<nav class="folder-tabs">${["summary","notes","re
 function renderBanner(p){return `<section class="patient-banner"><div class="patient-left">${patientPhoto()}<div class="patient-name"><h2>${esc(CASE.patient.name)} <span class="pill ${p.status==='worse'?'red':p.status==='same'?'yellow':'green'}">${esc(p.severity)}</span></h2><div class="demo-grid"><b>${esc(CASE.patient.age)}</b><span>${esc(CASE.patient.sex)}</span><b>MRN</b><span>${esc(CASE.patient.mrn)}</span><b>DOB</b><span>${esc(CASE.patient.dob)}</span><b>Room</b><span>${esc(p.room)}</span><b>Attending</b><span>${esc(CASE.patient.attending)}</span><b>PCP</b><span>${esc(CASE.patient.pcp)}</span></div></div></div><div class="banner-card"><div class="banner-top">${bannerItem("Location",p.location)}${bannerItem("Weight",`${p.weight}<br><small>${esc(p.weightDetail||"")}</small>`)}${bannerItem("Allergies",CASE.patient.allergy)}${bannerItem("Isolation","None")}${bannerItem("Code Status",CASE.patient.code)}${bannerItem("Primary Team",p.team)}${bannerItem("Diet",CASE.patient.diet)}${bannerItem("Access",CASE.patient.access)}</div><div class="vital-strip">${Object.entries(p.vitals).map(([k,v])=>`<div class="vital"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div></div></section>`}
 function bannerItem(k,v){return `<div class="banner-item"><span>${esc(k)}</span><strong>${v}</strong></div>`}
 function patientPhoto(){ if(PATIENT_PHOTO){return `<div class="photo"><img src="${PATIENT_PHOTO}" alt="Simulated pediatric patient photo"></div>`} return `<div class="photo"><svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#dff3f7"/><circle cx="60" cy="50" r="30" fill="#f0c49f"/><circle cx="49" cy="54" r="4"/><circle cx="72" cy="54" r="4"/><path d="M52 69c6 5 13 5 19 0" fill="none" stroke="#8c3f2b" stroke-width="3" stroke-linecap="round"/><path d="M20 120c6-27 25-39 40-39s34 12 40 39z" fill="#2f80b9"/><path d="M32 45c5-25 50-35 60-4-20-10-40-9-60 4z" fill="#5f371d"/></svg></div>`}
-function renderChartReview(p){return `<div class="card"><div class="card-head"><h3>Chart Review</h3></div><div class="chart-nav">${["summary","notes","results","flowsheet","mar","orders","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</div></div>`}
+function renderChartReview(p){return `<div class="card"><div class="card-head"><h3>Chart Review</h3></div><div class="chart-nav">${["notes","results","flowsheet","orders","mar","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</div></div>`}
 function renderTimelineCard(p){return `<div class="card"><div class="card-head"><h3>Timeline</h3></div><div class="card-body">${p.timeline.map(x=>`<div class="timeline-item"><time>${esc(x[0])}</time><div>${esc(x[1])}</div></div>`).join("")}<p class="muted">View full timeline</p></div></div>`}
 function renderMessagesCard(p){return `<div class="card"><div class="card-head"><h3>Messages</h3><span class="count">${p.messages.length} Unread</span></div><div class="card-body">${renderMessages(p)}<p class="muted">View all messages</p></div></div>`}
 function renderRecentOrders(p){return `<div class="card"><div class="card-head"><h3>Recent Orders</h3></div><div class="card-body">${p.orders.slice(0,5).map(o=>`<div class="order-item"><span class="order-status ${String(o[2]).toLowerCase().includes('missing')?'missing':''}">${esc(o[2])}</span><strong>${esc(o[0])}</strong><br><span class="muted">${esc(o[1])}</span></div>`).join("")}<p class="muted">View all orders</p></div></div>`}
