@@ -45,13 +45,13 @@ const CASE = {
       "weightDetail": "68 lb 5 oz",
       "hospitalDay": "ED",
       "status": "same",
-      "learnerPrompt": "You are the admitting pediatric hospitalist. Review the Emergency Department evaluation before assuming care.",
+      "learnerPrompt": "You are reviewing a new admission from the Emergency Department.",
       "vitals": {
-        "Temp": "39.2 \u00b0C",
-        "HR": "166",
-        "RR": "30",
+        "Temp": "38.1 \u00b0C",
+        "HR": "116",
+        "RR": "24",
         "SpO\u2082": "99% RA",
-        "Pain": "7/10",
+        "Pain": "5/10",
         "Updated": "07/03 17:20"
       },
       "summary": {
@@ -66,7 +66,8 @@ const CASE = {
           "Tachycardia"
         ],
         "events": [
-          "ED evaluation completed",
+          "Presented to ED with fever and refusal to bear weight",
+          "Fever and heart rate improved after antipyretic",
           "Blood culture collected",
           "Hip x-ray completed",
           "Admission requested for observation"
@@ -89,7 +90,7 @@ const CASE = {
           "Complete admission exam"
         ],
         "meds": [
-          "Ibuprofen 65 mg PO given",
+          "Ibuprofen 310 mg PO given",
           "Acetaminophen PRN not yet administered"
         ]
       },
@@ -104,7 +105,7 @@ const CASE = {
         ],
         [
           "14:52",
-          "Ibuprofen administered"
+          "Medication administered: ibuprofen 310 mg PO"
         ],
         [
           "16:18",
@@ -113,6 +114,10 @@ const CASE = {
         [
           "17:01",
           "PHM admission requested"
+        ],
+        [
+          "17:20",
+          "Current chart review"
         ]
       ],
       "notes": [
@@ -121,7 +126,7 @@ const CASE = {
           "Patel, MD",
           "07/03 16:45",
           "Fever and left hip pain since yesterday. Refusing to bear weight. Tachycardic, febrile...",
-          "Previously healthy 3-year-old male with one day of fever and left hip/leg pain with refusal to bear weight. No known trauma. Had URI symptoms last week.\n\nExam: uncomfortable with movement, cries with passive left hip range of motion, no swelling or erythema. Tachycardic while febrile, capillary refill less than 2 seconds, interactive with mother between exams.\n\nAssessment: Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture. Given reassuring perfusion and absence of septic physiology, plan to admit for observation and serial examinations.\n\nPlan: blood culture obtained, hip radiograph, pain control, IV fluids if poor intake. Defer empiric antibiotics while clinically stable to preserve culture yield unless patient worsens or additional data suggests bacterial infection. Consider MRI if worsening pain, persistent fever, rising inflammatory markers, or inability to bear weight persists.",
+          "Previously healthy 3-year-old male with one day of fever and left hip/leg pain with refusal to bear weight. No known trauma. Had URI symptoms last week.\n\nExam: uncomfortable with movement, cries with passive left hip range of motion, no swelling or erythema. Initially tachycardic while febrile with improvement after antipyretic. Capillary refill less than 2 seconds. Interactive with mother between exams.\n\nAssessment: Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture. Given reassuring perfusion and absence of septic physiology, plan to admit for observation and serial examinations.\n\nPlan: blood culture obtained, hip radiograph, pain control, IV fluids if poor intake. Defer empiric antibiotics while clinically stable to preserve culture yield unless patient worsens or additional data suggests bacterial infection. Consider MRI if worsening pain, persistent fever, rising inflammatory markers, or inability to bear weight persists.",
           "Physician"
         ],
         [
@@ -129,7 +134,7 @@ const CASE = {
           "Ashley RN",
           "07/03 16:18",
           "Ibuprofen given. PIV placed. Labs and blood culture drawn.",
-          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week. PIV placed, labs and blood culture drawn. Ibuprofen administered per order.",
+          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week. PIV placed, labs and blood culture drawn. Ibuprofen 310 mg PO administered per order.",
           "Nursing"
         ],
         [
@@ -167,13 +172,13 @@ const CASE = {
       ],
       "orders": [
         [
-          "Ibuprofen 10 mg/kg PO once",
+          "Ibuprofen 310 mg PO once",
           "Given 14:52",
           "Completed",
           "Medication"
         ],
         [
-          "Acetaminophen 15 mg/kg PO q6h PRN",
+          "Acetaminophen 465 mg PO q6h PRN",
           "Ordered 16:10",
           "Active",
           "Medication"
@@ -201,14 +206,14 @@ const CASE = {
         [
           "14:52",
           "Ibuprofen",
-          "65 mg PO",
+          "310 mg PO",
           "Given",
-          "Ordered as 10 mg/kg"
+          "Dose based on documented weight"
         ],
         [
           "16:10",
           "Acetaminophen",
-          "PRN",
+          "465 mg PO PRN",
           "Ordered",
           "Not yet administered"
         ]
@@ -296,38 +301,38 @@ const CASE = {
         "rows": [
           [
             "Heart Rate",
-            "152",
-            "158",
-            "164",
-            "166"
+            "156",
+            "150",
+            "124",
+            "116"
           ],
           [
             "Respiratory Rate",
-            "26",
             "28",
-            "30",
-            "30"
+            "28",
+            "24",
+            "24"
           ],
           [
             "Temperature",
-            "39.1",
             "39.3",
-            "39.0",
-            "39.2"
+            "39.1",
+            "38.4",
+            "38.1"
           ],
           [
             "SpO\u2082",
             "99",
             "99",
-            "98",
+            "99",
             "99"
           ],
           [
             "Pain",
             "8",
             "7",
-            "7",
-            "7"
+            "5",
+            "5"
           ],
           [
             "Cap refill",
@@ -340,8 +345,8 @@ const CASE = {
             "Mental status",
             "Alert",
             "Alert",
-            "Fussy",
-            "Fussy"
+            "Interactive",
+            "Interactive"
           ],
           [
             "Urine output",
@@ -356,13 +361,13 @@ const CASE = {
         [
           "Ashley RN",
           "16:20",
-          "He is still crying with diaper changes. Pain did not improve much after ibuprofen.",
+          "He is still uncomfortable with diaper changes, but his fever and heart rate improved after ibuprofen.",
           "AR"
         ],
         [
           "Pharmacy",
           "16:31",
-          "Can you verify the patient's weight before we prepare any weight-based medications? The documented weight seems high for age.",
+          "Can you clarify today's documented weight? It differs from prior encounters.",
           "PH"
         ]
       ],
@@ -409,9 +414,9 @@ const CASE = {
       "learnerPrompt": "You are the day hospitalist after overnight observation. Reassess whether the admission diagnosis still fits the patient.",
       "vitals": {
         "Temp": "39.4 \u00b0C",
-        "HR": "172",
-        "RR": "34",
-        "SpO\u2082": "97% RA",
+        "HR": "138",
+        "RR": "30",
+        "SpO\u2082": "98% RA",
         "Pain": "9/10",
         "Updated": "07/04 08:00"
       },
@@ -610,17 +615,17 @@ const CASE = {
         "rows": [
           [
             "Heart Rate",
-            "152",
-            "164",
-            "168",
-            "172"
+            "118",
+            "132",
+            "136",
+            "138"
           ],
           [
             "Respiratory Rate",
+            "24",
             "28",
             "30",
-            "32",
-            "34"
+            "30"
           ],
           [
             "Temperature",
