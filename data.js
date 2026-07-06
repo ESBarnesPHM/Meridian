@@ -121,28 +121,48 @@ const CASE = {
           "Patel, MD",
           "07/03 16:45",
           "Fever and left hip pain since yesterday. Refusing to bear weight. Tachycardic, febrile...",
-          "Previously healthy 3-year-old male with one day of fever and left hip/leg pain with refusal to bear weight. No known trauma. Had URI symptoms last week.\n\nExam: uncomfortable with movement, cries with passive left hip range of motion, no swelling or erythema. Tachycardic while febrile, capillary refill less than 2 seconds, interactive with mother between exams.\n\nAssessment: Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture. Given reassuring perfusion and absence of septic physiology, plan to admit for observation and serial examinations.\n\nPlan: blood culture obtained, hip radiograph, pain control, IV fluids if poor intake. Defer empiric antibiotics while clinically stable to preserve culture yield unless patient worsens or additional data suggests bacterial infection. Consider MRI if worsening pain, persistent fever, rising inflammatory markers, or inability to bear weight persists."
+          "Previously healthy 3-year-old male with one day of fever and left hip/leg pain with refusal to bear weight. No known trauma. Had URI symptoms last week.\n\nExam: uncomfortable with movement, cries with passive left hip range of motion, no swelling or erythema. Tachycardic while febrile, capillary refill less than 2 seconds, interactive with mother between exams.\n\nAssessment: Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture. Given reassuring perfusion and absence of septic physiology, plan to admit for observation and serial examinations.\n\nPlan: blood culture obtained, hip radiograph, pain control, IV fluids if poor intake. Defer empiric antibiotics while clinically stable to preserve culture yield unless patient worsens or additional data suggests bacterial infection. Consider MRI if worsening pain, persistent fever, rising inflammatory markers, or inability to bear weight persists.",
+          "Physician"
         ],
         [
           "ED Nursing Note",
           "Ashley RN",
           "07/03 16:18",
           "Ibuprofen given. PIV placed. Labs and blood culture drawn.",
-          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week. PIV placed, labs and blood culture drawn. Ibuprofen administered per order."
+          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week. PIV placed, labs and blood culture drawn. Ibuprofen administered per order.",
+          "Nursing"
         ],
         [
           "Triage Note",
           "ED Triage RN",
           "07/03 14:38",
           "Arrived via private car. Fever today. Left hip pain. Won't walk.",
-          "Chief complaint: Fever and will not walk. Mother reports no trauma. Triage weight documented: 31 kg."
+          "Chief complaint: Fever and will not walk. Mother reports no trauma. Triage weight documented: 31 kg.",
+          "Nursing"
         ],
         [
           "ED Nursing Note",
           "Ashley RN",
           "07/03 14:32",
           "Initial assessment completed. Placed on monitor.",
-          "Patient appears uncomfortable. No visible swelling or bruising."
+          "Patient appears uncomfortable. No visible swelling or bruising.",
+          "Nursing"
+        ],
+        [
+          "ED Attending Attestation",
+          "ED Attending",
+          "07/03 17:00",
+          "Agree with observation plan. Antibiotics deferred while stable.",
+          "I saw and examined the patient with the resident. Child is febrile and uncomfortable with hip range of motion but is perfusing well and interactive with parent between exams. Differential includes transient synovitis and early musculoskeletal infection. Blood culture has been obtained. Given current stability and diagnostic uncertainty, agree with admission for observation and serial exams. Would obtain MRI and start antibiotics if clinical status worsens or inflammatory markers rise.",
+          "Physician"
+        ],
+        [
+          "Medication Reconciliation",
+          "ED Pharmacist",
+          "07/03 16:40",
+          "Weight-based medication review requested.",
+          "Pharmacy review initiated for weight-based medications. Documented ED weight appears high for age. Recommend verifying weight before additional weight-based medication preparation.",
+          "Pharmacy"
         ]
       ],
       "orders": [
@@ -349,7 +369,29 @@ const CASE = {
       "facilitator": [
         "Phase 1 focus: admission reconciliation. The ED plan to observe without antibiotics is defensible because the child is clinically stable and diagnosis is uncertain.",
         "Medication safety clue: ED weight is 31 kg, parent says 29 lb, growth chart shows 13.1 kg, and ibuprofen 65 mg does not match 10 mg/kg using either 31 kg or 13 kg. Learners should verbalize that the weight must be verified and medication dosing corrected before assuming care."
-      ]
+      ],
+      "aha": "The weight does not reconcile across triage, parent report, MAR, and growth chart.",
+      "authenticQuestion": "Is it safe to assume care of this patient?",
+      "resultTrends": {
+        "CRP": [
+          [
+            "07/03 16:00",
+            8.6
+          ]
+        ],
+        "WBC": [
+          [
+            "07/03 16:00",
+            13.8
+          ]
+        ],
+        "ESR": [
+          [
+            "07/03 16:00",
+            42
+          ]
+        ]
+      }
     },
     {
       "id": "2",
@@ -441,14 +483,24 @@ const CASE = {
           "M. Lee, MD",
           "07/04 04:45",
           "Continues febrile. Refusing to stand.",
-          "Admitted for observation with suspected transient synovitis vs early infection. Continues febrile overnight and refuses to stand. Blood culture pending. Pain with movement persists despite antipyretics."
+          "Admitted for observation with suspected transient synovitis vs early infection. Continues febrile overnight and refuses to stand. Blood culture pending. Pain with movement persists despite antipyretics.",
+          "Physician"
         ],
         [
           "Nursing Note",
           "Ashley RN",
           "07/04 07:55",
           "Cries with any movement of left leg.",
-          "Patient lies still in bed and cries with any movement of left leg. Refuses to sit upright. Did not want breakfast. Mother worried he is sleepier and says, 'He is not acting like himself.'"
+          "Patient lies still in bed and cries with any movement of left leg. Refuses to sit upright. Did not want breakfast. Mother worried he is sleepier and says, 'He is not acting like himself.'",
+          "Nursing"
+        ],
+        [
+          "Parent/Nursing Update",
+          "Ashley RN",
+          "07/04 08:12",
+          "Mother reports he is not acting like himself.",
+          "Mother states he is usually active and playful but has been lying still and refusing breakfast. Patient whimpers even when left leg is not being touched. RN concerned this is not typical transient synovitis course.",
+          "Nursing"
         ]
       ],
       "orders": [
@@ -625,7 +677,41 @@ const CASE = {
       "facilitator": [
         "Phase 2 focus: clinical reassessment, not blaming the ED for a missed diagnosis. The patient is declaring himself over time.",
         "Expected actions: go to bedside, recognize that transient synovitis fits less well, broaden differential, order MRI, consult orthopedics, and communicate with family/nursing."
-      ]
+      ],
+      "aha": "The clinical course no longer fits transient synovitis.",
+      "authenticQuestion": "Does the diagnosis still fit?",
+      "resultTrends": {
+        "CRP": [
+          [
+            "07/03 16:00",
+            8.6
+          ],
+          [
+            "07/04 07:45",
+            16.4
+          ]
+        ],
+        "WBC": [
+          [
+            "07/03 16:00",
+            13.8
+          ],
+          [
+            "07/04 07:45",
+            15.6
+          ]
+        ],
+        "ESR": [
+          [
+            "07/03 16:00",
+            42
+          ],
+          [
+            "07/04 07:45",
+            58
+          ]
+        ]
+      }
     },
     {
       "id": "3",
@@ -716,21 +802,32 @@ const CASE = {
           "Radiology",
           "07/04 14:05",
           "Acute osteomyelitis of left proximal femur.",
-          "Acute osteomyelitis of the left proximal femur with small adjacent subperiosteal abscess. No hip joint effusion."
+          "Acute osteomyelitis of the left proximal femur with small adjacent subperiosteal abscess. No hip joint effusion.",
+          "Results"
         ],
         [
           "Orthopedic Surgery Consult",
           "J. Kim, MD",
           "07/04 15:25",
           "Recommend IV antibiotics and serial exams.",
-          "Recommend continued IV antibiotics, serial exams, trend CRP, and NPO at midnight in case operative source control is needed if clinical status worsens or abscess enlarges."
+          "Recommend continued IV antibiotics, serial exams, trend CRP, and NPO at midnight in case operative source control is needed if clinical status worsens or abscess enlarges.",
+          "Consult"
         ],
         [
           "Meridian Osteomyelitis Pathway",
           "Clinical Pathway",
           "07/04 15:35",
           "Obtain cultures, trend CRP, use local antibiotic guidance.",
-          "Obtain blood cultures. Trend CRP every 24-48 hours. Tailor empiric antibiotics to local susceptibility and MRSA risk. Consult orthopedics for abscess, septic arthritis concern, or failure to improve."
+          "Obtain blood cultures. Trend CRP every 24-48 hours. Tailor empiric antibiotics to local susceptibility and MRSA risk. Consult orthopedics for abscess, septic arthritis concern, or failure to improve.",
+          "Physician"
+        ],
+        [
+          "ID Curbside Recommendation",
+          "Infectious Diseases",
+          "07/04 16:05",
+          "Use local osteomyelitis pathway and repeat cultures.",
+          "Agree with empiric cefazolin if clinically stable and low MRSA risk based on local epidemiology. Repeat blood cultures until negative. Trend inflammatory markers. Broaden to vancomycin if clinical instability, MRSA risk factors, or failure to improve.",
+          "Consult"
         ]
       ],
       "orders": [
@@ -886,7 +983,41 @@ const CASE = {
       "facilitator": [
         "Phase 3 focus: evidence-based treatment. Cefazolin begins after MRI confirms osteomyelitis and blood culture shows GPC in clusters.",
         "Discuss antibiotic pathway logic: cefazolin may be appropriate if stable/low MRSA risk/local MSSA predominance; broaden to vancomycin if unstable, high MRSA risk, or severe sepsis."
-      ]
+      ],
+      "aha": "MRI and blood culture change the plan from observation to pathway-guided treatment.",
+      "authenticQuestion": "What is the best evidence-based treatment plan?",
+      "resultTrends": {
+        "CRP": [
+          [
+            "07/03 16:00",
+            8.6
+          ],
+          [
+            "07/04 07:45",
+            16.4
+          ]
+        ],
+        "WBC": [
+          [
+            "07/03 16:00",
+            13.8
+          ],
+          [
+            "07/04 07:45",
+            15.6
+          ]
+        ],
+        "ESR": [
+          [
+            "07/03 16:00",
+            42
+          ],
+          [
+            "07/04 07:45",
+            58
+          ]
+        ]
+      }
     },
     {
       "id": "4a",
@@ -975,14 +1106,16 @@ const CASE = {
           "M. Lee, MD",
           "07/04 09:10",
           "Likely transient synovitis. Blood culture pending.",
-          "Assessment: likely transient synovitis. Continue observation and pain control. Blood culture pending. Consider further imaging if not improving.\n\nNote: This documentation was written before MRI and positive blood culture resulted."
+          "Assessment: likely transient synovitis. Continue observation and pain control. Blood culture pending. Consider further imaging if not improving.\n\nNote: This documentation was written before MRI and positive blood culture resulted.",
+          "Physician"
         ],
         [
           "Verbal/Written Handoff",
           "Day Team",
           "07/04 19:00",
           "Probably osteo. Nothing major overnight.",
-          "3yo admitted with leg pain, probably osteo. MRI done. On cefazolin. Ortho aware. Nothing major overnight."
+          "3yo admitted with leg pain, probably osteo. MRI done. On cefazolin. Ortho aware. Nothing major overnight.",
+          "Handoff"
         ]
       ],
       "orders": [
@@ -1139,7 +1272,41 @@ const CASE = {
       "reveal": true,
       "facilitator": [
         "Learners should identify inadequate illness severity, missing action list, missing contingency planning, outdated physician note, and missing orders. Reveal 4B with code IPASS after debrief."
-      ]
+      ],
+      "aha": "The handoff omits information needed to safely care for the patient overnight.",
+      "authenticQuestion": "Can the night team safely care for this patient with the available handoff?",
+      "resultTrends": {
+        "CRP": [
+          [
+            "07/03 16:00",
+            8.6
+          ],
+          [
+            "07/04 07:45",
+            16.4
+          ]
+        ],
+        "WBC": [
+          [
+            "07/03 16:00",
+            13.8
+          ],
+          [
+            "07/04 07:45",
+            15.6
+          ]
+        ],
+        "ESR": [
+          [
+            "07/03 16:00",
+            42
+          ],
+          [
+            "07/04 07:45",
+            58
+          ]
+        ]
+      }
     },
     {
       "id": "4b",
@@ -1226,14 +1393,16 @@ const CASE = {
           "Day + Night Team",
           "07/04 21:28",
           "Watcher. Bacteremic osteomyelitis. Action list and contingencies included.",
-          "I \u2014 Illness severity: WATCHER. 3yo with acute hematogenous osteomyelitis of left proximal femur, bacteremia, and small subperiosteal abscess.\n\nP \u2014 Patient summary: Initially admitted for fever/refusal to bear weight. ED weight error corrected. MRI confirms osteomyelitis. Blood culture positive for gram-positive cocci in clusters. On cefazolin. Ortho following.\n\nA \u2014 Action list: Repeat blood culture now and daily until negative. CRP/CBC/BMP tonight. NPO at midnight. Reassess perfusion and urine output. Confirm antibiotic timing.\n\nS \u2014 Situation awareness/contingency: If persistent tachycardia, hypotension, altered mental status, delayed cap refill, rising lactate, or worsening pain, activate sepsis pathway, call Ortho/PICU, broaden antibiotics per pathway.\n\nS \u2014 Synthesis by receiver: Night team repeats back bacteremia, abscess, NPO plan, repeat culture/labs, and sepsis escalation triggers."
+          "I \u2014 Illness severity: WATCHER. 3yo with acute hematogenous osteomyelitis of left proximal femur, bacteremia, and small subperiosteal abscess.\n\nP \u2014 Patient summary: Initially admitted for fever/refusal to bear weight. ED weight error corrected. MRI confirms osteomyelitis. Blood culture positive for gram-positive cocci in clusters. On cefazolin. Ortho following.\n\nA \u2014 Action list: Repeat blood culture now and daily until negative. CRP/CBC/BMP tonight. NPO at midnight. Reassess perfusion and urine output. Confirm antibiotic timing.\n\nS \u2014 Situation awareness/contingency: If persistent tachycardia, hypotension, altered mental status, delayed cap refill, rising lactate, or worsening pain, activate sepsis pathway, call Ortho/PICU, broaden antibiotics per pathway.\n\nS \u2014 Synthesis by receiver: Night team repeats back bacteremia, abscess, NPO plan, repeat culture/labs, and sepsis escalation triggers.",
+          "Handoff"
         ],
         [
           "Physician Event Note",
           "R. Nguyen, MD",
           "07/04 21:35",
           "Evaluated for tachycardia and nursing concern. Repeat labs/culture ordered.",
-          "Called to bedside for persistent tachycardia and nursing concern. Patient febrile, uncomfortable, cap refill 3-4 seconds, HR 176, BP 88/52, urine output decreased. Reviewed chart and noted MRI-confirmed left proximal femur osteomyelitis with small subperiosteal abscess and positive blood culture.\n\nPlan: repeat blood culture, CBC, BMP, CRP, lactate; continue cefazolin; NPO at midnight; notify Ortho of clinical concern; close reassessment within 1 hour; activate sepsis pathway if perfusion worsens."
+          "Called to bedside for persistent tachycardia and nursing concern. Patient febrile, uncomfortable, cap refill 3-4 seconds, HR 176, BP 88/52, urine output decreased. Reviewed chart and noted MRI-confirmed left proximal femur osteomyelitis with small subperiosteal abscess and positive blood culture.\n\nPlan: repeat blood culture, CBC, BMP, CRP, lactate; continue cefazolin; NPO at midnight; notify Ortho of clinical concern; close reassessment within 1 hour; activate sepsis pathway if perfusion worsens.",
+          "Event"
         ]
       ],
       "orders": [
@@ -1380,7 +1549,41 @@ const CASE = {
       ],
       "facilitator": [
         "Use this after the handoff debrief to model complete IPASS and appropriate event documentation."
-      ]
+      ],
+      "aha": "A clear IPASS handoff creates a shared mental model.",
+      "authenticQuestion": "What changed when the handoff and documentation were corrected?",
+      "resultTrends": {
+        "CRP": [
+          [
+            "07/03 16:00",
+            8.6
+          ],
+          [
+            "07/04 07:45",
+            16.4
+          ]
+        ],
+        "WBC": [
+          [
+            "07/03 16:00",
+            13.8
+          ],
+          [
+            "07/04 07:45",
+            15.6
+          ]
+        ],
+        "ESR": [
+          [
+            "07/03 16:00",
+            42
+          ],
+          [
+            "07/04 07:45",
+            58
+          ]
+        ]
+      }
     },
     {
       "id": "5",
@@ -1473,14 +1676,16 @@ const CASE = {
           "MET Team",
           "07/05 02:05",
           "Septic shock with end-organ dysfunction.",
-          "Called for hypotension and altered mental status in 3yo with bacteremic osteomyelitis. On arrival: lethargic, HR 190, RR 48, BP 72/38, SpO2 92% RA, cap refill 5 seconds, weak pulses, mottled extremities. Impression: septic shock with end-organ dysfunction."
+          "Called for hypotension and altered mental status in 3yo with bacteremic osteomyelitis. On arrival: lethargic, HR 190, RR 48, BP 72/38, SpO2 92% RA, cap refill 5 seconds, weak pulses, mottled extremities. Impression: septic shock with end-organ dysfunction.",
+          "Event"
         ],
         [
           "PICU Acceptance Note",
           "S. Allen, MD",
           "07/05 02:15",
           "Accept to PICU for septic shock.",
-          "Accept to PICU for septic shock. Initiate sepsis bundle, fluid resuscitation, vasoactive support if inadequate response, broaden antibiotics per sepsis pathway, urgent Ortho reassessment for source control."
+          "Accept to PICU for septic shock. Initiate sepsis bundle, fluid resuscitation, vasoactive support if inadequate response, broaden antibiotics per sepsis pathway, urgent Ortho reassessment for source control.",
+          "Event"
         ]
       ],
       "orders": [
@@ -1687,7 +1892,49 @@ const CASE = {
       ],
       "facilitator": [
         "Expected actions: recognize septic shock, activate sepsis pathway/MET, fluids, cultures, broad antibiotics, PICU transfer, Ortho/source control communication."
-      ]
+      ],
+      "aha": "The child has septic shock with end-organ dysfunction.",
+      "authenticQuestion": "Does this patient require escalation of care now?",
+      "resultTrends": {
+        "CRP": [
+          [
+            "07/03 16:00",
+            8.6
+          ],
+          [
+            "07/04 07:45",
+            16.4
+          ],
+          [
+            "07/05 02:00",
+            28.1
+          ]
+        ],
+        "WBC": [
+          [
+            "07/03 16:00",
+            13.8
+          ],
+          [
+            "07/04 07:45",
+            15.6
+          ],
+          [
+            "07/05 02:00",
+            21.4
+          ]
+        ],
+        "Lactate": [
+          [
+            "07/04 21:35",
+            2.1
+          ],
+          [
+            "07/05 02:00",
+            5.1
+          ]
+        ]
+      }
     }
   ]
 };
