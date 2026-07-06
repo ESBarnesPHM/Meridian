@@ -1,82 +1,30 @@
 
+let screen = new URLSearchParams(location.search).get("phase") ? "chart" : "login";
 let currentPhase = new URLSearchParams(location.search).get("phase") || "1";
-let activeTab = "notes";
-
-function phase(){ return CASE.phases.find(p => p.id === currentPhase) || CASE.phases[0]; }
-function esc(s){ return String(s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-function render(){
-  const p = phase();
-  document.title = `Meridian EMR — ${p.label}`;
-  const app = document.getElementById("app");
-  app.innerHTML = `
-    <div class="topbar">
-      <div class="brand">◆ Meridian <span>Children's EMR</span></div>
-      <div class="phase-select">${CASE.phases.map(x => `<button class="${x.id===currentPhase?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div>
-    </div>
-    <section class="header">
-      <div class="patient">
-        <h1>${esc(CASE.patient.name)}</h1>
-        <div class="sub">${esc(CASE.patient.age)} · ${esc(CASE.patient.sex)} · MRN ${esc(CASE.patient.mrn)} · DOB ${esc(CASE.patient.dob)}</div>
-        <div class="sub"><strong>${esc(p.status)}</strong> · ${esc(p.time)}</div>
-      </div>
-      <div class="storyboard">
-        <div class="sb"><label>Weight</label><strong>${esc(p.storyboard.weight)}</strong></div>
-        <div class="sb"><label>Allergies</label><strong>${esc(CASE.patient.allergy)}</strong></div>
-        <div class="sb"><label>Team</label><strong>${esc(p.storyboard.team)}</strong></div>
-        <div class="sb"><label>Acuity</label><strong>${esc(p.storyboard.acuity)}</strong></div>
-      </div>
-    </section>
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="card"><h2>Chart navigator</h2><div class="tabs">${["notes","orders","mar","labs","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${label(t)}</button>`).join("")}</div></div>
-        <div class="card"><h2>Clinical timeline</h2><div class="card-body">${p.timeline.map(i=>`<div class="timeline-item"><time>${esc(i[0])}</time><div>${esc(i[1])}</div></div>`).join("")}</div></div>
-      </aside>
-      <main class="main">
-        ${p.alerts.map(a=>`<div class="alert ${currentPhase==='5'?'danger':''}">${esc(a)}</div>`).join("")}
-        <div class="card"><h2>${label(activeTab)}</h2><div class="card-body">${renderTab(p,activeTab)}</div></div>
-      </main>
-      <aside class="rightbar">
-        <div class="card"><h2>Secure chat / notifications</h2><div class="card-body">${renderMessages(p)}</div></div>
-        <div class="card"><h2>Facilitator notes</h2><div class="card-body"><button onclick="toggleFac()">Show / hide facilitator notes</button><div id="fac" class="hidden">${p.facilitator.map(x=>`<p>${esc(x)}</p>`).join("")}</div>${renderReveal(p)}</div></div>
-      </aside>
-    </div>
-    <div class="footer">Meridian EMR Simulation Platform · Fictional patient record for education</div>
-  `;
-}
-
-function label(t){
-  return ({notes:"Notes",orders:"Orders",mar:"MAR",labs:"Labs",imaging:"Imaging",growth:"Growth chart",messages:"Messages"}[t] || t);
-}
-function setPhase(id){ currentPhase=id; activeTab="notes"; history.replaceState(null,"",`?phase=${id}`); render(); }
-function setTab(t){ activeTab=t; render(); }
-function toggleFac(){ document.getElementById("fac").classList.toggle("hidden"); }
-
-function renderMessages(p){
-  const msgs = p.tabs.messages || [];
-  return msgs.map(m=>`<div class="msg"><span class="time">${esc(m[1])}</span><div class="from">${esc(m[0])}</div><div>${esc(m[2])}</div></div>`).join("") || "<p>No new messages.</p>";
-}
-function renderReveal(p){
-  if(!p.reveal) return "";
-  return `<div class="reveal"><strong>Facilitator reveal: Phase 4B</strong><p>Enter code after debrief.</p><input id="code" placeholder="Code" /> <button onclick="reveal4b()">Reveal</button><p id="codeMsg"></p></div>`;
-}
-function reveal4b(){
-  const val = document.getElementById("code").value.trim().toUpperCase();
-  if(val === "IPASS"){ setPhase("4b"); } else { document.getElementById("codeMsg").textContent = "Incorrect code."; }
-}
-function renderTab(p,t){
-  const d = p.tabs[t] || [];
-  if(t==="notes") return d.map(n=>`<article class="note"><div class="note-title">${esc(n[0])}<div class="note-meta">${esc(n[1])}</div></div><div class="note-content">${esc(n[2])}</div></article>`).join("");
-  if(t==="orders") return table(["Order","Details","Status","Comment"], d);
-  if(t==="mar") return table(["Time","Medication","Dose","Status","Comment"], d);
-  if(t==="labs") return `<table class="table"><thead><tr><th>Test</th><th>Result</th><th>Flag</th></tr></thead><tbody>${d.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td class="${flagClass(r[2])}">${esc(r[2])}</td></tr>`).join("")}</tbody></table>`;
-  if(t==="imaging") return d.map(r=>`<article class="note"><div class="note-title">${esc(r[0])}</div><div class="note-content">${esc(r[1])}</div></article>`).join("");
-  if(t==="growth") return table(["Date/age","Weight"], d) + `<p class="sub">Growth trend is included to support weight verification and medication safety review.</p>`;
-  if(t==="messages") return renderMessages(p);
-  return "";
-}
-function table(head, rows){
-  return `<table class="table"><thead><tr>${head.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
-}
-function flagClass(f){ f=String(f).toLowerCase(); if(f.includes("critical")||f.includes("high")||f.includes("low")) return "flag-high"; if(f.includes("pending")||f.includes("prelim")) return "flag-warn"; return ""; }
+let activeTab = "summary";
+let facultyOpen = false;
+function $(id){return document.getElementById(id)}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
+function phase(){return CASE.phases.find(p=>p.id===currentPhase)||CASE.phases[0]}
+function routeToChart(id="1"){screen="chart";currentPhase=id;activeTab="summary";history.replaceState(null,"",`?phase=${id}`);render()}
+function setPhase(id){currentPhase=id;activeTab="summary";history.replaceState(null,"",`?phase=${id}`);render()}
+function setTab(tab){activeTab=tab;render()}
+function toggleFaculty(){facultyOpen=!facultyOpen;renderFacultyOnly()}
+function renderFacultyOnly(){const panel=$("facultyPanel");if(panel)panel.classList.toggle("open",facultyOpen)}
+function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
+function render(){const app=$("app");app.innerHTML=screen==="login"?renderLogin():renderChart();renderFacultyOnly()}
+function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="logo-row"><div class="logo-mark">M</div><div class="logo-text"><h1>Meridian EMR</h1><p>${esc(CASE.hospital)}</p></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="meta">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div class="patient-main"><strong>${esc(CASE.patient.name)}</strong><span class="meta">ED → Hospital Medicine · New admission</span></div><span class="badge yellow">Watcher</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div class="patient-main"><strong>${esc(p.name)}</strong><span class="meta">${esc(p.detail)}</span></div><span class="badge">Future case</span></div>`).join("")}</div></div></section></main>`}
+function renderChart(){const p=phase();return `<div class="app-shell"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()" title="Return to patient list"><div class="mark">M</div><div>Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-actions"><div class="phase-picker">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="ghost-btn" onclick="toggleFaculty()">Faculty</button></div></header><section class="storyboard"><div class="patient-id"><h2>${esc(CASE.patient.name)}</h2><div class="meta">${esc(CASE.patient.age)} · ${esc(CASE.patient.sex)} · MRN ${esc(CASE.patient.mrn)} · DOB ${esc(CASE.patient.dob)}</div><div class="clinical-question">Better, worse, or the same? <span class="status-pill ${p.status}">${esc(p.status.toUpperCase())}</span></div></div><div class="story-grid">${story("Location",p.location)}${story("Hosp day",p.hospitalDay)}${story("Weight",p.weight)}${story("Allergies",CASE.patient.allergy)}${story("Team",p.team)}${story("Severity",p.severity)}</div></section><div class="main-layout"><aside><div class="card"><div class="card-title"><h3>Chart Review</h3></div><div class="nav">${navButtons(p)}</div></div><div class="card"><div class="card-title"><h3>Timeline</h3></div><div class="card-body">${renderTimeline(p)}</div></div></aside><main><div class="phase-title"><div><h2>${esc(p.title)}</h2><p>${esc(p.time)} · ${esc(p.short)}</p></div><span class="badge ${p.status==='worse'?'red':p.status==='same'?'yellow':'green'}">${esc(p.status)}</span></div>${p.alerts.map(a=>`<div class="alert ${p.id==='5'?'red':''}">${esc(a)}</div>`).join("")}<div class="card"><div class="card-title"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside><div class="card"><div class="card-title"><h3>Messages</h3><span class="count">${p.messages.length}</span></div><div class="card-body">${renderMessages(p)}</div></div><div class="card"><div class="card-title"><h3>Teaching focus</h3></div><div class="card-body"><strong>Ask before moving on:</strong><p>${esc(p.betterSameWorse)}</p><strong>Urgency:</strong><p>${esc(p.urgency)}</p></div></div></aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR Simulation Platform · Fictional medical record for pediatric patient safety education</footer></div>`}
+function story(k,v){return `<div class="story-item"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`}
+function navButtons(p){const tabs=["summary","notes","flowsheet","orders","mar","labs","imaging","growth"];return tabs.map(t=>{const n=Array.isArray(p[t])?p[t].length:"";return `<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)} ${n?`<span class="count">${n}</span>`:""}</button>`}).join("")}
+function tabLabel(t){return ({summary:"Patient Summary",notes:"Notes",flowsheet:"Flowsheet",orders:"Orders",mar:"MAR",labs:"Labs",imaging:"Imaging",growth:"Growth Chart"}[t]||t)}
+function renderTimeline(p){return p.timeline.map(x=>`<div class="timeline-item"><time>${esc(x[0])}</time><div>${esc(x[1])}</div></div>`).join("")}
+function renderMessages(p){return p.messages.map(m=>`<div class="msg"><span class="time">${esc(m[1])}</span><div class="from">${esc(m[0])}</div><div>${esc(m[2])}</div></div>`).join("")||"<p>No new messages.</p>"}
+function renderTab(p,t){if(t==="summary")return renderSummary(p);if(t==="notes")return p.notes.map((n,i)=>`<article class="note"><div class="note-head" onclick="document.getElementById('note${i}').classList.toggle('hidden')"><strong>▾ ${esc(n[0])}</strong><span>${esc(n[1])}</span></div><div class="note-text" id="note${i}">${esc(n[2])}</div></article>`).join("");if(t==="flowsheet")return renderFlowsheet(p.flowsheet);if(t==="orders")return table(["Order","Details","Status","Comment"],p.orders);if(t==="mar")return table(["Time","Medication","Dose","Status","Comment"],p.mar);if(t==="labs")return `<table class="table"><thead><tr><th>Test</th><th>Result</th><th>Flag</th></tr></thead><tbody>${p.labs.map(r=>`<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td><td class="${flagClass(r[2])}">${esc(r[2])}</td></tr>`).join("")}</tbody></table>`;if(t==="imaging")return p.imaging.map(i=>`<article class="note"><div class="note-head"><strong>${esc(i[0])}</strong></div><div class="note-text">${esc(i[1])}</div></article>`).join("");if(t==="growth")return table(["Date / age","Weight"],p.growth)+`<p class="meta">Growth history supports weight verification and medication safety review.</p>`}
+function renderSummary(p){return `<div class="summary-grid"><div class="mini-card"><h4>Clinical read</h4><div class="status-pill ${p.status}">${esc(p.status.toUpperCase())}</div><p>${esc(p.betterSameWorse)}</p></div><div class="mini-card"><h4>Active problems</h4><ul>${p.summary.problems.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini-card"><h4>Must-do tasks</h4><ul>${p.summary.tasks.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini-card" style="grid-column:1/-1"><h4>Recent events</h4><ul>${p.summary.recent.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div>`}
+function renderFlowsheet(fs){return `<div class="trends">${Object.entries(fs).map(([name,vals])=>renderTrend(name,vals)).join("")}</div>`}
+function renderTrend(name,vals){const nums=vals.map(Number),min=Math.min(...nums),max=Math.max(...nums);return `<div class="trend"><div class="trend-head"><span>${esc(name)}</span><span>${esc(vals[vals.length-1])}</span></div><div class="spark">${vals.map(v=>{let h=max===min?32:18+((Number(v)-min)/(max-min))*34;return `<div class="bar" style="height:${h}px"><span>${esc(v)}</span></div>`}).join("")}</div></div>`}
+function table(head,rows){return `<table class="table"><thead><tr>${head.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`}
+function flagClass(f){f=String(f).toLowerCase();if(f.includes("critical"))return"flag-critical";if(f.includes("high"))return"flag-high";if(f.includes("low"))return"flag-low";if(f.includes("pending"))return"flag-pending";if(f.includes("prelim"))return"flag-prelim";return""}
+function renderFaculty(p){return `<div class="faculty"><button class="primary-btn" onclick="toggleFaculty()">Faculty</button><div class="faculty-panel ${facultyOpen?'open':''}" id="facultyPanel"><div class="card-title"><h3>Facilitator Mode</h3><button class="primary-btn" onclick="toggleFaculty()">Close</button></div><div class="card-body"><p><strong>Current phase:</strong> ${esc(p.label)} — ${esc(p.title)}</p><p><strong>Teaching notes:</strong></p><ul>${p.facilitator.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>${p.reveal?`<div class="reveal"><strong>Reveal Phase 4B</strong><p>Use after the documentation/handoff debrief.</p><input id="revealCode" placeholder="Code"> <button class="primary-btn" onclick="reveal4B()">Reveal</button><p id="revealMsg"></p></div>`:""}</div></div></div>`}
 render();

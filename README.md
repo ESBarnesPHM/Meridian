@@ -1,26 +1,28 @@
-# Meridian EMR
+# Meridian EMR v1.0
 
-Static simulation EMR for pediatric patient safety education.
+A fictional pediatric electronic medical record for patient safety simulation.
 
-## GitHub Pages setup
-Upload these files directly to the root of your repository:
+## Publish on GitHub Pages
 
-- index.html
-- style.css
-- app.js
-- data.js
+Upload these files to the root of the `Meridian` repository:
 
-Then enable GitHub Pages:
-Settings → Pages → Deploy from branch → main → /root.
+- `index.html`
+- `style.css`
+- `app.js`
+- `data.js`
+- `README.md`
 
-## Phase links
-- `?phase=1`
-- `?phase=2`
-- `?phase=3`
-- `?phase=4a`
-- `?phase=4b`
-- `?phase=5`
+Then GitHub Pages should automatically rebuild.
 
-Phase 4A reveal code: `IPASS`.
+## Direct phase links
 
-This version intentionally uses no build system, no frameworks, and no external files so GitHub Pages should deploy cleanly.
+- Phase 1: `?phase=1`
+- Phase 2: `?phase=2`
+- Phase 3: `?phase=3`
+- Phase 4A: `?phase=4a`
+- Phase 4B: `?phase=4b`
+- Phase 5: `?phase=5`
+
+Phase 4A facilitator reveal code: `IPASS`.
+
+Core question: Is the patient better, worse, or the same — and how urgently do we need to act?
