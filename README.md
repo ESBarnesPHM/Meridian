@@ -1,4 +1,4 @@
-# Meridian EMR v1.1
+# Meridian EMR v2
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -8,12 +8,11 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - data.js
 - README.md
 
-Changes in v1.1:
-- Removed the learner-facing "better/worse/same" banner.
-- Moved chart review tabs into a horizontal file-folder tab bar.
-- Removed the Phase 1 giveaway medication-safety alert from learner view.
-- Kept hidden facilitator notes.
-- Added an illustrated pediatric patient avatar.
-- Added vital-sign trend graphs to Summary and Flowsheets.
-
-Phase 4A facilitator reveal code: IPASS.
+What changed:
+- Epic-style horizontal file-folder chart tabs.
+- No learner-facing "better/worse/same" banner.
+- No learner-facing Phase 1 medication-safety giveaway alert.
+- Patient avatar/photo added.
+- Vital sign trend graphs added to Summary and Flowsheets.
+- Faculty notes retain the hidden medication-safety clues.
+- Phase 4A reveal code: IPASS.

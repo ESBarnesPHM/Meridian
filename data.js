@@ -7,10 +7,12 @@ const CASE = {
     "sex": "Male",
     "mrn": "MCH-203948",
     "dob": "04/14/2023",
+    "room": "ED-12",
     "pcp": "Riverbend Pediatrics",
     "allergy": "NKDA",
     "code": "Full Code",
-    "isolation": "None"
+    "isolation": "None",
+    "attending": "Barnes, MD"
   },
   "inactivePatients": [
     {
@@ -30,8 +32,7 @@ const CASE = {
     {
       "id": "1",
       "label": "Phase 1",
-      "short": "ED",
-      "title": "ED admission: medication safety review",
+      "title": "ED admission",
       "time": "07/03/2026 17:20",
       "location": "ED \u2192 PHM",
       "team": "Hospital Medicine",
@@ -39,61 +40,67 @@ const CASE = {
       "weight": "31 kg",
       "hospitalDay": "ED",
       "status": "same",
-      "betterSameWorse": "Same, but unresolved \u2014 safety review needed before accepting orders.",
-      "urgency": "Act now: verify weight and medication dosing before cefazolin is administered.",
-      "alerts": [],
+      "learnerPrompt": "You are the admitting team. Review the ED chart and identify anything that needs attention before accepting admission orders.",
       "summary": {
         "problems": [
           "Fever",
           "Refusal to bear weight",
           "Left hip pain",
-          "Medication dosing risk"
+          "Tachycardia"
         ],
         "recent": [
-          "Triage weight entered as 31 kg",
-          "Ibuprofen 65 mg PO given",
-          "Cefazolin 775 mg IV q8h ordered",
-          "Blood culture pending"
+          "ED evaluation completed",
+          "Blood culture collected",
+          "Hip x-ray completed",
+          "Admission requested"
         ],
         "tasks": [
-          "Verify weight with parent/growth history",
-          "Recalculate cefazolin and ibuprofen",
-          "Notify pharmacy/nursing",
-          "Perform admission exam"
+          "Review MAR",
+          "Reassess patient",
+          "Follow blood culture",
+          "Verify admission orders"
+        ],
+        "meds": [
+          "Cefazolin 775 mg IV q8h ordered",
+          "Ibuprofen 65 mg PO given"
         ]
       },
       "timeline": [
         [
           "14:32",
-          "Arrived to ED"
+          "ED arrival"
         ],
         [
           "14:38",
-          "Triage weight documented as 31 kg"
+          "Triage complete"
         ],
         [
           "14:52",
-          "Ibuprofen 65 mg PO given"
+          "Ibuprofen administered"
+        ],
+        [
+          "16:18",
+          "Blood culture collected"
         ],
         [
           "16:25",
-          "Cefazolin 775 mg IV q8h ordered"
+          "Cefazolin ordered"
         ],
         [
           "17:01",
-          "Admission requested"
+          "PHM admission requested"
         ]
       ],
       "notes": [
         [
           "ED Triage Note",
           "Ashley Reed, RN \u00b7 14:38",
-          "Chief complaint: Fever and won't walk.\n\nMother reports fever since yesterday and refusal to bear weight today. No known trauma. Mother states, \"He was about 29 pounds at his pediatrician appointment last week.\"\n\nTriage weight documented: 31 kg."
+          "Chief complaint: Fever and will not walk.\n\nMother reports fever since yesterday and refusal to bear weight today. No known trauma. Mother states, \u201cHe was about 29 pounds at his pediatrician appointment last week.\u201d\n\nTriage weight documented: 31 kg."
         ],
         [
           "ED Provider Note",
           "N. Patel, MD \u00b7 16:45",
-          "Previously healthy 3-year-old male with one day of fever and left leg pain/refusal to bear weight. No trauma.\n\nExam: uncomfortable, cries with passive left hip range of motion, no swelling or erythema. Tachycardic, capillary refill <2 seconds.\n\nAssessment: transient synovitis vs early osteomyelitis vs septic arthritis.\n\nPlan: admit to PHM for observation, labs, blood culture, hip radiograph, empiric cefazolin, pain control."
+          "Previously healthy 3-year-old male with one day of fever and left leg pain/refusal to bear weight. No trauma.\n\nExam: uncomfortable, cries with passive left hip range of motion, no swelling or erythema. Tachycardic, capillary refill less than 2 seconds.\n\nAssessment: transient synovitis vs early osteomyelitis vs septic arthritis.\n\nPlan: admit to PHM for observation, labs, blood culture, hip radiograph, empiric cefazolin, pain control."
         ]
       ],
       "orders": [
@@ -101,13 +108,13 @@ const CASE = {
           "Cefazolin",
           "775 mg IV q8h",
           "Active",
-          "Dose calculated using 31 kg"
+          "Dose calculated using documented ED weight"
         ],
         [
           "Ibuprofen",
           "65 mg PO once",
           "Given",
-          "5 mg/kg using actual 13 kg weight"
+          ""
         ],
         [
           "Blood culture",
@@ -199,25 +206,30 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "HR": [
+        "Heart Rate": [
           152,
           158,
           164
         ],
-        "Temp": [
+        "Temperature": [
           39.1,
           39.3,
           39.0
+        ],
+        "Respiratory Rate": [
+          26,
+          28,
+          30
+        ],
+        "SpO\u2082": [
+          99,
+          99,
+          98
         ],
         "Pain": [
           8,
           7,
           7
-        ],
-        "Cap refill": [
-          2,
-          2,
-          2
         ]
       },
       "messages": [
@@ -233,21 +245,13 @@ const CASE = {
         ]
       ],
       "facilitator": [
-        "Learner-facing alert removed: the medication safety concern is distributed across ED weight, growth history, MAR, and parent history.",
-        "Correct weight is 13 kg. Cefazolin dose should be recalculated using verified weight. Ibuprofen 65 mg is only 5 mg/kg; typical analgesic/antipyretic dosing would be 10 mg/kg = 130 mg."
-      ],
-      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
-      "currentMeds": [
-        "Cefazolin 775 mg IV q8h ordered",
-        "Ibuprofen 65 mg PO given",
-        "Acetaminophen PRN not yet ordered"
+        "Medication safety clue: ED weight is 31 kg, parent says 29 lb, growth chart shows 13.1 kg, MAR shows cefazolin dosed using wrong weight and ibuprofen only 5 mg/kg."
       ]
     },
     {
       "id": "2",
       "label": "Phase 2",
-      "short": "Floor",
-      "title": "Hospital day 1: delayed diagnosis risk",
+      "title": "Hospital day 1",
       "time": "07/04/2026 08:30",
       "location": "6A-12",
       "team": "Hospital Medicine",
@@ -255,11 +259,7 @@ const CASE = {
       "weight": "13 kg",
       "hospitalDay": "1",
       "status": "worse",
-      "betterSameWorse": "Worse \u2014 persistent fever, rising inflammatory markers, worsening pain.",
-      "urgency": "Act this morning: reassess, broaden differential, and pursue MRI/Ortho consult.",
-      "alerts": [
-        "Persistent fever, rising CRP, and refusal to bear weight require diagnostic reassessment."
-      ],
+      "learnerPrompt": "Review overnight events and determine whether the working diagnosis still fits the patient.",
       "summary": {
         "problems": [
           "Fever",
@@ -269,7 +269,7 @@ const CASE = {
         ],
         "recent": [
           "Weight corrected to 13 kg",
-          "Pain persists despite antipyretics",
+          "Pain persists",
           "CRP increased from 8.6 to 16.4",
           "Parent reports he is worse"
         ],
@@ -277,7 +277,11 @@ const CASE = {
           "Repeat focused exam",
           "Order MRI",
           "Consult orthopedics",
-          "Update family and contingency plan"
+          "Update family"
+        ],
+        "meds": [
+          "Cefazolin 325 mg IV q8h",
+          "Acetaminophen 195 mg PO q6h PRN"
         ]
       },
       "timeline": [
@@ -395,29 +399,35 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "HR": [
+        "Heart Rate": [
           152,
           164,
           168,
           172
         ],
-        "Temp": [
+        "Temperature": [
           39.3,
           39.5,
           39.1,
           39.4
+        ],
+        "Respiratory Rate": [
+          28,
+          30,
+          32,
+          34
+        ],
+        "SpO\u2082": [
+          99,
+          98,
+          98,
+          97
         ],
         "Pain": [
           7,
           8,
           9,
           9
-        ],
-        "Cap refill": [
-          2,
-          2,
-          3,
-          3
         ]
       },
       "messages": [
@@ -429,19 +439,12 @@ const CASE = {
       ],
       "facilitator": [
         "Expected actions: bedside reassessment, recognize red flags, avoid anchoring on transient synovitis, order MRI, consult orthopedics."
-      ],
-      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
-      "currentMeds": [
-        "Cefazolin 325 mg IV q8h",
-        "Acetaminophen 195 mg PO q6h PRN",
-        "Ibuprofen PRN"
       ]
     },
     {
       "id": "3",
       "label": "Phase 3",
-      "short": "Pathway",
-      "title": "MRI positive: pathway-guided decisions",
+      "title": "Pathway decisions",
       "time": "07/04/2026 15:45",
       "location": "6A-12",
       "team": "PHM + Ortho",
@@ -449,11 +452,7 @@ const CASE = {
       "weight": "13 kg",
       "hospitalDay": "1",
       "status": "worse",
-      "betterSameWorse": "Worse/clearer \u2014 source identified, bacteremia now suspected.",
-      "urgency": "Act now: use pathway to order cultures, trend labs, antibiotics, and source-control contingency.",
-      "alerts": [
-        "New MRI result and positive blood culture require pathway-guided management."
-      ],
+      "learnerPrompt": "New results are available. Use the pathway and chart data to decide what needs to happen next.",
       "summary": {
         "problems": [
           "Acute hematogenous osteomyelitis",
@@ -471,6 +470,11 @@ const CASE = {
           "Trend CRP/CBC/BMP",
           "Review antibiotic pathway/antibiogram",
           "NPO at midnight per Ortho"
+        ],
+        "meds": [
+          "Cefazolin 325 mg IV q8h",
+          "Acetaminophen PRN",
+          "Ibuprofen PRN"
         ]
       },
       "timeline": [
@@ -577,29 +581,35 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "HR": [
+        "Heart Rate": [
           164,
           168,
           172,
           176
         ],
-        "Temp": [
+        "Temperature": [
           39.1,
           39.4,
           39.2,
           39.6
+        ],
+        "Respiratory Rate": [
+          30,
+          32,
+          34,
+          35
+        ],
+        "SpO\u2082": [
+          98,
+          98,
+          97,
+          97
         ],
         "Pain": [
           8,
           9,
           9,
           8
-        ],
-        "Cap refill": [
-          2,
-          3,
-          3,
-          3
         ]
       },
       "messages": [
@@ -616,19 +626,12 @@ const CASE = {
       ],
       "facilitator": [
         "Expected actions: repeat culture, trend labs, use pathway/antibiogram, clarify MRSA risk, communicate with Ortho/ID."
-      ],
-      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
-      "currentMeds": [
-        "Cefazolin 325 mg IV q8h",
-        "Acetaminophen 195 mg PO q6h PRN",
-        "Ibuprofen PRN"
       ]
     },
     {
       "id": "4a",
       "label": "Phase 4A",
-      "short": "Handoff",
-      "title": "Night shift: poor handoff + outdated documentation",
+      "title": "Poor handoff",
       "time": "07/04/2026 21:15",
       "location": "6A-12",
       "team": "Night PHM",
@@ -636,11 +639,7 @@ const CASE = {
       "weight": "13 kg",
       "hospitalDay": "1",
       "status": "worse",
-      "betterSameWorse": "Worse \u2014 but the handoff and documentation obscure the severity.",
-      "urgency": "Act now: recognize the handoff is unsafe, review chart, examine patient, clarify action items.",
-      "alerts": [
-        "The available sign-out and physician note are incomplete and outdated."
-      ],
+      "learnerPrompt": "You are the night team. Review the handoff and documentation. Decide whether you have enough information to safely care for this patient.",
       "summary": {
         "problems": [
           "Bacteremic osteomyelitis",
@@ -658,6 +657,10 @@ const CASE = {
           "Review MRI/culture/Ortho note",
           "Evaluate patient now",
           "Create clear plan and documentation"
+        ],
+        "meds": [
+          "Cefazolin 325 mg IV q8h",
+          "Antipyretics PRN"
         ]
       },
       "timeline": [
@@ -760,29 +763,35 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "HR": [
+        "Heart Rate": [
           168,
           174,
           178,
           182
         ],
-        "Temp": [
+        "Temperature": [
           39.2,
           39.6,
           39.8,
           40.0
         ],
-        "Urine output": [
+        "Respiratory Rate": [
+          32,
+          34,
+          36,
+          38
+        ],
+        "SpO\u2082": [
+          98,
+          97,
+          96,
+          96
+        ],
+        "Urine Output": [
           3,
           2,
           1,
           1
-        ],
-        "Cap refill": [
-          3,
-          3,
-          4,
-          4
         ]
       },
       "messages": [
@@ -795,19 +804,12 @@ const CASE = {
       "reveal": true,
       "facilitator": [
         "Learners should identify inadequate illness severity, missing action list, missing contingency planning, outdated physician note, and missing orders. Reveal 4B with code IPASS after debrief."
-      ],
-      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
-      "currentMeds": [
-        "Cefazolin 325 mg IV q8h",
-        "Acetaminophen 195 mg PO q6h PRN",
-        "Ibuprofen PRN"
       ]
     },
     {
       "id": "4b",
       "label": "Phase 4B",
-      "short": "IPASS",
-      "title": "Corrected IPASS handoff + physician event note",
+      "title": "Corrected IPASS",
       "time": "07/04/2026 21:35",
       "location": "6A-12",
       "team": "Night PHM",
@@ -815,11 +817,7 @@ const CASE = {
       "weight": "13 kg",
       "hospitalDay": "1",
       "status": "worse",
-      "betterSameWorse": "Worse \u2014 now clearly recognized and communicated.",
-      "urgency": "Act now: execute action list and monitor closely for sepsis escalation.",
-      "alerts": [
-        "Corrected handoff clarifies illness severity, action items, and contingency plans."
-      ],
+      "learnerPrompt": "Review the updated handoff and physician event note. Compare what is different now.",
       "summary": {
         "problems": [
           "Bacteremic osteomyelitis",
@@ -838,6 +836,10 @@ const CASE = {
           "Ensure antibiotics on time",
           "NPO at midnight",
           "Escalate if perfusion worsens"
+        ],
+        "meds": [
+          "Cefazolin 325 mg IV q8h",
+          "Antipyretics PRN"
         ]
       },
       "timeline": [
@@ -930,29 +932,35 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "HR": [
+        "Heart Rate": [
           168,
           174,
           178,
           182
         ],
-        "Temp": [
+        "Temperature": [
           39.2,
           39.6,
           39.8,
           40.0
         ],
-        "Urine output": [
+        "Respiratory Rate": [
+          32,
+          34,
+          36,
+          38
+        ],
+        "SpO\u2082": [
+          98,
+          97,
+          96,
+          96
+        ],
+        "Urine Output": [
           3,
           2,
           1,
           1
-        ],
-        "Cap refill": [
-          3,
-          3,
-          4,
-          4
         ]
       },
       "messages": [
@@ -964,19 +972,12 @@ const CASE = {
       ],
       "facilitator": [
         "Use this after the handoff debrief to model complete IPASS and appropriate event documentation."
-      ],
-      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
-      "currentMeds": [
-        "Cefazolin 325 mg IV q8h",
-        "Acetaminophen 195 mg PO q6h PRN",
-        "Ibuprofen PRN"
       ]
     },
     {
       "id": "5",
       "label": "Phase 5",
-      "short": "MET",
-      "title": "Deterioration: septic shock requiring escalation",
+      "title": "MET call",
       "time": "07/05/2026 02:10",
       "location": "6A-12 \u2192 PICU",
       "team": "PHM + PICU + Ortho",
@@ -984,11 +985,7 @@ const CASE = {
       "weight": "13 kg",
       "hospitalDay": "2",
       "status": "worse",
-      "betterSameWorse": "Worse \u2014 septic shock with end-organ dysfunction.",
-      "urgency": "Act immediately: MET/RRT, sepsis bundle, antibiotics, PICU transfer, source control.",
-      "alerts": [
-        "Clinical deterioration: hypotension, poor perfusion, altered mental status, oliguria."
-      ],
+      "learnerPrompt": "The patient is deteriorating. Review the chart quickly and lead the next steps.",
       "summary": {
         "problems": [
           "Septic shock",
@@ -1007,6 +1004,11 @@ const CASE = {
           "Fluid resuscitation",
           "Repeat cultures + broaden antibiotics",
           "Call PICU and Ortho urgently"
+        ],
+        "meds": [
+          "NS bolus 20 mL/kg",
+          "Vancomycin 15 mg/kg IV",
+          "Cefepime 50 mg/kg IV"
         ]
       },
       "timeline": [
@@ -1148,29 +1150,35 @@ const CASE = {
         ]
       ],
       "flowsheet": {
-        "HR": [
+        "Heart Rate": [
           176,
           182,
           186,
           190
         ],
-        "Temp": [
+        "Temperature": [
           39.8,
           40.0,
           40.2,
           40.2
         ],
-        "Urine output": [
+        "Respiratory Rate": [
+          38,
+          42,
+          46,
+          48
+        ],
+        "SpO\u2082": [
+          96,
+          94,
+          93,
+          92
+        ],
+        "Urine Output": [
           2,
           1,
           1,
           0
-        ],
-        "Cap refill": [
-          4,
-          4,
-          5,
-          5
         ]
       },
       "messages": [
@@ -1187,12 +1195,6 @@ const CASE = {
       ],
       "facilitator": [
         "Expected actions: recognize septic shock, activate sepsis pathway/MET, fluids, cultures, broad antibiotics, PICU transfer, Ortho/source control communication."
-      ],
-      "learnerPrompt": "Review the chart and identify what needs attention before moving forward.",
-      "currentMeds": [
-        "NS bolus 20 mL/kg",
-        "Vancomycin 15 mg/kg IV",
-        "Cefepime 50 mg/kg IV"
       ]
     }
   ]
