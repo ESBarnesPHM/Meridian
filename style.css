@@ -74,3 +74,52 @@
 .photo img{object-fit:cover;object-position:center center}
 .patient-name h2 .pill{display:none}
 .main-title .pill{display:none}
+
+
+/* v4.3 Results Review cleanup */
+.lab-grid{
+  display:grid;
+  grid-template-columns:230px repeat(var(--timecols), minmax(180px, 1fr));
+  min-width:780px;
+  font-size:13px;
+}
+.lab-cell{
+  padding:7px 10px;
+  border-right:1px solid #dbe5ee;
+  border-bottom:1px solid #e8eef3;
+  min-height:29px;
+  background:#fff;
+}
+.lab-head{
+  background:#e6f3f1;
+  font-weight:950;
+  color:#0b3157;
+  text-align:center;
+}
+.lab-section{
+  grid-column:1 / -1;
+  background:#d4eee9;
+  color:#005f73;
+  font-weight:950;
+  padding:7px 10px;
+  border-bottom:1px solid #bfdad5;
+  text-transform:uppercase;
+}
+.lab-row-name{
+  background:#edf3f8;
+  color:#0057a3;
+  font-weight:850;
+  position:sticky;
+  left:0;
+  z-index:1;
+}
+.lab-sticky{
+  position:sticky;
+  left:0;
+  z-index:2;
+  text-align:left;
+}
+.patient-banner{padding:8px 16px}
+.banner-item{min-height:50px;padding:7px 10px}
+.vital-strip{padding:5px 10px}
+.photo{background:#e8eef3}

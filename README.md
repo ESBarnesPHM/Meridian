@@ -1,4 +1,4 @@
-# Meridian EMR v4.2
+# Meridian EMR v4.3
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -10,8 +10,8 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - patient_photo.png
 
 Changes:
-- Results Review now uses normal example values for a full CBC, differential, and BMP instead of “within normal limits.”
-- Replaced patient image with a clean simulated portrait so it no longer appears screenshot-cropped.
-- Removed patient condition labels from the patient banner and main display in every phase.
-- Phase 2 orders no longer include MRI, orthopedic consult, or repeat labs before learners decide they are needed.
-- Hospital room updated to 5D-4 for inpatient phases.
+- Results Review fixed to display one analyte per row with time columns, closer to Epic-style lab review.
+- Current chart review banner now emphasizes hospital day and time instead of room number.
+- Removed the “Hospital Course” label above the phase title.
+- Patient photo replaced with a cleaner neutral simulated portrait.
+- Patient banner spacing slightly tightened.

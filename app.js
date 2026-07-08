@@ -13,7 +13,7 @@ function toggleFaculty(){facultyOpen=!facultyOpen;const panel=$("facultyPanel");
 function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
 function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : renderChart(); const panel=$("facultyPanel"); if(panel && facultyOpen) panel.classList.add("open");}
 function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="brand-login"><div class="logo">M</div><div><h1>Meridian EMR</h1><div>${esc(CASE.hospital)}</div></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="muted">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div><strong>${esc(CASE.patient.name)}</strong><div class="muted">ED → Hospital Medicine · New admission</div></div><span class="pill yellow">Watcher</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div><strong>${esc(p.name)}</strong><div class="muted">${esc(p.detail)}</div></div><span class="pill">Future case</span></div>`).join("")}</div></div></section></main>`}
-function renderChart(){const p=phase();return `<div class="app"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()"><div class="brand-mark">M</div><div class="brand-title">Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-right"><div class="phase-buttons">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="faculty-btn" onclick="toggleFaculty()">Faculty</button></div></header>${renderTabs(p)}${renderBanner(p)}<div class="layout"><aside>${renderChartReview(p)}${renderTimelineCard(p)}</aside><main><div class="main-title"><div><p class="muted" style="margin:0 0 2px">Hospital Course</p><h2>${esc(p.title)}</h2><p>${esc(p.time)} · ${esc(p.location)}</p></div></div><div class="prompt"><strong>Current chart review:</strong> ${esc(p.time)} · ${esc(p.location)}</div><div class="card"><div class="card-head"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR v3.0 · Educational Use Only</footer></div>`}
+function renderChart(){const p=phase();return `<div class="app"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()"><div class="brand-mark">M</div><div class="brand-title">Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-right"><div class="phase-buttons">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="faculty-btn" onclick="toggleFaculty()">Faculty</button></div></header>${renderTabs(p)}${renderBanner(p)}<div class="layout"><aside>${renderChartReview(p)}${renderTimelineCard(p)}</aside><main><div class="main-title"><div><h2>${esc(p.title)}</h2><p>${esc(p.time)}</p></div></div><div class="prompt"><strong>Current time:</strong> Hospital Day ${esc(p.hospitalDay || "")} • ${esc(p.time)}</div><div class="card"><div class="card-head"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR v3.0 · Educational Use Only</footer></div>`}
 function renderTabs(p){return `<nav class="folder-tabs">${["summary","notes","results","flowsheet","mar","orders","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
 function renderBanner(p){return `<section class="patient-banner"><div class="patient-left">${patientPhoto()}<div class="patient-name"><h2>${esc(CASE.patient.name)}</h2><div class="demo-grid"><b>${esc(CASE.patient.age)}</b><span>${esc(CASE.patient.sex)}</span><b>MRN</b><span>${esc(CASE.patient.mrn)}</span><b>DOB</b><span>${esc(CASE.patient.dob)}</span><b>Room</b><span>${esc(p.room)}</span><b>Attending</b><span>${esc(CASE.patient.attending)}</span><b>PCP</b><span>${esc(CASE.patient.pcp)}</span></div></div></div><div class="banner-card"><div class="banner-top">${bannerItem("Location",p.location)}${bannerItem("Weight",`${esc(p.weight)}<br><small>${esc(p.weightDetail||"")}</small>`)}${bannerItem("Allergies",CASE.patient.allergy)}${bannerItem("Isolation","None")}${bannerItem("Code Status",CASE.patient.code)}${bannerItem("Primary Team",p.team)}${bannerItem("Diet",CASE.patient.diet)}${bannerItem("Access",CASE.patient.access)}</div><div class="vital-strip">${Object.entries(p.vitals).map(([k,v])=>`<div class="vital"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div></div></section>`}
 function bannerItem(k,v){return `<div class="banner-item"><span>${esc(k)}</span><strong>${v}</strong></div>`}
@@ -120,12 +120,13 @@ function renderOrders(p,limit){
 }
 function renderMAR(p){return `<div class="mar-grid"><table class="mar-table"><thead><tr><th>Time</th><th>Medication</th><th>Dose</th><th>Status</th><th>Comment</th></tr></thead><tbody>${p.mar.map(r=>`<tr><td class="med-time">${esc(r[0])}</td><td class="med-name">${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join("")}</tbody></table></div>`}
 
+
 function renderResults(p){
   const timeCols = getResultTimes(p);
   const groups = p.results || {};
   return `<div class="lab-review">
-    <div class="lab-grid" style="--cols:${timeCols.length + 1}">
-      <div class="lab-cell lab-sticky lab-head">Time</div>
+    <div class="lab-grid" style="--timecols:${timeCols.length}">
+      <div class="lab-cell lab-sticky lab-head">Test</div>
       ${timeCols.map(t=>`<div class="lab-cell lab-head">${esc(t)}</div>`).join("")}
       ${Object.entries(groups).map(([group,rows])=>renderLabGroup(group,rows,timeCols,p)).join("")}
     </div>
@@ -139,18 +140,18 @@ function getResultTimes(p){
   return ["07/03 16:00","07/04 07:45","07/04 21:35","07/05 02:00"];
 }
 function renderLabGroup(group,rows,timeCols,p){
-  return `<div class="lab-section">${esc(group)}</div>${rows.map(r=>{
+  return `<div class="lab-section">▾ ${esc(group)}</div>${rows.map(r=>{
     return `<div class="lab-cell lab-row-name">${esc(r[0])}</div>${timeCols.map((t,i)=>`<div class="lab-cell ${flagClass(r[2]||"")}">${labValueForTime(p,group,r,t,i)}</div>`).join("")}`
   }).join("")}`;
 }
 function labValueForTime(p,group,row,t,i){
   const name = row[0];
   const val = row[1];
-  if(p.id==="2" && t==="07/04 07:45"){
+  if(p.id==="2" && t==="07/04 07:45" && group!=="Microbiology"){
     return `<span class="muted">—</span>`;
   }
-  if(String(val).toLowerCase().includes("pending") || String(val).toLowerCase().includes("no growth")){
-    return esc(val);
+  if((p.id==="1") && i>0){
+    return `<span class="muted">—</span>`;
   }
   return esc(val);
 }
