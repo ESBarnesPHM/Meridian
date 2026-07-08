@@ -40,16 +40,17 @@ const CASE = {
       "location": "ED \u2192 PHM",
       "room": "ED-12",
       "team": "Hospital Medicine",
-      "severity": "Watcher",
+      "severity": "Stable",
       "weight": "31 kg",
       "weightDetail": "68 lb 5 oz",
       "hospitalDay": "ED",
-      "status": "same",
+      "status": "better",
       "learnerPrompt": "You are reviewing a new admission from the Emergency Department.",
       "vitals": {
         "Temp": "38.1 \u00b0C",
         "HR": "116",
         "RR": "24",
+        "BP": "92/56",
         "SpO\u2082": "99% RA",
         "Pain": "5/10",
         "Updated": "07/03 17:20"
@@ -295,6 +296,13 @@ const CASE = {
         ],
         "rows": [
           [
+            "Temperature",
+            "39.3",
+            "39.1",
+            "38.4",
+            "38.1"
+          ],
+          [
             "Heart Rate",
             "156",
             "150",
@@ -309,11 +317,11 @@ const CASE = {
             "24"
           ],
           [
-            "Temperature",
-            "39.3",
-            "39.1",
-            "38.4",
-            "38.1"
+            "Blood Pressure",
+            "96/58",
+            "94/56",
+            "92/56",
+            "92/56"
           ],
           [
             "SpO\u2082",
@@ -405,6 +413,7 @@ const CASE = {
         "Temp": "38.5 \u00b0C",
         "HR": "136",
         "RR": "26",
+        "BP": "90/54",
         "SpO\u2082": "99% RA",
         "Pain": "5/10",
         "Updated": "07/04 07:45"
@@ -447,7 +456,7 @@ const CASE = {
         "meds": [
           "Ibuprofen 130 mg PO scheduled",
           "Acetaminophen 195 mg PO PRN",
-          "Maintenance IV fluids"
+          "D5NS + 20 mEq KCl/L at 45 mL/hr"
         ]
       },
       "timeline": [
@@ -518,7 +527,7 @@ const CASE = {
           "Resident Team",
           "07/03 18:10",
           "Admit for observation, serial exams, scheduled NSAIDs.",
-          "Chief Complaint\nFever and refusal to bear weight.\n\nHPI\nMason is a previously healthy 3-year-old male admitted from the ED for fever and left hip pain with refusal to bear weight. No known trauma. URI symptoms last week. Initial ED evaluation included labs, blood culture, and hip radiograph. X-ray was reassuring. He improved clinically after antipyretic with normalization of heart rate and stable perfusion.\n\nAssessment\nMost likely transient synovitis, though early osteomyelitis or septic arthritis cannot be fully excluded at this time.\n\nPlan\nAdmit for observation. Scheduled ibuprofen. Acetaminophen PRN. Serial examinations. Follow blood culture. Defer empiric antibiotics while stable and diagnosis remains uncertain. Reassess if symptoms persist or worsen.",
+          "Chief Complaint\nFever and refusal to bear weight.\n\nHPI\nMason is a previously healthy 3-year-old male admitted from the ED for fever and left hip pain with refusal to bear weight. Symptoms began yesterday with fever and increasing discomfort with movement of the left leg. No known trauma. He had URI symptoms last week. In the ED, initial evaluation included CBC, CRP, blood culture, and left hip radiograph. X-ray was reassuring. CRP was normal. He improved clinically after antipyretic with normalization of heart rate and stable perfusion.\n\nPMHx\nBirth history: Full term, no NICU stay.\nMedical history: No chronic medical conditions.\nSurgical history: None.\nDevelopment: Age-appropriate per mother.\nAllergies: NKDA.\nVaccinations: Up to date.\n\nFamily History\nNo family history of rheumatologic disease, recurrent skin/soft tissue infections, MRSA, immunodeficiency, or bleeding disorders.\n\nSocial History\nLives with mother, father, and older sibling. Attends daycare. No recent travel. No known sick contacts other than recent URI symptoms in household.\n\nPhysical Exam\nGeneral: Tired but non-toxic appearing child sitting with mother, cries with movement of left leg but calms when resting.\nHEENT: Moist mucous membranes.\nCV: Regular rate and rhythm, no murmur. Capillary refill less than 2 seconds.\nResp: Clear to auscultation bilaterally, no increased work of breathing.\nAbdomen: Soft, non-tender, non-distended.\nMSK: Left hip held slightly flexed. Cries with passive range of motion, especially internal rotation. No overlying erythema or swelling. Refuses to bear weight.\nNeuro: Alert, interactive with mother, moves all extremities spontaneously except limited left leg movement due to pain.\nSkin: No rash, bruising, or focal skin lesion.\n\nObjective Data\nCBC: WBC 11.8 K/uL, Hgb 11.7 g/dL, Platelets 348 K/uL.\nCRP: 3.2 mg/L.\nBMP: Within normal limits.\nBlood culture: Collected and pending.\nLeft hip radiograph: No acute fracture or dislocation. No osseous abnormality.\n\nAssessment\n3-year-old male with fever, left hip pain, and refusal to bear weight. Most likely transient synovitis given recent viral symptoms, stable appearance, normal CRP, and reassuring radiograph. Early osteomyelitis or septic arthritis cannot be fully excluded at this time, so will admit for observation and serial examinations.\n\nPlan\n1. Left hip pain/refusal to bear weight\n- Scheduled ibuprofen.\n- Acetaminophen PRN.\n- Serial musculoskeletal examinations.\n- Reassess ability to bear weight after pain control.\n- Consider repeat labs, MRI, and orthopedic consultation if symptoms persist or worsen.\n\n2. Fever\n- Follow fever curve.\n- Follow blood culture.\n- Defer empiric antibiotics while stable and diagnosis remains uncertain.\n\n3. Fluids/nutrition\n- Regular diet as tolerated.\n- Maintenance IV fluids if oral intake remains poor.\n\n4. Medication safety\n- ED weight discrepancy identified during admission reconciliation. Weight verified with parent report and prior growth history; corrected to 13.2 kg. Weight-based medication dosing updated.",
           "Physician"
         ],
         [
@@ -560,7 +569,7 @@ const CASE = {
           "Medication"
         ],
         [
-          "D5NS maintenance IV fluids",
+          "D5NS + 20 mEq KCl/L at 45 mL/hr",
           "Active",
           "Active",
           "Medication"
@@ -717,6 +726,14 @@ const CASE = {
         ],
         "rows": [
           [
+            "Temperature",
+            "38.0",
+            "38.6",
+            "39.1",
+            "38.5",
+            "38.5"
+          ],
+          [
             "Heart Rate",
             "122",
             "134",
@@ -733,12 +750,12 @@ const CASE = {
             "26"
           ],
           [
-            "Temperature",
-            "38.0",
-            "38.6",
-            "39.1",
-            "38.5",
-            "38.5"
+            "Blood Pressure",
+            "94/56",
+            "92/54",
+            "90/54",
+            "90/54",
+            "88/52"
           ],
           [
             "SpO\u2082",
@@ -785,8 +802,8 @@ const CASE = {
             "<2 sec",
             "<2 sec",
             "<2 sec",
-            "<2 sec",
-            "<2 sec"
+            "2 sec",
+            "3 sec"
           ],
           [
             "Urine output",
@@ -1025,6 +1042,13 @@ const CASE = {
         ],
         "rows": [
           [
+            "Temperature",
+            "39.1",
+            "39.4",
+            "39.2",
+            "39.6"
+          ],
+          [
             "Heart Rate",
             "164",
             "168",
@@ -1037,13 +1061,6 @@ const CASE = {
             "32",
             "34",
             "35"
-          ],
-          [
-            "Temperature",
-            "39.1",
-            "39.4",
-            "39.2",
-            "39.6"
           ],
           [
             "SpO\u2082",
@@ -1313,6 +1330,13 @@ const CASE = {
         ],
         "rows": [
           [
+            "Temperature",
+            "39.2",
+            "39.6",
+            "39.8",
+            "40.0"
+          ],
+          [
             "Heart Rate",
             "168",
             "174",
@@ -1325,13 +1349,6 @@ const CASE = {
             "34",
             "36",
             "38"
-          ],
-          [
-            "Temperature",
-            "39.2",
-            "39.6",
-            "39.8",
-            "40.0"
           ],
           [
             "SpO\u2082",
@@ -1591,6 +1608,13 @@ const CASE = {
         ],
         "rows": [
           [
+            "Temperature",
+            "39.2",
+            "39.6",
+            "39.8",
+            "40.0"
+          ],
+          [
             "Heart Rate",
             "168",
             "174",
@@ -1603,13 +1627,6 @@ const CASE = {
             "34",
             "36",
             "38"
-          ],
-          [
-            "Temperature",
-            "39.2",
-            "39.6",
-            "39.8",
-            "40.0"
           ],
           [
             "SpO\u2082",
@@ -1921,6 +1938,13 @@ const CASE = {
         ],
         "rows": [
           [
+            "Temperature",
+            "39.8",
+            "40.0",
+            "40.2",
+            "40.2"
+          ],
+          [
             "Heart Rate",
             "176",
             "182",
@@ -1940,13 +1964,6 @@ const CASE = {
             "82/46",
             "72/38",
             "74/40"
-          ],
-          [
-            "Temperature",
-            "39.8",
-            "40.0",
-            "40.2",
-            "40.2"
           ],
           [
             "SpO\u2082",

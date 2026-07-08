@@ -1,4 +1,4 @@
-# Meridian EMR v4.0
+# Meridian EMR v4.1
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -9,19 +9,11 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - README.md
 - patient_photo.png
 
-Major changes:
-- Complete Phase 2 clinical reassessment content.
-- Phase 2 reflects a resident prerounding workflow:
-  - corrected weight carried forward
-  - scheduled NSAIDs for presumed transient synovitis
-  - PRN acetaminophen for fever
-  - no repeat CRP/CBC yet
-  - no MRI yet
-  - no orthopedic consult yet
-  - blood culture remains no growth to date
-  - most recent note is the night nursing shift summary
-- Added day-shift inpatient nursing summary at 18:45.
-- Added attending addendum to admission H&P at 22:15.
-- Updated Phase 2 flowsheet with fever-associated tachycardia, worsening pain, poor intake, and persistent non-weight-bearing without shock physiology.
-- Phase 1 CRP changed to normal and ESR removed.
-- Timeline now tells the overnight hospitalization story.
+Changes:
+- Results Review redesigned as an Epic-like lab grid with times across the top and grouped sections.
+- Flowsheet vital signs reordered: Temperature, HR, RR, BP, SpO₂.
+- Patient photo recropped to remove screenshot-like edges.
+- Phase 1 no longer designates Mason as a Watcher; he appears stable after antipyretic.
+- Phase 2 Admission H&P expanded with CC, HPI, PMHx, surgical history, development, allergies, vaccines, family/social history, physical exam, objective data, assessment, and plan.
+- Phase 2 capillary refill at current chart review now lengthens to 3 seconds.
+- Phase 2 IV fluids updated to D5NS + 20 mEq KCl/L at 45 mL/hr.

@@ -55,3 +55,16 @@
 @media(max-width:900px){.notes-split{grid-template-columns:1fr}.note-reader{min-height:auto}}
 
 .timeline-item{grid-template-columns:82px 1fr}.timeline-item time{font-size:12px}
+
+
+/* v4.1 Results Review: Epic-like lab grid */
+.lab-review{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#fff}
+.lab-grid{display:grid;grid-template-columns:210px repeat(var(--cols), minmax(130px, 1fr));min-width:880px;font-size:13px}
+.lab-cell{padding:7px 9px;border-right:1px solid #dbe5ee;border-bottom:1px solid #e8eef3;min-height:30px;background:#fff}
+.lab-head{background:#eef8f5;font-weight:900;color:#0b3157;text-align:center}
+.lab-sticky{position:sticky;left:0;z-index:2;text-align:left}
+.lab-section{grid-column:1 / -1;background:#dff3f0;color:#005f73;font-weight:950;padding:7px 9px;border-bottom:1px solid #c5ded9;text-transform:uppercase}
+.lab-row-name{background:#eef4f8;color:#0057a3;font-weight:800;position:sticky;left:0;z-index:1}
+.lab-grid .flag-high,.lab-grid .flag-low,.lab-grid .flag-critical{color:#d92d20;font-weight:950}
+.photo img{object-position:center center}
+.pill.green{background:#eafaf2;color:#067647}

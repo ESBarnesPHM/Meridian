@@ -119,7 +119,41 @@ function renderOrders(p,limit){
   }).join("")}</div>`
 }
 function renderMAR(p){return `<div class="mar-grid"><table class="mar-table"><thead><tr><th>Time</th><th>Medication</th><th>Dose</th><th>Status</th><th>Comment</th></tr></thead><tbody>${p.mar.map(r=>`<tr><td class="med-time">${esc(r[0])}</td><td class="med-name">${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join("")}</tbody></table></div>`}
-function renderResults(p){let micro = ""; if(p.results && p.results.Microbiology){let m=p.results.Microbiology[0];let crit=String(m[2]).toLowerCase().includes("critical"); micro=`<div class="micro-status ${crit?'critical':''}">Microbiology: ${esc(m[0])} — ${esc(m[1])}</div>`}return `${micro}<div class="results-grid">${Object.entries(p.results||{}).map(([group,rows])=>`<div class="card"><div class="card-head"><h3>${esc(group)}</h3></div><div class="card-body">${table(["Test","Result","Flag"],rows)}</div></div>`).join("")}</div>${renderResultTrends(p)}`}
+
+function renderResults(p){
+  const timeCols = getResultTimes(p);
+  const groups = p.results || {};
+  return `<div class="lab-review">
+    <div class="lab-grid" style="--cols:${timeCols.length + 1}">
+      <div class="lab-cell lab-sticky lab-head">Time</div>
+      ${timeCols.map(t=>`<div class="lab-cell lab-head">${esc(t)}</div>`).join("")}
+      ${Object.entries(groups).map(([group,rows])=>renderLabGroup(group,rows,timeCols,p)).join("")}
+    </div>
+  </div>`;
+}
+function getResultTimes(p){
+  if(p.id==="1") return ["07/03 16:00"];
+  if(p.id==="2") return ["07/03 16:00","07/04 07:45"];
+  if(p.id==="3") return ["07/03 16:00","07/04 07:45","07/04 14:20"];
+  if(p.id==="4a" || p.id==="4b") return ["07/03 16:00","07/04 07:45","07/04 21:35"];
+  return ["07/03 16:00","07/04 07:45","07/04 21:35","07/05 02:00"];
+}
+function renderLabGroup(group,rows,timeCols,p){
+  return `<div class="lab-section">${esc(group)}</div>${rows.map(r=>{
+    return `<div class="lab-cell lab-row-name">${esc(r[0])}</div>${timeCols.map((t,i)=>`<div class="lab-cell ${flagClass(r[2]||"")}">${labValueForTime(p,group,r,t,i)}</div>`).join("")}`
+  }).join("")}`;
+}
+function labValueForTime(p,group,row,t,i){
+  const name = row[0];
+  const val = row[1];
+  if(p.id==="2" && t==="07/04 07:45" && (name==="CRP" || name==="WBC" || name==="BMP")){
+    return `<span class="muted">—</span>`;
+  }
+  if(String(val).toLowerCase().includes("pending") || String(val).toLowerCase().includes("no growth")){
+    return esc(val);
+  }
+  return esc(val);
+}
 function renderResultTrends(p){if(!p.resultTrends)return"";return `<div class="result-trend"><div class="card-head"><h3>Result Trends</h3></div><div class="card-body">${Object.entries(p.resultTrends).map(([k,vals])=>`<div style="margin-bottom:10px"><strong>${esc(k)}</strong><div class="muted">${vals.map(v=>`${esc(v[0])}: ${esc(v[1])}`).join("  ·  ")}</div></div>`).join("")}</div></div>`}
 function renderImaging(p){return p.imaging.map(i=>`<div class="note-card"><div class="note-summary"><div class="note-icon">▣</div><div><div class="note-title">${esc(i[0])}<span class="note-tag">Radiology</span></div><div class="note-preview">${esc(i[1]).slice(0,140)}</div></div><div class="note-meta">Final</div><div class="note-meta"></div></div><div class="note-detail">${esc(i[1])}</div></div>`).join("")}
 
