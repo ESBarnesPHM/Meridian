@@ -185,3 +185,124 @@
 }
 .flow-grid .abn{background:#fff4ed;color:#9a3412;font-weight:850}
 .flow-grid .crit{background:#fff1f0;color:#b42318;font-weight:950}
+
+
+/* Meridian v5.0 production polish */
+.patient-banner{
+  padding:7px 14px;
+  grid-template-columns:270px 1fr;
+  gap:14px;
+}
+.patient-left{
+  grid-template-columns:78px 1fr;
+  gap:12px;
+}
+.photo{
+  width:78px;
+  height:78px;
+  border-radius:9px;
+}
+.photo img{
+  object-fit:cover;
+  object-position:center center;
+}
+.patient-name h2{
+  font-size:26px;
+  margin:0 0 6px;
+}
+.demo-grid{
+  font-size:12px;
+  gap:3px 7px;
+}
+.banner-item{
+  min-height:46px;
+  padding:6px 9px;
+}
+.banner-item span{
+  font-size:9px;
+}
+.banner-item strong{
+  margin-top:4px;
+}
+.vital-strip{
+  padding:5px 9px;
+}
+.vital span{
+  font-size:11px;
+}
+.vital strong{
+  font-size:13px;
+}
+.main-title,.prompt{
+  display:none !important;
+}
+
+/* More chart real estate now that duplicate chart review nav is removed */
+.layout{
+  grid-template-columns:275px minmax(0,1fr) 350px;
+}
+aside > .card:empty{
+  display:none;
+}
+
+/* Top tabs: slightly tighter */
+.folder-tabs button{
+  min-width:auto;
+  padding-left:16px;
+  padding-right:16px;
+}
+
+/* Results Review: calmer Epic-like grid */
+.lab-review{
+  border:1px solid #c7d6e2;
+  border-radius:10px;
+}
+.lab-grid{
+  grid-template-columns:230px repeat(var(--timecols), minmax(180px, 1fr));
+  min-width:780px;
+}
+.lab-cell{
+  padding:6px 10px;
+  min-height:28px;
+  border-right:1px solid #d9e3eb;
+  border-bottom:1px solid #edf2f6;
+}
+.lab-head{
+  background:#e7f2f0;
+  color:#0b3157;
+}
+.lab-section{
+  background:#d9efec;
+  color:#005f73;
+  border-top:1px solid #bad7d2;
+  border-bottom:1px solid #bad7d2;
+}
+.lab-row-name{
+  background:#edf4f8;
+  color:#0057a3;
+}
+
+/* Flowsheet section colors closer to clinical EMR */
+.flow-section:nth-of-type(odd){
+  background:#d2eaf0;
+}
+.flow-section{
+  background:#d2eaf0;
+}
+.flow-time,.flow-corner{
+  background:#eef8f6;
+}
+.flow-row-name{
+  background:#eaf2f8;
+}
+.flow-cell{
+  min-height:25px;
+}
+
+/* Keep right rail tidy */
+.rightcol .card-body{
+  padding:12px;
+}
+.order-card{
+  padding:10px;
+}
