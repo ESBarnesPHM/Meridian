@@ -1,4 +1,4 @@
-# Meridian EMR v4.3
+# Meridian EMR v4.4
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -10,8 +10,10 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - patient_photo.png
 
 Changes:
-- Results Review fixed to display one analyte per row with time columns, closer to Epic-style lab review.
-- Current chart review banner now emphasizes hospital day and time instead of room number.
-- Removed the “Hospital Course” label above the phase title.
-- Patient photo replaced with a cleaner neutral simulated portrait.
-- Patient banner spacing slightly tightened.
+- Removed visible phase titles such as “Admission reconciliation” and “Clinical reassessment.”
+- Removed the redundant current-time banner from the main content area.
+- Flowsheets redesigned to look more like an Epic-style flowsheet:
+  - time columns across the top
+  - grouped sections such as Vitals, Pain, Activity/Neuro, Meals/Snacks, Intake, Output
+  - row labels fixed on the left
+- Replaced patient photo with a neutral EMR-style placeholder to remove screenshot/crop artifacts.

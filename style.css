@@ -123,3 +123,65 @@
 .banner-item{min-height:50px;padding:7px 10px}
 .vital-strip{padding:5px 10px}
 .photo{background:#e8eef3}
+
+
+/* v4.4 remove phase-title chrome */
+.main-title{display:none}
+.prompt{display:none}
+
+/* v4.4 Epic-like flowsheet */
+.flow-epic{
+  overflow:auto;
+  border:1px solid #b7cbd9;
+  border-radius:8px;
+  background:#fff;
+}
+.flow-grid{
+  display:grid;
+  grid-template-columns:220px repeat(calc(var(--flowcols) - 1), minmax(120px, 1fr));
+  min-width:850px;
+  font-size:13px;
+}
+.flow-cell{
+  min-height:26px;
+  padding:5px 8px;
+  border-right:1px solid #ccd8e3;
+  border-bottom:1px solid #e5edf3;
+  background:#fff;
+  text-align:center;
+}
+.flow-corner{
+  position:sticky;
+  left:0;
+  z-index:3;
+  background:#f1f8f6;
+  text-align:right;
+  font-weight:900;
+  color:#001f3f;
+}
+.flow-time{
+  background:#e5f3ef;
+  color:#001f3f;
+  font-weight:900;
+  text-align:center;
+}
+.flow-section{
+  grid-column:1 / -1;
+  background:#cde7ec;
+  color:#005f73;
+  font-weight:950;
+  padding:5px 8px;
+  border-bottom:1px solid #a8cbd3;
+  border-top:1px solid #a8cbd3;
+}
+.flow-row-name{
+  position:sticky;
+  left:0;
+  z-index:2;
+  background:#e9f1f7;
+  color:#0057a3;
+  font-weight:800;
+  text-align:left;
+}
+.flow-grid .abn{background:#fff4ed;color:#9a3412;font-weight:850}
+.flow-grid .crit{background:#fff1f0;color:#b42318;font-weight:950}
