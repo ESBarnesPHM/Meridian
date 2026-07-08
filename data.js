@@ -222,30 +222,25 @@ const CASE = {
         "CBC": [
           [
             "WBC",
-            "13.8 K/uL",
-            "High"
+            "11.8 K/uL",
+            ""
           ],
           [
             "Hgb",
-            "11.5 g/dL",
+            "11.7 g/dL",
             ""
           ],
           [
             "Platelets",
-            "355 K/uL",
+            "348 K/uL",
             ""
           ]
         ],
         "Inflammatory markers": [
           [
             "CRP",
-            "8.6 mg/dL",
-            "High"
-          ],
-          [
-            "ESR",
-            "42 mm/hr",
-            "High"
+            "3.2 mg/L",
+            "Normal"
           ]
         ],
         "Chemistry": [
@@ -381,19 +376,13 @@ const CASE = {
         "CRP": [
           [
             "07/03 16:00",
-            8.6
+            3.2
           ]
         ],
         "WBC": [
           [
             "07/03 16:00",
-            13.8
-          ]
-        ],
-        "ESR": [
-          [
-            "07/03 16:00",
-            42
+            11.8
           ]
         ]
       }
@@ -402,183 +391,284 @@ const CASE = {
       "id": "2",
       "label": "Phase 2",
       "title": "Clinical reassessment",
-      "time": "07/04/2026 08:30",
+      "time": "07/04/2026 07:45",
       "location": "6A-12",
       "room": "6A-12",
       "team": "Hospital Medicine",
-      "severity": "Watcher",
-      "weight": "13 kg",
-      "weightDetail": "28 lb 10 oz",
+      "severity": "Stable / needs reassessment",
+      "weight": "13.2 kg",
+      "weightDetail": "29 lb 2 oz",
       "hospitalDay": "1",
-      "status": "worse",
-      "learnerPrompt": "You are the day hospitalist after overnight observation. Reassess whether the admission diagnosis still fits the patient.",
+      "status": "same",
+      "learnerPrompt": "You are prerounding on Mason the morning after admission.",
       "vitals": {
-        "Temp": "39.4 \u00b0C",
-        "HR": "138",
-        "RR": "30",
-        "SpO\u2082": "98% RA",
-        "Pain": "9/10",
-        "Updated": "07/04 08:00"
+        "Temp": "38.5 \u00b0C",
+        "HR": "136",
+        "RR": "26",
+        "SpO\u2082": "99% RA",
+        "Pain": "5/10",
+        "Updated": "07/04 07:45"
       },
       "summary": {
         "assessment": [
-          "Persistent fever and refusal to bear weight after observation.",
-          "The clinical course is evolving; transient synovitis is less convincing this morning."
+          "Admitted overnight for observation with presumed transient synovitis vs early osteoarticular infection.",
+          "Weight discrepancy from ED corrected prior to floor medication dosing.",
+          "Despite scheduled NSAIDs, Mason continues to refuse to bear weight and is less interactive than expected."
         ],
         "problems": [
           "Fever",
           "Left hip pain",
           "Refusal to bear weight",
-          "Rising inflammatory markers"
+          "Poor oral intake"
         ],
         "events": [
-          "Continued fever overnight",
-          "Worsening pain with movement",
-          "Parent reports he is not acting like himself",
-          "CRP increased from 8.6 to 16.4"
+          "Transferred from ED to inpatient unit",
+          "Incorrect ED weight corrected to 13.2 kg",
+          "Received scheduled ibuprofen overnight",
+          "Received PRN acetaminophen for fever",
+          "Night nurse documents persistent pain and limited movement"
         ],
         "plan": [
-          "Repeat focused history and physical exam",
-          "Broaden differential to osteomyelitis/septic arthritis",
-          "Order MRI left hip/femur",
-          "Consult orthopedics",
-          "Continue to defer antibiotics until cultures/imaging unless unstable"
+          "Continue observation pending morning reassessment",
+          "Perform focused bedside exam",
+          "Reconsider differential if not improving as expected",
+          "Consider repeat inflammatory markers and imaging after assessment"
         ],
         "pending": [
-          "Blood culture preliminary",
-          "MRI decision",
-          "Orthopedic surgery input"
+          "Blood culture: no growth to date",
+          "Morning physician bedside reassessment"
         ],
         "todo": [
-          "See the patient at bedside",
-          "Order MRI",
-          "Consult orthopedics",
-          "Update family"
+          "Review overnight nursing documentation",
+          "Review MAR for response to scheduled NSAIDs",
+          "Assess pain, mobility, hydration, and parent concern",
+          "Decide whether additional workup is needed"
         ],
         "meds": [
-          "Ibuprofen/acetaminophen PRN",
-          "No empiric antibiotics started yet"
+          "Ibuprofen 130 mg PO scheduled",
+          "Acetaminophen 195 mg PO PRN",
+          "Maintenance IV fluids"
         ]
       },
       "timeline": [
         [
-          "20:00",
-          "Admitted to floor"
+          "07/03 14:38",
+          "ED triage: fever, left hip pain, refusal to walk"
         ],
         [
-          "23:30",
-          "Temp 39.5, HR 164"
+          "07/03 14:52",
+          "Medication administered: ibuprofen 310 mg PO"
         ],
         [
-          "04:15",
-          "Worse pain with hip movement"
+          "07/03 16:18",
+          "Blood culture collected"
         ],
         [
-          "07:45",
-          "CRP resulted higher"
+          "07/03 17:01",
+          "Admitted to Hospital Medicine for observation"
         ],
         [
-          "08:10",
-          "Parent reports child is worse"
+          "07/03 18:45",
+          "Day RN shift summary documented"
+        ],
+        [
+          "07/03 22:15",
+          "Attending addendum to Admission H&P"
+        ],
+        [
+          "07/04 02:10",
+          "PRN acetaminophen given for fever"
+        ],
+        [
+          "07/04 06:48",
+          "Night RN shift summary documented"
+        ],
+        [
+          "07/04 07:45",
+          "Current chart review"
         ]
       ],
       "notes": [
         [
-          "Overnight PHM Update",
-          "M. Lee, MD",
-          "07/04 04:45",
-          "Continues febrile. Refusing to stand.",
-          "Admitted for observation with suspected transient synovitis vs early infection. Continues febrile overnight and refuses to stand. Blood culture pending. Pain with movement persists despite antipyretics.",
-          "Physician"
-        ],
-        [
-          "Nursing Note",
-          "Ashley RN",
-          "07/04 07:55",
-          "Cries with any movement of left leg.",
-          "Patient lies still in bed and cries with any movement of left leg. Refuses to sit upright. Did not want breakfast. Mother worried he is sleepier and says, 'He is not acting like himself.'",
+          "Night Shift Nursing Summary",
+          "Night RN",
+          "07/04 06:48",
+          "Febrile overnight with persistent pain and limited movement.",
+          "Shift Summary\n\nFebrile overnight to 39.1\u00b0C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
           "Nursing"
         ],
         [
-          "Parent/Nursing Update",
+          "Attending Addendum to Admission H&P",
+          "Barnes, MD",
+          "07/03 22:15",
+          "Observation admission with scheduled NSAIDs and serial exams remains appropriate.",
+          "I personally evaluated Mason and discussed the case with the resident team. He presents with fever, refusal to bear weight, and a reassuring initial evaluation. Transient synovitis remains the leading diagnosis, though early osteoarticular infection cannot be excluded.\n\nGiven his persistent symptoms and inability to ambulate, observation admission with scheduled NSAIDs and serial examinations is appropriate. Blood culture has been obtained. Will continue to monitor his clinical course and reassess if symptoms fail to improve or additional findings emerge.\n\nThe ED weight discrepancy was identified during admission reconciliation. Weight verified with parent report and prior growth history; corrected to 13.2 kg. Weight-based medication dosing updated.",
+          "Physician"
+        ],
+        [
+          "Pediatric Inpatient Nursing Shift Summary",
+          "Day RN",
+          "07/03 18:45",
+          "Admitted from ED. Comfortable at rest but still refuses to bear weight.",
+          "Shift Summary\n\nReceived Mason from the Emergency Department this afternoon. Mother remains at bedside and actively involved in care. Admission assessment completed.\n\nFebrile on arrival to the floor but more comfortable after scheduled ibuprofen. Continues to refuse to bear weight on the left leg and cries with attempts to stand. Pain appears well controlled while resting but increases with movement.\n\nTaking small amounts of fluids and ate a few bites of applesauce with encouragement. Voided once since arrival to the floor. Peripheral IV remains patent and infusing maintenance IV fluids without difficulty.\n\nMother updated on the plan for overnight observation, scheduled NSAIDs, and serial examinations. No additional concerns at end of shift.",
+          "Nursing"
+        ],
+        [
+          "Admission H&P",
+          "Resident Team",
+          "07/03 18:10",
+          "Admit for observation, serial exams, scheduled NSAIDs.",
+          "Chief Complaint\nFever and refusal to bear weight.\n\nHPI\nMason is a previously healthy 3-year-old male admitted from the ED for fever and left hip pain with refusal to bear weight. No known trauma. URI symptoms last week. Initial ED evaluation included labs, blood culture, and hip radiograph. X-ray was reassuring. He improved clinically after antipyretic with normalization of heart rate and stable perfusion.\n\nAssessment\nMost likely transient synovitis, though early osteomyelitis or septic arthritis cannot be fully excluded at this time.\n\nPlan\nAdmit for observation. Scheduled ibuprofen. Acetaminophen PRN. Serial examinations. Follow blood culture. Defer empiric antibiotics while stable and diagnosis remains uncertain. Reassess if symptoms persist or worsen.",
+          "Physician"
+        ],
+        [
+          "ED Provider Note",
+          "Patel, MD",
+          "07/03 16:45",
+          "Fever and left hip pain since yesterday. Refusing to bear weight.",
+          "Previously healthy 3-year-old male with one day of fever and left hip/leg pain with refusal to bear weight. No known trauma. Had URI symptoms last week.\n\nExam: uncomfortable with movement, cries with passive left hip range of motion, no swelling or erythema. Initially tachycardic while febrile with improvement after antipyretic. Capillary refill less than 2 seconds. Interactive with mother between exams.\n\nAssessment: Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture. Given reassuring perfusion and absence of septic physiology, plan to admit for observation and serial examinations.\n\nPlan: blood culture obtained, hip radiograph, pain control, IV fluids if poor intake. Defer empiric antibiotics while clinically stable to preserve culture yield unless patient worsens or additional data suggests bacterial infection. Consider MRI if worsening pain, persistent fever, rising inflammatory markers, or inability to bear weight persists.",
+          "Physician"
+        ],
+        [
+          "ED Nursing Note",
           "Ashley RN",
-          "07/04 08:12",
-          "Mother reports he is not acting like himself.",
-          "Mother states he is usually active and playful but has been lying still and refusing breakfast. Patient whimpers even when left leg is not being touched. RN concerned this is not typical transient synovitis course.",
+          "07/03 16:18",
+          "PIV placed. Labs and blood culture drawn.",
+          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week. PIV placed, labs and blood culture drawn. Ibuprofen 310 mg PO administered per order.",
+          "Nursing"
+        ],
+        [
+          "Triage Note",
+          "ED Triage RN",
+          "07/03 14:38",
+          "Arrived via private car. Fever today. Left hip pain. Won't walk.",
+          "Chief complaint: Fever and will not walk. Mother reports no trauma. Triage weight documented: 31 kg.",
           "Nursing"
         ]
       ],
       "orders": [
         [
-          "Acetaminophen 195 mg PO q6h PRN",
+          "Ibuprofen 130 mg PO q6h scheduled",
           "Active",
           "Active",
           "Medication"
         ],
         [
-          "Ibuprofen 130 mg PO q6h PRN",
+          "Acetaminophen 195 mg PO q6h PRN fever/pain",
           "Active",
           "Active",
           "Medication"
         ],
         [
-          "Repeat CRP",
-          "Completed",
-          "Completed",
+          "D5NS maintenance IV fluids",
+          "Active",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Blood Culture (Peripheral)",
+          "Collected 07/03 16:18",
+          "In process",
           "Lab"
+        ],
+        [
+          "Vital signs q4h",
+          "Active",
+          "Active",
+          "Monitoring"
+        ],
+        [
+          "Serial musculoskeletal examinations",
+          "Active",
+          "Active",
+          "Monitoring"
         ],
         [
           "MRI left hip/femur",
           "Not ordered",
-          "Missing",
+          "Not ordered",
           "Imaging"
         ],
         [
           "Orthopedic surgery consult",
           "Not ordered",
-          "Missing",
+          "Not ordered",
           "Consult"
+        ],
+        [
+          "Repeat CRP/CBC",
+          "Not ordered",
+          "Not ordered",
+          "Lab"
         ]
       ],
       "mar": [
         [
-          "06:05",
-          "Acetaminophen",
-          "195 mg PO",
-          "Given",
-          "Temp 39.1 \u2192 38.6"
-        ],
-        [
-          "07:30",
+          "18:30",
           "Ibuprofen",
           "130 mg PO",
           "Given",
-          "Weight corrected to 13 kg"
+          "Scheduled NSAID after corrected weight"
+        ],
+        [
+          "00:30",
+          "Ibuprofen",
+          "130 mg PO",
+          "Given",
+          "Scheduled"
+        ],
+        [
+          "02:10",
+          "Acetaminophen",
+          "195 mg PO",
+          "Given",
+          "PRN for fever 39.1\u00b0C"
+        ],
+        [
+          "06:30",
+          "Ibuprofen",
+          "130 mg PO",
+          "Given",
+          "Scheduled"
+        ],
+        [
+          "08:00",
+          "Acetaminophen",
+          "195 mg PO PRN",
+          "Available",
+          "Not yet given this morning"
         ]
       ],
       "results": {
         "CBC": [
           [
             "WBC",
-            "15.6 K/uL",
-            "High"
+            "11.8 K/uL",
+            ""
+          ],
+          [
+            "Hgb",
+            "11.7 g/dL",
+            ""
           ],
           [
             "Platelets",
-            "352 K/uL",
+            "348 K/uL",
             ""
           ]
         ],
         "Inflammatory markers": [
           [
             "CRP",
-            "16.4 mg/dL",
-            "High"
-          ],
+            "3.2 mg/L",
+            "Normal"
+          ]
+        ],
+        "Chemistry": [
           [
-            "ESR",
-            "58 mm/hr",
-            "High"
+            "BMP",
+            "Within normal limits",
+            ""
           ]
         ],
         "Microbiology": [
@@ -591,129 +681,150 @@ const CASE = {
       },
       "imaging": [
         [
-          "Prior radiograph",
-          "No osseous abnormality. MRI recommended if concern persists."
+          "Left hip radiograph",
+          "No acute fracture or dislocation. No osseous abnormality. Early osteomyelitis cannot be excluded radiographically."
         ]
       ],
       "growth": [
+        [
+          "18 mo",
+          "11.6 kg"
+        ],
+        [
+          "24 mo",
+          "12.4 kg"
+        ],
+        [
+          "30 mo",
+          "12.9 kg"
+        ],
         [
           "2 weeks ago",
           "13.1 kg"
         ],
         [
           "Today verified",
-          "13.0 kg"
+          "13.2 kg"
         ]
       ],
       "flowsheet": {
         "times": [
-          "20:00",
-          "23:30",
-          "04:15",
-          "08:00"
+          "18:00",
+          "22:00",
+          "02:00",
+          "06:00",
+          "07:45"
         ],
         "rows": [
           [
             "Heart Rate",
-            "118",
-            "132",
+            "122",
+            "134",
+            "149",
             "136",
-            "138"
+            "136"
           ],
           [
             "Respiratory Rate",
             "24",
+            "26",
             "28",
-            "30",
-            "30"
+            "26",
+            "26"
           ],
           [
             "Temperature",
-            "39.3",
-            "39.5",
+            "38.0",
+            "38.6",
             "39.1",
-            "39.4"
+            "38.5",
+            "38.5"
           ],
           [
             "SpO\u2082",
             "99",
-            "98",
-            "98",
-            "97"
+            "99",
+            "99",
+            "99",
+            "99"
           ],
           [
-            "Pain",
-            "7",
-            "8",
-            "9",
-            "9"
+            "FLACC",
+            "3",
+            "4",
+            "6",
+            "5",
+            "5"
+          ],
+          [
+            "PO intake",
+            "Small fluids",
+            "Small snack",
+            "Sips only",
+            "Refused breakfast",
+            "Sips only"
+          ],
+          [
+            "Activity",
+            "Playing quietly",
+            "Resting",
+            "Awake crying",
+            "Lying quietly",
+            "Less interactive"
+          ],
+          [
+            "Weight bearing",
+            "No",
+            "No",
+            "No",
+            "No",
+            "No"
           ],
           [
             "Cap refill",
             "<2 sec",
             "<2 sec",
-            "3 sec",
-            "3 sec"
-          ],
-          [
-            "Mental status",
-            "Alert",
-            "Fussy",
-            "Sleeping",
-            "Sleepier"
+            "<2 sec",
+            "<2 sec",
+            "<2 sec"
           ],
           [
             "Urine output",
             "Adequate",
             "Adequate",
-            "Low",
-            "Low"
+            "Adequate",
+            "Adequate",
+            "Adequate"
           ]
         ]
       },
       "messages": [
         [
           "Ashley RN",
-          "08:05",
-          "I am concerned. He screams when I move his left hip and will not put any weight on the leg.",
+          "06:35",
+          "Good morning. Mason had another fever overnight and still isn't wanting to move his left leg. Mom is hoping someone can come see him soon.",
           "AR"
         ]
       ],
       "facilitator": [
-        "Phase 2 focus: clinical reassessment, not blaming the ED for a missed diagnosis. The patient is declaring himself over time.",
-        "Expected actions: go to bedside, recognize that transient synovitis fits less well, broaden differential, order MRI, consult orthopedics, and communicate with family/nursing."
+        "Phase 2 focus: clinical reassessment during prerounding. The ED/admission plan was reasonable; the patient is now providing new information through his trajectory.",
+        "Learners should notice that the medication safety issue has been corrected and should not remain the center of the case.",
+        "Key evidence lives in nursing documentation, MAR, flowsheet, and parent concern\u2014not in a new diagnostic test.",
+        "Expected actions after chart review and bedside assessment: broaden differential, consider repeat CRP/CBC, order MRI, consult orthopedics, and decide whether antibiotics are indicated based on stability and evolving concern."
       ],
-      "aha": "The clinical course no longer fits transient synovitis.",
-      "authenticQuestion": "Does the diagnosis still fit?",
+      "aha": "Despite an appropriate observation plan and scheduled NSAIDs, Mason is not following the expected course for transient synovitis.",
+      "authenticQuestion": "Is this patient following the expected clinical course?",
       "resultTrends": {
         "CRP": [
           [
             "07/03 16:00",
-            8.6
-          ],
-          [
-            "07/04 07:45",
-            16.4
+            3.2
           ]
         ],
         "WBC": [
           [
             "07/03 16:00",
-            13.8
-          ],
-          [
-            "07/04 07:45",
-            15.6
-          ]
-        ],
-        "ESR": [
-          [
-            "07/03 16:00",
-            42
-          ],
-          [
-            "07/04 07:45",
-            58
+            11.8
           ]
         ]
       }

@@ -53,3 +53,5 @@
 .note-detail.open{display:block;border-bottom:0;min-height:390px;font-size:15px;line-height:1.55}
 .order-type{letter-spacing:.06em}
 @media(max-width:900px){.notes-split{grid-template-columns:1fr}.note-reader{min-height:auto}}
+
+.timeline-item{grid-template-columns:82px 1fr}.timeline-item time{font-size:12px}

@@ -1,4 +1,4 @@
-# Meridian EMR v3.2
+# Meridian EMR v4.0
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -9,17 +9,19 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - README.md
 - patient_photo.png
 
-Changes:
-- Notes are listed reverse chronologically, newest to oldest.
-- Notes activity uses a polished two-pane layout.
-- Selected note has a stronger Epic-style blue highlight.
-- Reading pane displays the selected note title, author, time, and type.
-- Added subtle note-type icons.
-- Improved note body typography and section emphasis.
-- Orders have small category icons for faster scanning.
-- Keeps v3.1 clinical updates:
-  - no learner-facing authentic question
-  - no growth chart warning box
-  - subtle pharmacy message
-  - ibuprofen 310 mg PO in Phase 1
-  - Phase 1 vitals improve after antipyretic
+Major changes:
+- Complete Phase 2 clinical reassessment content.
+- Phase 2 reflects a resident prerounding workflow:
+  - corrected weight carried forward
+  - scheduled NSAIDs for presumed transient synovitis
+  - PRN acetaminophen for fever
+  - no repeat CRP/CBC yet
+  - no MRI yet
+  - no orthopedic consult yet
+  - blood culture remains no growth to date
+  - most recent note is the night nursing shift summary
+- Added day-shift inpatient nursing summary at 18:45.
+- Added attending addendum to admission H&P at 22:15.
+- Updated Phase 2 flowsheet with fever-associated tachycardia, worsening pain, poor intake, and persistent non-weight-bearing without shock physiology.
+- Phase 1 CRP changed to normal and ESR removed.
+- Timeline now tells the overnight hospitalization story.
