@@ -583,6 +583,10 @@ const CASE = {
       },
       "timeline": [
         [
+          "07/03 \u2014 Admission Day",
+          "__divider__"
+        ],
+        [
           "07/03 14:38",
           "ED triage: fever, left hip pain, refusal to walk"
         ],
@@ -605,6 +609,10 @@ const CASE = {
         [
           "07/03 22:15",
           "Attending addendum to Admission H&P"
+        ],
+        [
+          "07/04 \u2014 Hospital Day 1",
+          "__divider__"
         ],
         [
           "07/04 02:10",
@@ -697,10 +705,10 @@ const CASE = {
           "Medication"
         ],
         [
-          "Blood Culture (Peripheral)",
-          "Collected 07/03 16:18",
-          "In process",
-          "Lab"
+          "Regular Pediatric Diet",
+          "Diet effective now",
+          "Active",
+          "Diet"
         ],
         [
           "Vital signs q4h",
@@ -709,10 +717,34 @@ const CASE = {
           "Monitoring"
         ],
         [
+          "Strict Intake & Output",
+          "Every 4 hours",
+          "Active",
+          "Monitoring"
+        ],
+        [
           "Serial musculoskeletal examinations",
           "Active",
           "Active",
           "Monitoring"
+        ],
+        [
+          "Notify physician for worsening pain, persistent fever, inability to bear weight, or concern for clinical deterioration",
+          "Until discontinued",
+          "Active",
+          "Monitoring"
+        ],
+        [
+          "Blood Culture (Peripheral)",
+          "Collected 07/03 16:18",
+          "In process",
+          "Lab"
+        ],
+        [
+          "Left hip radiographs",
+          "Completed 07/03 15:40",
+          "Completed",
+          "Imaging"
         ]
       ],
       "mar": [

@@ -1,4 +1,4 @@
-# Meridian EMR v5.3
+# Meridian EMR v5.4
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -9,18 +9,18 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - README.md
 - patient_photo.png
 
+v5.4 is the intended UI-freeze version.
+
 Changes:
-- Uses the uploaded realistic pediatric patient photo.
-- Removes permanent static tab count badges.
-- Keeps blue-dot new-information badges that disappear once learners open those sections.
-- Reorders top tabs so Orders comes after Flowsheets and before MAR.
-- Redesigns the Orders tab into a grouped active-orders view:
-  - Medications
-  - IV Fluids
-  - Diet and Nutrition
-  - Nursing
-  - Laboratory
-  - Imaging
-  - Admission
-  - Consults & Referrals
-- Updates visible version labels to v5.3.
+- Keeps “new information” prompts only for Notes, Results, MAR, and Secure Chat.
+- Removes new-information prompts from Flowsheets, Orders, Imaging, and Growth.
+- In Phase 2, all notes after the Admission H&P are marked as new.
+- Orders tab now includes Diet & Nutrition and Imaging sections.
+- Phase 2 Orders include:
+  - Regular Pediatric Diet
+  - Strict Intake & Output
+  - Notify physician nursing communication order
+  - Left hip radiographs completed
+- Orders page spacing tightened.
+- Timeline now includes date dividers for Admission Day and Hospital Day 1.
+- Tab order remains: Summary, Notes, Results, Flowsheets, Orders, MAR, Imaging, Growth, Secure Chat.

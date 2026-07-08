@@ -4,12 +4,12 @@ let currentPhase = new URLSearchParams(location.search).get("phase") || "1";
 let activeTab = "notes";
 
 const NEW_INFO = {
-  "1": {notes:2, results:1, mar:1, growth:1, messages:2},
-  "2": {notes:2, flowsheet:1, mar:1, messages:1},
-  "3": {notes:1, results:2, orders:2, imaging:1, messages:1},
-  "4a": {notes:1, results:1, flowsheet:1, messages:1},
-  "4b": {notes:2, orders:1, messages:1},
-  "5": {notes:2, results:3, flowsheet:2, mar:2, messages:2}
+  "1": {notes:2, results:1, mar:1, messages:2},
+  "2": {notes:3, mar:1, messages:1},
+  "3": {notes:1, results:2, mar:1, messages:1},
+  "4a": {notes:1, results:1, messages:1},
+  "4b": {notes:2, messages:1},
+  "5": {notes:2, results:3, mar:2, messages:2}
 };
 let viewedTabs = {};
 
@@ -37,13 +37,13 @@ function toggleFaculty(){facultyOpen=!facultyOpen;const panel=$("facultyPanel");
 function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
 function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : renderChart(); const panel=$("facultyPanel"); if(panel && facultyOpen) panel.classList.add("open");}
 function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="brand-login"><div class="logo">M</div><div><h1>Meridian EMR</h1><div>${esc(CASE.hospital)}</div></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="muted">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div><strong>${esc(CASE.patient.name)}</strong><div class="muted">ED → Hospital Medicine · New admission</div></div><span class="pill yellow">Watcher</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div><strong>${esc(p.name)}</strong><div class="muted">${esc(p.detail)}</div></div><span class="pill">Future case</span></div>`).join("")}</div></div></section></main>`}
-function renderChart(){const p=phase();markViewed(activeTab);return `<div class="app"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()"><div class="brand-mark">M</div><div class="brand-title">Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-right"><div class="phase-buttons">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="faculty-btn" onclick="toggleFaculty()">Faculty</button></div></header>${renderTabs(p)}${renderBanner(p)}<div class="layout"><aside>${renderChartReview(p)}${renderTimelineCard(p)}</aside><main><div class="card"><div class="card-head"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR v5.3 · Educational Use Only</footer></div>`}
+function renderChart(){const p=phase();markViewed(activeTab);return `<div class="app"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()"><div class="brand-mark">M</div><div class="brand-title">Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-right"><div class="phase-buttons">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="faculty-btn" onclick="toggleFaculty()">Faculty</button></div></header>${renderTabs(p)}${renderBanner(p)}<div class="layout"><aside>${renderChartReview(p)}${renderTimelineCard(p)}</aside><main><div class="card"><div class="card-head"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR v5.4 · Educational Use Only</footer></div>`}
 function renderTabs(p){return `<nav class="folder-tabs">${["summary","notes","results","flowsheet","orders","mar","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
 function renderBanner(p){return `<section class="patient-banner"><div class="patient-left">${patientPhoto()}<div class="patient-name"><h2>${esc(CASE.patient.name)}</h2><div class="demo-grid"><b>${esc(CASE.patient.age)}</b><span>${esc(CASE.patient.sex)}</span><b>MRN</b><span>${esc(CASE.patient.mrn)}</span><b>DOB</b><span>${esc(CASE.patient.dob)}</span><b>Room</b><span>${esc(p.room)}</span><b>Attending</b><span>${esc(CASE.patient.attending)}</span><b>PCP</b><span>${esc(CASE.patient.pcp)}</span></div></div></div><div class="banner-card"><div class="banner-top">${bannerItem("Location",p.location)}${bannerItem("Weight",`${esc(p.weight)}<br><small>${esc(p.weightDetail||"")}</small>`)}${bannerItem("Allergies",CASE.patient.allergy)}${bannerItem("Isolation","None")}${bannerItem("Code Status",CASE.patient.code)}${bannerItem("Primary Team",p.team)}${bannerItem("Diet",CASE.patient.diet)}${bannerItem("Access",CASE.patient.access)}</div><div class="vital-strip">${Object.entries(p.vitals).map(([k,v])=>`<div class="vital"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div></div></section>`}
 function bannerItem(k,v){return `<div class="banner-item"><span>${esc(k)}</span><strong>${v}</strong></div>`}
 function patientPhoto(){ if(PATIENT_PHOTO){return `<div class="photo"><img src="${PATIENT_PHOTO}" alt="Simulated pediatric patient photo"></div>`} return `<div class="photo"><svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#dff3f7"/><circle cx="60" cy="50" r="30" fill="#f0c49f"/><circle cx="49" cy="54" r="4"/><circle cx="72" cy="54" r="4"/><path d="M52 69c6 5 13 5 19 0" fill="none" stroke="#8c3f2b" stroke-width="3" stroke-linecap="round"/><path d="M20 120c6-27 25-39 40-39s34 12 40 39z" fill="#2f80b9"/><path d="M32 45c5-25 50-35 60-4-20-10-40-9-60 4z" fill="#5f371d"/></svg></div>`}
 function renderChartReview(p){return ``}
-function renderTimelineCard(p){return `<div class="card"><div class="card-head"><h3>Timeline</h3></div><div class="card-body">${p.timeline.map(x=>`<div class="timeline-item"><time>${esc(x[0])}</time><div>${esc(x[1])}</div></div>`).join("")}<p class="muted">View full timeline</p></div></div>`}
+function renderTimelineCard(p){return `<div class="card"><div class="card-head"><h3>Timeline</h3></div><div class="card-body">${p.timeline.map(x=>x[1]==="__divider__"?`<div class="timeline-divider">${esc(x[0])}</div>`:`<div class="timeline-item"><time>${esc(x[0])}</time><div>${esc(x[1])}</div></div>`).join("")}<p class="muted">View full timeline</p></div></div>`}
 function renderMessagesCard(p){return `<div class="card"><div class="card-head"><h3>Messages</h3><span class="count">${p.messages.length} Unread</span></div><div class="card-body">${renderMessages(p)}<p class="muted">View all messages</p></div></div>`}
 function renderRecentOrders(p){return `<div class="card"><div class="card-head"><h3>Recent Orders</h3></div><div class="card-body">${renderOrders(p,true)}<p class="muted">View all orders</p></div></div>`}
 function tabLabel(t){return ({summary:"Summary",notes:"Notes",results:"Results",flowsheet:"Flowsheets",mar:"MAR",orders:"Orders",imaging:"Imaging",growth:"Growth",messages:"Secure Chat"}[t]||t)}
@@ -134,10 +134,10 @@ function orderGroupFromName(o){
   const name = String(o[0]||"").toLowerCase();
   const type = String(o[3]||"").toLowerCase();
   if(name.includes("d5") || name.includes("kcl") || name.includes("fluid")) return "IV Fluids";
-  if(name.includes("diet")) return "Diet and Nutrition";
-  if(type.includes("monitor") || name.includes("vital") || name.includes("serial") || name.includes("intake") || name.includes("output")) return "Nursing";
+  if(type.includes("diet") || name.includes("diet")) return "Diet and Nutrition";
+  if(type.includes("monitor") || name.includes("vital") || name.includes("serial") || name.includes("intake") || name.includes("output") || name.includes("notify physician")) return "Nursing";
   if(type.includes("lab") || name.includes("culture") || name.includes("cbc") || name.includes("crp")) return "Laboratory";
-  if(type.includes("imaging") || name.includes("x-ray") || name.includes("mri")) return "Imaging";
+  if(type.includes("imaging") || name.includes("x-ray") || name.includes("radiograph") || name.includes("mri")) return "Imaging";
   if(type.includes("consult")) return "Consults & Referrals";
   if(type.includes("admission")) return "Admission";
   if(type.includes("med")) return "Medications";
