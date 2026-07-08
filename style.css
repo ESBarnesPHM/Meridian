@@ -68,3 +68,9 @@
 .lab-grid .flag-high,.lab-grid .flag-low,.lab-grid .flag-critical{color:#d92d20;font-weight:950}
 .photo img{object-position:center center}
 .pill.green{background:#eafaf2;color:#067647}
+
+
+/* v4.2 patient photo and banner polish */
+.photo img{object-fit:cover;object-position:center center}
+.patient-name h2 .pill{display:none}
+.main-title .pill{display:none}

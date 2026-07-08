@@ -227,13 +227,48 @@ const CASE = {
             ""
           ],
           [
-            "Hgb",
+            "RBC",
+            "4.52 M/uL",
+            ""
+          ],
+          [
+            "Hemoglobin",
             "11.7 g/dL",
+            ""
+          ],
+          [
+            "Hematocrit",
+            "34.8 %",
+            ""
+          ],
+          [
+            "MCV",
+            "77 fL",
+            ""
+          ],
+          [
+            "MCH",
+            "25.9 pg",
+            ""
+          ],
+          [
+            "MCHC",
+            "33.6 g/dL",
+            ""
+          ],
+          [
+            "RDW",
+            "13.2 %",
             ""
           ],
           [
             "Platelets",
             "348 K/uL",
+            ""
+          ],
+          [
+            "MPV",
+            "8.9 fL",
             ""
           ]
         ],
@@ -246,8 +281,43 @@ const CASE = {
         ],
         "Chemistry": [
           [
-            "BMP",
-            "Within normal limits",
+            "Sodium",
+            "138 mmol/L",
+            ""
+          ],
+          [
+            "Potassium",
+            "4.1 mmol/L",
+            ""
+          ],
+          [
+            "Chloride",
+            "104 mmol/L",
+            ""
+          ],
+          [
+            "CO\u2082",
+            "23 mmol/L",
+            ""
+          ],
+          [
+            "BUN",
+            "10 mg/dL",
+            ""
+          ],
+          [
+            "Creatinine",
+            "0.32 mg/dL",
+            ""
+          ],
+          [
+            "Glucose",
+            "92 mg/dL",
+            ""
+          ],
+          [
+            "Calcium",
+            "9.6 mg/dL",
             ""
           ]
         ],
@@ -256,6 +326,58 @@ const CASE = {
             "Blood culture",
             "Pending",
             "Pending"
+          ]
+        ],
+        "Differential": [
+          [
+            "Neutrophils",
+            "62 %",
+            ""
+          ],
+          [
+            "Lymphocytes",
+            "28 %",
+            ""
+          ],
+          [
+            "Monocytes",
+            "8 %",
+            ""
+          ],
+          [
+            "Eosinophils",
+            "1 %",
+            ""
+          ],
+          [
+            "Basophils",
+            "1 %",
+            ""
+          ],
+          [
+            "Absolute neutrophils",
+            "7.3 K/uL",
+            ""
+          ],
+          [
+            "Absolute lymphocytes",
+            "3.3 K/uL",
+            ""
+          ],
+          [
+            "Absolute monocytes",
+            "0.9 K/uL",
+            ""
+          ],
+          [
+            "Absolute eosinophils",
+            "0.1 K/uL",
+            ""
+          ],
+          [
+            "Absolute basophils",
+            "0.1 K/uL",
+            ""
           ]
         ]
       },
@@ -400,8 +522,8 @@ const CASE = {
       "label": "Phase 2",
       "title": "Clinical reassessment",
       "time": "07/04/2026 07:45",
-      "location": "6A-12",
-      "room": "6A-12",
+      "location": "5D-4",
+      "room": "5D-4",
       "team": "Hospital Medicine",
       "severity": "Stable / needs reassessment",
       "weight": "13.2 kg",
@@ -591,24 +713,6 @@ const CASE = {
           "Active",
           "Active",
           "Monitoring"
-        ],
-        [
-          "MRI left hip/femur",
-          "Not ordered",
-          "Not ordered",
-          "Imaging"
-        ],
-        [
-          "Orthopedic surgery consult",
-          "Not ordered",
-          "Not ordered",
-          "Consult"
-        ],
-        [
-          "Repeat CRP/CBC",
-          "Not ordered",
-          "Not ordered",
-          "Lab"
         ]
       ],
       "mar": [
@@ -656,13 +760,48 @@ const CASE = {
             ""
           ],
           [
-            "Hgb",
+            "RBC",
+            "4.52 M/uL",
+            ""
+          ],
+          [
+            "Hemoglobin",
             "11.7 g/dL",
+            ""
+          ],
+          [
+            "Hematocrit",
+            "34.8 %",
+            ""
+          ],
+          [
+            "MCV",
+            "77 fL",
+            ""
+          ],
+          [
+            "MCH",
+            "25.9 pg",
+            ""
+          ],
+          [
+            "MCHC",
+            "33.6 g/dL",
+            ""
+          ],
+          [
+            "RDW",
+            "13.2 %",
             ""
           ],
           [
             "Platelets",
             "348 K/uL",
+            ""
+          ],
+          [
+            "MPV",
+            "8.9 fL",
             ""
           ]
         ],
@@ -675,8 +814,43 @@ const CASE = {
         ],
         "Chemistry": [
           [
-            "BMP",
-            "Within normal limits",
+            "Sodium",
+            "138 mmol/L",
+            ""
+          ],
+          [
+            "Potassium",
+            "4.1 mmol/L",
+            ""
+          ],
+          [
+            "Chloride",
+            "104 mmol/L",
+            ""
+          ],
+          [
+            "CO\u2082",
+            "23 mmol/L",
+            ""
+          ],
+          [
+            "BUN",
+            "10 mg/dL",
+            ""
+          ],
+          [
+            "Creatinine",
+            "0.32 mg/dL",
+            ""
+          ],
+          [
+            "Glucose",
+            "92 mg/dL",
+            ""
+          ],
+          [
+            "Calcium",
+            "9.6 mg/dL",
             ""
           ]
         ],
@@ -685,6 +859,58 @@ const CASE = {
             "Blood culture",
             "No growth to date",
             "Prelim"
+          ]
+        ],
+        "Differential": [
+          [
+            "Neutrophils",
+            "62 %",
+            ""
+          ],
+          [
+            "Lymphocytes",
+            "28 %",
+            ""
+          ],
+          [
+            "Monocytes",
+            "8 %",
+            ""
+          ],
+          [
+            "Eosinophils",
+            "1 %",
+            ""
+          ],
+          [
+            "Basophils",
+            "1 %",
+            ""
+          ],
+          [
+            "Absolute neutrophils",
+            "7.3 K/uL",
+            ""
+          ],
+          [
+            "Absolute lymphocytes",
+            "3.3 K/uL",
+            ""
+          ],
+          [
+            "Absolute monocytes",
+            "0.9 K/uL",
+            ""
+          ],
+          [
+            "Absolute eosinophils",
+            "0.1 K/uL",
+            ""
+          ],
+          [
+            "Absolute basophils",
+            "0.1 K/uL",
+            ""
           ]
         ]
       },
@@ -851,8 +1077,8 @@ const CASE = {
       "label": "Phase 3",
       "title": "Evidence-based treatment",
       "time": "07/04/2026 15:45",
-      "location": "6A-12",
-      "room": "6A-12",
+      "location": "5D-4",
+      "room": "5D-4",
       "team": "PHM + Ortho",
       "severity": "Watcher",
       "weight": "13 kg",
@@ -1157,8 +1383,8 @@ const CASE = {
       "label": "Phase 4A",
       "title": "Unsafe handoff",
       "time": "07/04/2026 21:15",
-      "location": "6A-12",
-      "room": "6A-12",
+      "location": "5D-4",
+      "room": "5D-4",
       "team": "Night PHM",
       "severity": "Unclear",
       "weight": "13 kg",
@@ -1446,8 +1672,8 @@ const CASE = {
       "label": "Phase 4B",
       "title": "Model handoff",
       "time": "07/04/2026 21:35",
-      "location": "6A-12",
-      "room": "6A-12",
+      "location": "5D-4",
+      "room": "5D-4",
       "team": "Night PHM",
       "severity": "Watcher / high risk",
       "weight": "13 kg",
@@ -1723,8 +1949,8 @@ const CASE = {
       "label": "Phase 5",
       "title": "Escalation of care",
       "time": "07/05/2026 02:10",
-      "location": "6A-12 \u2192 PICU",
-      "room": "6A-12",
+      "location": "5D-4 \u2192 PICU",
+      "room": "5D-4",
       "team": "PHM + PICU + Ortho",
       "severity": "Critical",
       "weight": "13 kg",
