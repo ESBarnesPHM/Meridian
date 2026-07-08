@@ -2,18 +2,42 @@
 let screen = new URLSearchParams(location.search).get("phase") ? "chart" : "login";
 let currentPhase = new URLSearchParams(location.search).get("phase") || "1";
 let activeTab = "notes";
+
+const NEW_INFO = {
+  "1": {notes:2, results:1, mar:1, growth:1, messages:2},
+  "2": {notes:2, flowsheet:1, mar:1, messages:1},
+  "3": {notes:1, results:2, orders:2, imaging:1, messages:1},
+  "4a": {notes:1, results:1, flowsheet:1, messages:1},
+  "4b": {notes:2, orders:1, messages:1},
+  "5": {notes:2, results:3, flowsheet:2, mar:2, messages:2}
+};
+let viewedTabs = {};
+
+let viewedNotes = {};
+function noteKey(note){ return `${currentPhase}|${note[0]}|${note[2]}`; }
+function isNewNote(note,index){
+  const max = (NEW_INFO[currentPhase] && NEW_INFO[currentPhase].notes) || 0;
+  return index < max && !viewedNotes[noteKey(note)];
+}
+function markNoteViewed(note){ viewedNotes[noteKey(note)] = true; }
+
+function resetViewedForPhase(){ viewedTabs[currentPhase] = viewedTabs[currentPhase] || {}; }
+function markViewed(tab){ resetViewedForPhase(); viewedTabs[currentPhase][tab] = true; }
+function isNewTab(tab){ resetViewedForPhase(); return (NEW_INFO[currentPhase] && NEW_INFO[currentPhase][tab] && !viewedTabs[currentPhase][tab]); }
+function newCount(tab){ return isNewTab(tab) ? NEW_INFO[currentPhase][tab] : 0; }
+
 let facultyOpen = false;
 function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
 function phase(){return CASE.phases.find(p=>p.id===currentPhase)||CASE.phases[0]}
 function routeToChart(id="1"){screen="chart";currentPhase=id;activeTab="notes";window.selectedNoteIndex=0;history.replaceState(null,"",`?phase=${id}`);render()}
 function setPhase(id){currentPhase=id;activeTab="notes";window.selectedNoteIndex=0;history.replaceState(null,"",`?phase=${id}`);render()}
-function setTab(tab){activeTab=tab;render()}
+function setTab(tab){activeTab=tab;markViewed(tab);render()}
 function toggleFaculty(){facultyOpen=!facultyOpen;const panel=$("facultyPanel");if(panel)panel.classList.toggle("open",facultyOpen)}
 function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
 function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : renderChart(); const panel=$("facultyPanel"); if(panel && facultyOpen) panel.classList.add("open");}
 function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="brand-login"><div class="logo">M</div><div><h1>Meridian EMR</h1><div>${esc(CASE.hospital)}</div></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="muted">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div><strong>${esc(CASE.patient.name)}</strong><div class="muted">ED → Hospital Medicine · New admission</div></div><span class="pill yellow">Watcher</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div><strong>${esc(p.name)}</strong><div class="muted">${esc(p.detail)}</div></div><span class="pill">Future case</span></div>`).join("")}</div></div></section></main>`}
-function renderChart(){const p=phase();return `<div class="app"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()"><div class="brand-mark">M</div><div class="brand-title">Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-right"><div class="phase-buttons">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="faculty-btn" onclick="toggleFaculty()">Faculty</button></div></header>${renderTabs(p)}${renderBanner(p)}<div class="layout"><aside>${renderChartReview(p)}${renderTimelineCard(p)}</aside><main><div class="card"><div class="card-head"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR v3.0 · Educational Use Only</footer></div>`}
+function renderChart(){const p=phase();markViewed(activeTab);return `<div class="app"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()"><div class="brand-mark">M</div><div class="brand-title">Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-right"><div class="phase-buttons">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="faculty-btn" onclick="toggleFaculty()">Faculty</button></div></header>${renderTabs(p)}${renderBanner(p)}<div class="layout"><aside>${renderChartReview(p)}${renderTimelineCard(p)}</aside><main><div class="card"><div class="card-head"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR v3.0 · Educational Use Only</footer></div>`}
 function renderTabs(p){return `<nav class="folder-tabs">${["summary","notes","results","flowsheet","mar","orders","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
 function renderBanner(p){return `<section class="patient-banner"><div class="patient-left">${patientPhoto()}<div class="patient-name"><h2>${esc(CASE.patient.name)}</h2><div class="demo-grid"><b>${esc(CASE.patient.age)}</b><span>${esc(CASE.patient.sex)}</span><b>MRN</b><span>${esc(CASE.patient.mrn)}</span><b>DOB</b><span>${esc(CASE.patient.dob)}</span><b>Room</b><span>${esc(p.room)}</span><b>Attending</b><span>${esc(CASE.patient.attending)}</span><b>PCP</b><span>${esc(CASE.patient.pcp)}</span></div></div></div><div class="banner-card"><div class="banner-top">${bannerItem("Location",p.location)}${bannerItem("Weight",`${esc(p.weight)}<br><small>${esc(p.weightDetail||"")}</small>`)}${bannerItem("Allergies",CASE.patient.allergy)}${bannerItem("Isolation","None")}${bannerItem("Code Status",CASE.patient.code)}${bannerItem("Primary Team",p.team)}${bannerItem("Diet",CASE.patient.diet)}${bannerItem("Access",CASE.patient.access)}</div><div class="vital-strip">${Object.entries(p.vitals).map(([k,v])=>`<div class="vital"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div></div></section>`}
 function bannerItem(k,v){return `<div class="banner-item"><span>${esc(k)}</span><strong>${v}</strong></div>`}
@@ -23,7 +47,13 @@ function renderTimelineCard(p){return `<div class="card"><div class="card-head">
 function renderMessagesCard(p){return `<div class="card"><div class="card-head"><h3>Messages</h3><span class="count">${p.messages.length} Unread</span></div><div class="card-body">${renderMessages(p)}<p class="muted">View all messages</p></div></div>`}
 function renderRecentOrders(p){return `<div class="card"><div class="card-head"><h3>Recent Orders</h3></div><div class="card-body">${renderOrders(p,true)}<p class="muted">View all orders</p></div></div>`}
 function tabLabel(t){return ({summary:"Summary",notes:"Notes",results:"Results",flowsheet:"Flowsheets",mar:"MAR",orders:"Orders",imaging:"Imaging",growth:"Growth",messages:"Secure Chat"}[t]||t)}
-function tabCount(p,t){const map={notes:p.notes,orders:p.orders,mar:p.mar,imaging:p.imaging,growth:p.growth,messages:p.messages};return map[t]?` <span class="count">${map[t].length}</span>`:""}
+
+function tabCount(p,t){
+  const n = newCount(t);
+  if(n){ return ` <span class="new-badge"><span class="new-dot"></span>${n}</span>`; }
+  const map={notes:p.notes,orders:p.orders,mar:p.mar,imaging:p.imaging,growth:p.growth,messages:p.messages};
+  return map[t]?` <span class="count">${map[t].length}</span>`:"";
+}
 function renderTab(p,t){if(t==="summary")return renderSummary(p);if(t==="notes")return renderNotes(p);if(t==="flowsheet")return renderFlowsheet(p,true);if(t==="messages")return renderMessages(p);if(t==="orders")return renderOrders(p,false);if(t==="mar")return renderMAR(p);if(t==="results")return renderResults(p);if(t==="imaging")return renderImaging(p);if(t==="growth")return renderGrowth(p)}
 function renderSummary(p){return `<div class="summary-grid"><div class="mini"><h4>Assessment</h4><ul>${p.summary.assessment.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Active Problems</h4><ul>${p.summary.problems.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Overnight / Recent Events</h4><ul>${p.summary.events.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Today's Plan</h4><ul>${p.summary.plan.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div><div class="two-col"><div class="mini"><h4>Pending Studies</h4><ul>${p.summary.pending.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>To Do</h4><ul>${p.summary.todo.map(x=>`<li>☐ ${esc(x)}</li>`).join("")}</ul></div></div><div class="card" style="margin-top:14px"><div class="card-head"><h3>Recent Notes</h3></div><div class="card-body">${renderNotes(p,true)}</div></div>`}
 
@@ -68,12 +98,13 @@ function renderNotes(p,compact=false){
 
   const selected = Math.min(window.selectedNoteIndex ?? 0, ordered.length - 1);
   const n = ordered[selected] || ordered[0];
+  if(n) markNoteViewed(n);
 
   return `<div class="notes-split">
     <div class="notes-list-pane">
       ${ordered.map((note,i)=>`
-        <button class="note-picker ${i===selected?'active':''}" onclick="selectNote(${i})">
-          <span class="note-kind">${noteIcon(note)} ${esc(note[5]||"Note")}</span>
+        <button class="note-picker ${i===selected?'active':''} ${isNewNote(note,i)?'unread-note':''}" onclick="selectNote(${i})">
+          <span class="note-kind">${isNewNote(note,i)?'<span class="new-dot"></span> ':''}${noteIcon(note)} ${esc(note[5]||"Note")}</span>
           <strong>${esc(note[0])}</strong>
           <small>${esc(note[1])} · ${esc(noteShortTime(note))}</small>
           <em>${esc(note[3])}</em>
