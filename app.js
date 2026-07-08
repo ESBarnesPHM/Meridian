@@ -37,8 +37,8 @@ function toggleFaculty(){facultyOpen=!facultyOpen;const panel=$("facultyPanel");
 function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
 function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : renderChart(); const panel=$("facultyPanel"); if(panel && facultyOpen) panel.classList.add("open");}
 function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="brand-login"><div class="logo">M</div><div><h1>Meridian EMR</h1><div>${esc(CASE.hospital)}</div></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="muted">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div><strong>${esc(CASE.patient.name)}</strong><div class="muted">ED → Hospital Medicine · New admission</div></div><span class="pill yellow">Watcher</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div><strong>${esc(p.name)}</strong><div class="muted">${esc(p.detail)}</div></div><span class="pill">Future case</span></div>`).join("")}</div></div></section></main>`}
-function renderChart(){const p=phase();markViewed(activeTab);return `<div class="app"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()"><div class="brand-mark">M</div><div class="brand-title">Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-right"><div class="phase-buttons">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="faculty-btn" onclick="toggleFaculty()">Faculty</button></div></header>${renderTabs(p)}${renderBanner(p)}<div class="layout"><aside>${renderChartReview(p)}${renderTimelineCard(p)}</aside><main><div class="card"><div class="card-head"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR v3.0 · Educational Use Only</footer></div>`}
-function renderTabs(p){return `<nav class="folder-tabs">${["summary","notes","results","flowsheet","mar","orders","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
+function renderChart(){const p=phase();markViewed(activeTab);return `<div class="app"><header class="topbar"><div class="brand" onclick="screen='login';history.replaceState(null,'','./');render()"><div class="brand-mark">M</div><div class="brand-title">Meridian EMR<small>${esc(CASE.hospital)}</small></div></div><div class="top-right"><div class="phase-buttons">${CASE.phases.map(x=>`<button class="${x.id===p.id?'active':''}" onclick="setPhase('${x.id}')">${esc(x.label)}</button>`).join("")}</div><button class="faculty-btn" onclick="toggleFaculty()">Faculty</button></div></header>${renderTabs(p)}${renderBanner(p)}<div class="layout"><aside>${renderChartReview(p)}${renderTimelineCard(p)}</aside><main><div class="card"><div class="card-head"><h3>${tabLabel(activeTab)}</h3></div><div class="card-body">${renderTab(p,activeTab)}</div></div></main><aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside></div>${renderFaculty(p)}<footer class="footer">Meridian EMR v5.3 · Educational Use Only</footer></div>`}
+function renderTabs(p){return `<nav class="folder-tabs">${["summary","notes","results","flowsheet","orders","mar","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
 function renderBanner(p){return `<section class="patient-banner"><div class="patient-left">${patientPhoto()}<div class="patient-name"><h2>${esc(CASE.patient.name)}</h2><div class="demo-grid"><b>${esc(CASE.patient.age)}</b><span>${esc(CASE.patient.sex)}</span><b>MRN</b><span>${esc(CASE.patient.mrn)}</span><b>DOB</b><span>${esc(CASE.patient.dob)}</span><b>Room</b><span>${esc(p.room)}</span><b>Attending</b><span>${esc(CASE.patient.attending)}</span><b>PCP</b><span>${esc(CASE.patient.pcp)}</span></div></div></div><div class="banner-card"><div class="banner-top">${bannerItem("Location",p.location)}${bannerItem("Weight",`${esc(p.weight)}<br><small>${esc(p.weightDetail||"")}</small>`)}${bannerItem("Allergies",CASE.patient.allergy)}${bannerItem("Isolation","None")}${bannerItem("Code Status",CASE.patient.code)}${bannerItem("Primary Team",p.team)}${bannerItem("Diet",CASE.patient.diet)}${bannerItem("Access",CASE.patient.access)}</div><div class="vital-strip">${Object.entries(p.vitals).map(([k,v])=>`<div class="vital"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div></div></section>`}
 function bannerItem(k,v){return `<div class="banner-item"><span>${esc(k)}</span><strong>${v}</strong></div>`}
 function patientPhoto(){ if(PATIENT_PHOTO){return `<div class="photo"><img src="${PATIENT_PHOTO}" alt="Simulated pediatric patient photo"></div>`} return `<div class="photo"><svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#dff3f7"/><circle cx="60" cy="50" r="30" fill="#f0c49f"/><circle cx="49" cy="54" r="4"/><circle cx="72" cy="54" r="4"/><path d="M52 69c6 5 13 5 19 0" fill="none" stroke="#8c3f2b" stroke-width="3" stroke-linecap="round"/><path d="M20 120c6-27 25-39 40-39s34 12 40 39z" fill="#2f80b9"/><path d="M32 45c5-25 50-35 60-4-20-10-40-9-60 4z" fill="#5f371d"/></svg></div>`}
@@ -51,8 +51,7 @@ function tabLabel(t){return ({summary:"Summary",notes:"Notes",results:"Results",
 function tabCount(p,t){
   const n = newCount(t);
   if(n){ return ` <span class="new-badge"><span class="new-dot"></span>${n}</span>`; }
-  const map={notes:p.notes,orders:p.orders,mar:p.mar,imaging:p.imaging,growth:p.growth,messages:p.messages};
-  return map[t]?` <span class="count">${map[t].length}</span>`:"";
+  return "";
 }
 function renderTab(p,t){if(t==="summary")return renderSummary(p);if(t==="notes")return renderNotes(p);if(t==="flowsheet")return renderFlowsheet(p,true);if(t==="messages")return renderMessages(p);if(t==="orders")return renderOrders(p,false);if(t==="mar")return renderMAR(p);if(t==="results")return renderResults(p);if(t==="imaging")return renderImaging(p);if(t==="growth")return renderGrowth(p)}
 function renderSummary(p){return `<div class="summary-grid"><div class="mini"><h4>Assessment</h4><ul>${p.summary.assessment.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Active Problems</h4><ul>${p.summary.problems.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Overnight / Recent Events</h4><ul>${p.summary.events.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Today's Plan</h4><ul>${p.summary.plan.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div><div class="two-col"><div class="mini"><h4>Pending Studies</h4><ul>${p.summary.pending.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>To Do</h4><ul>${p.summary.todo.map(x=>`<li>☐ ${esc(x)}</li>`).join("")}</ul></div></div><div class="card" style="margin-top:14px"><div class="card-head"><h3>Recent Notes</h3></div><div class="card-body">${renderNotes(p,true)}</div></div>`}
@@ -130,24 +129,67 @@ function selectNote(i){window.selectedNoteIndex=i;render();}
 function toggleNote(i){const el=$("note"+i); if(el) el.classList.toggle("hidden")}
 function renderMessages(p){return p.messages.map(m=>{let cls=(m[3]||"").toLowerCase();return `<div class="msg"><div class="msg-head"><div class="avatar ${cls}">${esc(m[3]||"AR")}</div><div><div class="from">${esc(m[0])}</div><div>${esc(m[2])}</div></div><div class="time">${esc(m[1])}<span class="unread"></span></div></div></div>`}).join("")||"<p>No messages.</p>"}
 
-function orderIcon(type){
-  const t = String(type||"").toLowerCase();
-  if(t.includes("med")) return "💊";
-  if(t.includes("lab")) return "🧪";
-  if(t.includes("imaging")) return "📷";
-  if(t.includes("admission")) return "🏥";
-  if(t.includes("diet")) return "🍽️";
-  if(t.includes("consult")) return "🩺";
-  if(t.includes("page")) return "📟";
-  return "▪";
+
+function orderGroupFromName(o){
+  const name = String(o[0]||"").toLowerCase();
+  const type = String(o[3]||"").toLowerCase();
+  if(name.includes("d5") || name.includes("kcl") || name.includes("fluid")) return "IV Fluids";
+  if(name.includes("diet")) return "Diet and Nutrition";
+  if(type.includes("monitor") || name.includes("vital") || name.includes("serial") || name.includes("intake") || name.includes("output")) return "Nursing";
+  if(type.includes("lab") || name.includes("culture") || name.includes("cbc") || name.includes("crp")) return "Laboratory";
+  if(type.includes("imaging") || name.includes("x-ray") || name.includes("mri")) return "Imaging";
+  if(type.includes("consult")) return "Consults & Referrals";
+  if(type.includes("admission")) return "Admission";
+  if(type.includes("med")) return "Medications";
+  return "Other";
+}
+function orderGroupOrder(group){
+  return {
+    "Medications":1,
+    "IV Fluids":2,
+    "Diet and Nutrition":3,
+    "Nursing":4,
+    "Laboratory":5,
+    "Imaging":6,
+    "Admission":7,
+    "Consults & Referrals":8,
+    "Other":9
+  }[group] || 99;
 }
 function renderOrders(p,limit){
-  let rows=limit?p.orders.slice(0,5):p.orders;
-  return `<div class="order-list">${rows.map(o=>{
-    let s=String(o[2]||"").toLowerCase();
-    let cls=s.includes("missing")?"missing":s.includes("complete")||s.includes("given")?"completed":s.includes("process")||s.includes("pending")?"process":"";
-    return `<div class="order-card"><div><div class="order-type">${orderIcon(o[3])} ${esc(o[3]||"Order")}</div><div class="order-title">${esc(o[0])}</div><div class="order-sub">${esc(o[1])}</div></div><span class="status ${cls}">${esc(o[2])}</span></div>`
-  }).join("")}</div>`
+  let rows = limit ? p.orders.slice(0,5) : p.orders;
+  if(limit){
+    return `<div class="order-list">${rows.map(o=>renderRecentOrder(o)).join("")}</div>`;
+  }
+  const groups = {};
+  rows.forEach(o=>{
+    const g = orderGroupFromName(o);
+    groups[g] = groups[g] || [];
+    groups[g].push(o);
+  });
+  return `<div class="orders-epic">${Object.keys(groups).sort((a,b)=>orderGroupOrder(a)-orderGroupOrder(b)).map(g=>`
+    <section class="orders-group">
+      <div class="orders-section">${esc(g)}</div>
+      ${groups[g].map(o=>renderOrderRow(o)).join("")}
+    </section>
+  `).join("")}</div>`;
+}
+function renderRecentOrder(o){
+  let s=String(o[2]||"").toLowerCase();
+  let cls=s.includes("missing")||s.includes("not ordered")?"missing":s.includes("complete")||s.includes("given")?"completed":s.includes("process")||s.includes("pending")?"process":"";
+  return `<div class="order-card"><div><div class="order-type">${esc(o[3]||"Order")}</div><div class="order-title">${esc(o[0])}</div><div class="order-sub">${esc(o[1])}</div></div><span class="status ${cls}">${esc(o[2])}</span></div>`;
+}
+function renderOrderRow(o){
+  const name = o[0] || "";
+  const detail = o[1] || "";
+  const status = o[2] || "";
+  let s=String(status).toLowerCase();
+  let cls=s.includes("missing")||s.includes("not ordered")?"missing":s.includes("complete")||s.includes("given")?"completed":s.includes("process")||s.includes("pending")?"process":"";
+  return `<div class="order-row">
+    <div class="order-name">${esc(name)}</div>
+    <div class="order-detail">${esc(detail)}</div>
+    <div class="order-actions"><span class="status ${cls}">${esc(status)}</span></div>
+  </div>`;
 }
 function renderMAR(p){return `<div class="mar-grid"><table class="mar-table"><thead><tr><th>Time</th><th>Medication</th><th>Dose</th><th>Status</th><th>Comment</th></tr></thead><tbody>${p.mar.map(r=>`<tr><td class="med-time">${esc(r[0])}</td><td class="med-name">${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join("")}</tbody></table></div>`}
 

@@ -1,4 +1,4 @@
-# Meridian EMR v5.1
+# Meridian EMR v5.3
 
 Upload these files to the root of the GitHub repository, replacing prior versions:
 
@@ -10,8 +10,17 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - patient_photo.png
 
 Changes:
-- Added subtle “new information” prompts in the top navigation.
-- New tabs show a blue-dot count until the learner opens that tab.
-- New notes display with a blue dot and stronger title until selected.
-- This is intentionally not a checklist; it simply cues learners that information has changed since the last chart review.
-- Preserves v5.0 locked UI foundation and Phase 2 clinical content.
+- Uses the uploaded realistic pediatric patient photo.
+- Removes permanent static tab count badges.
+- Keeps blue-dot new-information badges that disappear once learners open those sections.
+- Reorders top tabs so Orders comes after Flowsheets and before MAR.
+- Redesigns the Orders tab into a grouped active-orders view:
+  - Medications
+  - IV Fluids
+  - Diet and Nutrition
+  - Nursing
+  - Laboratory
+  - Imaging
+  - Admission
+  - Consults & Referrals
+- Updates visible version labels to v5.3.
