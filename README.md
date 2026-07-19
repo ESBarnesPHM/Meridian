@@ -1,6 +1,6 @@
-# Meridian EMR v5.4
+# Meridian EMR v5.5 — Responsive Learner View
 
-Upload these files to the root of the GitHub repository, replacing prior versions:
+Upload all six files to the root of the GitHub repository, replacing the existing versions:
 
 - index.html
 - style.css
@@ -9,18 +9,13 @@ Upload these files to the root of the GitHub repository, replacing prior version
 - README.md
 - patient_photo.png
 
-v5.4 is the intended UI-freeze version.
-
-Changes:
-- Keeps “new information” prompts only for Notes, Results, MAR, and Secure Chat.
-- Removes new-information prompts from Flowsheets, Orders, Imaging, and Growth.
-- In Phase 2, all notes after the Admission H&P are marked as new.
-- Orders tab now includes Diet & Nutrition and Imaging sections.
-- Phase 2 Orders include:
-  - Regular Pediatric Diet
-  - Strict Intake & Output
-  - Notify physician nursing communication order
-  - Left hip radiographs completed
-- Orders page spacing tightened.
-- Timeline now includes date dividers for Admission Day and Hospital Day 1.
-- Tab order remains: Summary, Notes, Results, Flowsheets, Orders, MAR, Imaging, Growth, Secure Chat.
+Changes in v5.5:
+- Completely removes the Faculty button, facilitator panel, reveal field, and learner access to facilitator content.
+- Keeps facilitator information in the separate faculty guide.
+- Adds responsive layouts for desktop, tablet landscape, tablet portrait, and phone.
+- Makes phase controls and chart tabs horizontally scrollable on smaller screens.
+- Stacks the chart, timeline, messages, and recent orders appropriately on tablets and phones.
+- Converts Notes to a stacked list-and-reader layout on tablets and phones.
+- Preserves horizontal scrolling for Results, Flowsheets, MAR, and Orders.
+- Increases touch-target sizes for tabs, phase buttons, and note selections.
+- Updates the visible version label to v5.5.
