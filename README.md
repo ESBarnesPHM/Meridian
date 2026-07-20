@@ -1,4 +1,4 @@
-# Meridian EMR v6.0
+# Meridian EMR v6.2
 
 Upload all files in this folder to the root of the GitHub repository, replacing files with the same names.
 
@@ -11,3 +11,10 @@ Upload all files in this folder to the root of the GitHub repository, replacing 
 - Preserved the guarded patient-photo check that fixed title-page navigation.
 
 Phase 4B reveal code: `IPASS`
+
+
+v6.2 corrections:
+- Phase 5A heart rate now peaks at 175 bpm.
+- Orders tabs show all currently active orders.
+- Oxygen removed from the MAR and retained as a respiratory order.
+- Phase 5B sepsis/end-organ function labs display in the 07/05 03:24 results column.

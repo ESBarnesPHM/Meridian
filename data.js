@@ -3910,7 +3910,7 @@ const CASE = {
       "learnerPrompt": "A Sepsis Red alert has triggered and the Medical Emergency Team is at the bedside. Assess Mason and initiate treatment.",
       "vitals": {
         "Temp": "39.4 °C",
-        "HR": "154",
+        "HR": "178",
         "RR": "34",
         "BP": "92/55",
         "SpO₂": "95% on 2 L NC",
@@ -4215,13 +4215,6 @@ const CASE = {
           "15 mg/kg PO",
           "Given",
           "PRN fever"
-        ],
-        [
-          "03:08",
-          "Oxygen",
-          "2 L/min NC",
-          "Started",
-          "SpO₂ 90–91% on room air"
         ]
       ],
       "results": {
@@ -4526,10 +4519,10 @@ const CASE = {
           [
             "Heart Rate",
             "132",
-            "140",
-            "147",
-            "152",
-            "154"
+            "145",
+            "160",
+            "171",
+            "178"
           ],
           [
             "Respiratory Rate",
@@ -4802,6 +4795,12 @@ const CASE = {
           "Respiratory"
         ],
         [
+          "Continuous pulse oximetry",
+          "Started 03:08",
+          "Active",
+          "Monitoring"
+        ],
+        [
           "Cefazolin IV",
           "Last dose given 00:15",
           "Active",
@@ -4814,16 +4813,52 @@ const CASE = {
           "IV Fluid"
         ],
         [
-          "Ibuprofen PO scheduled",
+          "Ibuprofen 10 mg/kg PO scheduled",
           "Given 01:10",
           "Active",
           "Medication"
         ],
         [
-          "Acetaminophen PO PRN",
+          "Acetaminophen 15 mg/kg PO q6h PRN",
           "Given 02:05",
           "Active",
           "Medication"
+        ],
+        [
+          "Oxycodone PO PRN severe pain",
+          "Available",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Regular diet; NPO after midnight",
+          "NPO in effect",
+          "Active",
+          "Diet"
+        ],
+        [
+          "Strict intake and output",
+          "Ongoing",
+          "Active",
+          "Nursing"
+        ],
+        [
+          "Vital signs q4h and PRN deterioration",
+          "Ongoing",
+          "Active",
+          "Monitoring"
+        ],
+        [
+          "Orthopedic Surgery consult",
+          "Following",
+          "Active",
+          "Consult"
+        ],
+        [
+          "Infectious Diseases consult",
+          "Following",
+          "Active",
+          "Consult"
         ]
       ]
     },
@@ -4843,7 +4878,7 @@ const CASE = {
       "learnerPrompt": "The bolus and broadened antibiotics have been given. Reassess Mason using the updated examination, trends, and resulted labs.",
       "vitals": {
         "Temp": "39.0 °C",
-        "HR": "142",
+        "HR": "155",
         "RR": "30",
         "BP": "94/57",
         "SpO₂": "96% on 2 L NC",
@@ -4994,7 +5029,7 @@ const CASE = {
           "PHM Resident",
           "07/05 04:12",
           "Sepsis Red response completed; only partial improvement after initial resuscitation.",
-          "Sepsis Red / MET evaluation performed at bedside for persistent fever, tachycardia, tachypnea, new oxygen requirement, delayed capillary refill, decreased urine output, and decreased interaction.\n\nOn assessment, Mason awakened to voice but was less interactive than baseline. Breath sounds were clear with tachypnea and no focal crackles. Extremities were warm with weak peripheral pulses and capillary refill approximately 4 seconds. Blood pressure remained age appropriate but had trended downward from prior values.\n\nInterventions: Continued 2 L/min nasal cannula. Administered 20 mL/kg normal saline bolus. Cefazolin discontinued and antimicrobial therapy broadened to vancomycin plus ceftriaxone. CBC, CMP, CRP, procalcitonin, lactate, VBG, and repeat peripheral blood culture obtained. Attending notified and evaluated at bedside. PICU contacted.\n\nReassessment after bolus: HR improved from 154 to 142, capillary refill approximately 3 seconds, and Mason is slightly more alert but not back to baseline. He remains tachypneic, requires 2 L NC, and has had no additional urine output. Labs demonstrate elevated lactate, metabolic acidosis, and increased creatinine. Plan for PICU transfer for ongoing resuscitation and monitoring.",
+          "Sepsis Red / MET evaluation performed at bedside for persistent fever, tachycardia, tachypnea, new oxygen requirement, delayed capillary refill, decreased urine output, and decreased interaction.\n\nOn assessment, Mason awakened to voice but was less interactive than baseline. Breath sounds were clear with tachypnea and no focal crackles. Extremities were warm with weak peripheral pulses and capillary refill approximately 4 seconds. Blood pressure remained age appropriate but had trended downward from prior values.\n\nInterventions: Continued 2 L/min nasal cannula. Administered 20 mL/kg normal saline bolus. Cefazolin discontinued and antimicrobial therapy broadened to vancomycin plus ceftriaxone. CBC, CMP, CRP, procalcitonin, lactate, VBG, and repeat peripheral blood culture obtained. Attending notified and evaluated at bedside. PICU contacted.\n\nReassessment after bolus: HR improved from 178 to 155, capillary refill approximately 3 seconds, and Mason is slightly more alert but not back to baseline. He remains tachypneic, requires 2 L NC, and has had no additional urine output. Labs demonstrate elevated lactate, metabolic acidosis, and increased creatinine. Plan for PICU transfer for ongoing resuscitation and monitoring.",
           "Physician"
         ],
         [
@@ -5235,13 +5270,6 @@ const CASE = {
           "IV",
           "Started",
           "Empiric broadened coverage"
-        ],
-        [
-          "Ongoing",
-          "Oxygen",
-          "2 L/min NC",
-          "Active",
-          "SpO₂ 96%"
         ]
       ],
       "results": {
@@ -5417,11 +5445,11 @@ const CASE = {
           ],
           [
             "Heart Rate",
-            "154",
-            "152",
-            "146",
-            "143",
-            "142"
+            "178",
+            "171",
+            "163",
+            "157",
+            "155"
           ],
           [
             "Respiratory Rate",
@@ -5501,7 +5529,7 @@ const CASE = {
         [
           "PICU Fellow",
           "04:18",
-          "Accepted for transfer. Please continue close reassessment and call for any further deterioration while awaiting transport.",
+          "Accepted for transfer. PICU is ready for the patient.",
           "PICU"
         ],
         [
@@ -5616,7 +5644,8 @@ const CASE = {
       "resultTimes": [
         "07/03 16:00",
         "07/04 09:45",
-        "07/04 13:32"
+        "07/04 13:32",
+        "07/05 03:24"
       ],
       "resultHistory": {
         "07/03 16:00": {
@@ -5724,14 +5753,58 @@ const CASE = {
             "Candida tropicalis": "Not detected",
             "Cryptococcus neoformans/gattii": "Not detected"
           }
+        },
+        "07/05 03:24": {
+          "CBC with differential": {
+            "WBC": "18.6 K/uL",
+            "Hemoglobin": "10.8 g/dL",
+            "Platelets": "214 K/uL",
+            "Neutrophils": "86%",
+            "Bands": "9%",
+            "Absolute neutrophils": "16.0 K/uL"
+          },
+          "Comprehensive metabolic panel": {
+            "Sodium": "146 mmol/L",
+            "Potassium": "4.3 mmol/L",
+            "Chloride": "113 mmol/L",
+            "CO₂": "17 mmol/L",
+            "BUN": "25 mg/dL",
+            "Creatinine": "0.58 mg/dL",
+            "Glucose": "108 mg/dL",
+            "Calcium": "8.4 mg/dL",
+            "Albumin": "2.8 g/dL",
+            "AST": "58 U/L",
+            "ALT": "39 U/L"
+          },
+          "Inflammatory markers": {
+            "CRP": "146 mg/L",
+            "Procalcitonin": "8.4 ng/mL"
+          },
+          "Perfusion / blood gas": {
+            "Lactate": "3.4 mmol/L",
+            "Venous pH": "7.29",
+            "pCO₂": "36 mmHg",
+            "HCO₃": "17 mmol/L",
+            "Base deficit": "-8"
+          },
+          "Microbiology": {
+            "Repeat blood culture": "Collected 07/05 03:24 — in process",
+            "Prior blood culture": "S. aureus detected; mecA/C not detected"
+          }
         }
       },
       "activeOrders": [
         [
-          "Normal saline 20 mL/kg IV bolus",
-          "Completed 03:50",
-          "Completed",
-          "IV Fluid"
+          "Oxygen 2 L/min by nasal cannula",
+          "Ongoing",
+          "Active",
+          "Respiratory"
+        ],
+        [
+          "Continuous pulse oximetry",
+          "Ongoing",
+          "Active",
+          "Monitoring"
         ],
         [
           "Vancomycin IV",
@@ -5746,64 +5819,58 @@ const CASE = {
           "Medication"
         ],
         [
-          "Cefazolin IV",
-          "Discontinued 03:25",
-          "Discontinued",
+          "D5NS + 20 mEq/L KCl at 45 mL/hr",
+          "Restarted after bolus",
+          "Active",
+          "IV Fluid"
+        ],
+        [
+          "Ibuprofen 10 mg/kg PO scheduled",
+          "Per schedule",
+          "Active",
           "Medication"
         ],
         [
-          "CBC with differential",
-          "Collected 03:24",
-          "Final",
-          "Lab"
+          "Acetaminophen 15 mg/kg PO q6h PRN",
+          "Available",
+          "Active",
+          "Medication"
         ],
         [
-          "Comprehensive metabolic panel",
-          "Collected 03:24",
-          "Final",
-          "Lab"
+          "NPO",
+          "Continued pending reassessment",
+          "Active",
+          "Diet"
         ],
         [
-          "CRP",
-          "Collected 03:24",
-          "Final",
-          "Lab"
+          "Strict intake and output",
+          "Ongoing",
+          "Active",
+          "Nursing"
         ],
         [
-          "Procalcitonin",
-          "Collected 03:24",
-          "Final",
-          "Lab"
-        ],
-        [
-          "Lactate",
-          "Collected 03:24",
-          "Final",
-          "Lab"
-        ],
-        [
-          "Venous blood gas",
-          "Collected 03:24",
-          "Final",
-          "Lab"
-        ],
-        [
-          "Repeat peripheral blood culture",
-          "Collected 03:24",
-          "In process",
-          "Lab"
+          "Vital signs q1h pending transfer",
+          "Ongoing",
+          "Active",
+          "Monitoring"
         ],
         [
           "Transfer to PICU",
-          "Accepted 04:18",
-          "In progress",
+          "Accepted 04:18; awaiting transport",
+          "Active",
           "Transfer"
         ],
         [
-          "Oxygen 2 L/min by nasal cannula",
-          "Ongoing",
+          "Orthopedic Surgery consult",
+          "Update requested",
           "Active",
-          "Respiratory"
+          "Consult"
+        ],
+        [
+          "Infectious Diseases consult",
+          "Update requested",
+          "Active",
+          "Consult"
         ]
       ]
     }
