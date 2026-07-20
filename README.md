@@ -1,11 +1,13 @@
-# Meridian EMR — Phases 3 and 4 update
+# Meridian EMR v6.0
 
-Upload every file in this folder to the root of the GitHub repository, replacing files with the same names.
+Upload all files in this folder to the root of the GitHub repository, replacing files with the same names.
 
-Included updates:
-- Finalized Phase 3 MRI, laboratory, microbiology PCR, consultations, medication recommendations, fluids, pain control, diet, and Resources tab.
-- Finalized Phase 4A unsafe handoff with the 09:30 progress note, vague I-PASS update, missing medications, and absent action/contingency planning.
-- Finalized Phase 4B corrected I-PASS with a concise action list and if/then guidance.
-- Added local ACH antibiogram and PIDS/IDSA guideline PDFs.
+## Changes
+- Restored Mason’s patient photograph.
+- Removed the 07/03 I-PASS handoff note from all phases.
+- Added Phase 5A with a Sepsis Red / MET landing screen and early sepsis escalation.
+- Added Phase 5B with post-bolus reassessment, end-organ dysfunction labs, and PICU transfer.
+- Updated antibiotic escalation to vancomycin plus ceftriaxone.
+- Preserved the guarded patient-photo check that fixed title-page navigation.
 
 Phase 4B reveal code: `IPASS`

@@ -1,3 +1,4 @@
+const PATIENT_PHOTO = "patient_photo.png";
 const CASE = {
   "hospital": "Meridian Children's Hospital",
   "tagline": "Think clearly. Communicate effectively. Care safely.",
@@ -669,14 +670,6 @@ const CASE = {
           "Nursing"
         ],
         [
-          "I-PASS Handoff",
-          "Night Team",
-          "07/03 22:30",
-          "Stable. Admitted for fever, left hip pain, and refusal to bear weight; observing for presumed transient synovitis.",
-          "I — Illness severity: STABLE.\n\nP — Patient summary: Previously healthy 3-year-old admitted with fever, left hip pain, and refusal to bear weight after a recent viral illness. Initial CRP and radiograph are reassuring. Working diagnosis is transient synovitis, though early osteomyelitis or septic arthritis cannot be excluded. He is receiving scheduled ibuprofen, PRN acetaminophen, and maintenance IV fluids. Blood culture is pending.\n\nA — Action list:\n- Reassess pain and ability to bear weight after scheduled ibuprofen.\n- Follow fever curve, intake, and urine output overnight.\n\nS — Situation awareness/contingency planning: If fever or pain worsens, perfusion changes, or he remains unable to bear weight in the morning, reassess at the bedside and consider repeat labs, MRI, and Orthopedic consultation.\n\nS — Synthesis by receiver: Mason is stable and being observed for presumed transient synovitis. I will follow his fever, pain, intake, urine output, and ability to bear weight, and escalate the evaluation if he worsens or does not improve.",
-          "Handoff"
-        ],
-        [
           "Attending Addendum to Admission H&P",
           "Barnes, MD",
           "07/03 22:15",
@@ -1316,14 +1309,6 @@ const CASE = {
           "Febrile overnight with persistent pain and limited movement.",
           "Shift Summary\n\nFebrile overnight to 39.1°C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
           "Nursing"
-        ],
-        [
-          "I-PASS Handoff",
-          "Night Team",
-          "07/03 22:30",
-          "Stable. Admitted for fever, left hip pain, and refusal to bear weight; observing for presumed transient synovitis.",
-          "I — Illness severity: STABLE.\n\nP — Patient summary: Previously healthy 3-year-old admitted with fever, left hip pain, and refusal to bear weight after a recent viral illness. Initial CRP and radiograph are reassuring. Working diagnosis is transient synovitis, though early osteomyelitis or septic arthritis cannot be excluded. He is receiving scheduled ibuprofen, PRN acetaminophen, and maintenance IV fluids. Blood culture is pending.\n\nA — Action list:\n- Reassess pain and ability to bear weight after scheduled ibuprofen.\n- Follow fever curve, intake, and urine output overnight.\n\nS — Situation awareness/contingency planning: If fever or pain worsens, perfusion changes, or he remains unable to bear weight in the morning, reassess at the bedside and consider repeat labs, MRI, and Orthopedic consultation.\n\nS — Synthesis by receiver: Mason is stable and being observed for presumed transient synovitis. I will follow his fever, pain, intake, urine output, and ability to bear weight, and escalate the evaluation if he worsens or does not improve.",
-          "Handoff"
         ],
         [
           "Attending Addendum to Admission H&P",
@@ -2205,14 +2190,6 @@ const CASE = {
           "Febrile overnight with persistent pain and limited movement.",
           "Shift Summary\n\nFebrile overnight to 39.1°C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
           "Nursing"
-        ],
-        [
-          "I-PASS Handoff",
-          "Night Team",
-          "07/03 22:30",
-          "Stable. Admitted for fever, left hip pain, and refusal to bear weight; observing for presumed transient synovitis.",
-          "I — Illness severity: STABLE.\n\nP — Patient summary: Previously healthy 3-year-old admitted with fever, left hip pain, and refusal to bear weight after a recent viral illness. Initial CRP and radiograph are reassuring. Working diagnosis is transient synovitis, though early osteomyelitis or septic arthritis cannot be excluded. He is receiving scheduled ibuprofen, PRN acetaminophen, and maintenance IV fluids. Blood culture is pending.\n\nA — Action list:\n- Reassess pain and ability to bear weight after scheduled ibuprofen.\n- Follow fever curve, intake, and urine output overnight.\n\nS — Situation awareness/contingency planning: If fever or pain worsens, perfusion changes, or he remains unable to bear weight in the morning, reassess at the bedside and consider repeat labs, MRI, and Orthopedic consultation.\n\nS — Synthesis by receiver: Mason is stable and being observed for presumed transient synovitis. I will follow his fever, pain, intake, urine output, and ability to bear weight, and escalate the evaluation if he worsens or does not improve.",
-          "Handoff"
         ],
         [
           "Attending Addendum to Admission H&P",
@@ -3145,14 +3122,6 @@ const CASE = {
           "Nursing"
         ],
         [
-          "I-PASS Handoff",
-          "Night Team",
-          "07/03 22:30",
-          "Stable. Admitted for fever, left hip pain, and refusal to bear weight; observing for presumed transient synovitis.",
-          "I — Illness severity: STABLE.\n\nP — Patient summary: Previously healthy 3-year-old admitted with fever, left hip pain, and refusal to bear weight after a recent viral illness. Initial CRP and radiograph are reassuring. Working diagnosis is transient synovitis, though early osteomyelitis or septic arthritis cannot be excluded. He is receiving scheduled ibuprofen, PRN acetaminophen, and maintenance IV fluids. Blood culture is pending.\n\nA — Action list:\n- Reassess pain and ability to bear weight after scheduled ibuprofen.\n- Follow fever curve, intake, and urine output overnight.\n\nS — Situation awareness/contingency planning: If fever or pain worsens, perfusion changes, or he remains unable to bear weight in the morning, reassess at the bedside and consider repeat labs, MRI, and Orthopedic consultation.\n\nS — Synthesis by receiver: Mason is stable and being observed for presumed transient synovitis. I will follow his fever, pain, intake, urine output, and ability to bear weight, and escalate the evaluation if he worsens or does not improve.",
-          "Handoff"
-        ],
-        [
           "Attending Addendum to Admission H&P",
           "Barnes, MD",
           "07/03 22:15",
@@ -3926,355 +3895,1917 @@ const CASE = {
       ]
     },
     {
-      "id": "5",
-      "label": "Phase 5",
-      "title": "Escalation of care",
-      "time": "07/05/2026 02:10",
-      "location": "5D-4 → PICU",
+      "id": "5a",
+      "label": "Phase 5A",
+      "title": "Sepsis escalation",
+      "time": "07/05/2026 03:18",
+      "location": "5D-4",
       "room": "5D-4",
-      "team": "PHM + PICU + Ortho",
-      "severity": "Critical",
-      "weight": "13 kg",
-      "weightDetail": "28 lb 10 oz",
+      "team": "Hospital Medicine / MET",
+      "severity": "Sepsis Red / MET active",
+      "weight": "13.2 kg",
+      "weightDetail": "29 lb 2 oz",
       "hospitalDay": "2",
       "status": "worse",
-      "learnerPrompt": "The patient is deteriorating. Review the chart quickly and lead the next steps.",
+      "learnerPrompt": "A Sepsis Red alert has triggered and the Medical Emergency Team is at the bedside. Assess Mason and initiate treatment.",
       "vitals": {
-        "Temp": "40.2 °C",
-        "HR": "190",
-        "RR": "48",
-        "SpO₂": "92% RA",
-        "Pain": "—",
-        "Updated": "07/05 02:00"
+        "Temp": "39.4 °C",
+        "HR": "154",
+        "RR": "34",
+        "BP": "92/55",
+        "SpO₂": "95% on 2 L NC",
+        "Pain": "7/10",
+        "Updated": "07/05 03:15"
       },
       "summary": {
         "assessment": [
-          "Septic shock with end-organ dysfunction in patient with bacteremic osteomyelitis.",
-          "Requires immediate escalation and source-control reassessment."
+          "3 y.o. with MSSA bacteremia and proximal femur osteomyelitis, now with new systemic deterioration.",
+          "Sepsis Red triggered for persistent fever, tachycardia, tachypnea, altered interaction, delayed capillary refill, oliguria, and new oxygen requirement.",
+          "Blood pressure is trending downward but remains within an age-appropriate range."
         ],
         "problems": [
-          "Septic shock",
-          "Bacteremic osteomyelitis",
-          "End-organ dysfunction",
-          "Need for source control"
+          "Sepsis with concern for evolving organ dysfunction",
+          "MSSA bacteremia",
+          "Proximal femur osteomyelitis",
+          "New hypoxemia requiring 2 L nasal cannula",
+          "Decreased urine output",
+          "Altered mental status / decreased interaction"
         ],
         "events": [
-          "Hypotension and lethargy",
-          "Lactate 5.1",
-          "VBG metabolic acidosis",
-          "PICU accepts transfer"
+          "Persistent fever despite scheduled ibuprofen and PRN acetaminophen",
+          "SpO₂ fell to 90–91% on room air; improved to 95–96% on 2 L nasal cannula",
+          "Capillary refill increased to 4 seconds",
+          "Urine output decreased despite maintenance IV fluids",
+          "Sepsis Red alert triggered; MET activated"
         ],
         "plan": [
-          "Activate and lead MET response",
-          "Fluid resuscitation",
-          "Repeat cultures and broaden antibiotics",
-          "PICU transfer",
-          "Urgent Ortho reassessment for source control"
+          "Immediate bedside assessment and ABC stabilization",
+          "Continue supplemental oxygen",
+          "Initiate sepsis resuscitation and reassess response",
+          "Broaden antimicrobial therapy while evaluating the source of deterioration",
+          "Obtain laboratory evaluation for end-organ dysfunction",
+          "Notify attending and discuss with PICU"
         ],
         "pending": [
-          "Repeat blood culture",
-          "Response to fluid bolus",
-          "Source control plan"
+          "Initial resuscitation decisions",
+          "CBC, CMP, CRP, procalcitonin, lactate, VBG, and repeat blood culture",
+          "Response to fluid bolus and antimicrobial escalation"
         ],
         "todo": [
-          "Lead MET using closed-loop communication",
-          "Fluid resuscitation",
-          "Repeat cultures + broaden antibiotics",
-          "Call PICU and Ortho urgently"
+          "Assess perfusion and mental status at bedside",
+          "Give 20 mL/kg normal saline bolus",
+          "Broaden to vancomycin plus ceftriaxone",
+          "Obtain sepsis/end-organ function labs and repeat blood culture",
+          "Notify attending",
+          "Contact PICU and reassess after interventions"
         ],
         "meds": [
-          "NS bolus 20 mL/kg",
-          "Vancomycin 15 mg/kg IV",
-          "Cefepime 50 mg/kg IV"
+          "Cefazolin active before MET evaluation",
+          "Scheduled ibuprofen",
+          "PRN acetaminophen",
+          "2 L/min oxygen by nasal cannula"
         ]
       },
       "timeline": [
         [
-          "00:20",
-          "Fever 40.2, HR 186"
+          "07/05 00:00",
+          "Persistent fever despite antipyretics"
         ],
         [
-          "01:15",
-          "Minimal urine output"
+          "07/05 02:30",
+          "Increasing sleepiness and reduced urine output noted"
         ],
         [
-          "01:50",
-          "BP 72/38, cap refill 5 sec"
+          "07/05 03:08",
+          "SpO₂ 90–91% on room air; 2 L NC applied"
         ],
         [
-          "02:00",
-          "MET activated"
+          "07/05 03:15",
+          "Sepsis Red triggered; MET activated"
         ],
         [
-          "02:10",
-          "PICU accepts transfer"
+          "07/05 03:18",
+          "Primary team at bedside"
+        ],
+        [
+          "09:30",
+          "Last PHM progress note signed"
+        ],
+        [
+          "11:05",
+          "MRI finalized"
+        ],
+        [
+          "12:47",
+          "Blood culture positive"
+        ],
+        [
+          "13:32",
+          "Blood Culture ID PCR resulted"
+        ],
+        [
+          "13:40",
+          "Orthopedic consult signed"
+        ],
+        [
+          "14:10",
+          "Cefazolin started"
+        ],
+        [
+          "19:00",
+          "Evening handoff"
+        ],
+        [
+          "19:05",
+          "Corrected I-PASS documented"
+        ],
+        [
+          "19:10",
+          "Physician event note filed"
         ]
       ],
       "notes": [
         [
-          "Rapid Response Note",
-          "MET Team",
-          "07/05 02:05",
-          "Septic shock with end-organ dysfunction.",
-          "Called for hypotension and altered mental status in 3yo with bacteremic osteomyelitis. On arrival: lethargic, HR 190, RR 48, BP 72/38, SpO2 92% RA, cap refill 5 seconds, weak pulses, mottled extremities. Impression: septic shock with end-organ dysfunction.",
+          "Nursing Event Note",
+          "Night RN",
+          "07/05 03:15",
+          "Sepsis Red triggered for worsening perfusion, oxygen requirement, and decreased interaction.",
+          "Mason has remained febrile despite scheduled ibuprofen and PRN acetaminophen overnight. Over the past several hours he has become increasingly sleepy, waking to voice but quickly falling back asleep. Mother states he \"just is not acting like himself\" and is less interactive than earlier today.\n\nRespiratory rate has increased with oxygen saturations of 90–91% on room air. He was placed on 2 L/min nasal cannula with improvement to 95–96%. Capillary refill is now approximately 4 seconds, and urine output has decreased despite maintenance IV fluids.\n\nPrimary team notified. Patient meets Sepsis Red criteria, and the Medical Emergency Team has been activated.",
+          "Nursing"
+        ],
+        [
+          "Corrected I-PASS Handoff",
+          "Day Team",
+          "07/04 19:05",
+          "Watcher. MSSA bacteremia with MRI-confirmed osteomyelitis; concrete overnight actions and contingencies included.",
+          "I — Illness severity: WATCHER.\n\nP — Patient summary: Previously healthy three-year-old with left proximal femur osteomyelitis and a small subperiosteal fluid collection without an operative indication today. Admission blood culture became positive for gram-positive cocci in clusters; rapid PCR detected Staphylococcus aureus with mecA/C not detected. Cefazolin was started this afternoon. Orthopedics and ID are following. Pain improved after oxycodone, but he remains intermittently febrile with poor oral intake. Maintenance IV fluids are running. Regular diet this evening; NPO at midnight for Orthopedic re-evaluation.\n\nA — Action list: Follow up vital signs and urine output after treating pain/fever and after several hours on maintenance IV fluids. Make NPO at midnight.\n\nS — Situation awareness/contingency planning: If fever persists with worsening tachycardia, delayed capillary refill, decreased urine output, increasing pain, or other signs of deterioration, reassess Mason at the bedside, notify the senior resident and attending, and discuss repeat evaluation with Orthopedics and Infectious Diseases.\n\nS — Synthesis by receiver: Mason has S. aureus bacteremia with proximal femur osteomyelitis. He is receiving cefazolin, maintenance fluids, scheduled ibuprofen, and PRN acetaminophen/oxycodone. I will reassess vital signs and urine output, make him NPO at midnight, and escalate for worsening perfusion or other deterioration.",
+          "Handoff"
+        ],
+        [
+          "Physician Event Note",
+          "Barnes, MD",
+          "07/04 19:10",
+          "Chart updated after MRI, culture PCR, and consultant recommendations.",
+          "MRI today demonstrated left proximal femur osteomyelitis with a small subperiosteal fluid collection, no septic arthritis, and no drainable abscess. Admission blood culture is positive; rapid identification detected Staphylococcus aureus with mecA/C not detected. Cefazolin was started using the verified 13.2 kg weight. Orthopedics recommends no operative intervention today, regular diet this evening, and NPO at midnight for morning re-evaluation. Infectious Diseases agrees with targeted beta-lactam therapy.\n\nMason remains intermittently febrile with poor oral intake and mild oliguria. Pain improved after PRN oxycodone. Maintenance IV fluids are running.\n\nOvernight plan: follow vital signs and urine output after fever/pain treatment and several hours of IV fluids. If worsening tachycardia, perfusion, urine output, pain, mental status, or other signs of deterioration occur, evaluate immediately and notify the senior resident/attending with Orthopedic and ID re-evaluation as indicated.",
           "Event"
         ],
         [
-          "PICU Acceptance Note",
-          "S. Allen, MD",
-          "07/05 02:15",
-          "Accept to PICU for septic shock.",
-          "Accept to PICU for septic shock. Initiate sepsis bundle, fluid resuscitation, vasoactive support if inadequate response, broaden antibiotics per sepsis pathway, urgent Ortho reassessment for source control.",
-          "Event"
+          "PHM Progress Note",
+          "Barnes, MD",
+          "07/04 09:30",
+          "Persistent fever and worsening pain; broaden evaluation for osteoarticular infection.",
+          "S — Subjective\nMother reports Mason remained febrile overnight and continues to refuse to stand or bear weight. He cries with repositioning of the left leg and has had only small sips of fluid with very little breakfast. Acetaminophen temporarily improved his fever, but his pain and activity level have not returned to baseline.\n\nO — Objective\nVital signs (07/04 07:45): T 39.1°C, HR 149, RR 30, BP 90/52, SpO₂ 98% on room air. Pain 7/10.\n\nIntake/Output: Poor oral intake overnight. Urine output remains present but is decreasing.\n\nPhysical Exam\nGeneral: Tired, uncomfortable-appearing child resting with mother; cries with movement but consoles when left leg is still.\nHEENT: Lips mildly dry; no oral lesions.\nCV: Tachycardic with regular rhythm; no murmur. Peripheral pulses 2+. Capillary refill approximately 3 seconds.\nResp: Clear to auscultation bilaterally; no retractions or increased work of breathing.\nAbdomen: Soft, non-tender, non-distended.\nMSK: Left hip held flexed. Marked pain with passive range of motion and with palpation over the proximal femur. No overlying erythema or visible swelling. Refuses to bear weight.\nNeuro: Awake and appropriately responsive to mother; moves all extremities except for pain-limited movement of the left leg.\nSkin: Warm; no rash or focal skin lesion.\n\nAdmission data reviewed: WBC 11.8 K/uL, CRP 3.2 mg/L, blood culture pending, left hip radiograph without acute abnormality.\n\nA — Assessment\nPreviously healthy 3-year-old admitted with fever and refusal to bear weight, initially managed as possible transient synovitis. Persistent high fever, worsening pain, continued inability to bear weight, tachycardia, and delayed capillary refill are no longer consistent with an uncomplicated course. Osteomyelitis and septic arthritis are now higher on the differential. He also has poor oral intake with early dehydration.\n\nP — Plan\n- Obtain CBC with differential, CRP, CMP, and procalcitonin.\n- Obtain MRI of the left hip/femur with contrast.\n- Consult Orthopedic Surgery.\n- Keep NPO pending imaging and operative recommendations.\n- Continue scheduled ibuprofen and PRN acetaminophen.\n- Continue maintenance IV fluids and strict intake/output monitoring.\n- Follow the admission blood culture.\n- Perform serial examinations and reassess perfusion, pain, and ability to bear weight.",
+          "Physician"
+        ],
+        [
+          "Orthopedic Surgery Consult",
+          "J. Kim, MD",
+          "07/04 13:40",
+          "No operative intervention today; regular diet, then NPO at midnight.",
+          "MRI findings are consistent with left proximal femur osteomyelitis with a small subperiosteal fluid collection. No septic arthritis and no drainable abscess. No operative intervention indicated today. Allow regular diet and make NPO at midnight for Orthopedic re-evaluation tomorrow morning.",
+          "Consult"
+        ],
+        [
+          "Infectious Diseases Consult",
+          "A. Patel, MD",
+          "07/04 13:50",
+          "Targeted beta-lactam therapy recommended.",
+          "Blood Culture ID PCR detected Staphylococcus aureus with mecA/C not detected. Recommend targeted beta-lactam therapy using the verified weight. Follow final identification and susceptibilities and monitor clinical response.",
+          "Consult"
+        ],
+        [
+          "I-PASS Handoff",
+          "Day Team",
+          "07/04 18:55",
+          "Stable. Patient had more workup today due to persistent fever. Ortho/ID consulted.",
+          "I — Illness severity: STABLE.\n\nP — Patient summary: Three-year-old admitted with fever, left hip pain, and refusal to bear weight. Initially thought to have transient synovitis. Receiving scheduled ibuprofen and PRN acetaminophen. Blood culture pending.\n\nUpdate: Patient had more workup today due to persistent fever. Ortho/ID consulted.\n\nA — Action list: None.\n\nS — Situation awareness/contingency planning: Continue to monitor.\n\nS — Synthesis by receiver: Not documented.",
+          "Handoff"
+        ],
+        [
+          "Night Shift Nursing Summary",
+          "Night RN",
+          "07/04 06:48",
+          "Febrile overnight with persistent pain and limited movement.",
+          "Shift Summary\n\nFebrile overnight to 39.1°C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
+          "Nursing"
+        ],
+        [
+          "Attending Addendum to Admission H&P",
+          "Barnes, MD",
+          "07/03 22:15",
+          "Observation admission with scheduled NSAIDs and serial exams remains appropriate.",
+          "I personally evaluated Mason and discussed the case with the resident team. He presents with fever, refusal to bear weight, and a reassuring initial evaluation. Transient synovitis remains the leading diagnosis, though early osteoarticular infection cannot be excluded.\n\nGiven his persistent symptoms and inability to ambulate, observation admission with scheduled NSAIDs and serial examinations is appropriate. Blood culture has been obtained. Will continue to monitor his clinical course and reassess if symptoms fail to improve or additional findings emerge.\n\nThe ED weight discrepancy was identified during admission reconciliation. Weight verified with parent report and prior growth history; corrected to 13.2 kg. Weight-based medication dosing updated.",
+          "Physician"
+        ],
+        [
+          "Pediatric Inpatient Nursing Shift Summary",
+          "Day RN",
+          "07/03 18:45",
+          "Admitted from ED. Comfortable at rest but still refuses to bear weight.",
+          "Shift Summary\n\nReceived Mason from the Emergency Department this afternoon. Mother remains at bedside and actively involved in care. Admission assessment completed.\n\nFebrile on arrival to the floor but more comfortable after scheduled ibuprofen. Continues to refuse to bear weight on the left leg and cries with attempts to stand. Pain appears well controlled while resting but increases with movement.\n\nTaking small amounts of fluids and ate a few bites of applesauce with encouragement. Voided once since arrival to the floor. Peripheral IV remains patent and infusing maintenance IV fluids without difficulty.\n\nMother updated on the plan for overnight observation, scheduled NSAIDs, and serial examinations. No additional concerns at end of shift.",
+          "Nursing"
+        ],
+        [
+          "Admission H&P",
+          "Resident Team",
+          "07/03 18:10",
+          "Admit for observation, serial exams, scheduled NSAIDs.",
+          "Chief Complaint\nFever and refusal to bear weight.\n\nHPI\nMason is a previously healthy 3-year-old male admitted from the ED for fever and left hip pain with refusal to bear weight. Symptoms began yesterday with fever and increasing discomfort with movement of the left leg. No known trauma. He had URI symptoms last week. In the ED, initial evaluation included CBC, CRP, blood culture, and left hip radiograph. X-ray was reassuring. CRP was normal. He improved clinically after antipyretic with normalization of heart rate and stable perfusion.\n\nPMHx\nBirth history: Full term, no NICU stay.\nMedical history: No chronic medical conditions.\nSurgical history: None.\nDevelopment: Age-appropriate per mother.\nAllergies: NKDA.\nVaccinations: Up to date.\n\nFamily History\nNo family history of rheumatologic disease, recurrent skin/soft tissue infections, MRSA, immunodeficiency, or bleeding disorders.\n\nSocial History\nLives with mother, father, and older sibling. Attends daycare. No recent travel. No known sick contacts other than recent URI symptoms in household.\n\nPhysical Exam\nGeneral: Tired but non-toxic appearing child sitting with mother, cries with movement of left leg but calms when resting.\nHEENT: Moist mucous membranes.\nCV: Regular rate and rhythm, no murmur. Capillary refill less than 2 seconds.\nResp: Clear to auscultation bilaterally, no increased work of breathing.\nAbdomen: Soft, non-tender, non-distended.\nMSK: Left hip held slightly flexed. Cries with passive range of motion, especially internal rotation. No overlying erythema or swelling. Refuses to bear weight.\nNeuro: Alert, interactive with mother, moves all extremities spontaneously except limited left leg movement due to pain.\nSkin: No rash, bruising, or focal skin lesion.\n\nObjective Data\nCBC: WBC 11.8 K/uL, Hgb 11.7 g/dL, Platelets 348 K/uL.\nCRP: 3.2 mg/L.\nBMP: Within normal limits.\nBlood culture: Collected and pending.\nLeft hip radiograph: No acute fracture or dislocation. No osseous abnormality.\n\nAssessment\n3-year-old male with fever, left hip pain, and refusal to bear weight. Most likely transient synovitis given recent viral symptoms, stable appearance, normal CRP, and reassuring radiograph. Early osteomyelitis or septic arthritis cannot be fully excluded at this time, so will admit for observation and serial examinations.\n\nPlan\n1. Left hip pain/refusal to bear weight\n- Scheduled ibuprofen.\n- Acetaminophen PRN.\n- Serial musculoskeletal examinations.\n- Reassess ability to bear weight after pain control.\n- Consider repeat labs, MRI, and orthopedic consultation if symptoms persist or worsen.\n\n2. Fever\n- Follow fever curve.\n- Follow blood culture.\n- Defer empiric antibiotics while stable and diagnosis remains uncertain.\n\n3. Fluids/nutrition\n- Regular diet as tolerated.\n- Maintenance IV fluids if oral intake remains poor.\n\n4. Medication safety\n- ED weight discrepancy identified during admission reconciliation. Weight verified with parent report and prior growth history; corrected to 13.2 kg. Weight-based medication dosing updated.",
+          "Physician"
+        ],
+        [
+          "ED Provider Note",
+          "Patel, MD",
+          "07/03 16:45",
+          "Fever and left hip pain since yesterday. Refusing to bear weight.",
+          "Previously healthy 3-year-old male with one day of fever and left hip/leg pain with refusal to bear weight. No known trauma. Had URI symptoms last week.\n\nExam: uncomfortable with movement, cries with passive left hip range of motion, no swelling or erythema. Initially tachycardic while febrile with improvement after antipyretic. Capillary refill less than 2 seconds. Interactive with mother between exams.\n\nAssessment: Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture. Given reassuring perfusion and absence of septic physiology, plan to admit for observation and serial examinations.\n\nPlan: blood culture obtained, hip radiograph, pain control, IV fluids if poor intake. Defer empiric antibiotics while clinically stable to preserve culture yield unless patient worsens or additional data suggests bacterial infection. Consider MRI if worsening pain, persistent fever, rising inflammatory markers, or inability to bear weight persists.",
+          "Physician"
+        ],
+        [
+          "ED Nursing Note",
+          "Ashley RN",
+          "07/03 16:18",
+          "PIV placed. Labs and blood culture drawn.",
+          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week. PIV placed, labs and blood culture drawn. Ibuprofen 310 mg PO administered per order.",
+          "Nursing"
+        ],
+        [
+          "Triage Note",
+          "ED Triage RN",
+          "07/03 14:38",
+          "Arrived via private car. Fever today. Left hip pain. Won't walk.",
+          "Chief complaint: Fever and will not walk. Mother reports no trauma. Triage weight documented: 31 kg.",
+          "Nursing"
+        ],
+        [
+          "ED Nursing Note",
+          "Ashley RN",
+          "07/03 14:32",
+          "Initial assessment completed. Placed on monitor.",
+          "Patient appears uncomfortable. No visible swelling or bruising.",
+          "Nursing"
+        ],
+        [
+          "ED Attending Attestation",
+          "ED Attending",
+          "07/03 17:00",
+          "Agree with observation plan. Antibiotics deferred while stable.",
+          "I saw and examined the patient with the resident. Child is febrile and uncomfortable with hip range of motion but is perfusing well and interactive with parent between exams. Differential includes transient synovitis and early musculoskeletal infection. Blood culture has been obtained. Given current stability and diagnostic uncertainty, agree with admission for observation and serial exams. Would obtain MRI and start antibiotics if clinical status worsens or inflammatory markers rise.",
+          "Physician"
+        ],
+        [
+          "Medication Reconciliation",
+          "ED Pharmacist",
+          "07/03 16:40",
+          "Weight-based medication review requested.",
+          "Pharmacy review initiated for weight-based medications. Documented ED weight appears high for age. Recommend verifying weight before additional weight-based medication preparation.",
+          "Pharmacy"
         ]
       ],
       "orders": [
         [
-          "Sepsis pathway",
-          "Activated",
-          "Completed",
-          ""
+          "Oxygen 2 L/min by nasal cannula",
+          "Started 03:08",
+          "Active",
+          "Respiratory"
         ],
         [
-          "Normal saline bolus",
-          "20 mL/kg IV",
-          "Ordered",
-          ""
+          "Cefazolin IV",
+          "Last dose given 00:15",
+          "Active",
+          "Medication"
         ],
         [
-          "Repeat blood culture",
-          "STAT",
-          "Ordered",
-          ""
+          "D5NS + 20 mEq/L KCl at 45 mL/hr",
+          "Infusing",
+          "Active",
+          "IV Fluid"
         ],
         [
-          "Cefepime + Vancomycin",
-          "Per sepsis pathway",
-          "Ordered",
-          ""
+          "Ibuprofen PO scheduled",
+          "Given 01:10",
+          "Active",
+          "Medication"
         ],
         [
-          "PICU transfer",
-          "Immediate",
-          "Accepted",
-          ""
+          "Acetaminophen PO PRN",
+          "Given 02:05",
+          "Active",
+          "Medication"
         ]
       ],
       "mar": [
         [
-          "02:03",
-          "Normal saline",
-          "260 mL IV bolus",
-          "Infusing",
-          "20 mL/kg"
+          "00:15",
+          "Cefazolin",
+          "IV",
+          "Given",
+          "Scheduled dose"
         ],
         [
-          "02:08",
-          "Vancomycin",
-          "15 mg/kg IV",
-          "Ordered",
-          ""
+          "01:10",
+          "Ibuprofen",
+          "10 mg/kg PO",
+          "Given",
+          "Scheduled"
         ],
         [
-          "02:08",
-          "Cefepime",
-          "50 mg/kg IV",
-          "Ordered",
-          ""
+          "02:05",
+          "Acetaminophen",
+          "15 mg/kg PO",
+          "Given",
+          "PRN fever"
+        ],
+        [
+          "03:08",
+          "Oxygen",
+          "2 L/min NC",
+          "Started",
+          "SpO₂ 90–91% on room air"
         ]
       ],
       "results": {
-        "Blood gas": [
+        "CBC": [
           [
-            "VBG pH",
-            "7.24",
-            "Critical"
-          ],
-          [
-            "pCO₂",
-            "31 mmHg",
-            ""
-          ],
-          [
-            "HCO₃",
-            "13 mEq/L",
-            "Low"
-          ],
-          [
-            "Base deficit",
-            "-13",
-            "Critical"
-          ]
-        ],
-        "Perfusion / organ function": [
-          [
-            "Lactate",
-            "5.1 mmol/L",
-            "Critical"
-          ],
-          [
-            "Creatinine",
-            "0.72 mg/dL",
+            "WBC",
+            "17.8 K/uL",
             "High"
           ],
           [
+            "Hemoglobin",
+            "11.2 g/dL",
+            ""
+          ],
+          [
+            "Hematocrit",
+            "33.5 %",
+            ""
+          ],
+          [
             "Platelets",
-            "118 K/uL",
+            "372 K/uL",
+            ""
+          ],
+          [
+            "Neutrophils",
+            "78 %",
+            "High"
+          ],
+          [
+            "Bands",
+            "8 %",
+            "High"
+          ],
+          [
+            "Absolute neutrophils",
+            "15.3 K/uL",
+            "High"
+          ]
+        ],
+        "Inflammatory markers": [
+          [
+            "CRP",
+            "87 mg/L",
+            "High"
+          ],
+          [
+            "Procalcitonin",
+            "1.4 ng/mL",
+            "High"
+          ]
+        ],
+        "Chemistry": [
+          [
+            "Sodium",
+            "145 mmol/L",
+            "High-normal"
+          ],
+          [
+            "Potassium",
+            "4.0 mmol/L",
+            ""
+          ],
+          [
+            "Chloride",
+            "111 mmol/L",
+            "High"
+          ],
+          [
+            "CO₂",
+            "20 mmol/L",
             "Low"
+          ],
+          [
+            "BUN",
+            "22 mg/dL",
+            "High"
+          ],
+          [
+            "Creatinine",
+            "0.34 mg/dL",
+            ""
+          ],
+          [
+            "Glucose",
+            "91 mg/dL",
+            ""
+          ],
+          [
+            "Calcium",
+            "9.2 mg/dL",
+            ""
+          ],
+          [
+            "Albumin",
+            "3.3 g/dL",
+            "Low"
+          ]
+        ],
+        "Microbiology": [
+          [
+            "Blood culture — 07/03 16:18",
+            "Gram-positive cocci in clusters",
+            "Critical 12:47"
+          ],
+          [
+            "Staphylococcus aureus",
+            "Detected",
+            "Detected 13:32"
+          ],
+          [
+            "mecA/C",
+            "Not detected",
+            "13:32"
+          ],
+          [
+            "Staphylococcus epidermidis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Staphylococcus lugdunensis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus agalactiae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus pneumoniae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus pyogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterococcus faecalis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterococcus faecium",
+            "Not detected",
+            ""
+          ],
+          [
+            "Listeria monocytogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Acinetobacter calcoaceticus-baumannii complex",
+            "Not detected",
+            ""
+          ],
+          [
+            "Bacteroides fragilis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterobacterales",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterobacter cloacae complex",
+            "Not detected",
+            ""
+          ],
+          [
+            "Escherichia coli",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella aerogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella oxytoca",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella pneumoniae group",
+            "Not detected",
+            ""
+          ],
+          [
+            "Proteus species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Salmonella species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Serratia marcescens",
+            "Not detected",
+            ""
+          ],
+          [
+            "Haemophilus influenzae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Neisseria meningitidis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Pseudomonas aeruginosa",
+            "Not detected",
+            ""
+          ],
+          [
+            "Stenotrophomonas maltophilia",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida albicans",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida auris",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida glabrata",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida krusei",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida parapsilosis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida tropicalis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Cryptococcus neoformans/gattii",
+            "Not detected",
+            ""
           ]
         ]
       },
       "imaging": [
         [
-          "MRI",
-          "Known osteomyelitis with subperiosteal abscess; Ortho reassessment requested for source control."
+          "MRI left femur/hip with contrast",
+          "Marrow edema and enhancement involving the left proximal femoral metaphysis, consistent with osteomyelitis. Small adjacent subperiosteal fluid collection. No hip joint effusion or septic arthritis. No drainable abscess."
         ]
       ],
       "growth": [
         [
           "Today verified",
-          "13.0 kg"
+          "13.2 kg"
         ]
       ],
       "flowsheet": {
         "times": [
-          "00:20",
-          "01:15",
-          "01:50",
-          "02:00"
+          "00:00",
+          "01:30",
+          "02:30",
+          "03:08",
+          "03:15"
         ],
         "rows": [
           [
             "Temperature",
-            "39.8",
-            "40.0",
-            "40.2",
-            "40.2"
+            "38.6",
+            "39.0",
+            "39.2",
+            "39.4",
+            "39.4"
           ],
           [
             "Heart Rate",
-            "176",
-            "182",
-            "186",
-            "190"
+            "132",
+            "140",
+            "147",
+            "152",
+            "154"
           ],
           [
             "Respiratory Rate",
-            "38",
-            "42",
-            "46",
-            "48"
+            "24",
+            "26",
+            "30",
+            "34",
+            "34"
           ],
           [
             "Blood Pressure",
-            "88/52",
-            "82/46",
-            "72/38",
-            "74/40"
+            "101/63",
+            "98/60",
+            "96/58",
+            "94/56",
+            "92/55"
           ],
           [
             "SpO₂",
-            "96",
-            "94",
-            "93",
-            "92"
+            "98 RA",
+            "97 RA",
+            "94 RA",
+            "90–91 RA",
+            "95–96 on 2 L NC"
+          ],
+          [
+            "Oxygen",
+            "Room air",
+            "Room air",
+            "Room air",
+            "2 L NC",
+            "2 L NC"
+          ],
+          [
+            "Pain",
+            "5",
+            "6",
+            "6",
+            "7",
+            "7"
+          ],
+          [
+            "Cap refill",
+            "2 sec",
+            "2–3 sec",
+            "3 sec",
+            "4 sec",
+            "4 sec"
+          ],
+          [
+            "Mental status",
+            "Interactive",
+            "Tired",
+            "Sleepy",
+            "Wakes to voice",
+            "Wakes to voice"
           ],
           [
             "Urine output",
-            "Low",
-            "Minimal",
-            "None",
-            "None"
+            "0.8 mL/kg/hr",
+            "0.7 mL/kg/hr",
+            "0.5 mL/kg/hr",
+            "0.4 mL/kg/hr",
+            "0.4 mL/kg/hr"
+          ],
+          [
+            "PEWS",
+            "2",
+            "3",
+            "4",
+            "6",
+            "6"
+          ]
+        ]
+      },
+      "messages": [
+        [
+          "Night RN",
+          "03:16",
+          "Sepsis Red triggered. MET at bedside. Please evaluate patient immediately.",
+          "RN"
+        ],
+        [
+          "Ashley RN",
+          "19:08",
+          "Thanks — I will repeat vitals after the next fever/pain treatment and update you on urine output after a few more hours of fluids.",
+          "AR"
+        ]
+      ],
+      "facilitator": [
+        "Phase 5A focus: early recognition and initial escalation from sepsis before frank hypotension.",
+        "Learners should integrate trends rather than wait for a single catastrophic vital sign.",
+        "Expected priorities: bedside assessment, oxygen, 20 mL/kg NS bolus, vancomycin + ceftriaxone, CBC/CMP/CRP/procalcitonin/lactate/VBG/repeat blood culture, attending notification, PICU contact, and explicit reassessment plan."
+      ],
+      "aha": "Mason has evolving multisystem dysfunction even though his blood pressure is not frankly hypotensive.",
+      "authenticQuestion": "What must happen now, before laboratory results are available?",
+      "resultTrends": {
+        "CRP": [
+          [
+            "07/03 16:00",
+            3.2
+          ],
+          [
+            "07/04 11:00",
+            87
+          ]
+        ],
+        "WBC": [
+          [
+            "07/03 16:00",
+            11.8
+          ],
+          [
+            "07/04 11:00",
+            17.8
+          ]
+        ]
+      },
+      "diet": "Regular diet; NPO at midnight",
+      "resources": [
+        {
+          "title": "ACH 2025 Antibiogram",
+          "description": "Local Staphylococcus aureus susceptibility data.",
+          "url": "2025_ACH_Antibiogram.pdf",
+          "type": "Local PDF"
+        },
+        {
+          "title": "PIDS/IDSA Pediatric Acute Hematogenous Osteomyelitis Guideline",
+          "description": "National guidance for antimicrobial selection and monitoring.",
+          "url": "PIDS-IDSA_Osteomyelitis_Guideline.pdf",
+          "type": "Guideline PDF"
+        },
+        {
+          "title": "Red Book — Invasive Staphylococcal Infections",
+          "description": "Reference: serious MSSA infections should receive an antistaphylococcal beta-lactam when susceptibilities allow.",
+          "type": "Reference",
+          "url": "redbook_staph_reference.html"
+        },
+        {
+          "type": "Clinical Pathway",
+          "title": "Osteomyelitis Evaluation & Management Flowchart",
+          "description": "A concise learner-facing pathway synthesized for this simulation.",
+          "url": "osteomyelitis_pathway.html"
+        },
+        {
+          "type": "Antibiotic Guidance",
+          "title": "Empiric and Targeted Antibiotic Decision Aid",
+          "description": "Use organism data, resistance markers, local susceptibility, and illness severity to select therapy.",
+          "url": "antibiotic_guidance.html"
+        }
+      ],
+      "resultTimes": [
+        "07/03 16:00",
+        "07/04 09:45",
+        "07/04 13:32"
+      ],
+      "resultHistory": {
+        "07/03 16:00": {
+          "CBC": {
+            "WBC": "11.8 K/uL",
+            "RBC": "4.52 M/uL",
+            "Hemoglobin": "11.7 g/dL",
+            "Hematocrit": "34.8 %",
+            "MCV": "77 fL",
+            "MCH": "25.9 pg",
+            "MCHC": "33.6 g/dL",
+            "RDW": "13.2 %",
+            "Platelets": "348 K/uL",
+            "MPV": "8.9 fL"
+          },
+          "Inflammatory markers": {
+            "CRP": "3.2 mg/L"
+          },
+          "Chemistry": {
+            "Sodium": "138 mmol/L",
+            "Potassium": "4.1 mmol/L",
+            "Chloride": "104 mmol/L",
+            "CO₂": "23 mmol/L",
+            "BUN": "10 mg/dL",
+            "Creatinine": "0.32 mg/dL",
+            "Glucose": "92 mg/dL",
+            "Calcium": "9.6 mg/dL"
+          },
+          "Microbiology": {
+            "Blood culture": "Pending"
+          },
+          "Differential": {
+            "Neutrophils": "62 %",
+            "Lymphocytes": "28 %",
+            "Monocytes": "8 %",
+            "Eosinophils": "1 %",
+            "Basophils": "1 %",
+            "Absolute neutrophils": "7.3 K/uL",
+            "Absolute lymphocytes": "3.3 K/uL",
+            "Absolute monocytes": "0.9 K/uL",
+            "Absolute eosinophils": "0.1 K/uL",
+            "Absolute basophils": "0.1 K/uL"
+          }
+        },
+        "07/04 09:45": {
+          "CBC": {
+            "WBC": "17.8 K/uL",
+            "Hemoglobin": "11.2 g/dL",
+            "Hematocrit": "33.5 %",
+            "Platelets": "372 K/uL",
+            "Neutrophils": "78 %",
+            "Bands": "8 %",
+            "Absolute neutrophils": "15.3 K/uL"
+          },
+          "Inflammatory markers": {
+            "CRP": "87 mg/L",
+            "Procalcitonin": "1.4 ng/mL"
+          },
+          "Chemistry": {
+            "Sodium": "145 mmol/L",
+            "Potassium": "4.0 mmol/L",
+            "Chloride": "111 mmol/L",
+            "CO₂": "20 mmol/L",
+            "BUN": "22 mg/dL",
+            "Creatinine": "0.34 mg/dL",
+            "Glucose": "91 mg/dL",
+            "Calcium": "9.2 mg/dL",
+            "Albumin": "3.3 g/dL"
+          }
+        },
+        "07/04 13:32": {
+          "Microbiology": {
+            "Blood culture — 07/03 16:18": "Gram-positive cocci in clusters",
+            "Staphylococcus aureus": "Detected",
+            "mecA/C": "Not detected",
+            "Staphylococcus epidermidis": "Not detected",
+            "Staphylococcus lugdunensis": "Not detected",
+            "Streptococcus species": "Not detected",
+            "Streptococcus agalactiae": "Not detected",
+            "Streptococcus pneumoniae": "Not detected",
+            "Streptococcus pyogenes": "Not detected",
+            "Enterococcus faecalis": "Not detected",
+            "Enterococcus faecium": "Not detected",
+            "Listeria monocytogenes": "Not detected",
+            "Acinetobacter calcoaceticus-baumannii complex": "Not detected",
+            "Bacteroides fragilis": "Not detected",
+            "Enterobacterales": "Not detected",
+            "Enterobacter cloacae complex": "Not detected",
+            "Escherichia coli": "Not detected",
+            "Klebsiella aerogenes": "Not detected",
+            "Klebsiella oxytoca": "Not detected",
+            "Klebsiella pneumoniae group": "Not detected",
+            "Proteus species": "Not detected",
+            "Salmonella species": "Not detected",
+            "Serratia marcescens": "Not detected",
+            "Haemophilus influenzae": "Not detected",
+            "Neisseria meningitidis": "Not detected",
+            "Pseudomonas aeruginosa": "Not detected",
+            "Stenotrophomonas maltophilia": "Not detected",
+            "Candida albicans": "Not detected",
+            "Candida auris": "Not detected",
+            "Candida glabrata": "Not detected",
+            "Candida krusei": "Not detected",
+            "Candida parapsilosis": "Not detected",
+            "Candida tropicalis": "Not detected",
+            "Cryptococcus neoformans/gattii": "Not detected"
+          }
+        }
+      },
+      "activeOrders": [
+        [
+          "Oxygen 2 L/min by nasal cannula",
+          "Started 03:08",
+          "Active",
+          "Respiratory"
+        ],
+        [
+          "Cefazolin IV",
+          "Last dose given 00:15",
+          "Active",
+          "Medication"
+        ],
+        [
+          "D5NS + 20 mEq/L KCl at 45 mL/hr",
+          "Infusing",
+          "Active",
+          "IV Fluid"
+        ],
+        [
+          "Ibuprofen PO scheduled",
+          "Given 01:10",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Acetaminophen PO PRN",
+          "Given 02:05",
+          "Active",
+          "Medication"
+        ]
+      ]
+    },
+    {
+      "id": "5b",
+      "label": "Phase 5B",
+      "title": "Post-resuscitation reassessment",
+      "time": "07/05/2026 04:20",
+      "location": "5D-4",
+      "room": "5D-4",
+      "team": "Hospital Medicine / MET",
+      "severity": "Persistent sepsis / PICU transfer",
+      "weight": "13.2 kg",
+      "weightDetail": "29 lb 2 oz",
+      "hospitalDay": "2",
+      "status": "worse",
+      "learnerPrompt": "The bolus and broadened antibiotics have been given. Reassess Mason using the updated examination, trends, and resulted labs.",
+      "vitals": {
+        "Temp": "39.0 °C",
+        "HR": "142",
+        "RR": "30",
+        "BP": "94/57",
+        "SpO₂": "96% on 2 L NC",
+        "Pain": "6/10",
+        "Updated": "07/05 04:15"
+      },
+      "summary": {
+        "assessment": [
+          "Sepsis with evolving end-organ dysfunction in a child with MSSA bacteremia and proximal femur osteomyelitis.",
+          "Only partial improvement after 20 mL/kg NS bolus, supplemental oxygen, and escalation to vancomycin plus ceftriaxone.",
+          "Persistent perfusion abnormalities, oxygen requirement, oliguria, altered interaction, metabolic acidosis, and elevated lactate warrant transfer to PICU."
+        ],
+        "problems": [
+          "Sepsis with organ dysfunction",
+          "Persistent abnormal perfusion after initial fluid resuscitation",
+          "Lactic acidosis",
+          "Early acute kidney injury / oliguria",
+          "New oxygen requirement",
+          "MSSA bacteremia and osteomyelitis"
+        ],
+        "events": [
+          "20 mL/kg NS bolus completed",
+          "Vancomycin and ceftriaxone initiated; cefazolin discontinued",
+          "Sepsis labs and repeat blood culture obtained",
+          "Attending evaluated at bedside",
+          "PICU consulted and transfer accepted"
+        ],
+        "plan": [
+          "Transfer to PICU for ongoing resuscitation and continuous monitoring",
+          "Continue 2 L nasal cannula and titrate to oxygenation/work of breathing",
+          "Continue vancomycin plus ceftriaxone pending repeat cultures and multidisciplinary reassessment",
+          "Strict intake/output and serial perfusion examinations",
+          "Repeat lactate and chemistry as clinically indicated",
+          "Continue Orthopedic and Infectious Diseases involvement; reassess source control"
+        ],
+        "pending": [
+          "Repeat blood culture",
+          "Response to continued resuscitation",
+          "Repeat lactate and renal function",
+          "PICU bed transfer"
+        ],
+        "todo": [
+          "Complete bedside handoff to PICU",
+          "Continue frequent reassessment during transfer",
+          "Communicate updated condition and treatment to family",
+          "Reassess need for source control with Orthopedics"
+        ],
+        "meds": [
+          "Vancomycin IV",
+          "Ceftriaxone IV",
+          "Normal saline bolus completed",
+          "2 L/min oxygen by nasal cannula"
+        ]
+      },
+      "timeline": [
+        [
+          "07/05 03:20",
+          "20 mL/kg NS bolus started"
+        ],
+        [
+          "07/05 03:24",
+          "Sepsis labs and repeat blood culture collected"
+        ],
+        [
+          "07/05 03:30",
+          "Vancomycin and ceftriaxone initiated"
+        ],
+        [
+          "07/05 03:50",
+          "NS bolus completed"
+        ],
+        [
+          "07/05 04:05",
+          "Post-bolus reassessment: partial response"
+        ],
+        [
+          "07/05 04:18",
+          "PICU transfer accepted"
+        ],
+        [
+          "07/05 00:00",
+          "Persistent fever despite antipyretics"
+        ],
+        [
+          "07/05 02:30",
+          "Increasing sleepiness and reduced urine output noted"
+        ],
+        [
+          "07/05 03:08",
+          "SpO₂ 90–91% on room air; 2 L NC applied"
+        ],
+        [
+          "07/05 03:15",
+          "Sepsis Red triggered; MET activated"
+        ],
+        [
+          "07/05 03:18",
+          "Primary team at bedside"
+        ],
+        [
+          "09:30",
+          "Last PHM progress note signed"
+        ],
+        [
+          "11:05",
+          "MRI finalized"
+        ],
+        [
+          "12:47",
+          "Blood culture positive"
+        ],
+        [
+          "13:32",
+          "Blood Culture ID PCR resulted"
+        ],
+        [
+          "13:40",
+          "Orthopedic consult signed"
+        ],
+        [
+          "14:10",
+          "Cefazolin started"
+        ],
+        [
+          "19:00",
+          "Evening handoff"
+        ],
+        [
+          "19:05",
+          "Corrected I-PASS documented"
+        ],
+        [
+          "19:10",
+          "Physician event note filed"
+        ]
+      ],
+      "notes": [
+        [
+          "Attending Significant Event Addendum",
+          "Barnes, MD",
+          "07/05 04:18",
+          "Persistent organ dysfunction and incomplete response to initial resuscitation require PICU transfer.",
+          "I evaluated Mason during the MET response and again after the initial 20 mL/kg normal saline bolus. He has shown modest improvement in heart rate and capillary refill but remains less interactive than baseline, tachypneic with a new oxygen requirement, and oliguric. Laboratory evaluation demonstrates lactic and metabolic acidosis with early renal dysfunction.\n\nAgree with broadening antimicrobial therapy to vancomycin plus ceftriaxone while repeat cultures are pending. Given persistent abnormal perfusion and evolving end-organ dysfunction despite initial resuscitation, he requires transfer to the PICU for continuous monitoring and further management. Orthopedics and Infectious Diseases should be updated and source control reconsidered as the clinical course evolves.",
+          "Physician"
+        ],
+        [
+          "Resident Significant Event Note",
+          "PHM Resident",
+          "07/05 04:12",
+          "Sepsis Red response completed; only partial improvement after initial resuscitation.",
+          "Sepsis Red / MET evaluation performed at bedside for persistent fever, tachycardia, tachypnea, new oxygen requirement, delayed capillary refill, decreased urine output, and decreased interaction.\n\nOn assessment, Mason awakened to voice but was less interactive than baseline. Breath sounds were clear with tachypnea and no focal crackles. Extremities were warm with weak peripheral pulses and capillary refill approximately 4 seconds. Blood pressure remained age appropriate but had trended downward from prior values.\n\nInterventions: Continued 2 L/min nasal cannula. Administered 20 mL/kg normal saline bolus. Cefazolin discontinued and antimicrobial therapy broadened to vancomycin plus ceftriaxone. CBC, CMP, CRP, procalcitonin, lactate, VBG, and repeat peripheral blood culture obtained. Attending notified and evaluated at bedside. PICU contacted.\n\nReassessment after bolus: HR improved from 154 to 142, capillary refill approximately 3 seconds, and Mason is slightly more alert but not back to baseline. He remains tachypneic, requires 2 L NC, and has had no additional urine output. Labs demonstrate elevated lactate, metabolic acidosis, and increased creatinine. Plan for PICU transfer for ongoing resuscitation and monitoring.",
+          "Physician"
+        ],
+        [
+          "Nursing Event Note",
+          "Night RN",
+          "07/05 03:15",
+          "Sepsis Red triggered for worsening perfusion, oxygen requirement, and decreased interaction.",
+          "Mason has remained febrile despite scheduled ibuprofen and PRN acetaminophen overnight. Over the past several hours he has become increasingly sleepy, waking to voice but quickly falling back asleep. Mother states he \"just is not acting like himself\" and is less interactive than earlier today.\n\nRespiratory rate has increased with oxygen saturations of 90–91% on room air. He was placed on 2 L/min nasal cannula with improvement to 95–96%. Capillary refill is now approximately 4 seconds, and urine output has decreased despite maintenance IV fluids.\n\nPrimary team notified. Patient meets Sepsis Red criteria, and the Medical Emergency Team has been activated.",
+          "Nursing"
+        ],
+        [
+          "Corrected I-PASS Handoff",
+          "Day Team",
+          "07/04 19:05",
+          "Watcher. MSSA bacteremia with MRI-confirmed osteomyelitis; concrete overnight actions and contingencies included.",
+          "I — Illness severity: WATCHER.\n\nP — Patient summary: Previously healthy three-year-old with left proximal femur osteomyelitis and a small subperiosteal fluid collection without an operative indication today. Admission blood culture became positive for gram-positive cocci in clusters; rapid PCR detected Staphylococcus aureus with mecA/C not detected. Cefazolin was started this afternoon. Orthopedics and ID are following. Pain improved after oxycodone, but he remains intermittently febrile with poor oral intake. Maintenance IV fluids are running. Regular diet this evening; NPO at midnight for Orthopedic re-evaluation.\n\nA — Action list: Follow up vital signs and urine output after treating pain/fever and after several hours on maintenance IV fluids. Make NPO at midnight.\n\nS — Situation awareness/contingency planning: If fever persists with worsening tachycardia, delayed capillary refill, decreased urine output, increasing pain, or other signs of deterioration, reassess Mason at the bedside, notify the senior resident and attending, and discuss repeat evaluation with Orthopedics and Infectious Diseases.\n\nS — Synthesis by receiver: Mason has S. aureus bacteremia with proximal femur osteomyelitis. He is receiving cefazolin, maintenance fluids, scheduled ibuprofen, and PRN acetaminophen/oxycodone. I will reassess vital signs and urine output, make him NPO at midnight, and escalate for worsening perfusion or other deterioration.",
+          "Handoff"
+        ],
+        [
+          "Physician Event Note",
+          "Barnes, MD",
+          "07/04 19:10",
+          "Chart updated after MRI, culture PCR, and consultant recommendations.",
+          "MRI today demonstrated left proximal femur osteomyelitis with a small subperiosteal fluid collection, no septic arthritis, and no drainable abscess. Admission blood culture is positive; rapid identification detected Staphylococcus aureus with mecA/C not detected. Cefazolin was started using the verified 13.2 kg weight. Orthopedics recommends no operative intervention today, regular diet this evening, and NPO at midnight for morning re-evaluation. Infectious Diseases agrees with targeted beta-lactam therapy.\n\nMason remains intermittently febrile with poor oral intake and mild oliguria. Pain improved after PRN oxycodone. Maintenance IV fluids are running.\n\nOvernight plan: follow vital signs and urine output after fever/pain treatment and several hours of IV fluids. If worsening tachycardia, perfusion, urine output, pain, mental status, or other signs of deterioration occur, evaluate immediately and notify the senior resident/attending with Orthopedic and ID re-evaluation as indicated.",
+          "Event"
+        ],
+        [
+          "PHM Progress Note",
+          "Barnes, MD",
+          "07/04 09:30",
+          "Persistent fever and worsening pain; broaden evaluation for osteoarticular infection.",
+          "S — Subjective\nMother reports Mason remained febrile overnight and continues to refuse to stand or bear weight. He cries with repositioning of the left leg and has had only small sips of fluid with very little breakfast. Acetaminophen temporarily improved his fever, but his pain and activity level have not returned to baseline.\n\nO — Objective\nVital signs (07/04 07:45): T 39.1°C, HR 149, RR 30, BP 90/52, SpO₂ 98% on room air. Pain 7/10.\n\nIntake/Output: Poor oral intake overnight. Urine output remains present but is decreasing.\n\nPhysical Exam\nGeneral: Tired, uncomfortable-appearing child resting with mother; cries with movement but consoles when left leg is still.\nHEENT: Lips mildly dry; no oral lesions.\nCV: Tachycardic with regular rhythm; no murmur. Peripheral pulses 2+. Capillary refill approximately 3 seconds.\nResp: Clear to auscultation bilaterally; no retractions or increased work of breathing.\nAbdomen: Soft, non-tender, non-distended.\nMSK: Left hip held flexed. Marked pain with passive range of motion and with palpation over the proximal femur. No overlying erythema or visible swelling. Refuses to bear weight.\nNeuro: Awake and appropriately responsive to mother; moves all extremities except for pain-limited movement of the left leg.\nSkin: Warm; no rash or focal skin lesion.\n\nAdmission data reviewed: WBC 11.8 K/uL, CRP 3.2 mg/L, blood culture pending, left hip radiograph without acute abnormality.\n\nA — Assessment\nPreviously healthy 3-year-old admitted with fever and refusal to bear weight, initially managed as possible transient synovitis. Persistent high fever, worsening pain, continued inability to bear weight, tachycardia, and delayed capillary refill are no longer consistent with an uncomplicated course. Osteomyelitis and septic arthritis are now higher on the differential. He also has poor oral intake with early dehydration.\n\nP — Plan\n- Obtain CBC with differential, CRP, CMP, and procalcitonin.\n- Obtain MRI of the left hip/femur with contrast.\n- Consult Orthopedic Surgery.\n- Keep NPO pending imaging and operative recommendations.\n- Continue scheduled ibuprofen and PRN acetaminophen.\n- Continue maintenance IV fluids and strict intake/output monitoring.\n- Follow the admission blood culture.\n- Perform serial examinations and reassess perfusion, pain, and ability to bear weight.",
+          "Physician"
+        ],
+        [
+          "Orthopedic Surgery Consult",
+          "J. Kim, MD",
+          "07/04 13:40",
+          "No operative intervention today; regular diet, then NPO at midnight.",
+          "MRI findings are consistent with left proximal femur osteomyelitis with a small subperiosteal fluid collection. No septic arthritis and no drainable abscess. No operative intervention indicated today. Allow regular diet and make NPO at midnight for Orthopedic re-evaluation tomorrow morning.",
+          "Consult"
+        ],
+        [
+          "Infectious Diseases Consult",
+          "A. Patel, MD",
+          "07/04 13:50",
+          "Targeted beta-lactam therapy recommended.",
+          "Blood Culture ID PCR detected Staphylococcus aureus with mecA/C not detected. Recommend targeted beta-lactam therapy using the verified weight. Follow final identification and susceptibilities and monitor clinical response.",
+          "Consult"
+        ],
+        [
+          "I-PASS Handoff",
+          "Day Team",
+          "07/04 18:55",
+          "Stable. Patient had more workup today due to persistent fever. Ortho/ID consulted.",
+          "I — Illness severity: STABLE.\n\nP — Patient summary: Three-year-old admitted with fever, left hip pain, and refusal to bear weight. Initially thought to have transient synovitis. Receiving scheduled ibuprofen and PRN acetaminophen. Blood culture pending.\n\nUpdate: Patient had more workup today due to persistent fever. Ortho/ID consulted.\n\nA — Action list: None.\n\nS — Situation awareness/contingency planning: Continue to monitor.\n\nS — Synthesis by receiver: Not documented.",
+          "Handoff"
+        ],
+        [
+          "Night Shift Nursing Summary",
+          "Night RN",
+          "07/04 06:48",
+          "Febrile overnight with persistent pain and limited movement.",
+          "Shift Summary\n\nFebrile overnight to 39.1°C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
+          "Nursing"
+        ],
+        [
+          "Attending Addendum to Admission H&P",
+          "Barnes, MD",
+          "07/03 22:15",
+          "Observation admission with scheduled NSAIDs and serial exams remains appropriate.",
+          "I personally evaluated Mason and discussed the case with the resident team. He presents with fever, refusal to bear weight, and a reassuring initial evaluation. Transient synovitis remains the leading diagnosis, though early osteoarticular infection cannot be excluded.\n\nGiven his persistent symptoms and inability to ambulate, observation admission with scheduled NSAIDs and serial examinations is appropriate. Blood culture has been obtained. Will continue to monitor his clinical course and reassess if symptoms fail to improve or additional findings emerge.\n\nThe ED weight discrepancy was identified during admission reconciliation. Weight verified with parent report and prior growth history; corrected to 13.2 kg. Weight-based medication dosing updated.",
+          "Physician"
+        ],
+        [
+          "Pediatric Inpatient Nursing Shift Summary",
+          "Day RN",
+          "07/03 18:45",
+          "Admitted from ED. Comfortable at rest but still refuses to bear weight.",
+          "Shift Summary\n\nReceived Mason from the Emergency Department this afternoon. Mother remains at bedside and actively involved in care. Admission assessment completed.\n\nFebrile on arrival to the floor but more comfortable after scheduled ibuprofen. Continues to refuse to bear weight on the left leg and cries with attempts to stand. Pain appears well controlled while resting but increases with movement.\n\nTaking small amounts of fluids and ate a few bites of applesauce with encouragement. Voided once since arrival to the floor. Peripheral IV remains patent and infusing maintenance IV fluids without difficulty.\n\nMother updated on the plan for overnight observation, scheduled NSAIDs, and serial examinations. No additional concerns at end of shift.",
+          "Nursing"
+        ],
+        [
+          "Admission H&P",
+          "Resident Team",
+          "07/03 18:10",
+          "Admit for observation, serial exams, scheduled NSAIDs.",
+          "Chief Complaint\nFever and refusal to bear weight.\n\nHPI\nMason is a previously healthy 3-year-old male admitted from the ED for fever and left hip pain with refusal to bear weight. Symptoms began yesterday with fever and increasing discomfort with movement of the left leg. No known trauma. He had URI symptoms last week. In the ED, initial evaluation included CBC, CRP, blood culture, and left hip radiograph. X-ray was reassuring. CRP was normal. He improved clinically after antipyretic with normalization of heart rate and stable perfusion.\n\nPMHx\nBirth history: Full term, no NICU stay.\nMedical history: No chronic medical conditions.\nSurgical history: None.\nDevelopment: Age-appropriate per mother.\nAllergies: NKDA.\nVaccinations: Up to date.\n\nFamily History\nNo family history of rheumatologic disease, recurrent skin/soft tissue infections, MRSA, immunodeficiency, or bleeding disorders.\n\nSocial History\nLives with mother, father, and older sibling. Attends daycare. No recent travel. No known sick contacts other than recent URI symptoms in household.\n\nPhysical Exam\nGeneral: Tired but non-toxic appearing child sitting with mother, cries with movement of left leg but calms when resting.\nHEENT: Moist mucous membranes.\nCV: Regular rate and rhythm, no murmur. Capillary refill less than 2 seconds.\nResp: Clear to auscultation bilaterally, no increased work of breathing.\nAbdomen: Soft, non-tender, non-distended.\nMSK: Left hip held slightly flexed. Cries with passive range of motion, especially internal rotation. No overlying erythema or swelling. Refuses to bear weight.\nNeuro: Alert, interactive with mother, moves all extremities spontaneously except limited left leg movement due to pain.\nSkin: No rash, bruising, or focal skin lesion.\n\nObjective Data\nCBC: WBC 11.8 K/uL, Hgb 11.7 g/dL, Platelets 348 K/uL.\nCRP: 3.2 mg/L.\nBMP: Within normal limits.\nBlood culture: Collected and pending.\nLeft hip radiograph: No acute fracture or dislocation. No osseous abnormality.\n\nAssessment\n3-year-old male with fever, left hip pain, and refusal to bear weight. Most likely transient synovitis given recent viral symptoms, stable appearance, normal CRP, and reassuring radiograph. Early osteomyelitis or septic arthritis cannot be fully excluded at this time, so will admit for observation and serial examinations.\n\nPlan\n1. Left hip pain/refusal to bear weight\n- Scheduled ibuprofen.\n- Acetaminophen PRN.\n- Serial musculoskeletal examinations.\n- Reassess ability to bear weight after pain control.\n- Consider repeat labs, MRI, and orthopedic consultation if symptoms persist or worsen.\n\n2. Fever\n- Follow fever curve.\n- Follow blood culture.\n- Defer empiric antibiotics while stable and diagnosis remains uncertain.\n\n3. Fluids/nutrition\n- Regular diet as tolerated.\n- Maintenance IV fluids if oral intake remains poor.\n\n4. Medication safety\n- ED weight discrepancy identified during admission reconciliation. Weight verified with parent report and prior growth history; corrected to 13.2 kg. Weight-based medication dosing updated.",
+          "Physician"
+        ],
+        [
+          "ED Provider Note",
+          "Patel, MD",
+          "07/03 16:45",
+          "Fever and left hip pain since yesterday. Refusing to bear weight.",
+          "Previously healthy 3-year-old male with one day of fever and left hip/leg pain with refusal to bear weight. No known trauma. Had URI symptoms last week.\n\nExam: uncomfortable with movement, cries with passive left hip range of motion, no swelling or erythema. Initially tachycardic while febrile with improvement after antipyretic. Capillary refill less than 2 seconds. Interactive with mother between exams.\n\nAssessment: Differential includes transient synovitis, early osteomyelitis, septic arthritis, and occult fracture. Given reassuring perfusion and absence of septic physiology, plan to admit for observation and serial examinations.\n\nPlan: blood culture obtained, hip radiograph, pain control, IV fluids if poor intake. Defer empiric antibiotics while clinically stable to preserve culture yield unless patient worsens or additional data suggests bacterial infection. Consider MRI if worsening pain, persistent fever, rising inflammatory markers, or inability to bear weight persists.",
+          "Physician"
+        ],
+        [
+          "ED Nursing Note",
+          "Ashley RN",
+          "07/03 16:18",
+          "PIV placed. Labs and blood culture drawn.",
+          "Child crying with diaper changes and movement of left leg. Mother reports he weighed about 29 pounds at pediatrician visit last week. PIV placed, labs and blood culture drawn. Ibuprofen 310 mg PO administered per order.",
+          "Nursing"
+        ],
+        [
+          "Triage Note",
+          "ED Triage RN",
+          "07/03 14:38",
+          "Arrived via private car. Fever today. Left hip pain. Won't walk.",
+          "Chief complaint: Fever and will not walk. Mother reports no trauma. Triage weight documented: 31 kg.",
+          "Nursing"
+        ],
+        [
+          "ED Nursing Note",
+          "Ashley RN",
+          "07/03 14:32",
+          "Initial assessment completed. Placed on monitor.",
+          "Patient appears uncomfortable. No visible swelling or bruising.",
+          "Nursing"
+        ],
+        [
+          "ED Attending Attestation",
+          "ED Attending",
+          "07/03 17:00",
+          "Agree with observation plan. Antibiotics deferred while stable.",
+          "I saw and examined the patient with the resident. Child is febrile and uncomfortable with hip range of motion but is perfusing well and interactive with parent between exams. Differential includes transient synovitis and early musculoskeletal infection. Blood culture has been obtained. Given current stability and diagnostic uncertainty, agree with admission for observation and serial exams. Would obtain MRI and start antibiotics if clinical status worsens or inflammatory markers rise.",
+          "Physician"
+        ],
+        [
+          "Medication Reconciliation",
+          "ED Pharmacist",
+          "07/03 16:40",
+          "Weight-based medication review requested.",
+          "Pharmacy review initiated for weight-based medications. Documented ED weight appears high for age. Recommend verifying weight before additional weight-based medication preparation.",
+          "Pharmacy"
+        ]
+      ],
+      "orders": [
+        [
+          "Normal saline 20 mL/kg IV bolus",
+          "Completed 03:50",
+          "Completed",
+          "IV Fluid"
+        ],
+        [
+          "Vancomycin IV",
+          "Started 03:30",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Ceftriaxone IV",
+          "Started 03:30",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Cefazolin IV",
+          "Discontinued 03:25",
+          "Discontinued",
+          "Medication"
+        ],
+        [
+          "CBC with differential",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Comprehensive metabolic panel",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "CRP",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Procalcitonin",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Lactate",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Venous blood gas",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Repeat peripheral blood culture",
+          "Collected 03:24",
+          "In process",
+          "Lab"
+        ],
+        [
+          "Transfer to PICU",
+          "Accepted 04:18",
+          "In progress",
+          "Transfer"
+        ],
+        [
+          "Oxygen 2 L/min by nasal cannula",
+          "Ongoing",
+          "Active",
+          "Respiratory"
+        ]
+      ],
+      "mar": [
+        [
+          "03:20",
+          "Normal saline",
+          "20 mL/kg IV",
+          "Completed",
+          "Bolus completed 03:50"
+        ],
+        [
+          "03:30",
+          "Vancomycin",
+          "IV",
+          "Started",
+          "Empiric broadened coverage"
+        ],
+        [
+          "03:30",
+          "Ceftriaxone",
+          "IV",
+          "Started",
+          "Empiric broadened coverage"
+        ],
+        [
+          "Ongoing",
+          "Oxygen",
+          "2 L/min NC",
+          "Active",
+          "SpO₂ 96%"
+        ]
+      ],
+      "results": {
+        "CBC with differential": [
+          [
+            "WBC",
+            "18.6 K/uL",
+            "High"
+          ],
+          [
+            "Hemoglobin",
+            "10.8 g/dL",
+            "Low"
+          ],
+          [
+            "Platelets",
+            "214 K/uL",
+            ""
+          ],
+          [
+            "Neutrophils",
+            "86%",
+            "High"
+          ],
+          [
+            "Bands",
+            "9%",
+            "High"
+          ],
+          [
+            "Absolute neutrophils",
+            "16.0 K/uL",
+            "High"
+          ]
+        ],
+        "Comprehensive metabolic panel": [
+          [
+            "Sodium",
+            "146 mmol/L",
+            "High"
+          ],
+          [
+            "Potassium",
+            "4.3 mmol/L",
+            ""
+          ],
+          [
+            "Chloride",
+            "113 mmol/L",
+            "High"
+          ],
+          [
+            "CO₂",
+            "17 mmol/L",
+            "Low"
+          ],
+          [
+            "BUN",
+            "25 mg/dL",
+            "High"
+          ],
+          [
+            "Creatinine",
+            "0.58 mg/dL",
+            "Increased from 0.32"
+          ],
+          [
+            "Glucose",
+            "108 mg/dL",
+            ""
+          ],
+          [
+            "Calcium",
+            "8.4 mg/dL",
+            "Low"
+          ],
+          [
+            "Albumin",
+            "2.8 g/dL",
+            "Low"
+          ],
+          [
+            "AST",
+            "58 U/L",
+            "High"
+          ],
+          [
+            "ALT",
+            "39 U/L",
+            "Mildly high"
+          ]
+        ],
+        "Inflammatory markers": [
+          [
+            "CRP",
+            "146 mg/L",
+            "High; prior 87"
+          ],
+          [
+            "Procalcitonin",
+            "8.4 ng/mL",
+            "High"
+          ]
+        ],
+        "Perfusion / blood gas": [
+          [
+            "Lactate",
+            "3.4 mmol/L",
+            "High"
+          ],
+          [
+            "Venous pH",
+            "7.29",
+            "Low"
+          ],
+          [
+            "pCO₂",
+            "36 mmHg",
+            ""
+          ],
+          [
+            "HCO₃",
+            "17 mmol/L",
+            "Low"
+          ],
+          [
+            "Base deficit",
+            "-8",
+            ""
+          ]
+        ],
+        "Microbiology": [
+          [
+            "Repeat blood culture",
+            "Collected 07/05 03:24",
+            "In process"
+          ],
+          [
+            "Prior blood culture",
+            "Staphylococcus aureus; mecA/C not detected",
+            "Presumptive MSSA"
+          ]
+        ]
+      },
+      "imaging": [
+        [
+          "MRI left femur/hip with contrast",
+          "Marrow edema and enhancement involving the left proximal femoral metaphysis, consistent with osteomyelitis. Small adjacent subperiosteal fluid collection. No hip joint effusion or septic arthritis. No drainable abscess."
+        ]
+      ],
+      "growth": [
+        [
+          "Today verified",
+          "13.2 kg"
+        ]
+      ],
+      "flowsheet": {
+        "times": [
+          "03:15",
+          "03:30",
+          "03:50",
+          "04:05",
+          "04:15"
+        ],
+        "rows": [
+          [
+            "Temperature",
+            "39.4",
+            "39.4",
+            "39.2",
+            "39.1",
+            "39.0"
+          ],
+          [
+            "Heart Rate",
+            "154",
+            "152",
+            "146",
+            "143",
+            "142"
+          ],
+          [
+            "Respiratory Rate",
+            "34",
+            "34",
+            "32",
+            "31",
+            "30"
+          ],
+          [
+            "Blood Pressure",
+            "92/55",
+            "93/55",
+            "94/56",
+            "94/57",
+            "94/57"
+          ],
+          [
+            "SpO₂",
+            "95 on 2 L",
+            "95 on 2 L",
+            "96 on 2 L",
+            "96 on 2 L",
+            "96 on 2 L"
+          ],
+          [
+            "Oxygen",
+            "2 L NC",
+            "2 L NC",
+            "2 L NC",
+            "2 L NC",
+            "2 L NC"
+          ],
+          [
+            "Pain",
+            "7",
+            "7",
+            "6",
+            "6",
+            "6"
           ],
           [
             "Cap refill",
             "4 sec",
             "4 sec",
-            "5 sec",
-            "5 sec"
-          ],
-          [
-            "Pulses",
-            "1+",
-            "Weak",
-            "Weak",
-            "Weak"
-          ],
-          [
-            "Skin",
-            "Cool",
-            "Cool",
-            "Mottled",
-            "Mottled"
+            "3–4 sec",
+            "3 sec",
+            "3 sec"
           ],
           [
             "Mental status",
+            "Wakes to voice",
             "Sleepy",
-            "Lethargic",
-            "Difficult to arouse",
-            "Lethargic"
+            "Slightly more alert",
+            "Less interactive than baseline",
+            "Less interactive than baseline"
+          ],
+          [
+            "Urine output",
+            "0.4 mL/kg/hr",
+            "No new urine",
+            "No new urine",
+            "No new urine",
+            "0.3 mL/kg/hr"
+          ],
+          [
+            "PEWS",
+            "6",
+            "6",
+            "6",
+            "5",
+            "5"
           ]
         ]
       },
       "messages": [
         [
           "PICU Fellow",
-          "02:12",
-          "We are coming now. Please continue fluid resuscitation and have antibiotics ready at bedside.",
+          "04:18",
+          "Accepted for transfer. Please continue close reassessment and call for any further deterioration while awaiting transport.",
           "PICU"
         ],
         [
-          "Ortho Resident",
-          "02:14",
-          "On our way for urgent reassessment. Keep NPO.",
-          "ORT"
+          "Night RN",
+          "04:05",
+          "HR improved somewhat after bolus, but he remains sleepy and has not had additional urine output.",
+          "RN"
+        ],
+        [
+          "Night RN",
+          "03:16",
+          "Sepsis Red triggered. MET at bedside. Please evaluate patient immediately.",
+          "RN"
+        ],
+        [
+          "Ashley RN",
+          "19:08",
+          "Thanks — I will repeat vitals after the next fever/pain treatment and update you on urine output after a few more hours of fluids.",
+          "AR"
         ]
       ],
       "facilitator": [
-        "Expected actions: recognize septic shock, activate sepsis pathway/MET, fluids, cultures, broad antibiotics, PICU transfer, Ortho/source control communication."
+        "Phase 5B focus: reassessment after intervention and escalation of level of care.",
+        "Learners should identify incomplete response plus objective organ dysfunction, not wait for hypotension.",
+        "Expected disposition: PICU transfer for ongoing resuscitation, monitoring, and multidisciplinary reassessment including source control."
       ],
-      "aha": "The child has septic shock with end-organ dysfunction.",
-      "authenticQuestion": "Does this patient require escalation of care now?",
+      "aha": "A normal-range blood pressure does not exclude pediatric septic shock or organ dysfunction.",
+      "authenticQuestion": "Has Mason responded sufficiently to remain on the floor?",
       "resultTrends": {
         "CRP": [
           [
             "07/03 16:00",
-            8.6
+            3.2
           ],
           [
-            "07/04 07:45",
-            16.4
+            "07/04 10:20",
+            87
           ],
           [
-            "07/05 02:00",
-            28.1
+            "07/05 03:24",
+            146
           ]
         ],
         "WBC": [
           [
             "07/03 16:00",
-            13.8
+            11.8
           ],
           [
-            "07/04 07:45",
-            15.6
+            "07/04 10:20",
+            15.2
           ],
           [
-            "07/05 02:00",
-            21.4
+            "07/05 03:24",
+            18.6
           ]
         ],
         "Lactate": [
           [
-            "07/04 21:35",
-            2.1
+            "07/05 03:24",
+            3.4
+          ]
+        ],
+        "Creatinine": [
+          [
+            "07/03 16:00",
+            0.32
           ],
           [
-            "07/05 02:00",
-            5.1
+            "07/04 10:20",
+            0.38
+          ],
+          [
+            "07/05 03:24",
+            0.58
           ]
         ]
-      }
+      },
+      "diet": "Regular diet; NPO at midnight",
+      "resources": [
+        {
+          "title": "ACH 2025 Antibiogram",
+          "description": "Local Staphylococcus aureus susceptibility data.",
+          "url": "2025_ACH_Antibiogram.pdf",
+          "type": "Local PDF"
+        },
+        {
+          "title": "PIDS/IDSA Pediatric Acute Hematogenous Osteomyelitis Guideline",
+          "description": "National guidance for antimicrobial selection and monitoring.",
+          "url": "PIDS-IDSA_Osteomyelitis_Guideline.pdf",
+          "type": "Guideline PDF"
+        },
+        {
+          "title": "Red Book — Invasive Staphylococcal Infections",
+          "description": "Reference: serious MSSA infections should receive an antistaphylococcal beta-lactam when susceptibilities allow.",
+          "type": "Reference",
+          "url": "redbook_staph_reference.html"
+        },
+        {
+          "type": "Clinical Pathway",
+          "title": "Osteomyelitis Evaluation & Management Flowchart",
+          "description": "A concise learner-facing pathway synthesized for this simulation.",
+          "url": "osteomyelitis_pathway.html"
+        },
+        {
+          "type": "Antibiotic Guidance",
+          "title": "Empiric and Targeted Antibiotic Decision Aid",
+          "description": "Use organism data, resistance markers, local susceptibility, and illness severity to select therapy.",
+          "url": "antibiotic_guidance.html"
+        }
+      ],
+      "resultTimes": [
+        "07/03 16:00",
+        "07/04 09:45",
+        "07/04 13:32"
+      ],
+      "resultHistory": {
+        "07/03 16:00": {
+          "CBC": {
+            "WBC": "11.8 K/uL",
+            "RBC": "4.52 M/uL",
+            "Hemoglobin": "11.7 g/dL",
+            "Hematocrit": "34.8 %",
+            "MCV": "77 fL",
+            "MCH": "25.9 pg",
+            "MCHC": "33.6 g/dL",
+            "RDW": "13.2 %",
+            "Platelets": "348 K/uL",
+            "MPV": "8.9 fL"
+          },
+          "Inflammatory markers": {
+            "CRP": "3.2 mg/L"
+          },
+          "Chemistry": {
+            "Sodium": "138 mmol/L",
+            "Potassium": "4.1 mmol/L",
+            "Chloride": "104 mmol/L",
+            "CO₂": "23 mmol/L",
+            "BUN": "10 mg/dL",
+            "Creatinine": "0.32 mg/dL",
+            "Glucose": "92 mg/dL",
+            "Calcium": "9.6 mg/dL"
+          },
+          "Microbiology": {
+            "Blood culture": "Pending"
+          },
+          "Differential": {
+            "Neutrophils": "62 %",
+            "Lymphocytes": "28 %",
+            "Monocytes": "8 %",
+            "Eosinophils": "1 %",
+            "Basophils": "1 %",
+            "Absolute neutrophils": "7.3 K/uL",
+            "Absolute lymphocytes": "3.3 K/uL",
+            "Absolute monocytes": "0.9 K/uL",
+            "Absolute eosinophils": "0.1 K/uL",
+            "Absolute basophils": "0.1 K/uL"
+          }
+        },
+        "07/04 09:45": {
+          "CBC": {
+            "WBC": "17.8 K/uL",
+            "Hemoglobin": "11.2 g/dL",
+            "Hematocrit": "33.5 %",
+            "Platelets": "372 K/uL",
+            "Neutrophils": "78 %",
+            "Bands": "8 %",
+            "Absolute neutrophils": "15.3 K/uL"
+          },
+          "Inflammatory markers": {
+            "CRP": "87 mg/L",
+            "Procalcitonin": "1.4 ng/mL"
+          },
+          "Chemistry": {
+            "Sodium": "145 mmol/L",
+            "Potassium": "4.0 mmol/L",
+            "Chloride": "111 mmol/L",
+            "CO₂": "20 mmol/L",
+            "BUN": "22 mg/dL",
+            "Creatinine": "0.34 mg/dL",
+            "Glucose": "91 mg/dL",
+            "Calcium": "9.2 mg/dL",
+            "Albumin": "3.3 g/dL"
+          }
+        },
+        "07/04 13:32": {
+          "Microbiology": {
+            "Blood culture — 07/03 16:18": "Gram-positive cocci in clusters",
+            "Staphylococcus aureus": "Detected",
+            "mecA/C": "Not detected",
+            "Staphylococcus epidermidis": "Not detected",
+            "Staphylococcus lugdunensis": "Not detected",
+            "Streptococcus species": "Not detected",
+            "Streptococcus agalactiae": "Not detected",
+            "Streptococcus pneumoniae": "Not detected",
+            "Streptococcus pyogenes": "Not detected",
+            "Enterococcus faecalis": "Not detected",
+            "Enterococcus faecium": "Not detected",
+            "Listeria monocytogenes": "Not detected",
+            "Acinetobacter calcoaceticus-baumannii complex": "Not detected",
+            "Bacteroides fragilis": "Not detected",
+            "Enterobacterales": "Not detected",
+            "Enterobacter cloacae complex": "Not detected",
+            "Escherichia coli": "Not detected",
+            "Klebsiella aerogenes": "Not detected",
+            "Klebsiella oxytoca": "Not detected",
+            "Klebsiella pneumoniae group": "Not detected",
+            "Proteus species": "Not detected",
+            "Salmonella species": "Not detected",
+            "Serratia marcescens": "Not detected",
+            "Haemophilus influenzae": "Not detected",
+            "Neisseria meningitidis": "Not detected",
+            "Pseudomonas aeruginosa": "Not detected",
+            "Stenotrophomonas maltophilia": "Not detected",
+            "Candida albicans": "Not detected",
+            "Candida auris": "Not detected",
+            "Candida glabrata": "Not detected",
+            "Candida krusei": "Not detected",
+            "Candida parapsilosis": "Not detected",
+            "Candida tropicalis": "Not detected",
+            "Cryptococcus neoformans/gattii": "Not detected"
+          }
+        }
+      },
+      "activeOrders": [
+        [
+          "Normal saline 20 mL/kg IV bolus",
+          "Completed 03:50",
+          "Completed",
+          "IV Fluid"
+        ],
+        [
+          "Vancomycin IV",
+          "Started 03:30",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Ceftriaxone IV",
+          "Started 03:30",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Cefazolin IV",
+          "Discontinued 03:25",
+          "Discontinued",
+          "Medication"
+        ],
+        [
+          "CBC with differential",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Comprehensive metabolic panel",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "CRP",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Procalcitonin",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Lactate",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Venous blood gas",
+          "Collected 03:24",
+          "Final",
+          "Lab"
+        ],
+        [
+          "Repeat peripheral blood culture",
+          "Collected 03:24",
+          "In process",
+          "Lab"
+        ],
+        [
+          "Transfer to PICU",
+          "Accepted 04:18",
+          "In progress",
+          "Transfer"
+        ],
+        [
+          "Oxygen 2 L/min by nasal cannula",
+          "Ongoing",
+          "Active",
+          "Respiratory"
+        ]
+      ]
     }
   ]
 };

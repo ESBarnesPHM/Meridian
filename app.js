@@ -2,6 +2,7 @@
 let screen = new URLSearchParams(location.search).get("phase") ? "chart" : "login";
 let currentPhase = new URLSearchParams(location.search).get("phase") || "1";
 let activeTab = "notes";
+let metResponded = false;
 
 const NEW_INFO = {
   "1": {notes:2, results:1, mar:1, messages:2},
@@ -9,7 +10,8 @@ const NEW_INFO = {
   "3": {notes:1, results:2, mar:1, messages:1},
   "4a": {notes:1, results:1, messages:1},
   "4b": {notes:2, messages:1},
-  "5": {notes:2, results:3, mar:2, messages:2}
+  "5a": {notes:1, messages:1},
+  "5b": {notes:2, results:4, mar:3, messages:2}
 };
 let viewedTabs = {};
 
@@ -30,10 +32,12 @@ function $(id){return document.getElementById(id)}
 function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]))}
 function phase(){return CASE.phases.find(p=>p.id===currentPhase)||CASE.phases[0]}
 function routeToChart(id="1"){screen="chart";currentPhase=id;activeTab="notes";window.selectedNoteIndex=0;history.replaceState(null,"",`?phase=${id}`);render()}
-function setPhase(id){currentPhase=id;activeTab="notes";window.selectedNoteIndex=0;history.replaceState(null,"",`?phase=${id}`);render()}
+function setPhase(id){currentPhase=id;activeTab="notes";if(id==="5a")metResponded=false;window.selectedNoteIndex=0;history.replaceState(null,"",`?phase=${id}`);render()}
 function setTab(tab){activeTab=tab;markViewed(tab);render()}
 function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
-function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : renderChart(); }
+function respondToMET(){metResponded=true;render();}
+function renderMETAlert(){return `<main class="met-screen"><section class="met-card"><div class="met-alert-icon">!</div><div class="met-eyebrow">Medical Emergency Team Activation</div><h1>Sepsis Red Alert</h1><div class="met-patient"><strong>${esc(CASE.patient.name)}</strong><span>Room 5D-4</span></div><h2>Trigger criteria</h2><div class="met-trigger-grid"><div>Persistent fever despite scheduled ibuprofen and PRN acetaminophen</div><div>Tachycardia and tachypnea</div><div>Delayed capillary refill</div><div>Decreased urine output</div><div>New oxygen requirement</div><div>Decreased interaction / altered mental status</div></div><p class="met-request">Primary team requested to bedside immediately.</p><button class="met-response-btn" onclick="respondToMET()">Respond to MET</button></section></main>`}
+function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : (currentPhase==="5a" && !metResponded ? renderMETAlert() : renderChart()); }
 function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="brand-login"><div class="logo">M</div><div><h1>Meridian EMR</h1><div>${esc(CASE.hospital)}</div></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="muted">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div><strong>${esc(CASE.patient.name)}</strong><div class="muted">ED → Hospital Medicine · New admission</div></div><span class="pill">New admission</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div><strong>${esc(p.name)}</strong><div class="muted">${esc(p.detail)}</div></div><span class="pill">Future case</span></div>`).join("")}</div></div></section></main>`}
 function renderChart(){
   const p=phase();
@@ -62,7 +66,7 @@ function renderChart(){
       </main>
       <aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside>
     </div>
-    <footer class="footer">Meridian EMR v5.8 · Educational Use Only</footer>
+    <footer class="footer">Meridian EMR v6.0 · Educational Use Only</footer>
   </div>`;
 }
 function renderTabs(p){return `<nav class="folder-tabs" aria-label="Chart sections">${["summary","notes","results","flowsheet","orders","mar","imaging","growth","messages","resources"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
