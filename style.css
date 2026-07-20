@@ -494,3 +494,13 @@ button{touch-action:manipulation}
   .vital-strip{grid-template-columns:1fr 1fr}
   .patient-name h2{font-size:19px}
 }
+
+
+/* Phase 3 resources */
+.resource-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.resource-card{display:block;position:relative;border:1px solid var(--line);border-radius:12px;padding:14px 42px 14px 14px;background:#fff;color:var(--ink);text-decoration:none;min-height:120px}
+a.resource-card:hover{border-color:#8fbfcb;background:#fbfdff}
+.resource-type{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--teal);font-weight:950;margin-bottom:7px}
+.resource-title{font-weight:950;color:#0b3c69;margin-bottom:7px}
+.resource-description{font-size:13px;color:var(--muted);line-height:1.45}
+.resource-open{position:absolute;right:12px;top:12px;color:var(--blue);font-weight:900;font-size:12px}

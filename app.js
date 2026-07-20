@@ -65,22 +65,22 @@ function renderChart(){
     <footer class="footer">Meridian EMR v5.5 · Educational Use Only</footer>
   </div>`;
 }
-function renderTabs(p){return `<nav class="folder-tabs" aria-label="Chart sections">${["summary","notes","results","flowsheet","orders","mar","imaging","growth","messages"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
-function renderBanner(p){return `<section class="patient-banner"><div class="patient-left">${patientPhoto()}<div class="patient-name"><h2>${esc(CASE.patient.name)}</h2><div class="demo-grid"><b>${esc(CASE.patient.age)}</b><span>${esc(CASE.patient.sex)}</span><b>MRN</b><span>${esc(CASE.patient.mrn)}</span><b>DOB</b><span>${esc(CASE.patient.dob)}</span><b>Room</b><span>${esc(p.room)}</span><b>Attending</b><span>${esc(CASE.patient.attending)}</span><b>PCP</b><span>${esc(CASE.patient.pcp)}</span></div></div></div><div class="banner-card"><div class="banner-top">${bannerItem("Location",p.location)}${bannerItem("Weight",`${esc(p.weight)}<br><small>${esc(p.weightDetail||"")}</small>`)}${bannerItem("Allergies",CASE.patient.allergy)}${bannerItem("Isolation","None")}${bannerItem("Code Status",CASE.patient.code)}${bannerItem("Primary Team",p.team)}${bannerItem("Diet",CASE.patient.diet)}${bannerItem("Access",CASE.patient.access)}</div><div class="vital-strip">${Object.entries(p.vitals).map(([k,v])=>`<div class="vital"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div></div></section>`}
+function renderTabs(p){return `<nav class="folder-tabs" aria-label="Chart sections">${["summary","notes","results","flowsheet","orders","mar","imaging","growth","messages","resources"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
+function renderBanner(p){return `<section class="patient-banner"><div class="patient-left">${patientPhoto()}<div class="patient-name"><h2>${esc(CASE.patient.name)}</h2><div class="demo-grid"><b>${esc(CASE.patient.age)}</b><span>${esc(CASE.patient.sex)}</span><b>MRN</b><span>${esc(CASE.patient.mrn)}</span><b>DOB</b><span>${esc(CASE.patient.dob)}</span><b>Room</b><span>${esc(p.room)}</span><b>Attending</b><span>${esc(CASE.patient.attending)}</span><b>PCP</b><span>${esc(CASE.patient.pcp)}</span></div></div></div><div class="banner-card"><div class="banner-top">${bannerItem("Location",p.location)}${bannerItem("Weight",`${esc(p.weight)}<br><small>${esc(p.weightDetail||"")}</small>`)}${bannerItem("Allergies",CASE.patient.allergy)}${bannerItem("Isolation","None")}${bannerItem("Code Status",CASE.patient.code)}${bannerItem("Primary Team",p.team)}${bannerItem("Diet",p.diet||CASE.patient.diet)}${bannerItem("Access",CASE.patient.access)}</div><div class="vital-strip">${Object.entries(p.vitals).map(([k,v])=>`<div class="vital"><span>${esc(k)}</span><strong>${esc(v)}</strong></div>`).join("")}</div></div></section>`}
 function bannerItem(k,v){return `<div class="banner-item"><span>${esc(k)}</span><strong>${v}</strong></div>`}
 function patientPhoto(){ if(PATIENT_PHOTO){return `<div class="photo"><img src="${PATIENT_PHOTO}" alt="Simulated pediatric patient photo"></div>`} return `<div class="photo"><svg viewBox="0 0 120 120"><rect width="120" height="120" fill="#dff3f7"/><circle cx="60" cy="50" r="30" fill="#f0c49f"/><circle cx="49" cy="54" r="4"/><circle cx="72" cy="54" r="4"/><path d="M52 69c6 5 13 5 19 0" fill="none" stroke="#8c3f2b" stroke-width="3" stroke-linecap="round"/><path d="M20 120c6-27 25-39 40-39s34 12 40 39z" fill="#2f80b9"/><path d="M32 45c5-25 50-35 60-4-20-10-40-9-60 4z" fill="#5f371d"/></svg></div>`}
 function renderChartReview(p){return ``}
 function renderTimelineCard(p){return `<div class="card"><div class="card-head"><h3>Timeline</h3></div><div class="card-body">${p.timeline.map(x=>x[1]==="__divider__"?`<div class="timeline-divider">${esc(x[0])}</div>`:`<div class="timeline-item"><time>${esc(x[0])}</time><div>${esc(x[1])}</div></div>`).join("")}<p class="muted">View full timeline</p></div></div>`}
 function renderMessagesCard(p){return `<div class="card"><div class="card-head"><h3>Messages</h3><span class="count">${p.messages.length} Unread</span></div><div class="card-body">${renderMessages(p)}<p class="muted">View all messages</p></div></div>`}
 function renderRecentOrders(p){return `<div class="card"><div class="card-head"><h3>Recent Orders</h3></div><div class="card-body">${renderOrders(p,true)}<p class="muted">View all orders</p></div></div>`}
-function tabLabel(t){return ({summary:"Summary",notes:"Notes",results:"Results",flowsheet:"Flowsheets",mar:"MAR",orders:"Orders",imaging:"Imaging",growth:"Growth",messages:"Secure Chat"}[t]||t)}
+function tabLabel(t){return ({summary:"Summary",notes:"Notes",results:"Results",flowsheet:"Flowsheets",mar:"MAR",orders:"Orders",imaging:"Imaging",growth:"Growth",messages:"Secure Chat",resources:"Resources"}[t]||t)}
 
 function tabCount(p,t){
   const n = newCount(t);
   if(n){ return ` <span class="new-badge"><span class="new-dot"></span>${n}</span>`; }
   return "";
 }
-function renderTab(p,t){if(t==="summary")return renderSummary(p);if(t==="notes")return renderNotes(p);if(t==="flowsheet")return renderFlowsheet(p,true);if(t==="messages")return renderMessages(p);if(t==="orders")return renderOrders(p,false);if(t==="mar")return renderMAR(p);if(t==="results")return renderResults(p);if(t==="imaging")return renderImaging(p);if(t==="growth")return renderGrowth(p)}
+function renderTab(p,t){if(t==="summary")return renderSummary(p);if(t==="notes")return renderNotes(p);if(t==="flowsheet")return renderFlowsheet(p,true);if(t==="messages")return renderMessages(p);if(t==="orders")return renderOrders(p,false);if(t==="mar")return renderMAR(p);if(t==="results")return renderResults(p);if(t==="imaging")return renderImaging(p);if(t==="growth")return renderGrowth(p);if(t==="resources")return renderResources(p)}
 function renderSummary(p){return `<div class="summary-grid"><div class="mini"><h4>Assessment</h4><ul>${p.summary.assessment.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Active Problems</h4><ul>${p.summary.problems.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Overnight / Recent Events</h4><ul>${p.summary.events.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>Today's Plan</h4><ul>${p.summary.plan.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div></div><div class="two-col"><div class="mini"><h4>Pending Studies</h4><ul>${p.summary.pending.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><div class="mini"><h4>To Do</h4><ul>${p.summary.todo.map(x=>`<li>☐ ${esc(x)}</li>`).join("")}</ul></div></div><div class="card" style="margin-top:14px"><div class="card-head"><h3>Recent Notes</h3></div><div class="card-body">${renderNotes(p,true)}</div></div>`}
 
 
@@ -220,6 +220,15 @@ function renderOrderRow(o){
 }
 function renderMAR(p){return `<div class="mar-grid"><table class="mar-table"><thead><tr><th>Time</th><th>Medication</th><th>Dose</th><th>Status</th><th>Comment</th></tr></thead><tbody>${p.mar.map(r=>`<tr><td class="med-time">${esc(r[0])}</td><td class="med-name">${esc(r[1])}</td><td>${esc(r[2])}</td><td>${esc(r[3])}</td><td>${esc(r[4])}</td></tr>`).join("")}</tbody></table></div>`}
 
+
+function renderResources(p){
+  const resources=p.resources||[];
+  if(!resources.length)return `<p class="muted">No resources available for this phase.</p>`;
+  return `<div class="resource-list">${resources.map(r=>{
+    const content=`<div class="resource-type">${esc(r.type||"Resource")}</div><div class="resource-title">${esc(r.title)}</div><div class="resource-description">${esc(r.description||"")}</div>`;
+    return r.url?`<a class="resource-card" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${content}<span class="resource-open">Open ↗</span></a>`:`<div class="resource-card">${content}</div>`;
+  }).join("")}</div>`;
+}
 
 function renderResults(p){
   const timeCols = getResultTimes(p);

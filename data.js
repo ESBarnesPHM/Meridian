@@ -20,15 +20,15 @@ const CASE = {
   "inactivePatients": [
     {
       "name": "Emma Johnson",
-      "detail": "Bronchiolitis \u00b7 Stable"
+      "detail": "Bronchiolitis · Stable"
     },
     {
       "name": "Ava Rodriguez",
-      "detail": "DKA \u00b7 PICU"
+      "detail": "DKA · PICU"
     },
     {
       "name": "Noah Wilson",
-      "detail": "Fever \u00b7 Observation"
+      "detail": "Fever · Observation"
     }
   ],
   "phases": [
@@ -37,7 +37,7 @@ const CASE = {
       "label": "Phase 1",
       "title": "Admission reconciliation",
       "time": "07/03/2026 17:20",
-      "location": "ED \u2192 PHM",
+      "location": "ED → PHM",
       "room": "ED-12",
       "team": "Hospital Medicine",
       "severity": "Stable",
@@ -47,11 +47,11 @@ const CASE = {
       "status": "better",
       "learnerPrompt": "You are reviewing a new admission from the Emergency Department.",
       "vitals": {
-        "Temp": "38.1 \u00b0C",
+        "Temp": "38.1 °C",
         "HR": "116",
         "RR": "24",
         "BP": "92/56",
-        "SpO\u2082": "99% RA",
+        "SpO₂": "99% RA",
         "Pain": "5/10",
         "Updated": "07/03 17:20"
       },
@@ -296,7 +296,7 @@ const CASE = {
             ""
           ],
           [
-            "CO\u2082",
+            "CO₂",
             "23 mmol/L",
             ""
           ],
@@ -446,7 +446,7 @@ const CASE = {
             "92/56"
           ],
           [
-            "SpO\u2082",
+            "SpO₂",
             "99",
             "99",
             "99",
@@ -475,10 +475,10 @@ const CASE = {
           ],
           [
             "Urine output",
-            "\u2014",
-            "\u2014",
+            "—",
+            "—",
             "1 wet diaper",
-            "\u2014"
+            "—"
           ]
         ]
       },
@@ -532,11 +532,11 @@ const CASE = {
       "status": "same",
       "learnerPrompt": "You are prerounding on Mason the morning after admission.",
       "vitals": {
-        "Temp": "38.5 \u00b0C",
+        "Temp": "38.5 °C",
         "HR": "136",
         "RR": "26",
         "BP": "90/54",
-        "SpO\u2082": "99% RA",
+        "SpO₂": "99% RA",
         "Pain": "5/10",
         "Updated": "07/04 07:45"
       },
@@ -583,7 +583,7 @@ const CASE = {
       },
       "timeline": [
         [
-          "07/03 \u2014 Admission Day",
+          "07/03 — Admission Day",
           "__divider__"
         ],
         [
@@ -611,7 +611,7 @@ const CASE = {
           "Attending addendum to Admission H&P"
         ],
         [
-          "07/04 \u2014 Hospital Day 1",
+          "07/04 — Hospital Day 1",
           "__divider__"
         ],
         [
@@ -633,7 +633,7 @@ const CASE = {
           "Night RN",
           "07/04 06:48",
           "Febrile overnight with persistent pain and limited movement.",
-          "Shift Summary\n\nFebrile overnight to 39.1\u00b0C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
+          "Shift Summary\n\nFebrile overnight to 39.1°C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
           "Nursing"
         ],
         [
@@ -767,7 +767,7 @@ const CASE = {
           "Acetaminophen",
           "195 mg PO",
           "Given",
-          "PRN for fever 39.1\u00b0C"
+          "PRN for fever 39.1°C"
         ],
         [
           "06:30",
@@ -861,7 +861,7 @@ const CASE = {
             ""
           ],
           [
-            "CO\u2082",
+            "CO₂",
             "23 mmol/L",
             ""
           ],
@@ -1016,7 +1016,7 @@ const CASE = {
             "88/52"
           ],
           [
-            "SpO\u2082",
+            "SpO₂",
             "99",
             "99",
             "99",
@@ -1084,7 +1084,7 @@ const CASE = {
       "facilitator": [
         "Phase 2 focus: clinical reassessment during prerounding. The ED/admission plan was reasonable; the patient is now providing new information through his trajectory.",
         "Learners should notice that the medication safety issue has been corrected and should not remain the center of the case.",
-        "Key evidence lives in nursing documentation, MAR, flowsheet, and parent concern\u2014not in a new diagnostic test.",
+        "Key evidence lives in nursing documentation, MAR, flowsheet, and parent concern—not in a new diagnostic test.",
         "Expected actions after chart review and bedside assessment: broaden differential, consider repeat CRP/CBC, order MRI, consult orthopedics, and decide whether antibiotics are indicated based on stability and evolving concern."
       ],
       "aha": "Despite an appropriate observation plan and scheduled NSAIDs, Mason is not following the expected course for transient synovitis.",
@@ -1108,880 +1108,1921 @@ const CASE = {
       "id": "3",
       "label": "Phase 3",
       "title": "Evidence-based treatment",
-      "time": "07/04/2026 15:45",
+      "time": "07/04/2026 14:00",
       "location": "5D-4",
       "room": "5D-4",
-      "team": "PHM + Ortho",
-      "severity": "Watcher",
-      "weight": "13 kg",
-      "weightDetail": "28 lb 10 oz",
+      "team": "Hospital Medicine",
+      "severity": "Stable / active infection",
+      "weight": "13.2 kg",
+      "weightDetail": "29 lb 2 oz",
       "hospitalDay": "1",
-      "status": "worse",
-      "learnerPrompt": "MRI and microbiology results are now available. Use the pathway and chart data to decide the treatment plan.",
+      "status": "same",
+      "learnerPrompt": "MRI, laboratory, and microbiology results are now available. Use the resources in the chart to develop Mason’s treatment plan.",
       "vitals": {
-        "Temp": "39.6 \u00b0C",
-        "HR": "176",
-        "RR": "35",
-        "SpO\u2082": "97% RA",
-        "Pain": "8/10",
-        "Updated": "07/04 15:30"
+        "Temp": "38.8 °C",
+        "HR": "142",
+        "RR": "28",
+        "BP": "91/53",
+        "SpO₂": "98% RA",
+        "Pain": "7/10",
+        "Updated": "07/04 13:50"
       },
       "summary": {
         "assessment": [
-          "MRI confirms acute osteomyelitis with small subperiosteal abscess.",
-          "Blood culture now positive with gram-positive cocci in clusters."
+          "MRI confirms left proximal femur osteomyelitis with a small subperiosteal fluid collection.",
+          "Blood culture is positive for Staphylococcus aureus; mecA/C is not detected."
         ],
         "problems": [
-          "Acute hematogenous osteomyelitis",
-          "Subperiosteal abscess",
-          "Positive blood culture",
-          "Persistent tachycardia"
+          "Left proximal femur osteomyelitis",
+          "Staphylococcus aureus bacteremia",
+          "Persistent fever and pain",
+          "Poor oral intake with mild dehydration"
         ],
         "events": [
-          "MRI completed",
-          "Orthopedic surgery consulted",
-          "Microbiology reported critical result"
+          "MRI completed and finalized",
+          "Blood culture became positive for gram-positive cocci in clusters",
+          "Blood Culture ID PCR detected Staphylococcus aureus with mecA/C not detected",
+          "Orthopedics recommends medical management today",
+          "Infectious Diseases consulted"
         ],
         "plan": [
-          "Start cefazolin per osteomyelitis pathway if clinically stable and low MRSA risk",
-          "Repeat blood cultures until negative",
-          "Trend CRP/CBC/BMP",
-          "Keep NPO at midnight per Ortho contingency",
-          "Broaden coverage if unstable or MRSA risk is high"
+          "Use institutional and national resources to select definitive therapy",
+          "Restart maintenance IV fluids for poor intake and mild dehydration",
+          "Continue multimodal pain control",
+          "Regular diet today; NPO at midnight for Orthopedic re-evaluation"
         ],
         "pending": [
-          "Speciation/susceptibilities",
-          "Repeat blood culture order"
+          "Final blood culture identification and susceptibilities",
+          "Clinical response to antibiotics, fluids, and pain control"
         ],
         "todo": [
-          "Repeat blood culture",
-          "Trend CRP/CBC/BMP",
-          "Review antibiotic pathway/antibiogram",
-          "NPO at midnight per Ortho"
+          "Present an evidence-based treatment plan to the attending"
         ],
         "meds": [
-          "Cefazolin 325 mg IV q8h started",
+          "Ibuprofen scheduled",
           "Acetaminophen PRN",
-          "Ibuprofen PRN"
+          "Oxycodone PRN for severe pain"
         ]
       },
       "timeline": [
         [
-          "11:30",
-          "MRI ordered"
+          "09:30",
+          "PHM progress note signed"
         ],
         [
-          "13:50",
+          "10:15",
           "MRI completed"
         ],
         [
-          "14:20",
-          "Blood culture positive"
+          "11:05",
+          "MRI finalized"
         ],
         [
-          "15:10",
-          "Ortho consulted"
+          "12:47",
+          "Blood culture reported positive: gram-positive cocci in clusters"
         ],
         [
-          "15:35",
-          "Osteomyelitis pathway opened"
+          "13:32",
+          "Blood Culture ID PCR resulted"
+        ],
+        [
+          "13:40",
+          "Orthopedic consult signed"
+        ],
+        [
+          "14:00",
+          "Current chart review"
         ]
       ],
       "notes": [
         [
-          "MRI Result",
-          "Radiology",
-          "07/04 14:05",
-          "Acute osteomyelitis of left proximal femur.",
-          "Acute osteomyelitis of the left proximal femur with small adjacent subperiosteal abscess. No hip joint effusion.",
-          "Results"
-        ],
-        [
           "Orthopedic Surgery Consult",
           "J. Kim, MD",
-          "07/04 15:25",
-          "Recommend IV antibiotics and serial exams.",
-          "Recommend continued IV antibiotics, serial exams, trend CRP, and NPO at midnight in case operative source control is needed if clinical status worsens or abscess enlarges.",
+          "07/04 13:40",
+          "MRI consistent with osteomyelitis. No operative intervention today.",
+          "Three-year-old with persistent fever, refusal to bear weight, and MRI findings consistent with left proximal femur osteomyelitis with a small subperiosteal fluid collection. No septic arthritis and no drainable abscess.\n\nAssessment: Presumed acute hematogenous osteomyelitis. No operative intervention indicated today.\n\nRecommendations: Begin IV antibiotic therapy, continue serial examinations, allow regular diet today, and make NPO at midnight for Orthopedic re-evaluation in the morning. Please notify Orthopedics for increasing pain, swelling, change in neurovascular examination, or clinical deterioration.",
           "Consult"
         ],
         [
-          "Meridian Osteomyelitis Pathway",
-          "Clinical Pathway",
-          "07/04 15:35",
-          "Obtain cultures, trend CRP, use local antibiotic guidance.",
-          "Obtain blood cultures. Trend CRP every 24-48 hours. Tailor empiric antibiotics to local susceptibility and MRSA risk. Consult orthopedics for abscess, septic arthritis concern, or failure to improve.",
+          "PHM Progress Note",
+          "Barnes, MD",
+          "07/04 09:30",
+          "Persistent fever and pain; broaden evaluation for osteoarticular infection.",
+          "Three-year-old admitted overnight with fever, left hip pain, and refusal to bear weight. Weight discrepancy has been corrected. Despite scheduled ibuprofen, he remains febrile and will not bear weight.\n\nAssessment: Clinical course is no longer consistent with uncomplicated transient synovitis. Osteomyelitis and septic arthritis are now higher on the differential.\n\nPlan: Obtain CBC, CRP, CMP, procalcitonin, and MRI with contrast. Consult Orthopedics. Keep NPO pending imaging and surgical recommendations. Continue scheduled ibuprofen and PRN acetaminophen. Follow admission blood culture.",
           "Physician"
         ],
         [
-          "ID Curbside Recommendation",
-          "Infectious Diseases",
-          "07/04 16:05",
-          "Use local osteomyelitis pathway and repeat cultures.",
-          "Agree with empiric cefazolin if clinically stable and low MRSA risk based on local epidemiology. Repeat blood cultures until negative. Trend inflammatory markers. Broaden to vancomycin if clinical instability, MRSA risk factors, or failure to improve.",
+          "Infectious Diseases Consult",
+          "A. Patel, MD",
+          "07/04 13:50",
+          "Use microbiology and local susceptibility data to guide targeted treatment.",
+          "MRI confirms osteomyelitis. Admission blood culture is positive for Staphylococcus aureus by rapid molecular identification; mecA/C is not detected. Recommend targeted beta-lactam therapy using the verified 13.2 kg weight. Follow the final culture identification and susceptibilities. Monitor fever curve, pain, perfusion, urine output, and CRP response.",
           "Consult"
         ]
       ],
       "orders": [
         [
-          "Cefazolin 325 mg IV q8h",
-          "Ordered 15:00",
-          "Active",
+          "MRI left femur/hip with contrast",
+          "Completed 10:15",
+          "Completed",
+          "Imaging"
+        ],
+        [
+          "Orthopedic Surgery consult",
+          "Completed 13:40",
+          "Completed",
+          "Consult"
+        ],
+        [
+          "Infectious Diseases consult",
+          "Completed 13:50",
+          "Completed",
+          "Consult"
+        ],
+        [
+          "CBC, CRP, CMP, Procalcitonin",
+          "Resulted",
+          "Completed",
+          "Lab"
+        ],
+        [
+          "D5NS + 20 mEq/L KCl at 46 mL/hr",
+          "Restart for poor intake",
+          "Recommended",
           "Medication"
         ],
         [
-          "Repeat blood culture",
-          "Needs order",
-          "Missing",
-          "Lab"
-        ],
-        [
-          "CRP daily",
-          "Needs order",
-          "Missing",
-          "Lab"
-        ],
-        [
-          "NPO at midnight",
+          "Cefazolin 660 mg IV q8h",
+          "50 mg/kg/dose using 13.2 kg",
           "Recommended",
-          "Missing",
+          "Medication"
+        ],
+        [
+          "Regular diet now; NPO at midnight",
+          "Per Orthopedics",
+          "Recommended",
           "Diet"
+        ],
+        [
+          "Oxycodone 1.3 mg PO q4h PRN severe pain",
+          "0.1 mg/kg/dose",
+          "Recommended",
+          "Medication"
         ]
       ],
       "mar": [
         [
-          "15:00",
-          "Cefazolin",
-          "325 mg IV",
+          "08:00",
+          "Ibuprofen",
+          "132 mg PO",
           "Given",
-          "Started after MRI/culture results"
+          "Scheduled"
+        ],
+        [
+          "11:20",
+          "Acetaminophen",
+          "198 mg PO",
+          "Given",
+          "Fever/pain"
+        ],
+        [
+          "13:15",
+          "Oxycodone",
+          "1.3 mg PO",
+          "Given",
+          "Severe pain; pain improved from 8/10 to 5/10"
         ]
       ],
       "results": {
-        "Microbiology": [
+        "CBC": [
           [
-            "Blood culture",
-            "Gram-positive cocci in clusters",
-            "Critical"
+            "WBC",
+            "17.8 K/uL",
+            "High"
+          ],
+          [
+            "Hemoglobin",
+            "11.2 g/dL",
+            ""
+          ],
+          [
+            "Hematocrit",
+            "33.5 %",
+            ""
+          ],
+          [
+            "Platelets",
+            "372 K/uL",
+            ""
+          ],
+          [
+            "Neutrophils",
+            "78 %",
+            "High"
+          ],
+          [
+            "Bands",
+            "8 %",
+            "High"
+          ],
+          [
+            "Absolute neutrophils",
+            "15.3 K/uL",
+            "High"
           ]
         ],
         "Inflammatory markers": [
           [
             "CRP",
-            "16.4 mg/dL",
+            "87 mg/L",
+            "High"
+          ],
+          [
+            "Procalcitonin",
+            "1.4 ng/mL",
             "High"
           ]
         ],
-        "CBC": [
+        "Chemistry": [
           [
-            "WBC",
-            "15.6 K/uL",
+            "Sodium",
+            "145 mmol/L",
+            "High-normal"
+          ],
+          [
+            "Potassium",
+            "4.0 mmol/L",
+            ""
+          ],
+          [
+            "Chloride",
+            "111 mmol/L",
             "High"
+          ],
+          [
+            "CO₂",
+            "20 mmol/L",
+            "Low"
+          ],
+          [
+            "BUN",
+            "22 mg/dL",
+            "High"
+          ],
+          [
+            "Creatinine",
+            "0.34 mg/dL",
+            ""
+          ],
+          [
+            "Glucose",
+            "91 mg/dL",
+            ""
+          ],
+          [
+            "Calcium",
+            "9.2 mg/dL",
+            ""
+          ],
+          [
+            "Albumin",
+            "3.3 g/dL",
+            "Low"
+          ]
+        ],
+        "Microbiology": [
+          [
+            "Blood culture — 07/03 16:18",
+            "Gram-positive cocci in clusters",
+            "Critical 12:47"
+          ],
+          [
+            "Staphylococcus aureus",
+            "Detected",
+            "Detected 13:32"
+          ],
+          [
+            "mecA/C",
+            "Not detected",
+            "13:32"
+          ],
+          [
+            "Staphylococcus epidermidis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Staphylococcus lugdunensis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus agalactiae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus pneumoniae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus pyogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterococcus faecalis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterococcus faecium",
+            "Not detected",
+            ""
+          ],
+          [
+            "Listeria monocytogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Acinetobacter calcoaceticus-baumannii complex",
+            "Not detected",
+            ""
+          ],
+          [
+            "Bacteroides fragilis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterobacterales",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterobacter cloacae complex",
+            "Not detected",
+            ""
+          ],
+          [
+            "Escherichia coli",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella aerogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella oxytoca",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella pneumoniae group",
+            "Not detected",
+            ""
+          ],
+          [
+            "Proteus species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Salmonella species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Serratia marcescens",
+            "Not detected",
+            ""
+          ],
+          [
+            "Haemophilus influenzae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Neisseria meningitidis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Pseudomonas aeruginosa",
+            "Not detected",
+            ""
+          ],
+          [
+            "Stenotrophomonas maltophilia",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida albicans",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida auris",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida glabrata",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida krusei",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida parapsilosis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida tropicalis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Cryptococcus neoformans/gattii",
+            "Not detected",
+            ""
           ]
         ]
       },
       "imaging": [
         [
-          "MRI left hip/femur",
-          "Left proximal femur osteomyelitis with small subperiosteal abscess. No septic arthritis."
+          "MRI left femur/hip with contrast",
+          "Marrow edema and enhancement involving the left proximal femoral metaphysis, consistent with osteomyelitis. Small adjacent subperiosteal fluid collection. No hip joint effusion or septic arthritis. No drainable abscess."
         ]
       ],
       "growth": [
         [
           "Today verified",
-          "13.0 kg"
+          "13.2 kg"
         ]
       ],
       "flowsheet": {
         "times": [
           "08:00",
+          "10:30",
           "12:00",
-          "14:00",
-          "15:30"
+          "13:50"
         ],
         "rows": [
           [
             "Temperature",
             "39.1",
-            "39.4",
-            "39.2",
-            "39.6"
+            "38.7",
+            "39.0",
+            "38.8"
           ],
           [
             "Heart Rate",
-            "164",
-            "168",
-            "172",
-            "176"
+            "149",
+            "138",
+            "146",
+            "142"
           ],
           [
             "Respiratory Rate",
-            "30",
-            "32",
-            "34",
-            "35"
+            "28",
+            "26",
+            "28",
+            "28"
           ],
           [
-            "SpO\u2082",
+            "Blood Pressure",
+            "92/54",
+            "90/52",
+            "91/53",
+            "91/53"
+          ],
+          [
+            "SpO₂",
+            "99",
+            "99",
             "98",
-            "98",
-            "97",
-            "97"
+            "98"
           ],
           [
             "Pain",
+            "7",
             "8",
-            "9",
-            "9",
-            "8"
+            "8",
+            "5"
           ],
           [
             "Cap refill",
-            "<2 sec",
-            "3 sec",
-            "3 sec",
-            "3 sec"
+            "2 sec",
+            "2 sec",
+            "2 sec",
+            "2 sec"
           ],
           [
-            "Mental status",
-            "Fussy",
-            "Sleepy",
-            "Sleepy",
-            "Sleepy"
+            "Pulses",
+            "2+",
+            "2+",
+            "2+",
+            "2+"
+          ],
+          [
+            "PO intake",
+            "Refused breakfast",
+            "Sips",
+            "Sips",
+            "Poor"
           ],
           [
             "Urine output",
-            "Adequate",
-            "Adequate",
-            "Low",
-            "Low"
+            "0.9 mL/kg/hr",
+            "0.8 mL/kg/hr",
+            "0.8 mL/kg/hr",
+            "0.8 mL/kg/hr"
+          ],
+          [
+            "Activity",
+            "Lying quietly",
+            "Cries with movement",
+            "Resting",
+            "More comfortable after oxycodone"
           ]
         ]
       },
       "messages": [
         [
           "Microbiology",
-          "14:20",
-          "Critical result: blood culture positive for gram-positive cocci in clusters.",
+          "12:47",
+          "Critical result: admission blood culture is positive with gram-positive cocci in clusters.",
           "MICRO"
         ],
         [
-          "Ortho Resident",
-          "15:32",
-          "Please keep NPO at midnight and call if tachycardia worsens, perfusion changes, or pain increases.",
+          "Microbiology",
+          "13:32",
+          "Blood Culture ID PCR: Staphylococcus aureus detected; mecA/C not detected.",
+          "MICRO"
+        ],
+        [
+          "Orthopedic Surgery",
+          "13:42",
+          "No operative intervention today. Regular diet now, NPO at midnight, and we will re-evaluate in the morning.",
           "ORT"
         ]
       ],
       "facilitator": [
-        "Phase 3 focus: evidence-based treatment. Cefazolin begins after MRI confirms osteomyelitis and blood culture shows GPC in clusters.",
-        "Discuss antibiotic pathway logic: cefazolin may be appropriate if stable/low MRSA risk/local MSSA predominance; broaden to vancomycin if unstable, high MRSA risk, or severe sepsis."
+        "Phase 3 focus: residents use MRI, PCR, the local antibiogram, clinical pathway, and national guidance to create a treatment plan.",
+        "Expected plan: cefazolin using the verified weight, maintenance IV fluids, ID and Ortho involvement, multimodal pain control, regular diet until NPO at midnight, and monitoring of clinical response/CRP."
       ],
-      "aha": "MRI and blood culture change the plan from observation to pathway-guided treatment.",
-      "authenticQuestion": "What is the best evidence-based treatment plan?",
+      "aha": "The most reliable treatment plan comes from integrating the patient’s data with trusted institutional and national resources.",
+      "authenticQuestion": "What evidence-based treatment plan should you present to the attending?",
       "resultTrends": {
         "CRP": [
           [
             "07/03 16:00",
-            8.6
+            3.2
           ],
           [
-            "07/04 07:45",
-            16.4
+            "07/04 11:00",
+            87
           ]
         ],
         "WBC": [
           [
             "07/03 16:00",
-            13.8
+            11.8
           ],
           [
-            "07/04 07:45",
-            15.6
-          ]
-        ],
-        "ESR": [
-          [
-            "07/03 16:00",
-            42
-          ],
-          [
-            "07/04 07:45",
-            58
+            "07/04 11:00",
+            17.8
           ]
         ]
-      }
+      },
+      "diet": "Regular diet; NPO at midnight",
+      "resources": [
+        {
+          "title": "ACH 2025 Antibiogram",
+          "description": "Local Staphylococcus aureus susceptibility data.",
+          "url": "2025_ACH_Antibiogram.pdf",
+          "type": "Local PDF"
+        },
+        {
+          "title": "PIDS/IDSA Pediatric Acute Hematogenous Osteomyelitis Guideline",
+          "description": "National guidance for antimicrobial selection and monitoring.",
+          "url": "PIDS-IDSA_Osteomyelitis_Guideline.pdf",
+          "type": "Guideline PDF"
+        },
+        {
+          "title": "CHOP Bone and Joint Infection Clinical Pathway",
+          "description": "Clinical pathway for evaluation and management of pediatric bone and joint infection.",
+          "url": "https://www.chop.edu/clinical-pathway/bone-joint-infection-clinical-pathway",
+          "type": "External resource"
+        },
+        {
+          "title": "CHOP Bone and Joint Infection Antibiotic Recommendations",
+          "description": "Empiric and targeted antibiotic recommendations.",
+          "url": "https://www.chop.edu/clinical-pathway/bone-joint-infection-antibiotic-recommendations",
+          "type": "External resource"
+        },
+        {
+          "title": "Red Book — Invasive Staphylococcal Infections",
+          "description": "Reference: serious MSSA infections should receive an antistaphylococcal beta-lactam when susceptibilities allow.",
+          "type": "Reference"
+        }
+      ]
     },
     {
       "id": "4a",
       "label": "Phase 4A",
       "title": "Unsafe handoff",
-      "time": "07/04/2026 21:15",
+      "time": "07/04/2026 19:00",
       "location": "5D-4",
       "room": "5D-4",
-      "team": "Night PHM",
-      "severity": "Unclear",
-      "weight": "13 kg",
-      "weightDetail": "28 lb 10 oz",
+      "team": "Night Hospital Medicine",
+      "severity": "Stable",
+      "weight": "13.2 kg",
+      "weightDetail": "29 lb 2 oz",
       "hospitalDay": "1",
-      "status": "worse",
-      "learnerPrompt": "You are the night team. Receive sign-out and determine whether you have enough information to safely care for this patient overnight.",
+      "status": "same",
+      "learnerPrompt": "You are receiving Mason at evening handoff. Determine whether the available handoff and documentation are sufficient to safely assume responsibility overnight.",
       "vitals": {
-        "Temp": "40.0 \u00b0C",
-        "HR": "182",
-        "RR": "38",
-        "SpO\u2082": "96% RA",
-        "Pain": "8/10",
-        "Updated": "07/04 21:00"
+        "Temp": "38.6 °C",
+        "HR": "136",
+        "RR": "26",
+        "BP": "92/55",
+        "SpO₂": "98% RA",
+        "Pain": "4/10",
+        "Updated": "07/04 18:45"
       },
       "summary": {
         "assessment": [
-          "Known bacteremic osteomyelitis with abscess, but documentation does not clearly reflect current illness severity.",
-          "Nursing concerns suggest clinical worsening."
+          "The most recent primary-team note was written at 09:30, before the major diagnostic and treatment developments of the day.",
+          "The I-PASS contains only a vague one-line update and does not create a useful overnight plan."
         ],
         "problems": [
-          "Bacteremic osteomyelitis",
-          "Subperiosteal abscess",
-          "Persistent tachycardia",
-          "Poor documentation/handoff"
+          "Outdated physician documentation",
+          "Incomplete transfer of current diagnosis and treatment",
+          "Medication omissions in handoff",
+          "No meaningful action list or contingency plan"
         ],
         "events": [
-          "Day note predates MRI/culture results",
-          "Handoff omits bacteremia and contingencies",
-          "RN reports worsening perfusion/urine output"
+          "MRI confirmed osteomyelitis",
+          "Blood culture and rapid PCR identified Staphylococcus aureus without mecA/C",
+          "Cefazolin and PRN oxycodone were started",
+          "Ortho and ID completed consultations",
+          "Day-team handoff remained largely unchanged from the prior night"
         ],
         "plan": [
-          "Review chart for missing data",
-          "Evaluate patient now",
-          "Clarify action list and contingency planning"
+          "Review the chart and identify what is missing from the handoff"
         ],
         "pending": [
-          "Repeat blood culture not ordered",
-          "NPO order not placed",
-          "Trend labs not ordered"
+          "Final blood culture identification and susceptibilities",
+          "Overnight response to pain/fever treatment and maintenance IV fluids"
         ],
         "todo": [
-          "Identify missing IPASS elements",
-          "Review MRI/culture/Ortho note",
-          "Evaluate patient now",
-          "Create clear plan and documentation"
+          "Determine what information and overnight actions are needed before accepting responsibility"
         ],
         "meds": [
-          "Cefazolin 325 mg IV q8h",
-          "Antipyretics PRN"
+          "Ibuprofen scheduled",
+          "Acetaminophen PRN"
         ]
       },
       "timeline": [
         [
-          "17:45",
-          "Persistent tachycardia"
+          "09:30",
+          "Last PHM progress note signed"
         ],
         [
-          "18:30",
-          "Urine output decreased"
+          "11:05",
+          "MRI finalized"
+        ],
+        [
+          "12:47",
+          "Blood culture positive"
+        ],
+        [
+          "13:32",
+          "Blood Culture ID PCR resulted"
+        ],
+        [
+          "13:40",
+          "Orthopedic consult signed"
+        ],
+        [
+          "14:10",
+          "Cefazolin started"
         ],
         [
           "19:00",
-          "Day team signs out"
-        ],
-        [
-          "20:40",
-          "RN reports patient looks worse"
-        ],
-        [
-          "21:15",
-          "Night team reviews chart"
+          "Evening handoff"
         ]
       ],
       "notes": [
         [
-          "Outdated PHM Progress Note",
-          "M. Lee, MD",
-          "07/04 09:10",
-          "Likely transient synovitis. Blood culture pending.",
-          "Assessment: likely transient synovitis. Continue observation and pain control. Blood culture pending. Consider further imaging if not improving.\n\nNote: This documentation was written before MRI and positive blood culture resulted.",
+          "I-PASS Handoff",
+          "Day Team",
+          "07/04 18:55",
+          "Stable. Patient had more workup today due to persistent fever. Ortho/ID consulted.",
+          "I — Illness severity: STABLE.\n\nP — Patient summary: Three-year-old admitted with fever, left hip pain, and refusal to bear weight. Initially thought to have transient synovitis. Receiving scheduled ibuprofen and PRN acetaminophen. Blood culture pending.\n\nUpdate: Patient had more workup today due to persistent fever. Ortho/ID consulted.\n\nA — Action list: None.\n\nS — Situation awareness/contingency planning: Continue to monitor.\n\nS — Synthesis by receiver: Not documented.",
+          "Handoff"
+        ],
+        [
+          "PHM Progress Note",
+          "Barnes, MD",
+          "07/04 09:30",
+          "Persistent fever and pain; broaden evaluation for osteoarticular infection.",
+          "Three-year-old admitted overnight with fever, left hip pain, and refusal to bear weight. Weight discrepancy has been corrected. Despite scheduled ibuprofen, he remains febrile and will not bear weight.\n\nAssessment: Clinical course is no longer consistent with uncomplicated transient synovitis. Osteomyelitis and septic arthritis are now higher on the differential.\n\nPlan: Obtain CBC, CRP, CMP, procalcitonin, and MRI with contrast. Consult Orthopedics. Keep NPO pending imaging and surgical recommendations. Continue scheduled ibuprofen and PRN acetaminophen. Follow admission blood culture.",
           "Physician"
         ],
         [
-          "Verbal/Written Handoff",
-          "Day Team",
-          "07/04 19:00",
-          "Probably osteo. Nothing major overnight.",
-          "3yo admitted with leg pain, probably osteo. MRI done. On cefazolin. Ortho aware. Nothing major overnight.",
-          "Handoff"
+          "Orthopedic Surgery Consult",
+          "J. Kim, MD",
+          "07/04 13:40",
+          "No operative intervention today; regular diet, then NPO at midnight.",
+          "MRI findings are consistent with left proximal femur osteomyelitis with a small subperiosteal fluid collection. No septic arthritis and no drainable abscess. No operative intervention indicated today. Allow regular diet and make NPO at midnight for Orthopedic re-evaluation tomorrow morning.",
+          "Consult"
+        ],
+        [
+          "Infectious Diseases Consult",
+          "A. Patel, MD",
+          "07/04 13:50",
+          "Targeted beta-lactam therapy recommended.",
+          "Blood Culture ID PCR detected Staphylococcus aureus with mecA/C not detected. Recommend targeted beta-lactam therapy using the verified weight. Follow final identification and susceptibilities and monitor clinical response.",
+          "Consult"
         ]
       ],
       "orders": [
         [
-          "Cefazolin 325 mg IV q8h",
-          "Active",
+          "Cefazolin 660 mg IV q8h",
+          "Started 14:10",
           "Active",
           "Medication"
         ],
         [
-          "Repeat blood culture",
-          "Not ordered",
-          "Missing",
-          "Lab"
+          "D5NS + 20 mEq/L KCl at 46 mL/hr",
+          "Started 15:00",
+          "Active",
+          "Medication"
         ],
         [
-          "CRP trend",
-          "Not ordered",
-          "Missing",
-          "Lab"
+          "Oxycodone 1.3 mg PO q4h PRN severe pain",
+          "Ordered 13:05",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Regular diet",
+          "Active until midnight",
+          "Active",
+          "Diet"
         ],
         [
           "NPO at midnight",
-          "Not ordered",
-          "Missing",
+          "Starts 00:00",
+          "Active",
           "Diet"
         ]
       ],
       "mar": [
         [
-          "15:00",
+          "14:10",
           "Cefazolin",
-          "325 mg IV",
+          "660 mg IV",
           "Given",
-          ""
+          "First dose"
         ],
         [
-          "23:00",
+          "15:00",
+          "D5NS + 20 KCl",
+          "46 mL/hr",
+          "Started",
+          "Maintenance IV fluids"
+        ],
+        [
+          "15:20",
+          "Oxycodone",
+          "1.3 mg PO",
+          "Given",
+          "Severe pain"
+        ],
+        [
+          "16:00",
+          "Ibuprofen",
+          "132 mg PO",
+          "Given",
+          "Scheduled"
+        ],
+        [
+          "22:10",
           "Cefazolin",
-          "325 mg IV",
+          "660 mg IV",
           "Due",
           ""
         ]
       ],
       "results": {
-        "Microbiology": [
+        "CBC": [
           [
-            "Blood culture",
-            "Gram-positive cocci in clusters",
-            "Critical"
+            "WBC",
+            "17.8 K/uL",
+            "High"
+          ],
+          [
+            "Hemoglobin",
+            "11.2 g/dL",
+            ""
+          ],
+          [
+            "Hematocrit",
+            "33.5 %",
+            ""
+          ],
+          [
+            "Platelets",
+            "372 K/uL",
+            ""
+          ],
+          [
+            "Neutrophils",
+            "78 %",
+            "High"
+          ],
+          [
+            "Bands",
+            "8 %",
+            "High"
+          ],
+          [
+            "Absolute neutrophils",
+            "15.3 K/uL",
+            "High"
           ]
         ],
         "Inflammatory markers": [
           [
             "CRP",
-            "16.4 mg/dL",
+            "87 mg/L",
             "High"
+          ],
+          [
+            "Procalcitonin",
+            "1.4 ng/mL",
+            "High"
+          ]
+        ],
+        "Chemistry": [
+          [
+            "Sodium",
+            "145 mmol/L",
+            "High-normal"
+          ],
+          [
+            "Potassium",
+            "4.0 mmol/L",
+            ""
+          ],
+          [
+            "Chloride",
+            "111 mmol/L",
+            "High"
+          ],
+          [
+            "CO₂",
+            "20 mmol/L",
+            "Low"
+          ],
+          [
+            "BUN",
+            "22 mg/dL",
+            "High"
+          ],
+          [
+            "Creatinine",
+            "0.34 mg/dL",
+            ""
+          ],
+          [
+            "Glucose",
+            "91 mg/dL",
+            ""
+          ],
+          [
+            "Calcium",
+            "9.2 mg/dL",
+            ""
+          ],
+          [
+            "Albumin",
+            "3.3 g/dL",
+            "Low"
+          ]
+        ],
+        "Microbiology": [
+          [
+            "Blood culture — 07/03 16:18",
+            "Gram-positive cocci in clusters",
+            "Critical 12:47"
+          ],
+          [
+            "Staphylococcus aureus",
+            "Detected",
+            "Detected 13:32"
+          ],
+          [
+            "mecA/C",
+            "Not detected",
+            "13:32"
+          ],
+          [
+            "Staphylococcus epidermidis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Staphylococcus lugdunensis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus agalactiae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus pneumoniae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus pyogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterococcus faecalis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterococcus faecium",
+            "Not detected",
+            ""
+          ],
+          [
+            "Listeria monocytogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Acinetobacter calcoaceticus-baumannii complex",
+            "Not detected",
+            ""
+          ],
+          [
+            "Bacteroides fragilis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterobacterales",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterobacter cloacae complex",
+            "Not detected",
+            ""
+          ],
+          [
+            "Escherichia coli",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella aerogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella oxytoca",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella pneumoniae group",
+            "Not detected",
+            ""
+          ],
+          [
+            "Proteus species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Salmonella species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Serratia marcescens",
+            "Not detected",
+            ""
+          ],
+          [
+            "Haemophilus influenzae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Neisseria meningitidis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Pseudomonas aeruginosa",
+            "Not detected",
+            ""
+          ],
+          [
+            "Stenotrophomonas maltophilia",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida albicans",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida auris",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida glabrata",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida krusei",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida parapsilosis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida tropicalis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Cryptococcus neoformans/gattii",
+            "Not detected",
+            ""
           ]
         ]
       },
       "imaging": [
         [
-          "MRI",
-          "Positive for proximal femur osteomyelitis with subperiosteal abscess."
+          "MRI left femur/hip with contrast",
+          "Marrow edema and enhancement involving the left proximal femoral metaphysis, consistent with osteomyelitis. Small adjacent subperiosteal fluid collection. No hip joint effusion or septic arthritis. No drainable abscess."
         ]
       ],
       "growth": [
         [
           "Today verified",
-          "13.0 kg"
+          "13.2 kg"
         ]
       ],
       "flowsheet": {
         "times": [
-          "17:45",
-          "18:30",
-          "20:00",
-          "21:00"
+          "14:00",
+          "15:30",
+          "17:00",
+          "18:45"
         ],
         "rows": [
           [
             "Temperature",
-            "39.2",
-            "39.6",
-            "39.8",
-            "40.0"
+            "38.8",
+            "39.0",
+            "38.4",
+            "38.6"
           ],
           [
             "Heart Rate",
-            "168",
-            "174",
-            "178",
-            "182"
+            "142",
+            "148",
+            "132",
+            "136"
           ],
           [
             "Respiratory Rate",
-            "32",
-            "34",
-            "36",
-            "38"
+            "28",
+            "28",
+            "26",
+            "26"
           ],
           [
-            "SpO\u2082",
+            "Blood Pressure",
+            "91/53",
+            "90/52",
+            "92/54",
+            "92/55"
+          ],
+          [
+            "SpO₂",
             "98",
-            "97",
-            "96",
-            "96"
+            "98",
+            "99",
+            "98"
           ],
           [
-            "Urine output",
-            "Adequate",
-            "Low",
-            "Low",
-            "Minimal"
+            "Pain",
+            "7",
+            "7",
+            "5",
+            "4"
           ],
           [
             "Cap refill",
-            "3 sec",
-            "3 sec",
-            "4 sec",
-            "4 sec"
+            "2 sec",
+            "2 sec",
+            "2 sec",
+            "2 sec"
           ],
           [
             "Pulses",
             "2+",
             "2+",
-            "1+",
-            "1+"
+            "2+",
+            "2+"
           ],
           [
-            "Skin",
-            "Warm",
-            "Warm",
-            "Cool",
-            "Cool"
+            "Urine output",
+            "0.8 mL/kg/hr",
+            "0.8 mL/kg/hr",
+            "0.9 mL/kg/hr",
+            "0.9 mL/kg/hr"
           ],
           [
-            "Mental status",
-            "Fussy",
-            "Sleepy",
-            "Irritable",
-            "Sleepy"
+            "IV fluids",
+            "Not running",
+            "Started 46 mL/hr",
+            "Running",
+            "Running"
+          ],
+          [
+            "Diet",
+            "Regular",
+            "Regular",
+            "Regular",
+            "Regular"
           ]
         ]
       },
       "messages": [
         [
           "Ashley RN",
-          "20:40",
-          "He does not look right. HR is still 178, cap refill is closer to 4 seconds, and he has barely peed. Can someone come see him?",
+          "18:40",
+          "Pain is improved after oxycodone. He is still not drinking much. MIVF are running and he has had one wet diaper since they were restarted.",
           "AR"
         ]
       ],
       "reveal": true,
       "facilitator": [
-        "Learners should identify inadequate illness severity, missing action list, missing contingency planning, outdated physician note, and missing orders. Reveal 4B with code IPASS after debrief."
+        "Learners should identify that the handoff is superficially updated but functionally unsafe: outdated 09:30 team note, vague update, missing diagnosis/results, omission of cefazolin and oxycodone, no real action list, and no if/then guidance."
       ],
-      "aha": "The handoff omits information needed to safely care for the patient overnight.",
-      "authenticQuestion": "Can the night team safely care for this patient with the available handoff?",
+      "aha": "A vague update does not transfer the information, tasks, and anticipatory guidance needed for safe overnight care.",
+      "authenticQuestion": "Do you have enough information to safely assume responsibility for Mason overnight?",
       "resultTrends": {
         "CRP": [
           [
             "07/03 16:00",
-            8.6
+            3.2
           ],
           [
-            "07/04 07:45",
-            16.4
+            "07/04 11:00",
+            87
           ]
         ],
         "WBC": [
           [
             "07/03 16:00",
-            13.8
+            11.8
           ],
           [
-            "07/04 07:45",
-            15.6
-          ]
-        ],
-        "ESR": [
-          [
-            "07/03 16:00",
-            42
-          ],
-          [
-            "07/04 07:45",
-            58
+            "07/04 11:00",
+            17.8
           ]
         ]
-      }
+      },
+      "diet": "Regular diet; NPO at midnight",
+      "resources": [
+        {
+          "title": "ACH 2025 Antibiogram",
+          "description": "Local Staphylococcus aureus susceptibility data.",
+          "url": "2025_ACH_Antibiogram.pdf",
+          "type": "Local PDF"
+        },
+        {
+          "title": "PIDS/IDSA Pediatric Acute Hematogenous Osteomyelitis Guideline",
+          "description": "National guidance for antimicrobial selection and monitoring.",
+          "url": "PIDS-IDSA_Osteomyelitis_Guideline.pdf",
+          "type": "Guideline PDF"
+        },
+        {
+          "title": "CHOP Bone and Joint Infection Clinical Pathway",
+          "description": "Clinical pathway for evaluation and management of pediatric bone and joint infection.",
+          "url": "https://www.chop.edu/clinical-pathway/bone-joint-infection-clinical-pathway",
+          "type": "External resource"
+        },
+        {
+          "title": "CHOP Bone and Joint Infection Antibiotic Recommendations",
+          "description": "Empiric and targeted antibiotic recommendations.",
+          "url": "https://www.chop.edu/clinical-pathway/bone-joint-infection-antibiotic-recommendations",
+          "type": "External resource"
+        },
+        {
+          "title": "Red Book — Invasive Staphylococcal Infections",
+          "description": "Reference: serious MSSA infections should receive an antistaphylococcal beta-lactam when susceptibilities allow.",
+          "type": "Reference"
+        }
+      ]
     },
     {
       "id": "4b",
       "label": "Phase 4B",
-      "title": "Model handoff",
-      "time": "07/04/2026 21:35",
+      "title": "Corrected I-PASS",
+      "time": "07/04/2026 19:10",
       "location": "5D-4",
       "room": "5D-4",
-      "team": "Night PHM",
-      "severity": "Watcher / high risk",
-      "weight": "13 kg",
-      "weightDetail": "28 lb 10 oz",
+      "team": "Night Hospital Medicine",
+      "severity": "Watcher",
+      "weight": "13.2 kg",
+      "weightDetail": "29 lb 2 oz",
       "hospitalDay": "1",
-      "status": "worse",
-      "learnerPrompt": "Review the updated handoff and physician event note. Compare what is different now.",
+      "status": "same",
+      "learnerPrompt": "Compare the corrected I-PASS and updated physician documentation with the original handoff.",
       "vitals": {
-        "Temp": "40.0 \u00b0C",
-        "HR": "182",
-        "RR": "38",
-        "SpO\u2082": "96% RA",
-        "Pain": "8/10",
-        "Updated": "07/04 21:35"
+        "Temp": "38.6 °C",
+        "HR": "136",
+        "RR": "26",
+        "BP": "92/55",
+        "SpO₂": "98% RA",
+        "Pain": "4/10",
+        "Updated": "07/04 18:45"
       },
       "summary": {
         "assessment": [
-          "Bacteremic osteomyelitis with abscess and early perfusion concerns.",
-          "Illness severity and contingency planning now explicitly documented."
+          "MSSA bacteremia with MRI-confirmed left proximal femur osteomyelitis and a small nonoperative subperiosteal fluid collection.",
+          "The corrected handoff identifies concrete overnight actions and an explicit if/then plan."
         ],
         "problems": [
-          "Bacteremic osteomyelitis",
-          "Subperiosteal abscess",
-          "Early perfusion concerns",
-          "High risk for septic shock"
+          "Osteomyelitis",
+          "Staphylococcus aureus bacteremia",
+          "Persistent fever and pain",
+          "Poor oral intake with mild oliguria"
         ],
         "events": [
-          "Night team evaluated patient",
-          "Updated IPASS documented",
-          "Physician event note filed",
-          "Repeat labs/culture ordered"
+          "Corrected I-PASS documented",
+          "Updated physician event note filed",
+          "Medication list reconciled",
+          "Regular diet confirmed with NPO at midnight"
         ],
         "plan": [
-          "Follow lactate and labs",
-          "Ensure cefazolin given on time",
-          "NPO at midnight",
-          "Escalate if perfusion worsens"
+          "Follow vital signs and urine output after treatment and several hours of maintenance IV fluids",
+          "NPO at midnight for Orthopedic re-evaluation",
+          "Use explicit contingency guidance if Mason worsens"
         ],
         "pending": [
-          "Lactate",
-          "Repeat CBC/BMP/CRP",
-          "Repeat blood culture"
+          "Final blood culture identification and susceptibilities",
+          "Response of vital signs and urine output"
         ],
         "todo": [
-          "Follow lactate/labs",
-          "Ensure antibiotics on time",
-          "NPO at midnight",
-          "Escalate if perfusion worsens"
+          "Follow up vital signs and urine output after treating pain/fever and several hours on MIVF",
+          "Make NPO at midnight"
         ],
         "meds": [
-          "Cefazolin 325 mg IV q8h",
-          "Antipyretics PRN"
+          "Cefazolin 660 mg IV q8h",
+          "Ibuprofen scheduled",
+          "Acetaminophen PRN",
+          "Oxycodone PRN",
+          "D5NS + 20 KCl at 46 mL/hr"
         ]
       },
       "timeline": [
         [
-          "21:20",
-          "Night resident evaluates patient"
+          "09:30",
+          "Last PHM progress note signed"
         ],
         [
-          "21:28",
-          "Updated IPASS documented"
+          "11:05",
+          "MRI finalized"
         ],
         [
-          "21:35",
+          "12:47",
+          "Blood culture positive"
+        ],
+        [
+          "13:32",
+          "Blood Culture ID PCR resulted"
+        ],
+        [
+          "13:40",
+          "Orthopedic consult signed"
+        ],
+        [
+          "14:10",
+          "Cefazolin started"
+        ],
+        [
+          "19:00",
+          "Evening handoff"
+        ],
+        [
+          "19:05",
+          "Corrected I-PASS documented"
+        ],
+        [
+          "19:10",
           "Physician event note filed"
-        ],
-        [
-          "21:40",
-          "Repeat labs and culture ordered"
         ]
       ],
       "notes": [
         [
-          "Updated IPASS Handoff",
-          "Day + Night Team",
-          "07/04 21:28",
-          "Watcher. Bacteremic osteomyelitis. Action list and contingencies included.",
-          "I \u2014 Illness severity: WATCHER. 3yo with acute hematogenous osteomyelitis of left proximal femur, bacteremia, and small subperiosteal abscess.\n\nP \u2014 Patient summary: Initially admitted for fever/refusal to bear weight. ED weight error corrected. MRI confirms osteomyelitis. Blood culture positive for gram-positive cocci in clusters. On cefazolin. Ortho following.\n\nA \u2014 Action list: Repeat blood culture now and daily until negative. CRP/CBC/BMP tonight. NPO at midnight. Reassess perfusion and urine output. Confirm antibiotic timing.\n\nS \u2014 Situation awareness/contingency: If persistent tachycardia, hypotension, altered mental status, delayed cap refill, rising lactate, or worsening pain, activate sepsis pathway, call Ortho/PICU, broaden antibiotics per pathway.\n\nS \u2014 Synthesis by receiver: Night team repeats back bacteremia, abscess, NPO plan, repeat culture/labs, and sepsis escalation triggers.",
+          "Corrected I-PASS Handoff",
+          "Day Team",
+          "07/04 19:05",
+          "Watcher. MSSA bacteremia with MRI-confirmed osteomyelitis; concrete overnight actions and contingencies included.",
+          "I — Illness severity: WATCHER.\n\nP — Patient summary: Previously healthy three-year-old with left proximal femur osteomyelitis and a small subperiosteal fluid collection without an operative indication today. Admission blood culture became positive for gram-positive cocci in clusters; rapid PCR detected Staphylococcus aureus with mecA/C not detected. Cefazolin was started this afternoon. Orthopedics and ID are following. Pain improved after oxycodone, but he remains intermittently febrile with poor oral intake. Maintenance IV fluids are running. Regular diet this evening; NPO at midnight for Orthopedic re-evaluation.\n\nA — Action list: Follow up vital signs and urine output after treating pain/fever and after several hours on maintenance IV fluids. Make NPO at midnight.\n\nS — Situation awareness/contingency planning: If fever persists with worsening tachycardia, delayed capillary refill, decreased urine output, increasing pain, or other signs of deterioration, reassess Mason at the bedside, notify the senior resident and attending, and discuss repeat evaluation with Orthopedics and Infectious Diseases.\n\nS — Synthesis by receiver: Mason has S. aureus bacteremia with proximal femur osteomyelitis. He is receiving cefazolin, maintenance fluids, scheduled ibuprofen, and PRN acetaminophen/oxycodone. I will reassess vital signs and urine output, make him NPO at midnight, and escalate for worsening perfusion or other deterioration.",
           "Handoff"
         ],
         [
           "Physician Event Note",
-          "R. Nguyen, MD",
-          "07/04 21:35",
-          "Evaluated for tachycardia and nursing concern. Repeat labs/culture ordered.",
-          "Called to bedside for persistent tachycardia and nursing concern. Patient febrile, uncomfortable, cap refill 3-4 seconds, HR 176, BP 88/52, urine output decreased. Reviewed chart and noted MRI-confirmed left proximal femur osteomyelitis with small subperiosteal abscess and positive blood culture.\n\nPlan: repeat blood culture, CBC, BMP, CRP, lactate; continue cefazolin; NPO at midnight; notify Ortho of clinical concern; close reassessment within 1 hour; activate sepsis pathway if perfusion worsens.",
+          "Barnes, MD",
+          "07/04 19:10",
+          "Chart updated after MRI, culture PCR, and consultant recommendations.",
+          "MRI today demonstrated left proximal femur osteomyelitis with a small subperiosteal fluid collection, no septic arthritis, and no drainable abscess. Admission blood culture is positive; rapid identification detected Staphylococcus aureus with mecA/C not detected. Cefazolin was started using the verified 13.2 kg weight. Orthopedics recommends no operative intervention today, regular diet this evening, and NPO at midnight for morning re-evaluation. Infectious Diseases agrees with targeted beta-lactam therapy.\n\nMason remains intermittently febrile with poor oral intake and mild oliguria. Pain improved after PRN oxycodone. Maintenance IV fluids are running.\n\nOvernight plan: follow vital signs and urine output after fever/pain treatment and several hours of IV fluids. If worsening tachycardia, perfusion, urine output, pain, mental status, or other signs of deterioration occur, evaluate immediately and notify the senior resident/attending with Orthopedic and ID re-evaluation as indicated.",
           "Event"
+        ],
+        [
+          "PHM Progress Note",
+          "Barnes, MD",
+          "07/04 09:30",
+          "Persistent fever and pain; broaden evaluation for osteoarticular infection.",
+          "Three-year-old admitted overnight with fever, left hip pain, and refusal to bear weight. Weight discrepancy has been corrected. Despite scheduled ibuprofen, he remains febrile and will not bear weight.\n\nAssessment: Clinical course is no longer consistent with uncomplicated transient synovitis. Osteomyelitis and septic arthritis are now higher on the differential.\n\nPlan: Obtain CBC, CRP, CMP, procalcitonin, and MRI with contrast. Consult Orthopedics. Keep NPO pending imaging and surgical recommendations. Continue scheduled ibuprofen and PRN acetaminophen. Follow admission blood culture.",
+          "Physician"
+        ],
+        [
+          "Orthopedic Surgery Consult",
+          "J. Kim, MD",
+          "07/04 13:40",
+          "No operative intervention today; regular diet, then NPO at midnight.",
+          "MRI findings are consistent with left proximal femur osteomyelitis with a small subperiosteal fluid collection. No septic arthritis and no drainable abscess. No operative intervention indicated today. Allow regular diet and make NPO at midnight for Orthopedic re-evaluation tomorrow morning.",
+          "Consult"
+        ],
+        [
+          "Infectious Diseases Consult",
+          "A. Patel, MD",
+          "07/04 13:50",
+          "Targeted beta-lactam therapy recommended.",
+          "Blood Culture ID PCR detected Staphylococcus aureus with mecA/C not detected. Recommend targeted beta-lactam therapy using the verified weight. Follow final identification and susceptibilities and monitor clinical response.",
+          "Consult"
         ]
       ],
       "orders": [
         [
-          "Repeat blood culture",
-          "Ordered",
+          "Cefazolin 660 mg IV q8h",
+          "Started 14:10",
           "Active",
-          "Lab"
+          "Medication"
         ],
         [
-          "CBC/BMP/CRP/lactate",
-          "STAT ordered",
+          "D5NS + 20 mEq/L KCl at 46 mL/hr",
+          "Started 15:00",
           "Active",
-          "Lab"
+          "Medication"
         ],
         [
-          "NPO at midnight",
-          "Ordered",
+          "Oxycodone 1.3 mg PO q4h PRN severe pain",
+          "Ordered 13:05",
+          "Active",
+          "Medication"
+        ],
+        [
+          "Regular diet",
+          "Active until midnight",
           "Active",
           "Diet"
         ],
         [
-          "Ortho update",
-          "Completed",
-          "Completed",
-          "Page"
+          "NPO at midnight",
+          "Starts 00:00",
+          "Active",
+          "Diet"
         ]
       ],
       "mar": [
         [
-          "23:00",
+          "14:10",
           "Cefazolin",
-          "325 mg IV",
+          "660 mg IV",
+          "Given",
+          "First dose"
+        ],
+        [
+          "15:00",
+          "D5NS + 20 KCl",
+          "46 mL/hr",
+          "Started",
+          "Maintenance IV fluids"
+        ],
+        [
+          "15:20",
+          "Oxycodone",
+          "1.3 mg PO",
+          "Given",
+          "Severe pain"
+        ],
+        [
+          "16:00",
+          "Ibuprofen",
+          "132 mg PO",
+          "Given",
+          "Scheduled"
+        ],
+        [
+          "22:10",
+          "Cefazolin",
+          "660 mg IV",
           "Due",
-          "Ensure on time"
+          ""
         ]
       ],
       "results": {
-        "Labs ordered": [
+        "CBC": [
           [
-            "Lactate",
-            "Pending",
+            "WBC",
+            "17.8 K/uL",
+            "High"
+          ],
+          [
+            "Hemoglobin",
+            "11.2 g/dL",
             ""
           ],
           [
-            "CBC/BMP/CRP",
-            "Pending",
+            "Hematocrit",
+            "33.5 %",
+            ""
+          ],
+          [
+            "Platelets",
+            "372 K/uL",
+            ""
+          ],
+          [
+            "Neutrophils",
+            "78 %",
+            "High"
+          ],
+          [
+            "Bands",
+            "8 %",
+            "High"
+          ],
+          [
+            "Absolute neutrophils",
+            "15.3 K/uL",
+            "High"
+          ]
+        ],
+        "Inflammatory markers": [
+          [
+            "CRP",
+            "87 mg/L",
+            "High"
+          ],
+          [
+            "Procalcitonin",
+            "1.4 ng/mL",
+            "High"
+          ]
+        ],
+        "Chemistry": [
+          [
+            "Sodium",
+            "145 mmol/L",
+            "High-normal"
+          ],
+          [
+            "Potassium",
+            "4.0 mmol/L",
+            ""
+          ],
+          [
+            "Chloride",
+            "111 mmol/L",
+            "High"
+          ],
+          [
+            "CO₂",
+            "20 mmol/L",
+            "Low"
+          ],
+          [
+            "BUN",
+            "22 mg/dL",
+            "High"
+          ],
+          [
+            "Creatinine",
+            "0.34 mg/dL",
+            ""
+          ],
+          [
+            "Glucose",
+            "91 mg/dL",
+            ""
+          ],
+          [
+            "Calcium",
+            "9.2 mg/dL",
+            ""
+          ],
+          [
+            "Albumin",
+            "3.3 g/dL",
+            "Low"
+          ]
+        ],
+        "Microbiology": [
+          [
+            "Blood culture — 07/03 16:18",
+            "Gram-positive cocci in clusters",
+            "Critical 12:47"
+          ],
+          [
+            "Staphylococcus aureus",
+            "Detected",
+            "Detected 13:32"
+          ],
+          [
+            "mecA/C",
+            "Not detected",
+            "13:32"
+          ],
+          [
+            "Staphylococcus epidermidis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Staphylococcus lugdunensis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus agalactiae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus pneumoniae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Streptococcus pyogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterococcus faecalis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterococcus faecium",
+            "Not detected",
+            ""
+          ],
+          [
+            "Listeria monocytogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Acinetobacter calcoaceticus-baumannii complex",
+            "Not detected",
+            ""
+          ],
+          [
+            "Bacteroides fragilis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterobacterales",
+            "Not detected",
+            ""
+          ],
+          [
+            "Enterobacter cloacae complex",
+            "Not detected",
+            ""
+          ],
+          [
+            "Escherichia coli",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella aerogenes",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella oxytoca",
+            "Not detected",
+            ""
+          ],
+          [
+            "Klebsiella pneumoniae group",
+            "Not detected",
+            ""
+          ],
+          [
+            "Proteus species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Salmonella species",
+            "Not detected",
+            ""
+          ],
+          [
+            "Serratia marcescens",
+            "Not detected",
+            ""
+          ],
+          [
+            "Haemophilus influenzae",
+            "Not detected",
+            ""
+          ],
+          [
+            "Neisseria meningitidis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Pseudomonas aeruginosa",
+            "Not detected",
+            ""
+          ],
+          [
+            "Stenotrophomonas maltophilia",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida albicans",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida auris",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida glabrata",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida krusei",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida parapsilosis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Candida tropicalis",
+            "Not detected",
+            ""
+          ],
+          [
+            "Cryptococcus neoformans/gattii",
+            "Not detected",
             ""
           ]
         ]
       },
       "imaging": [
         [
-          "MRI",
-          "Left proximal femur osteomyelitis with small subperiosteal abscess."
+          "MRI left femur/hip with contrast",
+          "Marrow edema and enhancement involving the left proximal femoral metaphysis, consistent with osteomyelitis. Small adjacent subperiosteal fluid collection. No hip joint effusion or septic arthritis. No drainable abscess."
         ]
       ],
       "growth": [
         [
           "Today verified",
-          "13.0 kg"
+          "13.2 kg"
         ]
       ],
       "flowsheet": {
         "times": [
-          "17:45",
-          "18:30",
-          "20:00",
-          "21:00"
+          "14:00",
+          "15:30",
+          "17:00",
+          "18:45"
         ],
         "rows": [
           [
             "Temperature",
-            "39.2",
-            "39.6",
-            "39.8",
-            "40.0"
+            "38.8",
+            "39.0",
+            "38.4",
+            "38.6"
           ],
           [
             "Heart Rate",
-            "168",
-            "174",
-            "178",
-            "182"
+            "142",
+            "148",
+            "132",
+            "136"
           ],
           [
             "Respiratory Rate",
-            "32",
-            "34",
-            "36",
-            "38"
+            "28",
+            "28",
+            "26",
+            "26"
           ],
           [
-            "SpO\u2082",
+            "Blood Pressure",
+            "91/53",
+            "90/52",
+            "92/54",
+            "92/55"
+          ],
+          [
+            "SpO₂",
             "98",
-            "97",
-            "96",
-            "96"
+            "98",
+            "99",
+            "98"
           ],
           [
-            "Urine output",
-            "Adequate",
-            "Low",
-            "Low",
-            "Minimal"
+            "Pain",
+            "7",
+            "7",
+            "5",
+            "4"
           ],
           [
             "Cap refill",
-            "3 sec",
-            "3 sec",
-            "4 sec",
-            "4 sec"
+            "2 sec",
+            "2 sec",
+            "2 sec",
+            "2 sec"
           ],
           [
             "Pulses",
             "2+",
             "2+",
-            "1+",
-            "1+"
+            "2+",
+            "2+"
           ],
           [
-            "Skin",
-            "Warm",
-            "Warm",
-            "Cool",
-            "Cool"
+            "Urine output",
+            "0.8 mL/kg/hr",
+            "0.8 mL/kg/hr",
+            "0.9 mL/kg/hr",
+            "0.9 mL/kg/hr"
           ],
           [
-            "Mental status",
-            "Fussy",
-            "Sleepy",
-            "Irritable",
-            "Sleepy"
+            "IV fluids",
+            "Not running",
+            "Started 46 mL/hr",
+            "Running",
+            "Running"
+          ],
+          [
+            "Diet",
+            "Regular",
+            "Regular",
+            "Regular",
+            "Regular"
           ]
         ]
       },
       "messages": [
         [
-          "Ortho Resident",
-          "21:42",
-          "Agree with NPO and repeat labs. Call immediately for hypotension, worsening perfusion, or increased pain.",
-          "ORT"
+          "Ashley RN",
+          "19:08",
+          "Thanks — I will repeat vitals after the next fever/pain treatment and update you on urine output after a few more hours of fluids.",
+          "AR"
         ]
       ],
       "facilitator": [
-        "Use this after the handoff debrief to model complete IPASS and appropriate event documentation."
+        "Use this reveal after learners identify the deficiencies in Phase 4A. Emphasize a concise action list made of actual overnight tasks, followed by explicit if/then guidance."
       ],
-      "aha": "A clear IPASS handoff creates a shared mental model.",
-      "authenticQuestion": "What changed when the handoff and documentation were corrected?",
+      "aha": "A safe handoff transfers a shared mental model, concrete ownership, and clear triggers for reassessment and escalation.",
+      "authenticQuestion": "What makes this handoff safer and more useful to the receiving team?",
       "resultTrends": {
         "CRP": [
           [
             "07/03 16:00",
-            8.6
+            3.2
           ],
           [
-            "07/04 07:45",
-            16.4
+            "07/04 11:00",
+            87
           ]
         ],
         "WBC": [
           [
             "07/03 16:00",
-            13.8
+            11.8
           ],
           [
-            "07/04 07:45",
-            15.6
-          ]
-        ],
-        "ESR": [
-          [
-            "07/03 16:00",
-            42
-          ],
-          [
-            "07/04 07:45",
-            58
+            "07/04 11:00",
+            17.8
           ]
         ]
-      }
+      },
+      "diet": "Regular diet; NPO at midnight",
+      "resources": [
+        {
+          "title": "ACH 2025 Antibiogram",
+          "description": "Local Staphylococcus aureus susceptibility data.",
+          "url": "2025_ACH_Antibiogram.pdf",
+          "type": "Local PDF"
+        },
+        {
+          "title": "PIDS/IDSA Pediatric Acute Hematogenous Osteomyelitis Guideline",
+          "description": "National guidance for antimicrobial selection and monitoring.",
+          "url": "PIDS-IDSA_Osteomyelitis_Guideline.pdf",
+          "type": "Guideline PDF"
+        },
+        {
+          "title": "CHOP Bone and Joint Infection Clinical Pathway",
+          "description": "Clinical pathway for evaluation and management of pediatric bone and joint infection.",
+          "url": "https://www.chop.edu/clinical-pathway/bone-joint-infection-clinical-pathway",
+          "type": "External resource"
+        },
+        {
+          "title": "CHOP Bone and Joint Infection Antibiotic Recommendations",
+          "description": "Empiric and targeted antibiotic recommendations.",
+          "url": "https://www.chop.edu/clinical-pathway/bone-joint-infection-antibiotic-recommendations",
+          "type": "External resource"
+        },
+        {
+          "title": "Red Book — Invasive Staphylococcal Infections",
+          "description": "Reference: serious MSSA infections should receive an antistaphylococcal beta-lactam when susceptibilities allow.",
+          "type": "Reference"
+        }
+      ]
     },
     {
       "id": "5",
       "label": "Phase 5",
       "title": "Escalation of care",
       "time": "07/05/2026 02:10",
-      "location": "5D-4 \u2192 PICU",
+      "location": "5D-4 → PICU",
       "room": "5D-4",
       "team": "PHM + PICU + Ortho",
       "severity": "Critical",
@@ -1991,11 +3032,11 @@ const CASE = {
       "status": "worse",
       "learnerPrompt": "The patient is deteriorating. Review the chart quickly and lead the next steps.",
       "vitals": {
-        "Temp": "40.2 \u00b0C",
+        "Temp": "40.2 °C",
         "HR": "190",
         "RR": "48",
-        "SpO\u2082": "92% RA",
-        "Pain": "\u2014",
+        "SpO₂": "92% RA",
+        "Pain": "—",
         "Updated": "07/05 02:00"
       },
       "summary": {
@@ -2142,12 +3183,12 @@ const CASE = {
             "Critical"
           ],
           [
-            "pCO\u2082",
+            "pCO₂",
             "31 mmHg",
             ""
           ],
           [
-            "HCO\u2083",
+            "HCO₃",
             "13 mEq/L",
             "Low"
           ],
@@ -2224,7 +3265,7 @@ const CASE = {
             "74/40"
           ],
           [
-            "SpO\u2082",
+            "SpO₂",
             "96",
             "94",
             "93",
