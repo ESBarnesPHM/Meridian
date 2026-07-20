@@ -504,3 +504,14 @@ a.resource-card:hover{border-color:#8fbfcb;background:#fbfdff}
 .resource-title{font-weight:950;color:#0b3c69;margin-bottom:7px}
 .resource-description{font-size:13px;color:var(--muted);line-height:1.45}
 .resource-open{position:absolute;right:12px;top:12px;color:var(--blue);font-weight:900;font-size:12px}
+
+/* v5.7 decision-making resources */
+.resource-list{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.resource-card{min-height:154px;padding:18px 46px 18px 18px;border-radius:16px;border:1px solid #cddde8;background:linear-gradient(180deg,#fff 0%,#f8fbfd 100%);box-shadow:0 2px 8px rgba(20,53,78,.06);transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+a.resource-card:hover{transform:translateY(-2px);border-color:#5fa8b2;box-shadow:0 7px 18px rgba(20,53,78,.11);background:#fff}
+.resource-card-top{display:flex;align-items:center;gap:9px;margin-bottom:12px}
+.resource-icon{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:28px;padding:0 7px;border-radius:8px;background:#e7f4f3;color:#08727d;font-size:10px;font-weight:950;letter-spacing:.04em}
+.resource-type{margin:0;color:#647487;font-size:10px}
+.resource-title{font-size:15px;line-height:1.3;margin-bottom:9px;color:#0b3c69}
+.resource-description{font-size:13px;line-height:1.5;color:#526477}
+.resource-open{right:14px;top:17px;background:#edf4fb;border-radius:999px;padding:4px 8px;font-size:10px;color:#0b5b98}

@@ -669,6 +669,14 @@ const CASE = {
           "Nursing"
         ],
         [
+          "I-PASS Handoff",
+          "Night Team",
+          "07/03 22:30",
+          "Stable. Admitted for fever, left hip pain, and refusal to bear weight; observing for presumed transient synovitis.",
+          "I — Illness severity: STABLE.\n\nP — Patient summary: Previously healthy 3-year-old admitted with fever, left hip pain, and refusal to bear weight after a recent viral illness. Initial CRP and radiograph are reassuring. Working diagnosis is transient synovitis, though early osteomyelitis or septic arthritis cannot be excluded. He is receiving scheduled ibuprofen, PRN acetaminophen, and maintenance IV fluids. Blood culture is pending.\n\nA — Action list:\n- Reassess pain and ability to bear weight after scheduled ibuprofen.\n- Follow fever curve, intake, and urine output overnight.\n\nS — Situation awareness/contingency planning: If fever or pain worsens, perfusion changes, or he remains unable to bear weight in the morning, reassess at the bedside and consider repeat labs, MRI, and Orthopedic consultation.\n\nS — Synthesis by receiver: Mason is stable and being observed for presumed transient synovitis. I will follow his fever, pain, intake, urine output, and ability to bear weight, and escalate the evaluation if he worsens or does not improve.",
+          "Handoff"
+        ],
+        [
           "Attending Addendum to Admission H&P",
           "Barnes, MD",
           "07/03 22:15",
@@ -1297,8 +1305,8 @@ const CASE = {
           "PHM Progress Note",
           "Barnes, MD",
           "07/04 09:30",
-          "Persistent fever and pain; broaden evaluation for osteoarticular infection.",
-          "Three-year-old admitted overnight with fever, left hip pain, and refusal to bear weight. Weight discrepancy has been corrected. Despite scheduled ibuprofen, he remains febrile and will not bear weight.\n\nAssessment: Clinical course is no longer consistent with uncomplicated transient synovitis. Osteomyelitis and septic arthritis are now higher on the differential.\n\nPlan: Obtain CBC, CRP, CMP, procalcitonin, and MRI with contrast. Consult Orthopedics. Keep NPO pending imaging and surgical recommendations. Continue scheduled ibuprofen and PRN acetaminophen. Follow admission blood culture.",
+          "Persistent fever and worsening pain; broaden evaluation for osteoarticular infection.",
+          "S — Subjective\nMother reports Mason remained febrile overnight and continues to refuse to stand or bear weight. He cries with repositioning of the left leg and has had only small sips of fluid with very little breakfast. Acetaminophen temporarily improved his fever, but his pain and activity level have not returned to baseline.\n\nO — Objective\nVital signs (07/04 07:45): T 39.1°C, HR 149, RR 30, BP 90/52, SpO₂ 98% on room air. Pain 7/10.\n\nIntake/Output: Poor oral intake overnight. Urine output remains present but is decreasing.\n\nPhysical Exam\nGeneral: Tired, uncomfortable-appearing child resting with mother; cries with movement but consoles when left leg is still.\nHEENT: Lips mildly dry; no oral lesions.\nCV: Tachycardic with regular rhythm; no murmur. Peripheral pulses 2+. Capillary refill approximately 3 seconds.\nResp: Clear to auscultation bilaterally; no retractions or increased work of breathing.\nAbdomen: Soft, non-tender, non-distended.\nMSK: Left hip held flexed. Marked pain with passive range of motion and with palpation over the proximal femur. No overlying erythema or visible swelling. Refuses to bear weight.\nNeuro: Awake and appropriately responsive to mother; moves all extremities except for pain-limited movement of the left leg.\nSkin: Warm; no rash or focal skin lesion.\n\nAdmission data reviewed: WBC 11.8 K/uL, CRP 3.2 mg/L, blood culture pending, left hip radiograph without acute abnormality.\n\nA — Assessment\nPreviously healthy 3-year-old admitted with fever and refusal to bear weight, initially managed as possible transient synovitis. Persistent high fever, worsening pain, continued inability to bear weight, tachycardia, and delayed capillary refill are no longer consistent with an uncomplicated course. Osteomyelitis and septic arthritis are now higher on the differential. He also has poor oral intake with early dehydration.\n\nP — Plan\n- Obtain CBC with differential, CRP, CMP, and procalcitonin.\n- Obtain MRI of the left hip/femur with contrast.\n- Consult Orthopedic Surgery.\n- Keep NPO pending imaging and operative recommendations.\n- Continue scheduled ibuprofen and PRN acetaminophen.\n- Continue maintenance IV fluids and strict intake/output monitoring.\n- Follow the admission blood culture.\n- Perform serial examinations and reassess perfusion, pain, and ability to bear weight.",
           "Physician"
         ],
         [
@@ -1308,6 +1316,14 @@ const CASE = {
           "Febrile overnight with persistent pain and limited movement.",
           "Shift Summary\n\nFebrile overnight to 39.1°C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
           "Nursing"
+        ],
+        [
+          "I-PASS Handoff",
+          "Night Team",
+          "07/03 22:30",
+          "Stable. Admitted for fever, left hip pain, and refusal to bear weight; observing for presumed transient synovitis.",
+          "I — Illness severity: STABLE.\n\nP — Patient summary: Previously healthy 3-year-old admitted with fever, left hip pain, and refusal to bear weight after a recent viral illness. Initial CRP and radiograph are reassuring. Working diagnosis is transient synovitis, though early osteomyelitis or septic arthritis cannot be excluded. He is receiving scheduled ibuprofen, PRN acetaminophen, and maintenance IV fluids. Blood culture is pending.\n\nA — Action list:\n- Reassess pain and ability to bear weight after scheduled ibuprofen.\n- Follow fever curve, intake, and urine output overnight.\n\nS — Situation awareness/contingency planning: If fever or pain worsens, perfusion changes, or he remains unable to bear weight in the morning, reassess at the bedside and consider repeat labs, MRI, and Orthopedic consultation.\n\nS — Synthesis by receiver: Mason is stable and being observed for presumed transient synovitis. I will follow his fever, pain, intake, urine output, and ability to bear weight, and escalate the evaluation if he worsens or does not improve.",
+          "Handoff"
         ],
         [
           "Attending Addendum to Admission H&P",
@@ -1859,7 +1875,8 @@ const CASE = {
         {
           "title": "Red Book — Invasive Staphylococcal Infections",
           "description": "Reference: serious MSSA infections should receive an antistaphylococcal beta-lactam when susceptibilities allow.",
-          "type": "Reference"
+          "type": "Reference",
+          "url": "redbook_staph_reference.html"
         },
         {
           "type": "Clinical Pathway",
@@ -2161,8 +2178,8 @@ const CASE = {
           "PHM Progress Note",
           "Barnes, MD",
           "07/04 09:30",
-          "Persistent fever and pain; broaden evaluation for osteoarticular infection.",
-          "Three-year-old admitted overnight with fever, left hip pain, and refusal to bear weight. Weight discrepancy has been corrected. Despite scheduled ibuprofen, he remains febrile and will not bear weight.\n\nAssessment: Clinical course is no longer consistent with uncomplicated transient synovitis. Osteomyelitis and septic arthritis are now higher on the differential.\n\nPlan: Obtain CBC, CRP, CMP, procalcitonin, and MRI with contrast. Consult Orthopedics. Keep NPO pending imaging and surgical recommendations. Continue scheduled ibuprofen and PRN acetaminophen. Follow admission blood culture.",
+          "Persistent fever and worsening pain; broaden evaluation for osteoarticular infection.",
+          "S — Subjective\nMother reports Mason remained febrile overnight and continues to refuse to stand or bear weight. He cries with repositioning of the left leg and has had only small sips of fluid with very little breakfast. Acetaminophen temporarily improved his fever, but his pain and activity level have not returned to baseline.\n\nO — Objective\nVital signs (07/04 07:45): T 39.1°C, HR 149, RR 30, BP 90/52, SpO₂ 98% on room air. Pain 7/10.\n\nIntake/Output: Poor oral intake overnight. Urine output remains present but is decreasing.\n\nPhysical Exam\nGeneral: Tired, uncomfortable-appearing child resting with mother; cries with movement but consoles when left leg is still.\nHEENT: Lips mildly dry; no oral lesions.\nCV: Tachycardic with regular rhythm; no murmur. Peripheral pulses 2+. Capillary refill approximately 3 seconds.\nResp: Clear to auscultation bilaterally; no retractions or increased work of breathing.\nAbdomen: Soft, non-tender, non-distended.\nMSK: Left hip held flexed. Marked pain with passive range of motion and with palpation over the proximal femur. No overlying erythema or visible swelling. Refuses to bear weight.\nNeuro: Awake and appropriately responsive to mother; moves all extremities except for pain-limited movement of the left leg.\nSkin: Warm; no rash or focal skin lesion.\n\nAdmission data reviewed: WBC 11.8 K/uL, CRP 3.2 mg/L, blood culture pending, left hip radiograph without acute abnormality.\n\nA — Assessment\nPreviously healthy 3-year-old admitted with fever and refusal to bear weight, initially managed as possible transient synovitis. Persistent high fever, worsening pain, continued inability to bear weight, tachycardia, and delayed capillary refill are no longer consistent with an uncomplicated course. Osteomyelitis and septic arthritis are now higher on the differential. He also has poor oral intake with early dehydration.\n\nP — Plan\n- Obtain CBC with differential, CRP, CMP, and procalcitonin.\n- Obtain MRI of the left hip/femur with contrast.\n- Consult Orthopedic Surgery.\n- Keep NPO pending imaging and operative recommendations.\n- Continue scheduled ibuprofen and PRN acetaminophen.\n- Continue maintenance IV fluids and strict intake/output monitoring.\n- Follow the admission blood culture.\n- Perform serial examinations and reassess perfusion, pain, and ability to bear weight.",
           "Physician"
         ],
         [
@@ -2188,6 +2205,14 @@ const CASE = {
           "Febrile overnight with persistent pain and limited movement.",
           "Shift Summary\n\nFebrile overnight to 39.1°C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
           "Nursing"
+        ],
+        [
+          "I-PASS Handoff",
+          "Night Team",
+          "07/03 22:30",
+          "Stable. Admitted for fever, left hip pain, and refusal to bear weight; observing for presumed transient synovitis.",
+          "I — Illness severity: STABLE.\n\nP — Patient summary: Previously healthy 3-year-old admitted with fever, left hip pain, and refusal to bear weight after a recent viral illness. Initial CRP and radiograph are reassuring. Working diagnosis is transient synovitis, though early osteomyelitis or septic arthritis cannot be excluded. He is receiving scheduled ibuprofen, PRN acetaminophen, and maintenance IV fluids. Blood culture is pending.\n\nA — Action list:\n- Reassess pain and ability to bear weight after scheduled ibuprofen.\n- Follow fever curve, intake, and urine output overnight.\n\nS — Situation awareness/contingency planning: If fever or pain worsens, perfusion changes, or he remains unable to bear weight in the morning, reassess at the bedside and consider repeat labs, MRI, and Orthopedic consultation.\n\nS — Synthesis by receiver: Mason is stable and being observed for presumed transient synovitis. I will follow his fever, pain, intake, urine output, and ability to bear weight, and escalate the evaluation if he worsens or does not improve.",
+          "Handoff"
         ],
         [
           "Attending Addendum to Admission H&P",
@@ -2753,7 +2778,8 @@ const CASE = {
         {
           "title": "Red Book — Invasive Staphylococcal Infections",
           "description": "Reference: serious MSSA infections should receive an antistaphylococcal beta-lactam when susceptibilities allow.",
-          "type": "Reference"
+          "type": "Reference",
+          "url": "redbook_staph_reference.html"
         },
         {
           "type": "Clinical Pathway",
@@ -3082,8 +3108,8 @@ const CASE = {
           "PHM Progress Note",
           "Barnes, MD",
           "07/04 09:30",
-          "Persistent fever and pain; broaden evaluation for osteoarticular infection.",
-          "Three-year-old admitted overnight with fever, left hip pain, and refusal to bear weight. Weight discrepancy has been corrected. Despite scheduled ibuprofen, he remains febrile and will not bear weight.\n\nAssessment: Clinical course is no longer consistent with uncomplicated transient synovitis. Osteomyelitis and septic arthritis are now higher on the differential.\n\nPlan: Obtain CBC, CRP, CMP, procalcitonin, and MRI with contrast. Consult Orthopedics. Keep NPO pending imaging and surgical recommendations. Continue scheduled ibuprofen and PRN acetaminophen. Follow admission blood culture.",
+          "Persistent fever and worsening pain; broaden evaluation for osteoarticular infection.",
+          "S — Subjective\nMother reports Mason remained febrile overnight and continues to refuse to stand or bear weight. He cries with repositioning of the left leg and has had only small sips of fluid with very little breakfast. Acetaminophen temporarily improved his fever, but his pain and activity level have not returned to baseline.\n\nO — Objective\nVital signs (07/04 07:45): T 39.1°C, HR 149, RR 30, BP 90/52, SpO₂ 98% on room air. Pain 7/10.\n\nIntake/Output: Poor oral intake overnight. Urine output remains present but is decreasing.\n\nPhysical Exam\nGeneral: Tired, uncomfortable-appearing child resting with mother; cries with movement but consoles when left leg is still.\nHEENT: Lips mildly dry; no oral lesions.\nCV: Tachycardic with regular rhythm; no murmur. Peripheral pulses 2+. Capillary refill approximately 3 seconds.\nResp: Clear to auscultation bilaterally; no retractions or increased work of breathing.\nAbdomen: Soft, non-tender, non-distended.\nMSK: Left hip held flexed. Marked pain with passive range of motion and with palpation over the proximal femur. No overlying erythema or visible swelling. Refuses to bear weight.\nNeuro: Awake and appropriately responsive to mother; moves all extremities except for pain-limited movement of the left leg.\nSkin: Warm; no rash or focal skin lesion.\n\nAdmission data reviewed: WBC 11.8 K/uL, CRP 3.2 mg/L, blood culture pending, left hip radiograph without acute abnormality.\n\nA — Assessment\nPreviously healthy 3-year-old admitted with fever and refusal to bear weight, initially managed as possible transient synovitis. Persistent high fever, worsening pain, continued inability to bear weight, tachycardia, and delayed capillary refill are no longer consistent with an uncomplicated course. Osteomyelitis and septic arthritis are now higher on the differential. He also has poor oral intake with early dehydration.\n\nP — Plan\n- Obtain CBC with differential, CRP, CMP, and procalcitonin.\n- Obtain MRI of the left hip/femur with contrast.\n- Consult Orthopedic Surgery.\n- Keep NPO pending imaging and operative recommendations.\n- Continue scheduled ibuprofen and PRN acetaminophen.\n- Continue maintenance IV fluids and strict intake/output monitoring.\n- Follow the admission blood culture.\n- Perform serial examinations and reassess perfusion, pain, and ability to bear weight.",
           "Physician"
         ],
         [
@@ -3117,6 +3143,14 @@ const CASE = {
           "Febrile overnight with persistent pain and limited movement.",
           "Shift Summary\n\nFebrile overnight to 39.1°C. Received scheduled ibuprofen and one PRN dose of acetaminophen for persistent fever with temporary improvement. Continues to refuse to bear weight on the left leg and cries with repositioning.\n\nSlept intermittently overnight, awakening several times due to pain. Taking only small sips of water and refused most dinner. Breakfast tray remains untouched this morning. Urine output adequate overnight.\n\nMother remains at bedside and reports Mason is \"not acting like himself\" and seems less playful than usual. Continues to appear uncomfortable with movement and has not demonstrated improvement in willingness to ambulate.",
           "Nursing"
+        ],
+        [
+          "I-PASS Handoff",
+          "Night Team",
+          "07/03 22:30",
+          "Stable. Admitted for fever, left hip pain, and refusal to bear weight; observing for presumed transient synovitis.",
+          "I — Illness severity: STABLE.\n\nP — Patient summary: Previously healthy 3-year-old admitted with fever, left hip pain, and refusal to bear weight after a recent viral illness. Initial CRP and radiograph are reassuring. Working diagnosis is transient synovitis, though early osteomyelitis or septic arthritis cannot be excluded. He is receiving scheduled ibuprofen, PRN acetaminophen, and maintenance IV fluids. Blood culture is pending.\n\nA — Action list:\n- Reassess pain and ability to bear weight after scheduled ibuprofen.\n- Follow fever curve, intake, and urine output overnight.\n\nS — Situation awareness/contingency planning: If fever or pain worsens, perfusion changes, or he remains unable to bear weight in the morning, reassess at the bedside and consider repeat labs, MRI, and Orthopedic consultation.\n\nS — Synthesis by receiver: Mason is stable and being observed for presumed transient synovitis. I will follow his fever, pain, intake, urine output, and ability to bear weight, and escalate the evaluation if he worsens or does not improve.",
+          "Handoff"
         ],
         [
           "Attending Addendum to Admission H&P",
@@ -3681,7 +3715,8 @@ const CASE = {
         {
           "title": "Red Book — Invasive Staphylococcal Infections",
           "description": "Reference: serious MSSA infections should receive an antistaphylococcal beta-lactam when susceptibilities allow.",
-          "type": "Reference"
+          "type": "Reference",
+          "url": "redbook_staph_reference.html"
         },
         {
           "type": "Clinical Pathway",
@@ -4243,4 +4278,3 @@ const CASE = {
     }
   ]
 };
-const PATIENT_PHOTO = "patient_photo.png";

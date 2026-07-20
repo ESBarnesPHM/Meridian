@@ -226,7 +226,8 @@ function renderResources(p){
   const resources=p.resources||[];
   if(!resources.length)return `<p class="muted">No resources available for this phase.</p>`;
   return `<div class="resource-list">${resources.map(r=>{
-    const content=`<div class="resource-type">${esc(r.type||"Resource")}</div><div class="resource-title">${esc(r.title)}</div><div class="resource-description">${esc(r.description||"")}</div>`;
+    const icon=({"Local PDF":"LOCAL","Guideline PDF":"GUIDE","Reference":"BOOK","Clinical Pathway":"PATH","Antibiotic Guidance":"ABX"}[r.type]||"REF");
+    const content=`<div class="resource-card-top"><span class="resource-icon">${icon}</span><span class="resource-type">${esc(r.type||"Resource")}</span></div><div class="resource-title">${esc(r.title)}</div><div class="resource-description">${esc(r.description||"")}</div>`;
     return r.url?`<a class="resource-card" href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${content}<span class="resource-open">Open ↗</span></a>`:`<div class="resource-card">${content}</div>`;
   }).join("")}</div>`;
 }
