@@ -19,3 +19,5 @@ Changes in v5.5:
 - Preserves horizontal scrolling for Results, Flowsheets, MAR, and Orders.
 - Increases touch-target sizes for tabs, phase buttons, and note selections.
 - Updates the visible version label to v5.5.
+
+Fix: removed a leftover JavaScript reference to the deleted Faculty panel that could prevent the app from rendering.

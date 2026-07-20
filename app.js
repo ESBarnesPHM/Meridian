@@ -33,7 +33,7 @@ function routeToChart(id="1"){screen="chart";currentPhase=id;activeTab="notes";w
 function setPhase(id){currentPhase=id;activeTab="notes";window.selectedNoteIndex=0;history.replaceState(null,"",`?phase=${id}`);render()}
 function setTab(tab){activeTab=tab;markViewed(tab);render()}
 function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
-function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : renderChart(); const panel=$("facultyPanel"); if(panel && facultyOpen) panel.classList.add("open");}
+function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : renderChart(); }
 function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="brand-login"><div class="logo">M</div><div><h1>Meridian EMR</h1><div>${esc(CASE.hospital)}</div></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="muted">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div><strong>${esc(CASE.patient.name)}</strong><div class="muted">ED → Hospital Medicine · New admission</div></div><span class="pill yellow">Watcher</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div><strong>${esc(p.name)}</strong><div class="muted">${esc(p.detail)}</div></div><span class="pill">Future case</span></div>`).join("")}</div></div></section></main>`}
 function renderChart(){
   const p=phase();
