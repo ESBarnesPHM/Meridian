@@ -34,7 +34,7 @@ function setPhase(id){currentPhase=id;activeTab="notes";window.selectedNoteIndex
 function setTab(tab){activeTab=tab;markViewed(tab);render()}
 function reveal4B(){const val=$("revealCode").value.trim().toUpperCase();if(val==="IPASS")setPhase("4b");else $("revealMsg").textContent="Incorrect code."}
 function render(){ $("app").innerHTML = screen==="login" ? renderLogin() : renderChart(); }
-function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="brand-login"><div class="logo">M</div><div><h1>Meridian EMR</h1><div>${esc(CASE.hospital)}</div></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="muted">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div><strong>${esc(CASE.patient.name)}</strong><div class="muted">ED → Hospital Medicine · New admission</div></div><span class="pill yellow">Watcher</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div><strong>${esc(p.name)}</strong><div class="muted">${esc(p.detail)}</div></div><span class="pill">Future case</span></div>`).join("")}</div></div></section></main>`}
+function renderLogin(){return `<main class="login"><section class="login-card"><div class="login-hero"><div class="brand-login"><div class="logo">M</div><div><h1>Meridian EMR</h1><div>${esc(CASE.hospital)}</div></div></div><div class="tagline">${esc(CASE.tagline)}</div><p>A fictional pediatric electronic medical record for patient safety simulation.</p></div><div class="login-body"><h2>Hospital Medicine Patient List</h2><p class="muted">Select the active simulation patient. Other patients are placeholders for future cases.</p><div class="patient-list"><div class="patient-tile" onclick="routeToChart('1')"><div><strong>${esc(CASE.patient.name)}</strong><div class="muted">ED → Hospital Medicine · New admission</div></div><span class="pill">New admission</span></div>${CASE.inactivePatients.map(p=>`<div class="patient-tile disabled"><div><strong>${esc(p.name)}</strong><div class="muted">${esc(p.detail)}</div></div><span class="pill">Future case</span></div>`).join("")}</div></div></section></main>`}
 function renderChart(){
   const p=phase();
   markViewed(activeTab);
@@ -62,7 +62,7 @@ function renderChart(){
       </main>
       <aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside>
     </div>
-    <footer class="footer">Meridian EMR v5.5 · Educational Use Only</footer>
+    <footer class="footer">Meridian EMR v5.6 · Educational Use Only</footer>
   </div>`;
 }
 function renderTabs(p){return `<nav class="folder-tabs" aria-label="Chart sections">${["summary","notes","results","flowsheet","orders","mar","imaging","growth","messages","resources"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}
@@ -184,7 +184,8 @@ function orderGroupOrder(group){
   }[group] || 99;
 }
 function renderOrders(p,limit){
-  let rows = limit ? p.orders.slice(0,5) : p.orders;
+  const sourceRows = p.activeOrders || p.orders || [];
+  let rows = limit ? sourceRows.slice(0,5) : sourceRows;
   if(limit){
     return `<div class="order-list">${rows.map(o=>renderRecentOrder(o)).join("")}</div>`;
   }
@@ -242,6 +243,7 @@ function renderResults(p){
   </div>`;
 }
 function getResultTimes(p){
+  if(p.resultTimes) return p.resultTimes;
   if(p.id==="1") return ["07/03 16:00"];
   if(p.id==="2") return ["07/03 16:00","07/04 07:45"];
   if(p.id==="3") return ["07/03 16:00","07/04 07:45","07/04 14:20"];
@@ -255,13 +257,13 @@ function renderLabGroup(group,rows,timeCols,p){
 }
 function labValueForTime(p,group,row,t,i){
   const name = row[0];
+  if(p.resultHistory){
+    const value = p.resultHistory?.[t]?.[group]?.[name];
+    return value===undefined ? `<span class="muted">—</span>` : esc(value);
+  }
   const val = row[1];
-  if(p.id==="2" && t==="07/04 07:45" && group!=="Microbiology"){
-    return `<span class="muted">—</span>`;
-  }
-  if((p.id==="1") && i>0){
-    return `<span class="muted">—</span>`;
-  }
+  if(p.id==="2" && t==="07/04 07:45" && group!=="Microbiology") return `<span class="muted">—</span>`;
+  if((p.id==="1") && i>0) return `<span class="muted">—</span>`;
   return esc(val);
 }
 function renderResultTrends(p){if(!p.resultTrends)return"";return `<div class="result-trend"><div class="card-head"><h3>Result Trends</h3></div><div class="card-body">${Object.entries(p.resultTrends).map(([k,vals])=>`<div style="margin-bottom:10px"><strong>${esc(k)}</strong><div class="muted">${vals.map(v=>`${esc(v[0])}: ${esc(v[1])}`).join("  ·  ")}</div></div>`).join("")}</div></div>`}
@@ -307,7 +309,7 @@ function renderFlowsheet(p, includeGraphs){
   return tableHtml + (includeGraphs ? `<div class="card" style="margin-top:14px"><div class="card-head"><h3>Trend Graphs</h3></div><div class="card-body">${renderTrends(p.flowsheet)}</div></div>` : "");
 }
 function cellClass(row,v){let s=String(v).toLowerCase();let n=parseFloat(v);if(row==="Heart Rate"&&n>=180)return"crit";if(row==="Heart Rate"&&n>=170)return"abn";if(row==="Temperature"&&n>=40)return"crit";if(row==="Temperature"&&n>=39.5)return"abn";if(row==="Respiratory Rate"&&n>=40)return"abn";if(row==="SpO₂"&&n<=92)return"crit";if(s.includes("mottled")||s.includes("difficult")||s.includes("none")||s.includes("weak")||s.includes("5 sec"))return"crit";if(s.includes("low")||s.includes("minimal")||s.includes("cool")||s.includes("4 sec")||s.includes("1+"))return"abn";return""}
-function renderTrends(flow){const numericRows=flow.rows.filter(r=>r.slice(1).every(v=>!isNaN(parseFloat(v)))).slice(0,4);return `<div class="trend-grid">${numericRows.map((r,i)=>renderTrend(r[0],r.slice(1).map(Number),i)).join("")}</div>`}
+function renderTrends(flow){const allowed=new Set(["Temperature","Heart Rate","Respiratory Rate","SpO₂"]);const numericRows=flow.rows.filter(r=>allowed.has(r[0])&&r.slice(1).every(v=>!isNaN(parseFloat(v))));return `<div class="trend-grid">${numericRows.map((r,i)=>renderTrend(r[0],r.slice(1).map(Number),i)).join("")}</div>`}
 function renderTrend(name,vals,idx){const min=Math.min(...vals),max=Math.max(...vals),w=300,h=125,pad=28;const pts=vals.map((v,i)=>{const x=pad+i*((w-pad*2)/(vals.length-1||1));const y=h-pad-(max===min?.5:(v-min)/(max-min))*(h-pad*2);return [x,y,v]});const path=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ");const color=idx<3?"red":"blue";return `<div class="trend"><div class="trend-top"><span>${esc(name)}</span><small>latest ${esc(vals[vals.length-1])}</small></div><svg class="chart" viewBox="0 0 ${w} ${h}"><line class="axis" x1="${pad}" y1="${h-pad}" x2="${w-pad}" y2="${h-pad}"/><line class="axis" x1="${pad}" y1="${pad}" x2="${pad}" y2="${h-pad}"/><path class="line-${color}" d="${path}"/>${pts.map((p,i)=>`<circle class="dot-${color}" cx="${p[0]}" cy="${p[1]}" r="4"/><text class="lab" x="${p[0]}" y="${p[1]-8}" text-anchor="middle">${esc(p[2])}</text><text class="xlab" x="${p[0]}" y="${h-8}" text-anchor="middle">${i+1}</text>`).join("")}</svg></div>`}
 function table(head,rows){return `<table class="table"><thead><tr>${head.map(h=>`<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td class="${flagClass(c)}">${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>`}
 function flagClass(f){f=String(f).toLowerCase();if(f.includes("critical"))return"flag-critical";if(f.includes("high"))return"flag-high";if(f.includes("low"))return"flag-low";if(f.includes("pending"))return"flag-pending";if(f.includes("prelim"))return"flag-prelim";return""}
