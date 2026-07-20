@@ -66,7 +66,7 @@ function renderChart(){
       </main>
       <aside class="rightcol">${renderMessagesCard(p)}${renderRecentOrders(p)}</aside>
     </div>
-    <footer class="footer">Meridian EMR v6.2 · Educational Use Only</footer>
+    <footer class="footer">Meridian EMR v6.3 · Educational Use Only</footer>
   </div>`;
 }
 function renderTabs(p){return `<nav class="folder-tabs" aria-label="Chart sections">${["summary","notes","results","flowsheet","orders","mar","imaging","growth","messages","resources"].map(t=>`<button class="${activeTab===t?'active':''}" onclick="setTab('${t}')">${tabLabel(t)}${tabCount(p,t)}</button>`).join("")}</nav>`}

@@ -5273,7 +5273,7 @@ const CASE = {
         ]
       ],
       "results": {
-        "CBC with differential": [
+        "CBC": [
           [
             "WBC",
             "18.6 K/uL",
@@ -5305,7 +5305,7 @@ const CASE = {
             "High"
           ]
         ],
-        "Comprehensive metabolic panel": [
+        "Chemistry": [
           [
             "Sodium",
             "146 mmol/L",
@@ -5565,7 +5565,7 @@ const CASE = {
             3.2
           ],
           [
-            "07/04 10:20",
+            "07/04 09:45",
             87
           ],
           [
@@ -5579,8 +5579,8 @@ const CASE = {
             11.8
           ],
           [
-            "07/04 10:20",
-            15.2
+            "07/04 09:45",
+            17.8
           ],
           [
             "07/05 03:24",
@@ -5599,8 +5599,8 @@ const CASE = {
             0.32
           ],
           [
-            "07/04 10:20",
-            0.38
+            "07/04 09:45",
+            0.34
           ],
           [
             "07/05 03:24",
@@ -5755,7 +5755,7 @@ const CASE = {
           }
         },
         "07/05 03:24": {
-          "CBC with differential": {
+          "CBC": {
             "WBC": "18.6 K/uL",
             "Hemoglobin": "10.8 g/dL",
             "Platelets": "214 K/uL",
@@ -5763,7 +5763,7 @@ const CASE = {
             "Bands": "9%",
             "Absolute neutrophils": "16.0 K/uL"
           },
-          "Comprehensive metabolic panel": {
+          "Chemistry": {
             "Sodium": "146 mmol/L",
             "Potassium": "4.3 mmol/L",
             "Chloride": "113 mmol/L",
